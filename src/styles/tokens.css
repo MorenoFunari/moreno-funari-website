@@ -24,19 +24,19 @@
   --color-success: #357a55;
   --color-warning: #856118;
   --color-error: #94433a;
-  --font-body: var(--font-plus-jakarta-sans), system-ui, sans-serif;
-  --font-heading: var(--font-plus-jakarta-sans), system-ui, sans-serif;
+  --font-body: var(--font-rubik), system-ui, sans-serif;
+  --font-heading: var(--font-rubik), system-ui, sans-serif;
 
-  --font-size-display: clamp(2.75rem, 8vw, 5.75rem);
-  --font-size-h1: clamp(2.35rem, 6vw, 4.5rem);
-  --font-size-h2: clamp(1.9rem, 4.5vw, 3.25rem);
+  --font-size-display: clamp(2.75rem, 7.4vw, 5.5rem);
+  --font-size-h1: clamp(2.3rem, 5.6vw, 4.35rem);
+  --font-size-h2: clamp(1.875rem, 4.2vw, 3.15rem);
   --font-size-h3: clamp(1.35rem, 2.4vw, 1.75rem);
   --font-size-h4: clamp(1.125rem, 2vw, 1.375rem);
-  --font-size-body-lg: clamp(1.125rem, 2vw, 1.375rem);
+  --font-size-body-lg: clamp(1.125rem, 1.8vw, 1.25rem);
   --font-size-body: 1rem;
   --font-size-body-sm: 0.9375rem;
   --font-size-label: 0.875rem;
-  --font-size-eyebrow: 0.84rem;
+  --font-size-eyebrow: 0.875rem;
 
   --line-height-tight: 1.08;
   --line-height-heading: 1.16;
@@ -47,8 +47,8 @@
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  --letter-spacing-tight: -0.015em;
-  --letter-spacing-eyebrow: 0.045em;
+  --letter-spacing-tight: -0.012em;
+  --letter-spacing-eyebrow: 0.025em;
 
   --container-width: 1120px;
   --container-wide-width: 1280px;

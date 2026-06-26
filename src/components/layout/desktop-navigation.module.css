@@ -20,9 +20,9 @@
   padding: 0.65rem 0.75rem;
   color: var(--color-text-muted);
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   line-height: var(--line-height-label);
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   text-decoration: none;
   transition:
     background-color var(--transition-base),

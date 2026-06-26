@@ -14,10 +14,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 The visual system follows a "professional but human" direction: warm, clear, credible, and intentionally far from motivational-guru styling.
 
-- Fonts: Plus Jakarta Sans is the single typeface for body, UI, navigation, buttons, labels and headings via `next/font/google`.
+- Fonts: Rubik is the single typeface for body, UI, navigation, buttons, labels and headings via `next/font/google`.
 - Palette V1.1: warm ivory backgrounds, warm white surfaces, petrol blue as the primary color, sage green as a limited accent, and warm grays for secondary text and borders.
 - Tokens: global design tokens live in `src/styles/tokens.css` and are imported by `src/app/globals.css`.
-- Principle: the interface should feel modern, professional but human, with green used for small details rather than dominant surfaces.
+- Type scale: body uses 400, UI text uses 500, buttons and headings use 600, and 700 is reserved for limited emphasis.
+- Microcopy: labels stay at least `0.875rem`, uppercase is limited, and tracking stays modest for a modern, soft, professional feel.
 - UI components: `Container`, `ButtonLink`, `Eyebrow`, `SectionHeading`, and `SurfaceCard` live in `src/components/ui`.
 - Styling: CSS Modules for component/page styles, with global CSS limited to reset, typography, accessibility, and document-level behavior.
 

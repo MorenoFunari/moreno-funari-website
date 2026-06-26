@@ -4,7 +4,6 @@
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--letter-spacing-eyebrow);
   line-height: var(--line-height-label);
-  text-transform: uppercase;
 }
 
 .light {

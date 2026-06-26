@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Rubik } from "next/font/google";
 
 import { SiteShell } from "@/components/layout/site-shell";
 import { siteConfig } from "@/config/site";
 
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const rubik = Rubik({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-plus-jakarta-sans",
+  variable: "--font-rubik",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it">
-      <body className={plusJakartaSans.variable}>
+      <body className={rubik.variable}>
         <SiteShell>{children}</SiteShell>
       </body>
     </html>
