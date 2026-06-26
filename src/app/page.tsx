@@ -1,109 +1,35 @@
-import { ButtonLink } from "@/components/ui/button-link";
-import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { SurfaceCard } from "@/components/ui/surface-card";
+import type { Metadata } from "next";
+
+import { AboutPreviewSection } from "@/components/sections/home/about-preview-section";
+import { ApproachSection } from "@/components/sections/home/approach-section";
+import { BlogPreviewSection } from "@/components/sections/home/blog-preview-section";
+import { ClosingCtaSection } from "@/components/sections/home/closing-cta-section";
+import { HomeHero } from "@/components/sections/home/home-hero";
+import { RecognitionSection } from "@/components/sections/home/recognition-section";
+import { ResourcesSection } from "@/components/sections/home/resources-section";
+import { StartPathsSection } from "@/components/sections/home/start-paths-section";
 import { siteConfig } from "@/config/site";
 
 import styles from "./page.module.css";
 
-const startCards = [
-  {
-    title: "Voglio capire",
-    description:
-      "Leggi riflessioni ed esempi concreti su blocco, fiducia, pressione, errori e vita quotidiana.",
-    linkLabel: "Leggi il blog",
-    href: "/blog",
-    isExternal: false,
+export const metadata: Metadata = {
+  title: {
+    absolute: siteConfig.name,
   },
-  {
-    title: "Voglio riflettere",
-    description:
-      "Fermati qualche minuto, rispondi a poche domande e prova a individuare un piccolo passo possibile.",
-    linkLabel: "Prova la riflessione guidata",
-    href: siteConfig.appUrl,
-    isExternal: true,
-  },
-  {
-    title: "Voglio confrontarmi",
-    description:
-      "Scopri uno spazio di coaching umano, concreto e costruito sulla situazione che stai vivendo.",
-    linkLabel: "Scopri il coaching",
-    href: "/coaching",
-    isExternal: false,
-  },
-] as const;
+  description: siteConfig.description,
+};
 
 export default function Home() {
   return (
     <main className={styles.page} id="main-content">
-      <Container
-        as="section"
-        aria-labelledby="hero-title"
-        className={styles.hero}
-      >
-        <div className={styles.heroContent}>
-          <Eyebrow className={styles.heroEyebrow}>
-            Moreno Funari | Mental Coach
-          </Eyebrow>
-          <h1 className={styles.heroTitle} id="hero-title">
-            Non devi risolvere tutto oggi.
-          </h1>
-          <p className={styles.heroText}>
-            Se ti senti bloccato, sotto pressione o troppo duro con te stesso,
-            puoi iniziare facendo chiarezza e trovando un passo possibile.
-          </p>
-          <div className={styles.heroActions} aria-label="Azioni principali">
-            <ButtonLink href="#inizia-da-qui" size="large">
-              Inizia da qui
-            </ButtonLink>
-            <ButtonLink href="/chi-sono" size="large" variant="secondary">
-              Conosci Moreno
-            </ButtonLink>
-          </div>
-        </div>
-      </Container>
-
-      <Container
-        as="section"
-        className={styles.startSection}
-        id="inizia-da-qui"
-        aria-labelledby="start-title"
-      >
-        <SectionHeading
-          id="start-title"
-          title="Da dove puoi iniziare?"
-          description="Non esiste una strada uguale per tutti. Puoi scegliere il modo che senti più vicino al momento che stai vivendo."
-        />
-
-        <div className={styles.cardGrid}>
-          {startCards.map((card) => (
-            <SurfaceCard
-              as="article"
-              className={styles.card}
-              key={card.title}
-              variant="default"
-            >
-              <h3 className={styles.cardTitle}>{card.title}</h3>
-              <p className={styles.cardText}>{card.description}</p>
-              <ButtonLink
-                className={styles.cardLink}
-                external={card.isExternal}
-                href={card.href}
-                target={card.isExternal ? "_blank" : undefined}
-                variant="text"
-              >
-                {card.linkLabel}
-              </ButtonLink>
-            </SurfaceCard>
-          ))}
-        </div>
-
-        <p className={styles.note}>
-          Questa è la prima fondazione del sito. Contenuti, fotografie e
-          percorsi verranno sviluppati nelle prossime issue.
-        </p>
-      </Container>
+      <HomeHero />
+      <RecognitionSection />
+      <StartPathsSection />
+      <ApproachSection />
+      <ResourcesSection />
+      <AboutPreviewSection />
+      <BlogPreviewSection />
+      <ClosingCtaSection />
     </main>
   );
 }

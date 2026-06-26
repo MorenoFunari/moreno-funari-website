@@ -31,6 +31,15 @@ Header, footer and the global shell live in `src/components/layout`. Navigation,
 - Accessibility: `SiteShell` adds the `Salta al contenuto` skip link pointing to `#main-content`.
 - Footer: navigation, app link, email, Instagram and legal links are all driven by `siteConfig`.
 
+## Homepage V1
+
+Homepage sections live in `src/components/sections/home`, with repeated content in `src/config/home.ts`.
+
+- Sections: hero, recognition, start paths, approach, resources, about preview, blog preview and closing CTA.
+- Main path: leggere, riflettere, confrontarsi.
+- No stock images are used; the about section can later receive a real photo without changing routes.
+- Blog previews are planned content only and do not link to article slugs yet.
+
 ## Checks
 
 ```bash
