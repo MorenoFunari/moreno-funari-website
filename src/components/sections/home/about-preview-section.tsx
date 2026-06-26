@@ -19,7 +19,7 @@ export function AboutPreviewSection() {
           className={styles.image}
           fill
           sizes="(max-width: 767px) 100vw, (max-width: 1199px) 38vw, 26rem"
-          src="/images/moreno/moreno-about-outdoor.png"
+          src="/images/moreno/moreno-about-outdoor.webp"
         />
       </div>
       <div className={styles.content}>

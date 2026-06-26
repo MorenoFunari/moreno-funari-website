@@ -40,7 +40,7 @@ export function HomeHero() {
           fill
           priority
           sizes="(max-width: 767px) 100vw, (max-width: 1199px) 42vw, 34rem"
-          src="/images/moreno/moreno-hero-outdoor.png"
+          src="/images/moreno/moreno-hero-outdoor.webp"
         />
       </div>
     </Container>

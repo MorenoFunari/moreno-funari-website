@@ -54,7 +54,7 @@ export const resources = [
     note: undefined,
     image: {
       alt: "Copertina dell'eBook Un passo possibile.",
-      src: "/images/ebook/un-passo-possibile-cover.png",
+      src: "/images/ebook/un-passo-possibile-cover.webp",
       variant: "cover",
     },
   },
@@ -68,7 +68,7 @@ export const resources = [
     note: "Non è terapia e non sostituisce il confronto con un professionista.",
     image: {
       alt: "Schermata iniziale di Un Passo Possibile AI.",
-      src: "/images/app/un-passo-possibile-ai-home.png",
+      src: "/images/app/un-passo-possibile-ai-home.webp",
       variant: "screen",
     },
   },
