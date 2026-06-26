@@ -1,21 +1,15 @@
 import type { Metadata } from "next";
-import { Lora, Source_Sans_3 } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 
 import { SiteShell } from "@/components/layout/site-shell";
 import { siteConfig } from "@/config/site";
 
 import "./globals.css";
 
-const sourceSans3 = Source_Sans_3({
-  variable: "--font-source-sans-3",
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
-});
-
-const lora = Lora({
-  variable: "--font-lora",
-  subsets: ["latin"],
-  display: "swap",
+  variable: "--font-plus-jakarta-sans",
 });
 
 export const metadata: Metadata = {
@@ -36,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it">
-      <body className={`${sourceSans3.variable} ${lora.variable}`}>
+      <body className={plusJakartaSans.variable}>
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

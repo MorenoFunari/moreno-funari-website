@@ -7,7 +7,7 @@
   min-height: 2.75rem;
   border: 1px solid transparent;
   border-radius: var(--radius-md);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-label);
   letter-spacing: 0.005em;
   text-align: center;

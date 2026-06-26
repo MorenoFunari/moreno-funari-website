@@ -20,7 +20,7 @@
   padding: 0.65rem 0.75rem;
   color: var(--color-text-muted);
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-label);
   letter-spacing: 0.01em;
   text-decoration: none;

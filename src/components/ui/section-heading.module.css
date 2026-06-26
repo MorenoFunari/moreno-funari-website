@@ -14,11 +14,13 @@
 .title {
   color: var(--color-primary-strong);
   font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semibold);
 }
 
 .description {
   margin-top: var(--space-md);
   color: var(--color-text-muted);
   font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-regular);
   line-height: var(--line-height-intro);
 }

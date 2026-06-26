@@ -14,7 +14,7 @@
 .name {
   font-family: var(--font-heading);
   font-size: 1.15rem;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   line-height: 1.12;
 }
 
@@ -23,7 +23,7 @@
   color: var(--color-text-muted);
   font-size: 0.78rem;
   font-weight: var(--font-weight-medium);
-  letter-spacing: var(--letter-spacing-eyebrow);
+  letter-spacing: 0.025em;
   line-height: var(--line-height-label);
   text-transform: uppercase;
 }

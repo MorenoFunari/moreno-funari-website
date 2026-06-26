@@ -20,9 +20,11 @@
 }
 
 .heroTitle {
-  max-width: 11ch;
+  max-width: 12ch;
   color: var(--color-primary-strong);
   font-size: var(--font-size-display);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-tight);
   line-height: var(--line-height-tight);
 }
 
@@ -31,6 +33,7 @@
   margin-top: var(--space-xl);
   color: var(--color-text-muted);
   font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-regular);
   line-height: var(--line-height-intro);
 }
 
@@ -62,6 +65,7 @@
 .cardTitle {
   color: var(--color-primary-strong);
   font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-heading);
 }
 
