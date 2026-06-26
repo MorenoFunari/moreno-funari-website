@@ -1,5 +1,24 @@
 .section {
+  display: grid;
+  gap: clamp(var(--space-xl), 6vw, var(--space-3xl));
+  align-items: center;
   padding-block: clamp(var(--space-3xl), 8vw, var(--section-space));
+}
+
+.media {
+  position: relative;
+  width: min(100%, 26rem);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-muted);
+  box-shadow: var(--shadow-card);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center 22%;
 }
 
 .content {
@@ -23,4 +42,10 @@
   color: var(--color-text-muted);
   font-size: var(--font-size-body-lg);
   line-height: var(--line-height-intro);
+}
+
+@media (min-width: 1024px) {
+  .section {
+    grid-template-columns: minmax(18rem, 0.45fr) minmax(0, 0.55fr);
+  }
 }

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
@@ -30,6 +32,16 @@ export function HomeHero() {
             Conosci Moreno
           </ButtonLink>
         </div>
+      </div>
+      <div className={styles.media}>
+        <Image
+          alt="Moreno Funari all'aperto in un momento informale."
+          className={styles.image}
+          fill
+          priority
+          sizes="(max-width: 767px) 100vw, (max-width: 1199px) 42vw, 34rem"
+          src="/images/moreno/moreno-hero-outdoor.png"
+        />
       </div>
     </Container>
   );

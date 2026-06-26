@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -28,6 +30,25 @@ export function ResourcesSection() {
             key={resource.title}
             variant="muted"
           >
+            <div
+              className={`${styles.media} ${
+                resource.image.variant === "cover"
+                  ? styles.coverMedia
+                  : styles.screenMedia
+              }`}
+            >
+              <Image
+                alt={resource.image.alt}
+                className={`${styles.mediaImage} ${
+                  resource.image.variant === "cover"
+                    ? styles.coverImage
+                    : styles.screenImage
+                }`}
+                fill
+                sizes="(max-width: 759px) calc(100vw - 3rem), 36vw"
+                src={resource.image.src}
+              />
+            </div>
             <h3 className={styles.cardTitle}>{resource.title}</h3>
             <p className={styles.cardText}>{resource.description}</p>
             {resource.note ? <p className={styles.note}>{resource.note}</p> : null}

@@ -1,6 +1,7 @@
 .hero {
-  display: flex;
+  display: grid;
   align-items: center;
+  gap: clamp(var(--space-xl), 6vw, var(--space-3xl));
   padding-block: clamp(var(--space-3xl), 8vw, var(--space-4xl));
 }
 
@@ -36,9 +37,36 @@
   margin-top: var(--space-xl);
 }
 
+.media {
+  position: relative;
+  width: min(100%, 34rem);
+  aspect-ratio: 4 / 5;
+  justify-self: center;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-muted);
+  box-shadow: var(--shadow-card);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center 28%;
+}
+
 @media (min-width: 900px) {
   .hero {
     min-height: 56dvh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.18fr) minmax(18rem, 0.82fr);
+  }
+
+  .media {
+    justify-self: end;
   }
 }
 

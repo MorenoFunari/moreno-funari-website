@@ -10,9 +10,42 @@
 
 .card {
   display: flex;
-  min-height: 19rem;
+  min-height: 32rem;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.media {
+  position: relative;
+  width: 100%;
+  margin-bottom: var(--space-lg);
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.coverMedia {
+  width: min(100%, 16rem);
+  aspect-ratio: 3 / 4;
+  align-self: center;
+}
+
+.screenMedia {
+  aspect-ratio: 16 / 10;
+}
+
+.mediaImage {
+  object-position: center;
+}
+
+.coverImage {
+  object-fit: contain;
+}
+
+.screenImage {
+  object-fit: cover;
 }
 
 .cardTitle {

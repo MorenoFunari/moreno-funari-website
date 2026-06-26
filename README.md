@@ -37,7 +37,7 @@ Homepage sections live in `src/components/sections/home`, with repeated content 
 
 - Sections: hero, recognition, start paths, approach, resources, about preview, blog preview and closing CTA.
 - Main path: leggere, riflettere, confrontarsi.
-- No stock images are used; the about section can later receive a real photo without changing routes.
+- Visual assets: homepage portraits, eBook cover and app preview use local real assets with `next/image`.
 - Blog previews are planned content only and do not link to article slugs yet.
 
 ## Checks
