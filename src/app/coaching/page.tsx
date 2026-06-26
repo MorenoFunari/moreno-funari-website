@@ -1,19 +1,33 @@
 import type { Metadata } from "next";
 
-import { PlaceholderPage } from "@/components/layout/placeholder-page";
+import { BoundariesSection } from "@/components/sections/coaching/boundaries-section";
+import { CoachingClosingCta } from "@/components/sections/coaching/coaching-closing-cta";
+import { CoachingDefinitionSection } from "@/components/sections/coaching/coaching-definition-section";
+import { CoachingFaqSection } from "@/components/sections/coaching/coaching-faq-section";
+import { CoachingHero } from "@/components/sections/coaching/coaching-hero";
+import { ExpectationsSection } from "@/components/sections/coaching/expectations-section";
+import { FirstContactSection } from "@/components/sections/coaching/first-contact-section";
+import { ProcessSection } from "@/components/sections/coaching/process-section";
+import { UsefulWhenSection } from "@/components/sections/coaching/useful-when-section";
 
 export const metadata: Metadata = {
   title: "Coaching",
   description:
-    "Un percorso umano e concreto per fare chiarezza e individuare passi sostenibili.",
+    "Uno spazio umano e concreto per fare chiarezza, affrontare blocco e pressione e individuare piccoli passi sostenibili.",
 };
 
 export default function CoachingPage() {
   return (
-    <PlaceholderPage
-      eyebrow="Uno spazio di confronto"
-      title="Coaching"
-      description="Un percorso umano e concreto per fare chiarezza e individuare passi sostenibili."
-    />
+    <main id="main-content">
+      <CoachingHero />
+      <UsefulWhenSection />
+      <CoachingDefinitionSection />
+      <ProcessSection />
+      <ExpectationsSection />
+      <FirstContactSection />
+      <BoundariesSection />
+      <CoachingFaqSection />
+      <CoachingClosingCta />
+    </main>
   );
 }

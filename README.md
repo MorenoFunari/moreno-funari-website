@@ -50,6 +50,17 @@ The `/chi-sono` route is a narrative profile page built from dedicated sections 
 - Responsibility: training and coaching boundaries are shown in balanced blocks.
 - CTAs: the page points to `/coaching` and `/contatti`.
 
+## Pagina Coaching V1
+
+The `/coaching` route is a text-first page built from dedicated sections in `src/components/sections/coaching` and repeated content in `src/config/coaching.ts`.
+
+- Structure: hero, useful situations, definition, process, expectations, first contact, boundaries, FAQ and closing CTA.
+- Path: the content moves from situation to clarity to a sustainable first step.
+- FAQ: questions use native `<details>` and `<summary>` elements.
+- Boundaries: the page clarifies that coaching is not psychotherapy or healthcare support.
+- Open decisions: price, duration, mode, location and availability are intentionally not published yet.
+- CTA: the main conversion path points to `/contatti`.
+
 ## Checks
 
 ```bash
