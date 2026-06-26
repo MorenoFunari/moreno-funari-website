@@ -1,5 +1,8 @@
-import Link from "next/link";
-
+import { ButtonLink } from "@/components/ui/button-link";
+import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { SurfaceCard } from "@/components/ui/surface-card";
 import { siteConfig } from "@/config/site";
 
 import styles from "./page.module.css";
@@ -34,9 +37,15 @@ const startCards = [
 export default function Home() {
   return (
     <main className={styles.page}>
-      <section className={styles.hero} aria-labelledby="hero-title">
-        <div className={styles.heroInner}>
-          <p className={styles.eyebrow}>Moreno Funari | Mental Coach</p>
+      <Container
+        as="section"
+        aria-labelledby="hero-title"
+        className={styles.hero}
+      >
+        <div className={styles.heroContent}>
+          <Eyebrow className={styles.heroEyebrow}>
+            Moreno Funari | Mental Coach
+          </Eyebrow>
           <h1 className={styles.heroTitle} id="hero-title">
             Non devi risolvere tutto oggi.
           </h1>
@@ -45,51 +54,48 @@ export default function Home() {
             puoi iniziare facendo chiarezza e trovando un passo possibile.
           </p>
           <div className={styles.heroActions} aria-label="Azioni principali">
-            <a className={styles.primaryCta} href="#inizia-da-qui">
+            <ButtonLink href="#inizia-da-qui" size="large">
               Inizia da qui
-            </a>
-            <Link className={styles.secondaryCta} href="/chi-sono">
+            </ButtonLink>
+            <ButtonLink href="/chi-sono" size="large" variant="secondary">
               Conosci Moreno
-            </Link>
+            </ButtonLink>
           </div>
         </div>
-      </section>
+      </Container>
 
-      <section
+      <Container
+        as="section"
         className={styles.startSection}
         id="inizia-da-qui"
         aria-labelledby="start-title"
       >
-        <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle} id="start-title">
-            Da dove puoi iniziare?
-          </h2>
-          <p className={styles.sectionText}>
-            Non esiste una strada uguale per tutti. Puoi scegliere il modo che
-            senti più vicino al momento che stai vivendo.
-          </p>
-        </div>
+        <SectionHeading
+          id="start-title"
+          title="Da dove puoi iniziare?"
+          description="Non esiste una strada uguale per tutti. Puoi scegliere il modo che senti più vicino al momento che stai vivendo."
+        />
 
         <div className={styles.cardGrid}>
           {startCards.map((card) => (
-            <article className={styles.card} key={card.title}>
+            <SurfaceCard
+              as="article"
+              className={styles.card}
+              key={card.title}
+              variant="default"
+            >
               <h3 className={styles.cardTitle}>{card.title}</h3>
               <p className={styles.cardText}>{card.description}</p>
-              {card.isExternal ? (
-                <a
-                  className={styles.cardLink}
-                  href={card.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {card.linkLabel}
-                </a>
-              ) : (
-                <Link className={styles.cardLink} href={card.href}>
-                  {card.linkLabel}
-                </Link>
-              )}
-            </article>
+              <ButtonLink
+                className={styles.cardLink}
+                external={card.isExternal}
+                href={card.href}
+                target={card.isExternal ? "_blank" : undefined}
+                variant="text"
+              >
+                {card.linkLabel}
+              </ButtonLink>
+            </SurfaceCard>
           ))}
         </div>
 
@@ -97,7 +103,7 @@ export default function Home() {
           Questa è la prima fondazione del sito. Contenuti, fotografie e
           percorsi verranno sviluppati nelle prossime issue.
         </p>
-      </section>
+      </Container>
     </main>
   );
 }

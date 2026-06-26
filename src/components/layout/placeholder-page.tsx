@@ -1,4 +1,7 @@
-import Link from "next/link";
+import { ButtonLink } from "@/components/ui/button-link";
+import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
+import { SurfaceCard } from "@/components/ui/surface-card";
 
 import styles from "./placeholder-page.module.css";
 
@@ -15,18 +18,22 @@ export function PlaceholderPage({
 }: PlaceholderPageProps) {
   return (
     <main className={styles.page}>
-      <div className={styles.inner}>
-        <article className={styles.card} aria-labelledby="placeholder-title">
-          <p className={styles.eyebrow}>{eyebrow}</p>
+      <Container className={styles.inner}>
+        <SurfaceCard
+          as="article"
+          aria-labelledby="placeholder-title"
+          className={styles.card}
+        >
+          <Eyebrow className={styles.eyebrow}>{eyebrow}</Eyebrow>
           <h1 className={styles.title} id="placeholder-title">
             {title}
           </h1>
           <p className={styles.description}>{description}</p>
-          <Link className={styles.homeLink} href="/">
+          <ButtonLink className={styles.homeLink} href="/" variant="secondary">
             Torna alla homepage
-          </Link>
-        </article>
-      </div>
+          </ButtonLink>
+        </SurfaceCard>
+      </Container>
     </main>
   );
 }

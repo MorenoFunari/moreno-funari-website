@@ -1,0 +1,12 @@
+.eyebrow {
+  color: var(--color-primary);
+  font-size: var(--font-size-eyebrow);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-eyebrow);
+  line-height: var(--line-height-label);
+  text-transform: uppercase;
+}
+
+.light {
+  color: var(--color-accent);
+}

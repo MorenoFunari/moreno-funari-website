@@ -3,44 +3,34 @@
 }
 
 .hero {
-  display: grid;
-  min-height: 68vh;
-  padding: clamp(var(--space-2xl), 9vw, 7rem) var(--space-lg);
-  place-items: center;
+  display: flex;
+  min-height: 68dvh;
+  align-items: center;
+  padding-block: var(--section-space);
 }
 
-.heroInner {
+.heroContent {
   display: flex;
-  width: min(100%, var(--container-width));
   flex-direction: column;
   align-items: flex-start;
 }
 
-.eyebrow {
+.heroEyebrow {
   margin-bottom: var(--space-lg);
-  color: var(--color-primary);
-  font-size: 0.8125rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  line-height: 1.4;
-  text-transform: uppercase;
 }
 
 .heroTitle {
   max-width: 10ch;
-  color: var(--color-primary-dark);
-  font-size: clamp(3.25rem, 12vw, 7.5rem);
-  font-weight: 600;
-  line-height: 0.96;
-  text-wrap: balance;
+  color: var(--color-primary-strong);
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-tight);
 }
 
 .heroText {
   max-width: 650px;
   margin-top: var(--space-xl);
   color: var(--color-text-muted);
-  font-size: clamp(1.125rem, 2.2vw, 1.5rem);
-  text-wrap: balance;
+  font-size: var(--font-size-body-lg);
 }
 
 .heroActions {
@@ -50,80 +40,14 @@
   margin-top: var(--space-xl);
 }
 
-.primaryCta,
-.secondaryCta,
-.cardLink {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.75rem;
-  border-radius: var(--radius-md);
-  font-weight: 800;
-  line-height: 1.2;
-  text-decoration: none;
-}
-
-.primaryCta,
-.secondaryCta {
-  padding: 0.75rem 1.05rem;
-  border: 1px solid transparent;
-  transition:
-    background-color var(--transition-base),
-    border-color var(--transition-base),
-    color var(--transition-base),
-    transform var(--transition-base);
-}
-
-.primaryCta {
-  background: var(--color-primary);
-  color: var(--color-surface);
-}
-
-.secondaryCta {
-  border-color: var(--color-border-strong);
-  color: var(--color-primary-dark);
-}
-
-.primaryCta:hover {
-  background: var(--color-primary-dark);
-  color: var(--color-surface);
-  transform: translateY(-1px);
-}
-
-.secondaryCta:hover {
-  border-color: var(--color-primary);
-  background: var(--color-accent-soft);
-  color: var(--color-primary-dark);
-  transform: translateY(-1px);
-}
-
 .startSection {
-  width: min(100%, var(--container-width));
-  margin: 0 auto;
-  padding: var(--space-2xl) var(--space-lg) clamp(var(--space-3xl), 9vw, 7rem);
-}
-
-.sectionHeader {
-  max-width: var(--content-width);
-}
-
-.sectionTitle {
-  color: var(--color-primary-dark);
-  font-size: clamp(2rem, 6vw, 4rem);
-  font-weight: 600;
-  text-wrap: balance;
-}
-
-.sectionText {
-  margin-top: var(--space-md);
-  color: var(--color-text-muted);
-  font-size: clamp(1.0625rem, 2vw, 1.25rem);
+  padding-block: var(--space-2xl) var(--section-space);
 }
 
 .cardGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-md);
+  gap: var(--grid-gutter);
   margin-top: var(--space-xl);
 }
 
@@ -132,17 +56,11 @@
   min-height: 19rem;
   flex-direction: column;
   align-items: flex-start;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-surface);
-  box-shadow: var(--shadow-subtle);
-  padding: var(--space-xl);
 }
 
 .cardTitle {
-  color: var(--color-primary-dark);
-  font-size: 1.65rem;
-  font-weight: 600;
+  color: var(--color-primary-strong);
+  font-size: var(--font-size-h3);
 }
 
 .cardText {
@@ -153,13 +71,6 @@
 .cardLink {
   margin-top: auto;
   padding-top: var(--space-xl);
-  color: var(--color-primary-dark);
-  text-decoration: underline;
-  text-decoration-color: rgb(28 91 99 / 0.3);
-}
-
-.cardLink:hover {
-  color: var(--color-primary);
 }
 
 .note {
@@ -184,18 +95,13 @@
 @media (max-width: 560px) {
   .hero {
     min-height: auto;
-    padding-right: var(--space-md);
-    padding-left: var(--space-md);
   }
 
-  .startSection {
-    padding-right: var(--space-md);
-    padding-left: var(--space-md);
+  .heroActions {
+    width: 100%;
   }
 
-  .heroActions,
-  .primaryCta,
-  .secondaryCta {
+  .heroActions > * {
     width: 100%;
   }
 }

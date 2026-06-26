@@ -1,0 +1,28 @@
+.card {
+  border-radius: var(--radius-lg);
+  padding: clamp(var(--space-lg), 4vw, var(--space-xl));
+}
+
+.default {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.muted {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-muted);
+  box-shadow: var(--shadow-sm);
+}
+
+.outlined {
+  border: 1px solid var(--color-border-strong);
+  background: transparent;
+}
+
+.dark {
+  border: 1px solid rgb(255 255 255 / 0.12);
+  background: var(--color-primary-strong);
+  color: var(--color-text-on-dark);
+  box-shadow: var(--shadow-elevated);
+}
