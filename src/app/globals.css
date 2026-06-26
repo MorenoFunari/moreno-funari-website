@@ -16,6 +16,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: inherit;
 }
 
 body {
@@ -25,7 +26,7 @@ body {
     radial-gradient(circle at top left, var(--color-background-glow), transparent 28rem),
     var(--color-background);
   color: var(--color-text);
-  font-family: var(--font-body);
+  font-family: inherit;
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-body);
@@ -33,6 +34,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+
 
 body.is-menu-open {
   overflow: hidden;
@@ -54,7 +56,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-heading);
+  font-family: inherit;
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--letter-spacing-tight);
   line-height: var(--line-height-heading);
@@ -113,6 +115,7 @@ input,
 textarea,
 select {
   font: inherit;
+  font-family: inherit;
 }
 
 textarea {

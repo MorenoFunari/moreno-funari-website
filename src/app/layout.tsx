@@ -8,8 +8,7 @@ import "./globals.css";
 
 const rubik = Rubik({
   subsets: ["latin"],
-  display: "swap",
-  variable: "--font-rubik",
+  display: "swap"
 });
 
 export const metadata: Metadata = {
@@ -30,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it">
-      <body className={rubik.variable}>
+      <body className={rubik.className}>
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

@@ -24,8 +24,6 @@
   --color-success: #357a55;
   --color-warning: #856118;
   --color-error: #94433a;
-  --font-body: var(--font-rubik), system-ui, sans-serif;
-  --font-heading: var(--font-rubik), system-ui, sans-serif;
 
   --font-size-display: clamp(2.75rem, 7.4vw, 5.5rem);
   --font-size-h1: clamp(2.3rem, 5.6vw, 4.35rem);
