@@ -1,66 +1,103 @@
-import Image from "next/image";
+import Link from "next/link";
+
+import { siteConfig } from "@/config/site";
+
 import styles from "./page.module.css";
+
+const startCards = [
+  {
+    title: "Voglio capire",
+    description:
+      "Leggi riflessioni ed esempi concreti su blocco, fiducia, pressione, errori e vita quotidiana.",
+    linkLabel: "Leggi il blog",
+    href: "/blog",
+    isExternal: false,
+  },
+  {
+    title: "Voglio riflettere",
+    description:
+      "Fermati qualche minuto, rispondi a poche domande e prova a individuare un piccolo passo possibile.",
+    linkLabel: "Prova la riflessione guidata",
+    href: siteConfig.appUrl,
+    isExternal: true,
+  },
+  {
+    title: "Voglio confrontarmi",
+    description:
+      "Scopri uno spazio di coaching umano, concreto e costruito sulla situazione che stai vivendo.",
+    linkLabel: "Scopri il coaching",
+    href: "/coaching",
+    isExternal: false,
+  },
+] as const;
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className={styles.page}>
+      <section className={styles.hero} aria-labelledby="hero-title">
+        <div className={styles.heroInner}>
+          <p className={styles.eyebrow}>Moreno Funari | Mental Coach</p>
+          <h1 className={styles.heroTitle} id="hero-title">
+            Non devi risolvere tutto oggi.
+          </h1>
+          <p className={styles.heroText}>
+            Se ti senti bloccato, sotto pressione o troppo duro con te stesso,
+            puoi iniziare facendo chiarezza e trovando un passo possibile.
+          </p>
+          <div className={styles.heroActions} aria-label="Azioni principali">
+            <a className={styles.primaryCta} href="#inizia-da-qui">
+              Inizia da qui
+            </a>
+            <Link className={styles.secondaryCta} href="/chi-sono">
+              Conosci Moreno
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className={styles.startSection}
+        id="inizia-da-qui"
+        aria-labelledby="start-title"
+      >
+        <div className={styles.sectionHeader}>
+          <h2 className={styles.sectionTitle} id="start-title">
+            Da dove puoi iniziare?
+          </h2>
+          <p className={styles.sectionText}>
+            Non esiste una strada uguale per tutti. Puoi scegliere il modo che
+            senti più vicino al momento che stai vivendo.
           </p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className={styles.cardGrid}>
+          {startCards.map((card) => (
+            <article className={styles.card} key={card.title}>
+              <h3 className={styles.cardTitle}>{card.title}</h3>
+              <p className={styles.cardText}>{card.description}</p>
+              {card.isExternal ? (
+                <a
+                  className={styles.cardLink}
+                  href={card.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {card.linkLabel}
+                </a>
+              ) : (
+                <Link className={styles.cardLink} href={card.href}>
+                  {card.linkLabel}
+                </Link>
+              )}
+            </article>
+          ))}
         </div>
-      </main>
-    </div>
+
+        <p className={styles.note}>
+          Questa è la prima fondazione del sito. Contenuti, fotografie e
+          percorsi verranno sviluppati nelle prossime issue.
+        </p>
+      </section>
+    </main>
   );
 }

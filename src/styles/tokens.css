@@ -1,0 +1,31 @@
+:root {
+  --color-background: #f8f4ec;
+  --color-surface: #fffdf8;
+  --color-surface-muted: #f1eadf;
+  --color-primary: #1c5b63;
+  --color-primary-dark: #123f45;
+  --color-accent: #b8d8ba;
+  --color-accent-soft: #e5f0e4;
+  --color-text: #223034;
+  --color-text-muted: #667276;
+  --color-border: #ded4c5;
+  --color-border-strong: #c8bba8;
+  --color-focus: #2f747d;
+  --container-width: 1120px;
+  --content-width: 720px;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --shadow-soft: 0 1rem 2.5rem rgb(34 48 52 / 0.08);
+  --shadow-subtle: 0 0.375rem 1.25rem rgb(34 48 52 / 0.06);
+  --transition-base: 180ms ease;
+  --transition-slow: 260ms ease;
+}
