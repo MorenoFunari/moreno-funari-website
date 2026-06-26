@@ -1,0 +1,28 @@
+.section {
+  display: grid;
+  gap: var(--space-xl);
+  padding-block: var(--section-space);
+}
+
+.copy {
+  display: grid;
+  gap: var(--space-md);
+  max-width: 740px;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-intro);
+}
+
+@media (min-width: 960px) {
+  .section {
+    grid-template-columns: minmax(0, 0.95fr) minmax(24rem, 1.05fr);
+    align-items: start;
+    gap: var(--space-3xl);
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding-block: var(--space-3xl);
+  }
+}

@@ -40,6 +40,16 @@ Homepage sections live in `src/components/sections/home`, with repeated content 
 - Visual assets: homepage portraits, eBook cover and app preview use local real assets with `next/image`.
 - Blog previews are planned content only and do not link to article slugs yet.
 
+## Pagina Chi sono V1
+
+The `/chi-sono` route is a narrative profile page built from dedicated sections in `src/components/sections/about` and repeated lists in `src/config/about.ts`.
+
+- Structure: hero, real-life work, sport, coaching choice, working principles, transparency, credentials and closing CTA.
+- Visual: the hero uses `public/images/moreno/moreno-about-outdoor.webp` with `next/image`.
+- Focus: the `#come-lavoro` section explains the coaching principles without presenting them as a fixed method.
+- Responsibility: training and coaching boundaries are shown in balanced blocks.
+- CTAs: the page points to `/coaching` and `/contatti`.
+
 ## Checks
 
 ```bash
