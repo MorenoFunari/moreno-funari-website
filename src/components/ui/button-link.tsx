@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import type { MouseEventHandler, ReactNode } from "react";
 
 import styles from "./button-link.module.css";
 
@@ -13,6 +13,7 @@ type ButtonLinkProps = {
   iconAfter?: ReactNode;
   iconBefore?: ReactNode;
   isDisabled?: boolean;
+  onClick?: MouseEventHandler<HTMLAnchorElement | HTMLSpanElement>;
   size?: "medium" | "large";
   target?: "_blank" | "_self";
   variant?: "primary" | "secondary" | "ghost" | "text";
@@ -28,6 +29,7 @@ export function ButtonLink({
   iconAfter,
   iconBefore,
   isDisabled = false,
+  onClick,
   size = "medium",
   target,
   variant = "primary",
@@ -57,6 +59,7 @@ export function ButtonLink({
         aria-disabled="true"
         aria-label={ariaLabel}
         className={classNames}
+        onClick={onClick}
         role="link"
         tabIndex={-1}
       >
@@ -73,6 +76,7 @@ export function ButtonLink({
         aria-label={ariaLabel}
         className={classNames}
         href={href}
+        onClick={onClick as MouseEventHandler<HTMLAnchorElement>}
         rel={rel}
         target={target}
       >
@@ -82,7 +86,12 @@ export function ButtonLink({
   }
 
   return (
-    <Link aria-label={ariaLabel} className={classNames} href={href}>
+    <Link
+      aria-label={ariaLabel}
+      className={classNames}
+      href={href}
+      onClick={onClick as MouseEventHandler<HTMLAnchorElement>}
+    >
       {content}
     </Link>
   );

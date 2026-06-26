@@ -36,7 +36,7 @@ const startCards = [
 
 export default function Home() {
   return (
-    <main className={styles.page}>
+    <main className={styles.page} id="main-content">
       <Container
         as="section"
         aria-labelledby="hero-title"

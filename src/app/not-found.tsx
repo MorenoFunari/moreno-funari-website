@@ -4,7 +4,7 @@ import styles from "./not-found.module.css";
 
 export default function NotFound() {
   return (
-    <main className={styles.page}>
+    <main className={styles.page} id="main-content">
       <section className={styles.content} aria-labelledby="not-found-title">
         <p className={styles.code}>404</p>
         <h1 className={styles.title} id="not-found-title">

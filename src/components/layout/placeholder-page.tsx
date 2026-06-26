@@ -17,7 +17,7 @@ export function PlaceholderPage({
   description,
 }: PlaceholderPageProps) {
   return (
-    <main className={styles.page}>
+    <main className={styles.page} id="main-content">
       <Container className={styles.inner}>
         <SurfaceCard
           as="article"

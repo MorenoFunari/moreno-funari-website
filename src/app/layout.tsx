@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lora, Manrope } from "next/font/google";
 
+import { SiteShell } from "@/components/layout/site-shell";
 import { siteConfig } from "@/config/site";
 
 import "./globals.css";
@@ -35,7 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" className={`${manrope.variable} ${lora.variable}`}>
-      <body>{children}</body>
+      <body>
+        <SiteShell>{children}</SiteShell>
+      </body>
     </html>
   );
 }

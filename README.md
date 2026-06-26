@@ -20,6 +20,15 @@ The visual system follows a "professional but human" direction: warm, clear, cre
 - UI components: `Container`, `ButtonLink`, `Eyebrow`, `SectionHeading`, and `SurfaceCard` live in `src/components/ui`.
 - Styling: CSS Modules for component/page styles, with global CSS limited to reset, typography, accessibility, and document-level behavior.
 
+## Layout globale
+
+Header, footer and the global shell live in `src/components/layout`. Navigation, legal links and contact URLs are configured in `src/config/site.ts`.
+
+- Desktop: sticky header with brand, main navigation and the `Inizia da qui` CTA.
+- Mobile: accessible menu button, dropdown panel, Escape closing and body scroll lock while open.
+- Accessibility: `SiteShell` adds the `Salta al contenuto` skip link pointing to `#main-content`.
+- Footer: navigation, app link, email, Instagram and legal links are all driven by `siteConfig`.
+
 ## Checks
 
 ```bash

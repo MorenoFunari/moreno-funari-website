@@ -1,0 +1,32 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-header);
+  min-height: var(--header-height);
+  border-bottom: 1px solid rgb(222 210 194 / 0.86);
+  background: rgb(255 253 248 / 0.96);
+  box-shadow: 0 0.5rem 1.5rem rgb(34 48 52 / 0.04);
+}
+
+.inner {
+  display: grid;
+  min-height: var(--header-height);
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.desktopAction {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    grid-template-columns: minmax(12rem, 1fr) auto minmax(10rem, 1fr);
+  }
+
+  .desktopAction {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

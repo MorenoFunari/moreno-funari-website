@@ -7,6 +7,27 @@ export const siteConfig = {
   appUrl: "https://app.morenofunari.it",
   email: "moreno.funari@gmail.com",
   instagramUrl: "https://www.instagram.com/moreno.coach86/",
+  mainNavigation: [
+    { label: "Chi sono", href: "/chi-sono" },
+    { label: "Blog", href: "/blog" },
+    { label: "eBook", href: "/ebook" },
+    { label: "Coaching", href: "/coaching" },
+  ],
+  footerNavigation: [
+    { label: "Home", href: "/" },
+    { label: "Chi sono", href: "/chi-sono" },
+    { label: "Blog", href: "/blog" },
+    { label: "eBook", href: "/ebook" },
+    { label: "Coaching", href: "/coaching" },
+    { label: "Contatti", href: "/contatti" },
+  ],
+  legalNavigation: [
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Cookie Policy", href: "/cookie-policy" },
+  ],
 } as const;
 
 export type SiteConfig = typeof siteConfig;
+export type MainNavigationItem = (typeof siteConfig.mainNavigation)[number];
+export type FooterNavigationItem = (typeof siteConfig.footerNavigation)[number];
+export type LegalNavigationItem = (typeof siteConfig.legalNavigation)[number];
