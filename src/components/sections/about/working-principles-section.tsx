@@ -17,9 +17,6 @@ export function WorkingPrinciplesSection() {
             title="Ascolto, domande e piccoli passi."
             description="Non esiste una risposta uguale per tutti. Il lavoro parte dalla situazione concreta che stai vivendo e da ciò che per te è davvero importante."
           />
-          <ButtonLink href="/coaching" variant="secondary">
-            Scopri il coaching
-          </ButtonLink>
         </div>
         <div className={styles.grid}>
           {workingPrinciples.map((principle, index) => (
@@ -35,6 +32,9 @@ export function WorkingPrinciplesSection() {
             </SurfaceCard>
           ))}
         </div>
+        <ButtonLink className={styles.cta} href="/coaching" variant="secondary">
+          Scopri il coaching
+        </ButtonLink>
       </Container>
     </section>
   );
