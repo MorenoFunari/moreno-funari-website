@@ -22,15 +22,16 @@ body {
   min-height: 100%;
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgb(184 216 186 / 0.28), transparent 28rem),
+    radial-gradient(circle at top left, var(--color-background-glow), transparent 28rem),
     var(--color-background);
   color: var(--color-text);
-  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body.is-menu-open {
@@ -53,7 +54,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-heading), Georgia, serif;
+  font-family: var(--font-heading);
   font-weight: var(--font-weight-medium);
   letter-spacing: var(--letter-spacing-tight);
   line-height: var(--line-height-heading);
@@ -82,7 +83,7 @@ p {
 
 a {
   color: inherit;
-  text-decoration-color: rgb(28 91 99 / 0.35);
+  text-decoration-color: var(--color-link-underline);
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
   transition:

@@ -21,7 +21,7 @@
 }
 
 .dark {
-  border: 1px solid rgb(255 255 255 / 0.12);
+  border: 1px solid var(--color-footer-border);
   background: var(--color-primary-strong);
   color: var(--color-text-on-dark);
   box-shadow: var(--shadow-elevated);

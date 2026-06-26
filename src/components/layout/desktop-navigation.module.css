@@ -20,8 +20,9 @@
   padding: 0.65rem 0.75rem;
   color: var(--color-text-muted);
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-medium);
   line-height: var(--line-height-label);
+  letter-spacing: 0.01em;
   text-decoration: none;
   transition:
     background-color var(--transition-base),
@@ -40,7 +41,7 @@
 }
 
 .link:hover {
-  background: var(--color-accent-soft);
+  background: var(--color-primary-soft);
   color: var(--color-primary-strong);
 }
 
@@ -49,7 +50,7 @@
 }
 
 .active::after {
-  background: var(--color-accent);
+  background: var(--color-accent-strong);
 }
 
 @media (min-width: 768px) {

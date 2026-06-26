@@ -14,9 +14,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 The visual system follows a "professional but human" direction: warm, clear, credible, and intentionally far from motivational-guru styling.
 
-- Fonts: Manrope for body/UI and Lora for headings via `next/font/google`.
-- Palette: warm ivory backgrounds, warm white surfaces, petrol blue primary tones, sage/yellow-green accents, and warm grays for secondary text and borders.
+- Fonts: Source Sans 3 for body/UI and Lora for headings via `next/font/google`.
+- Palette V1.1: warm ivory backgrounds, warm white surfaces, petrol blue as the primary color, sage green as a limited accent, and warm grays for secondary text and borders.
 - Tokens: global design tokens live in `src/styles/tokens.css` and are imported by `src/app/globals.css`.
+- Principle: the interface should feel professional but human, with green used for small details rather than dominant surfaces.
 - UI components: `Container`, `ButtonLink`, `Eyebrow`, `SectionHeading`, and `SurfaceCard` live in `src/components/ui`.
 - Styling: CSS Modules for component/page styles, with global CSS limited to reset, typography, accessibility, and document-level behavior.
 

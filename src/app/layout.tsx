@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Lora, Manrope } from "next/font/google";
+import { Lora, Source_Sans_3 } from "next/font/google";
 
 import { SiteShell } from "@/components/layout/site-shell";
 import { siteConfig } from "@/config/site";
 
 import "./globals.css";
 
-const manrope = Manrope({
-  variable: "--font-body",
+const sourceSans3 = Source_Sans_3({
+  variable: "--font-source-sans-3",
   subsets: ["latin"],
   display: "swap",
 });
 
 const lora = Lora({
-  variable: "--font-heading",
+  variable: "--font-lora",
   subsets: ["latin"],
   display: "swap",
 });
@@ -35,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it" className={`${manrope.variable} ${lora.variable}`}>
-      <body>
+    <html lang="it">
+      <body className={`${sourceSans3.variable} ${lora.variable}`}>
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

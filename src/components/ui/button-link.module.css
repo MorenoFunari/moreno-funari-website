@@ -7,8 +7,9 @@
   min-height: 2.75rem;
   border: 1px solid transparent;
   border-radius: var(--radius-md);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-medium);
   line-height: var(--line-height-label);
+  letter-spacing: 0.005em;
   text-align: center;
   text-decoration: none;
   transition:
@@ -53,18 +54,18 @@
 
 .secondary:hover {
   border-color: var(--color-primary);
-  background: var(--color-accent-soft);
+  background: var(--color-primary-soft);
   color: var(--color-primary-strong);
   transform: translateY(-1px);
 }
 
 .ghost {
-  background: var(--color-accent-soft);
+  background: var(--color-primary-soft);
   color: var(--color-primary-strong);
 }
 
 .ghost:hover {
-  background: var(--color-accent);
+  background: var(--color-accent-soft);
   color: var(--color-primary-strong);
   transform: translateY(-1px);
 }
@@ -75,7 +76,7 @@
   padding: 0;
   color: var(--color-primary-strong);
   text-decoration: underline;
-  text-decoration-color: rgb(28 91 99 / 0.3);
+  text-decoration-color: var(--color-link-underline);
   text-underline-offset: 0.18em;
 }
 

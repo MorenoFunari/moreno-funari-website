@@ -20,7 +20,7 @@
 
 .button:hover {
   border-color: var(--color-primary);
-  background: var(--color-accent-soft);
+  background: var(--color-primary-soft);
 }
 
 .icon {
@@ -117,7 +117,8 @@
   border-radius: var(--radius-md);
   padding: 0.75rem 0.8rem;
   color: var(--color-primary-strong);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-label);
   text-decoration: none;
 }
 
@@ -130,15 +131,15 @@
 }
 
 .link:hover {
-  background: var(--color-accent-soft);
+  background: var(--color-primary-soft);
 }
 
 .active {
-  background: var(--color-accent-soft);
+  background: var(--color-primary-soft);
 }
 
 .active::before {
-  background: var(--color-accent);
+  background: var(--color-accent-strong);
 }
 
 .cta {

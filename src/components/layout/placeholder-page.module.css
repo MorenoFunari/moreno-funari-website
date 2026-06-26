@@ -30,6 +30,7 @@
   max-width: var(--content-width);
   color: var(--color-text-muted);
   font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-intro);
 }
 
 .homeLink {

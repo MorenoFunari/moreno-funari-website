@@ -15,10 +15,10 @@
 }
 
 .code {
-  color: var(--color-primary);
+  color: var(--color-accent-strong);
   font-size: 0.875rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-eyebrow);
 }
 
 .title {
@@ -27,8 +27,8 @@
   color: var(--color-primary-strong);
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 9vw, 5.5rem);
-  font-weight: 600;
-  line-height: 0.98;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
   text-wrap: balance;
 }
 
@@ -37,6 +37,7 @@
   margin-top: var(--space-lg);
   color: var(--color-text-muted);
   font-size: clamp(1.0625rem, 2vw, 1.25rem);
+  line-height: var(--line-height-intro);
 }
 
 .homeLink {
@@ -47,8 +48,8 @@
   border-radius: var(--radius-md);
   background: var(--color-primary);
   padding: 0.75rem 1rem;
-  color: var(--color-surface);
-  font-weight: 800;
+  color: var(--color-text-on-dark);
+  font-weight: var(--font-weight-medium);
   text-decoration: none;
   transition:
     background-color var(--transition-base),

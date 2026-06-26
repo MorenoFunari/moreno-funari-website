@@ -15,7 +15,7 @@
 
 .tagline {
   margin-top: var(--space-md);
-  color: rgb(247 242 233 / 0.74);
+  color: var(--color-text-on-dark-muted);
 }
 
 .columns {
@@ -25,10 +25,10 @@
 
 .columnTitle {
   margin-bottom: var(--space-sm);
-  color: rgb(247 242 233 / 0.74);
-  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  color: var(--color-text-on-dark-muted);
+  font-family: var(--font-body);
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-medium);
   line-height: var(--line-height-label);
 }
 
@@ -46,7 +46,7 @@
   min-height: 2rem;
   align-items: center;
   color: var(--color-text-on-dark);
-  text-decoration-color: rgb(247 242 233 / 0.34);
+  text-decoration-color: var(--color-text-on-dark-subtle);
 }
 
 .link:hover {
@@ -59,7 +59,7 @@
   gap: var(--space-md);
   border-top: 1px solid var(--color-footer-border);
   padding-block: var(--space-lg);
-  color: rgb(247 242 233 / 0.72);
+  color: var(--color-text-on-dark-muted);
   font-size: var(--font-size-body-sm);
 }
 
@@ -73,7 +73,7 @@
 }
 
 .legalLink {
-  color: rgb(247 242 233 / 0.82);
+  color: var(--color-text-on-dark);
 }
 
 .legalLink:hover {

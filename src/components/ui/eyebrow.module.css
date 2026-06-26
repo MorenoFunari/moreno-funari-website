@@ -1,5 +1,5 @@
 .eyebrow {
-  color: var(--color-primary);
+  color: var(--color-accent-strong);
   font-size: var(--font-size-eyebrow);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-eyebrow);
