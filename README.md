@@ -61,6 +61,18 @@ The `/coaching` route is a text-first page built from dedicated sections in `src
 - Open decisions: price, duration, mode, location and availability are intentionally not published yet.
 - CTA: the main conversion path points to `/contatti`.
 
+## Pagina eBook V1
+
+The `/ebook` route presents "Un passo possibile" with dedicated sections in `src/components/sections/ebook` and repeated content in `src/config/ebook.ts`.
+
+- Structure: hero, useful moments, contents, usage modes, author note, ecosystem, boundaries, FAQ and closing CTA.
+- Visual: the hero uses `public/images/ebook/un-passo-possibile-cover.webp` with `next/image`.
+- Download: `src/config/ebook.ts` centralizes the PDF availability and CTA behavior.
+- Fallback: when the PDF is missing, the primary CTA points to `/contatti` instead of a broken document link.
+- Ecosystem: the page links to the app and coaching without treating either as mandatory.
+- FAQ: questions use native `<details>` and `<summary>` elements.
+- V1: no email capture or newsletter flow is included.
+
 ## Checks
 
 ```bash
