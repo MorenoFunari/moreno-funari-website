@@ -94,6 +94,16 @@ Local blog content lives in `content/blog` and is rendered through `next-mdx-rem
 - MDX components: native markdown elements are mapped to accessible styled components, with `Callout` and `ReflectionPrompt` available directly in article files.
 - Editorial guide: see `content/blog/README.md`.
 
+## Pagina Blog V1
+
+The `/blog` page is powered by the local MDX blog engine and shows only published articles.
+
+- Layout: text-first hero, one main article, an optional grid for remaining articles, editorial topics and resource links.
+- Empty state: when there are no published posts, the page shows a curated editorial state instead of placeholders.
+- Publishing rules: drafts and future-dated posts are excluded from the page.
+- Resources: the page links to the eBook, Un Passo Possibile AI and coaching with equal weight.
+- V1: no filters, search, pagination, newsletter or comments.
+
 ## Checks
 
 ```bash

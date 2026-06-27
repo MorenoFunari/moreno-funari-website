@@ -1,0 +1,21 @@
+.section {
+  padding-bottom: var(--section-space);
+}
+
+.grid {
+  display: grid;
+  gap: var(--grid-gutter);
+  margin-top: var(--space-xl);
+}
+
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1080px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
