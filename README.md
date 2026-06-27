@@ -82,6 +82,18 @@ The `/contatti` route uses dedicated sections in `src/components/sections/contac
 - FAQ: questions use native `<details>` and `<summary>` elements.
 - Boundaries: the page clarifies that coaching does not replace urgent or clinical professional support.
 
+## Motore blog MDX
+
+Local blog content lives in `content/blog` and is rendered through `next-mdx-remote/rsc` with frontmatter parsed by `gray-matter`.
+
+- Frontmatter: title, description, publishedAt, optional updatedAt, category, tags, required draft, featured, and optional paired coverImage/coverAlt.
+- Static generation: `/blog/[slug]` uses local files, `generateStaticParams`, `generateMetadata`, and 404s for missing or unpublished slugs.
+- Drafts: `draft: true` and future-dated posts are available only during local development; production excludes them from generated article pages and from the sitemap.
+- SEO: article metadata includes canonical URL, Open Graph article fields, Twitter card data, and noindex robots for local draft previews.
+- Sitemap: `src/app/sitemap.ts` includes public routes and published blog posts only.
+- MDX components: native markdown elements are mapped to accessible styled components, with `Callout` and `ReflectionPrompt` available directly in article files.
+- Editorial guide: see `content/blog/README.md`.
+
 ## Checks
 
 ```bash

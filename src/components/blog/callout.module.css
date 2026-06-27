@@ -1,0 +1,18 @@
+.callout {
+  border-left: 0.25rem solid var(--color-accent-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-soft);
+  color: var(--color-primary-strong);
+  padding: var(--space-lg);
+}
+
+.title {
+  margin-bottom: var(--space-xs);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+}
+
+.body {
+  display: grid;
+  gap: var(--space-sm);
+}
