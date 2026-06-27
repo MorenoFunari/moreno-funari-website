@@ -73,6 +73,15 @@ The `/ebook` route presents "Un passo possibile" with dedicated sections in `src
 - FAQ: questions use native `<details>` and `<summary>` elements.
 - V1: no email capture or newsletter flow is included.
 
+## Pagina Contatti V1
+
+The `/contatti` route uses dedicated sections in `src/components/sections/contact` and shared contact data in `src/config/contact.ts`.
+
+- Contact: the V1 offers email and Instagram only, with no form and no additional data collection.
+- First step: the first message is without commitment, and practical details are clarified before any possible meeting.
+- FAQ: questions use native `<details>` and `<summary>` elements.
+- Boundaries: the page clarifies that coaching does not replace urgent or clinical professional support.
+
 ## Checks
 
 ```bash

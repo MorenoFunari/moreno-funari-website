@@ -1,0 +1,64 @@
+.band {
+  background: var(--color-background-alt);
+}
+
+.section {
+  display: grid;
+  gap: var(--space-2xl);
+  padding-block: var(--section-space);
+}
+
+.grid {
+  display: grid;
+  gap: var(--grid-gutter);
+}
+
+.card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cardTitle {
+  color: var(--color-primary-strong);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+}
+
+.cardText {
+  margin-top: var(--space-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-body);
+}
+
+.address {
+  margin-block: var(--space-lg);
+  font-style: normal;
+  line-height: var(--line-height-intro);
+}
+
+.address a {
+  color: var(--color-primary-strong);
+  font-weight: var(--font-weight-semibold);
+  overflow-wrap: anywhere;
+  text-decoration-color: var(--color-link-underline);
+  text-underline-offset: 0.18em;
+}
+
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding-block: var(--space-3xl);
+  }
+
+  .card > a:last-child {
+    width: 100%;
+  }
+}
