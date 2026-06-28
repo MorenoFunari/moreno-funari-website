@@ -125,6 +125,14 @@ The canonical domain is `https://morenofunari.it`, centralized through `src/conf
 - JSON-LD: homepage uses `WebSite` and `Person`, `/chi-sono` uses `ProfilePage`, and articles use `BlogPosting`.
 - Search Console and Analytics are intentionally not configured in this issue.
 
+## Google Search Console
+
+Google Search Console uses a Domain property for `morenofunari.it`, verified manually through a DNS TXT record on Porkbun.
+
+- Sitemap: `https://morenofunari.it/sitemap.xml`.
+- Verification tokens and DNS record values are not stored in the repository.
+- Full operational notes live in `docs/search-console.md`.
+
 ## Checks
 
 ```bash
