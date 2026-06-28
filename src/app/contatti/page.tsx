@@ -8,12 +8,14 @@ import { ContactOptionsSection } from "@/components/sections/contact/contact-opt
 import { ContactTopicsSection } from "@/components/sections/contact/contact-topics-section";
 import { FirstContactProcessSection } from "@/components/sections/contact/first-contact-process-section";
 import { MessageStartersSection } from "@/components/sections/contact/message-starters-section";
+import { createPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Contatti",
   description:
     "Scrivi a Moreno Funari per raccontare la situazione che stai vivendo, chiarire un dubbio sul coaching o iniziare un primo confronto senza impegno.",
-};
+  path: "/contatti",
+});
 
 export default function ContattiPage() {
   return (

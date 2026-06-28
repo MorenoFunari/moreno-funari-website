@@ -5,7 +5,9 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 import { mdxComponents } from "@/components/blog/mdx-components";
+import { JsonLd } from "@/components/seo/json-ld";
 import { getBlogCategoryLabel } from "@/config/blog-categories";
+import { seoConfig, toAbsoluteUrl } from "@/config/seo";
 import {
   getAllBlogPosts,
   getBlogPostBySlug,
@@ -16,6 +18,7 @@ import {
   editorialDateToIso,
   formatEditorialDate,
 } from "@/lib/blog/blog-date";
+import { createBlogPostingJsonLd } from "@/lib/seo/structured-data";
 
 import styles from "./article.module.css";
 
@@ -49,11 +52,22 @@ export async function generateMetadata({
     notFound();
   }
 
-  const url = `/blog/${post.slug}`;
+  const url = toAbsoluteUrl(`/blog/${post.slug}`);
   const isLocalUnpublished = includeUnpublished && isUnpublishedBlogPost(post);
-  const image = post.coverImage
-    ? [{ url: post.coverImage, alt: post.coverAlt ?? post.title }]
-    : undefined;
+  const defaultSocialImageUrl = toAbsoluteUrl(seoConfig.defaultSocialImagePath);
+  const socialImages = post.coverImage && post.coverAlt
+    ? [
+        {
+          url: toAbsoluteUrl(post.coverImage),
+          alt: post.coverAlt,
+        },
+      ]
+    : [
+        {
+          url: defaultSocialImageUrl,
+          alt: seoConfig.defaultSocialImageAlt,
+        },
+      ];
 
   return {
     title: post.title,
@@ -66,16 +80,23 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       url,
+      siteName: seoConfig.siteName,
+      locale: seoConfig.locale,
       publishedTime: editorialDateToIso(post.publishedAt),
-      modifiedTime: editorialDateToIso(post.updatedAt ?? post.publishedAt),
+      ...(post.updatedAt
+        ? { modifiedTime: editorialDateToIso(post.updatedAt) }
+        : {}),
       tags: [...post.tags],
-      images: image,
+      images: socialImages,
     },
     twitter: {
-      card: post.coverImage ? "summary_large_image" : "summary",
+      card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: post.coverImage ? [post.coverImage] : undefined,
+      images:
+        post.coverImage && post.coverAlt
+          ? [toAbsoluteUrl(post.coverImage)]
+          : [defaultSocialImageUrl],
     },
     robots: isLocalUnpublished
       ? {
@@ -113,6 +134,7 @@ export default async function BlogArticlePage({
 
   return (
     <main className={styles.page} id="main-content">
+      <JsonLd data={createBlogPostingJsonLd(post)} />
       <article className={styles.article}>
         <Link className={styles.backLink} href="/blog">
           Torna al blog

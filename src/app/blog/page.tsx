@@ -6,29 +6,15 @@ import { BlogHero } from "@/components/sections/blog/blog-hero";
 import { BlogResourcesSection } from "@/components/sections/blog/blog-resources-section";
 import { FeaturedPostSection } from "@/components/sections/blog/featured-post-section";
 import { PostsGridSection } from "@/components/sections/blog/posts-grid-section";
-import { siteConfig } from "@/config/site";
 import { getPublishedBlogPosts } from "@/lib/blog/blog-content";
+import { createPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Blog",
   description:
     "Riflessioni concrete su fiducia, pressione, errore, lavoro, sport e piccoli passi possibili nella vita quotidiana.",
-  alternates: {
-    canonical: "/blog",
-  },
-  openGraph: {
-    title: "Blog",
-    description:
-      "Riflessioni concrete su fiducia, pressione, errore, lavoro, sport e piccoli passi possibili nella vita quotidiana.",
-    url: `${siteConfig.url}/blog`,
-  },
-  twitter: {
-    card: "summary",
-    title: "Blog",
-    description:
-      "Riflessioni concrete su fiducia, pressione, errore, lavoro, sport e piccoli passi possibili nella vita quotidiana.",
-  },
-};
+  path: "/blog",
+});
 
 export default async function BlogPage() {
   const posts = await getPublishedBlogPosts();

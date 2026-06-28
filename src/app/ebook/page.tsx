@@ -9,12 +9,14 @@ import { EcosystemSection } from "@/components/sections/ebook/ecosystem-section"
 import { HowToUseSection } from "@/components/sections/ebook/how-to-use-section";
 import { InsideEbookSection } from "@/components/sections/ebook/inside-ebook-section";
 import { UsefulWhenSection } from "@/components/sections/ebook/useful-when-section";
+import { createPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Un passo possibile — eBook",
   description:
     "Una guida semplice e concreta per fare chiarezza quando ti senti bloccato, ritrovare fiducia e individuare un piccolo passo da cui ripartire.",
-};
+  path: "/ebook",
+});
 
 export default function EbookPage() {
   return (

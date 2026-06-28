@@ -113,6 +113,18 @@ The `/blog` page is powered by the local MDX blog engine and shows only publishe
 - Resources: the page links to the eBook, Un Passo Possibile AI and coaching with equal weight.
 - V1: no filters, search, pagination, newsletter or comments.
 
+## SEO Foundation
+
+The canonical domain is `https://morenofunari.it`, centralized through `src/config/site.ts` and `src/config/seo.ts`.
+
+- Metadata: shared helpers generate page titles, descriptions, canonical URLs, Open Graph and Twitter cards.
+- Social image: `/opengraph-image` and `/twitter-image` are generated locally with no remote assets.
+- Robots: `/robots.txt` allows public crawling and points to the canonical sitemap.
+- Sitemap: `/sitemap.xml` includes public pages and published blog articles only.
+- Noindex: legal pages use `noindex, follow`; the eBook PDF stays downloadable but gets `X-Robots-Tag: noindex, follow`.
+- JSON-LD: homepage uses `WebSite` and `Person`, `/chi-sono` uses `ProfilePage`, and articles use `BlogPosting`.
+- Search Console and Analytics are intentionally not configured in this issue.
+
 ## Checks
 
 ```bash

@@ -9,12 +9,14 @@ import { ExpectationsSection } from "@/components/sections/coaching/expectations
 import { FirstContactSection } from "@/components/sections/coaching/first-contact-section";
 import { ProcessSection } from "@/components/sections/coaching/process-section";
 import { UsefulWhenSection } from "@/components/sections/coaching/useful-when-section";
+import { createPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Coaching",
   description:
     "Uno spazio umano e concreto per fare chiarezza, affrontare blocco e pressione e individuare piccoli passi sostenibili.",
-};
+  path: "/coaching",
+});
 
 export default function CoachingPage() {
   return (

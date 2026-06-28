@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { siteConfig } from "@/config/site";
+import { toAbsoluteUrl } from "@/config/seo";
 import { getPublishedBlogPosts } from "@/lib/blog/blog-content";
 import { editorialDateToIso } from "@/lib/blog/blog-date";
 
@@ -11,17 +11,15 @@ const staticRoutes = [
   "/ebook",
   "/contatti",
   "/blog",
-  "/privacy-policy",
-  "/cookie-policy",
 ] as const;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPublishedBlogPosts();
   const staticEntries = staticRoutes.map((route) => ({
-    url: `${siteConfig.url}${route}`,
+    url: toAbsoluteUrl(route === "" ? "/" : route),
   }));
   const blogEntries = posts.map((post) => ({
-    url: `${siteConfig.url}/blog/${post.slug}`,
+    url: toAbsoluteUrl(`/blog/${post.slug}`),
     lastModified: editorialDateToIso(post.updatedAt ?? post.publishedAt),
   }));
 
