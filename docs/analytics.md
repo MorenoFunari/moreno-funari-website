@@ -8,6 +8,26 @@ Measurement ID: G-11RJTDXWBS
 Consent Mode: Basic
 ```
 
+## Stato richiesto della proprietà GA4
+
+```text
+Measurement ID: G-11RJTDXWBS
+Google Signals: disattivato
+Personalizzazione pubblicitaria: disattivata
+Collegamento Google Ads: assente
+User ID: non utilizzato
+Custom events: assenti
+Page view manuali: assenti
+Consent Mode: Basic
+Conservazione dati a livello utente: 2 mesi
+```
+
+- [ ] Google Signals disattivato nella proprietà GA4
+- [ ] Personalizzazione pubblicitaria disattivata nella proprietà GA4
+- [ ] Conservazione dati a livello utente impostata a 2 mesi
+- [ ] Nessun collegamento Google Ads
+- [ ] Dati condivisi con prodotti Google disattivati
+
 ## Caricamento
 
 - Nessun tag Google viene caricato prima del consenso.
@@ -24,7 +44,7 @@ NEXT_PUBLIC_GA_ENABLED
 NEXT_PUBLIC_GA_MEASUREMENT_ID
 ```
 
-In produzione `NEXT_PUBLIC_GA_ENABLED` deve restare `false` fino al completamento della Issue #19.
+In produzione `NEXT_PUBLIC_GA_ENABLED` deve essere attivato solo dopo il deploy delle informative aggiornate.
 
 ## Preferenza
 

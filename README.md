@@ -123,7 +123,7 @@ The canonical domain is `https://morenofunari.it`, centralized through `src/conf
 - Sitemap: `/sitemap.xml` includes public pages and published blog articles only.
 - Noindex: legal pages use `noindex, follow`; the eBook PDF stays downloadable but gets `X-Robots-Tag: noindex, follow`.
 - JSON-LD: homepage uses `WebSite` and `Person`, `/chi-sono` uses `ProfilePage`, and articles use `BlogPosting`.
-- Search Console and Analytics are intentionally not configured in this issue.
+- Search Console and Analytics are documented separately because they depend on operational configuration outside the static SEO foundation.
 
 ## Google Search Console
 
@@ -142,6 +142,15 @@ Analytics uses Google Analytics 4 with the public Measurement ID configured thro
 - Page views: automatic through GA4 Enhanced Measurement, with no manual `page_view` events.
 - Production: `NEXT_PUBLIC_GA_ENABLED` must stay `false` until Issue #19 updates the legal pages.
 - Full implementation notes live in `docs/analytics.md`.
+
+## Privacy e cookie
+
+The site includes public Privacy Policy and Cookie Policy pages, both linked from the footer and kept `noindex, follow`.
+
+- GA4 is blocked before consent and can be accepted, refused or revoked.
+- The analytics preference can be changed from the footer.
+- The cookie and storage inventory lives in `docs/privacy-and-cookies.md`.
+- The legal documentation must be reviewed whenever services, providers or data flows change.
 
 ## Checks
 

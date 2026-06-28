@@ -52,6 +52,47 @@
   font-weight: var(--font-weight-medium);
 }
 
+.preferences {
+  display: grid;
+  gap: var(--space-xs);
+  margin-block: var(--space-xs);
+}
+
+.preferenceRow {
+  display: grid;
+  gap: var(--space-xs);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-muted);
+  padding: var(--space-sm);
+}
+
+.preferenceRow div {
+  display: grid;
+  gap: var(--space-2xs);
+}
+
+.preferenceRow strong {
+  color: var(--color-primary-strong);
+}
+
+.preferenceRow span {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-body);
+}
+
+.badge {
+  width: fit-content;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-soft);
+  color: var(--color-primary-strong) !important;
+  font-size: var(--font-size-label) !important;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-label) !important;
+  padding: 0.25rem 0.625rem;
+}
+
 .link {
   width: fit-content;
   color: var(--color-primary);
@@ -123,6 +164,11 @@
 
   .actions {
     justify-content: flex-end;
+  }
+
+  .preferenceRow {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
   }
 }
 

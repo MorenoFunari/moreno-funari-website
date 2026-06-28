@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -32,6 +34,12 @@ export function ContactOptionsSection() {
                 {contactLinks.email}
               </a>
             </address>
+            <p className={styles.privacyNote}>
+              Nel primo messaggio evita di inserire dati sanitari, diagnosi o
+              altre informazioni particolarmente sensibili. Per sapere come
+              vengono gestiti i dati puoi leggere la{" "}
+              <Link href="/privacy-policy">Privacy Policy</Link>.
+            </p>
             <ButtonLink href={contactLinks.emailHref} external>
               Apri la tua email
             </ButtonLink>

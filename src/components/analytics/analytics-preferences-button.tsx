@@ -5,7 +5,13 @@ import { analyticsPreferencesEventName } from "@/lib/analytics/consent";
 
 import styles from "@/components/layout/site-footer.module.css";
 
-export function AnalyticsPreferencesButton() {
+type AnalyticsPreferencesButtonProps = {
+  className?: string;
+};
+
+export function AnalyticsPreferencesButton({
+  className,
+}: AnalyticsPreferencesButtonProps) {
   if (!analyticsConfig.isConfigured) {
     return null;
   }
@@ -16,7 +22,7 @@ export function AnalyticsPreferencesButton() {
 
   return (
     <button
-      className={styles.legalButton}
+      className={className ?? styles.legalButton}
       onClick={openPreferences}
       type="button"
     >

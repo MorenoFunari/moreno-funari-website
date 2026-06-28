@@ -47,6 +47,18 @@
   text-underline-offset: 0.18em;
 }
 
+.privacyNote {
+  margin-bottom: var(--space-lg);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-body);
+}
+
+.privacyNote a {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+}
+
 @media (min-width: 760px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

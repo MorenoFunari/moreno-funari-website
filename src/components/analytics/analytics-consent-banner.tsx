@@ -51,11 +51,34 @@ export function AnalyticsConsentBanner({
           <p className={styles.text}>
             Google Analytics mi aiuta a capire quali contenuti vengono letti e
             come migliorare il sito. Si attiva solo se scegli di accettare.
+            Potrai cambiare scelta in qualsiasi momento dal footer.
           </p>
           {mode === "preferences" ? (
-            <p className={styles.status}>
-              Stato attuale: {getStatusLabel(currentStatus)}.
-            </p>
+            <div className={styles.preferences} aria-label="Stato cookie">
+              <div className={styles.preferenceRow}>
+                <div>
+                  <strong>Cookie necessari</strong>
+                  <span>
+                    Ricordano la scelta e consentono il funzionamento del sito.
+                  </span>
+                </div>
+                <span className={styles.badge}>Sempre attivi</span>
+              </div>
+              <div className={styles.preferenceRow}>
+                <div>
+                  <strong>Cookie analytics</strong>
+                  <span>
+                    Misurano l’utilizzo del sito soltanto dopo consenso.
+                  </span>
+                </div>
+                <span className={styles.badge}>
+                  {currentStatus === "granted" ? "Attivi" : "Non attivi"}
+                </span>
+              </div>
+              <p className={styles.status}>
+                Stato attuale: {getStatusLabel(currentStatus)}.
+              </p>
+            </div>
           ) : null}
           <Link className={styles.link} href="/cookie-policy">
             Leggi la Cookie Policy
