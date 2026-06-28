@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
+import { BlogCategoriesSection } from "@/components/sections/blog/blog-categories-section";
 import { BlogEmptyState } from "@/components/sections/blog/blog-empty-state";
 import { BlogHero } from "@/components/sections/blog/blog-hero";
 import { BlogResourcesSection } from "@/components/sections/blog/blog-resources-section";
-import { BlogTopicsSection } from "@/components/sections/blog/blog-topics-section";
 import { FeaturedPostSection } from "@/components/sections/blog/featured-post-section";
 import { PostsGridSection } from "@/components/sections/blog/posts-grid-section";
 import { siteConfig } from "@/config/site";
@@ -50,7 +50,7 @@ export default async function BlogPage() {
       ) : (
         <BlogEmptyState />
       )}
-      <BlogTopicsSection />
+      <BlogCategoriesSection />
       <BlogResourcesSection />
     </main>
   );

@@ -94,11 +94,20 @@ Local blog content lives in `content/blog` and is rendered through `next-mdx-rem
 - MDX components: native markdown elements are mapped to accessible styled components, with `Callout` and `ReflectionPrompt` available directly in article files.
 - Editorial guide: see `content/blog/README.md`.
 
+## Categorie blog
+
+Blog categories are defined in `src/config/blog-categories.ts` and currently use five editorial buckets: Consapevolezza, Fiducia e azione, Pressione e lavoro, Sport e mentalità, and Vita quotidiana.
+
+- Each MDX article must set exactly one required `category` slug.
+- Frontmatter validation fails the build when the slug is missing, empty or outside the configured taxonomy.
+- Visible labels are kept separate from stable slugs, so UI copy can evolve without changing content identifiers.
+- Full editorial usage notes live in `content/blog/README.md`.
+
 ## Pagina Blog V1
 
 The `/blog` page is powered by the local MDX blog engine and shows only published articles.
 
-- Layout: text-first hero, one main article, an optional grid for remaining articles, editorial topics and resource links.
+- Layout: text-first hero, one main article, an optional grid for remaining articles, editorial categories and resource links.
 - Empty state: when there are no published posts, the page shows a curated editorial state instead of placeholders.
 - Publishing rules: drafts and future-dated posts are excluded from the page.
 - Resources: the page links to the eBook, Un Passo Possibile AI and coaching with equal weight.

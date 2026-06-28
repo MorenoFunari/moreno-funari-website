@@ -15,7 +15,7 @@ title: "Titolo dell'articolo"
 description: "Descrizione breve e concreta dell'articolo."
 publishedAt: "2026-06-28"
 updatedAt: "2026-06-28"
-category: "Consapevolezza"
+category: "consapevolezza"
 tags:
   - blocco
   - fiducia
@@ -47,6 +47,20 @@ Testo dell'articolo.
 Le date future restano escluse dalla produzione finche non arriva un nuovo deploy dopo quella data.
 
 Le cover sono opzionali. Se presenti, usa immagini locali in `public/images/blog/` e valori come `/images/blog/nome-immagine.webp`; `coverImage` e `coverAlt` devono esserci insieme.
+
+## Categorie disponibili
+
+Ogni articolo deve avere una sola `category` e il valore deve essere lo slug, non l'etichetta visibile. Usa i `tags` per temi più specifici, sfumature o parole chiave secondarie.
+
+| Slug | Etichetta | Uso editoriale |
+| --- | --- | --- |
+| `consapevolezza` | Consapevolezza | Osservare pensieri, reazioni e abitudini per capire con maggiore chiarezza ciò che sta accadendo. |
+| `fiducia-e-azione` | Fiducia e azione | Fare un primo passo anche quando la sicurezza non è ancora completa. |
+| `pressione-e-lavoro` | Pressione e lavoro | Responsabilità, aspettative, autocritica e lucidità nei momenti professionali più intensi. |
+| `sport-e-mentalita` | Sport e mentalità | Errore, presenza, concentrazione, rispetto e capacità di tornare nell’azione successiva. |
+| `vita-quotidiana` | Vita quotidiana | Cambiamenti, relazioni, stanchezza e piccoli gesti concreti nelle situazioni di ogni giorno. |
+
+Non creare nuove categorie direttamente nei file MDX. Una nuova categoria richiede prima una modifica a `src/config/blog-categories.ts` e una revisione editoriale della tassonomia.
 
 ## Anteprima locale
 

@@ -15,11 +15,11 @@ export const blogPageCopy = {
       "Nel frattempo puoi partire dall’eBook oppure usare la riflessione guidata di Un Passo Possibile AI.",
     ],
   },
-  topics: {
-    eyebrow: "Temi",
-    title: "Argomenti che attraversano lavoro, sport e vita quotidiana.",
+  categories: {
+    eyebrow: "Categorie",
+    title: "Cinque prospettive per leggere situazioni diverse.",
     description:
-      "Situazioni diverse, spesso collegate dalle stesse domande: come gestire la pressione, ritrovare fiducia e tornare a ciò che puoi fare nel presente.",
+      "Ogni articolo parte da una categoria principale. I tag aiutano a entrare nei dettagli, ma la categoria chiarisce da quale prospettiva leggere il contenuto.",
   },
   resources: {
     eyebrow: "Da dove puoi iniziare",
@@ -28,37 +28,6 @@ export const blogPageCopy = {
       "Puoi scegliere lo strumento più adatto al momento che stai vivendo, senza dover seguire un percorso obbligatorio.",
   },
 } as const;
-
-export const blogTopics = [
-  {
-    title: "Fiducia",
-    description: "Quando aspetti di sentirti completamente sicuro prima di agire.",
-  },
-  {
-    title: "Blocco",
-    description:
-      "Quando continui a rimandare anche se sai che vorresti cambiare qualcosa.",
-  },
-  {
-    title: "Pressione",
-    description: "Quando senti di dover dimostrare sempre qualcosa.",
-  },
-  {
-    title: "Errore",
-    description:
-      "Quando ciò che è successo continua a condizionare l’azione successiva.",
-  },
-  {
-    title: "Lavoro e responsabilità",
-    description:
-      "Decisioni, delega, aspettative e difficoltà di restare lucidi nei momenti intensi.",
-  },
-  {
-    title: "Sport e presenza",
-    description:
-      "Lo sport come spazio per osservare fiducia, rispetto, concentrazione e capacità di ripartire.",
-  },
-] as const;
 
 export const blogResourceItems = [
   {

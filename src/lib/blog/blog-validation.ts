@@ -1,3 +1,8 @@
+import {
+  getAllowedBlogCategorySlugs,
+  isBlogCategorySlug,
+  type BlogCategorySlug,
+} from "@/config/blog-categories";
 import type { BlogPostFrontmatter } from "@/types/blog";
 
 import { compareEditorialDates, isValidEditorialDate } from "./blog-date";
@@ -31,7 +36,7 @@ export function validateBlogFrontmatter(
   );
   const publishedAt = requiredDate(data.publishedAt, fileName, "publishedAt");
   const updatedAt = optionalDate(data.updatedAt, fileName, "updatedAt");
-  const category = requiredTrimmedString(data.category, fileName, "category");
+  const category = requiredBlogCategory(data.category, fileName);
   const tags = normalizeTags(data.tags, fileName);
   const draft = requiredBoolean(data.draft, fileName, "draft");
   const featured = optionalBoolean(data.featured, fileName, "featured", false);
@@ -74,6 +79,27 @@ function requiredTrimmedString(
   }
 
   return trimmed;
+}
+
+function requiredBlogCategory(
+  value: unknown,
+  fileName: string,
+): BlogCategorySlug {
+  if (typeof value !== "string") {
+    throw invalidFrontmatter(fileName, "category", "must be a string.");
+  }
+
+  if (!value.trim()) {
+    throw invalidFrontmatter(fileName, "category", "must not be empty.");
+  }
+
+  if (value !== value.trim() || !isBlogCategorySlug(value)) {
+    throw new Error(
+      `Invalid blog frontmatter in "${fileName}": unknown category "${value}". Allowed categories: ${getAllowedBlogCategorySlugs()}.`,
+    );
+  }
+
+  return value;
 }
 
 function optionalTrimmedString(

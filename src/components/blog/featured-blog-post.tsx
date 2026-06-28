@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { ButtonLink } from "@/components/ui/button-link";
+import { getBlogCategoryLabel } from "@/config/blog-categories";
 import { editorialDateToIso, formatEditorialDate } from "@/lib/blog/blog-date";
 import type { BlogPostSummary } from "@/types/blog";
 
@@ -13,6 +14,7 @@ type FeaturedBlogPostProps = {
 };
 
 export function FeaturedBlogPost({ label, post, titleId }: FeaturedBlogPostProps) {
+  const categoryLabel = getBlogCategoryLabel(post.category);
   const tags = post.tags.slice(0, 3);
   const hasCover = Boolean(post.coverImage && post.coverAlt);
 
@@ -21,7 +23,7 @@ export function FeaturedBlogPost({ label, post, titleId }: FeaturedBlogPostProps
       <div className={styles.content}>
         <p className={styles.label}>{label}</p>
         <div className={styles.meta}>
-          <span>{post.category}</span>
+          <span>{categoryLabel}</span>
           <span aria-hidden="true">·</span>
           <time dateTime={editorialDateToIso(post.publishedAt)}>
             {formatEditorialDate(post.publishedAt)}

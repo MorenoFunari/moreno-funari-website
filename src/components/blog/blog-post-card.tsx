@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { ButtonLink } from "@/components/ui/button-link";
+import { getBlogCategoryLabel } from "@/config/blog-categories";
 import { editorialDateToIso, formatEditorialDate } from "@/lib/blog/blog-date";
 import type { BlogPostSummary } from "@/types/blog";
 
@@ -12,6 +13,7 @@ type BlogPostCardProps = {
 
 export function BlogPostCard({ post }: BlogPostCardProps) {
   const href = `/blog/${post.slug}`;
+  const categoryLabel = getBlogCategoryLabel(post.category);
   const tags = post.tags.slice(0, 3);
 
   return (
@@ -31,7 +33,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
 
       <div className={styles.body}>
         <div className={styles.meta}>
-          <span>{post.category}</span>
+          <span>{categoryLabel}</span>
           <span aria-hidden="true">·</span>
           <time dateTime={editorialDateToIso(post.publishedAt)}>
             {formatEditorialDate(post.publishedAt)}

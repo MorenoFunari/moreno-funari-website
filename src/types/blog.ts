@@ -1,9 +1,11 @@
+import type { BlogCategorySlug } from "@/config/blog-categories";
+
 export type BlogPostFrontmatter = {
   title: string;
   description: string;
   publishedAt: string;
   updatedAt?: string;
-  category: string;
+  category: BlogCategorySlug;
   tags: readonly string[];
   draft: boolean;
   featured: boolean;

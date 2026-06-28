@@ -11,20 +11,23 @@
 .grid {
   display: grid;
   gap: var(--grid-gutter);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.topic {
+.category {
   border-top: 1px solid var(--color-border-strong);
   padding-top: var(--space-lg);
 }
 
-.topic h3 {
+.category h3 {
   color: var(--color-primary-strong);
   font-size: var(--font-size-h4);
   line-height: var(--line-height-heading);
 }
 
-.topic p {
+.category p {
   margin-top: var(--space-md);
   color: var(--color-text-muted);
   line-height: var(--line-height-body);

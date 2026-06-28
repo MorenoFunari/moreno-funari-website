@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 import { mdxComponents } from "@/components/blog/mdx-components";
+import { getBlogCategoryLabel } from "@/config/blog-categories";
 import {
   getAllBlogPosts,
   getBlogPostBySlug,
@@ -103,6 +104,7 @@ export default async function BlogArticlePage({
   }
 
   const showDraftBadge = includeUnpublished && isUnpublishedBlogPost(post);
+  const categoryLabel = getBlogCategoryLabel(post.category);
   const publishedLabel = formatEditorialDate(post.publishedAt);
   const updatedLabel =
     post.updatedAt && post.updatedAt !== post.publishedAt
@@ -121,7 +123,7 @@ export default async function BlogArticlePage({
             <p className={styles.draftBadge}>Bozza locale — non pubblicata</p>
           ) : null}
           <div className={styles.metaLine}>
-            <span className={styles.category}>{post.category}</span>
+            <span className={styles.category}>{categoryLabel}</span>
             <span aria-hidden="true">·</span>
             <time dateTime={editorialDateToIso(post.publishedAt)}>
               {publishedLabel}
