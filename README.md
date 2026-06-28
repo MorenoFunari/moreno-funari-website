@@ -133,6 +133,16 @@ Google Search Console uses a Domain property for `morenofunari.it`, verified man
 - Verification tokens and DNS record values are not stored in the repository.
 - Full operational notes live in `docs/search-console.md`.
 
+## Analytics
+
+Analytics uses Google Analytics 4 with the public Measurement ID configured through environment variables.
+
+- Consent Mode: Basic, with the Google tag blocked before consent.
+- Preference: users can accept, refuse or later change analytics from the footer.
+- Page views: automatic through GA4 Enhanced Measurement, with no manual `page_view` events.
+- Production: `NEXT_PUBLIC_GA_ENABLED` must stay `false` until Issue #19 updates the legal pages.
+- Full implementation notes live in `docs/analytics.md`.
+
 ## Checks
 
 ```bash

@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { AnalyticsPreferencesButton } from "@/components/analytics/analytics-preferences-button";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 
@@ -74,6 +75,9 @@ export function SiteFooter() {
                 </Link>
               </li>
             ))}
+            <li>
+              <AnalyticsPreferencesButton />
+            </li>
           </ul>
         </div>
       </Container>

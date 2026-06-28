@@ -80,7 +80,20 @@
   color: var(--color-text-on-dark);
 }
 
-.legalLink:hover {
+.legalButton {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-on-dark);
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--color-link-underline);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+.legalLink:hover,
+.legalButton:hover {
   color: var(--color-accent);
 }
 

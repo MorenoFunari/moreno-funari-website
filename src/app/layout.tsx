@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
+import Script from "next/script";
 
+import { AnalyticsConsentManager } from "@/components/analytics/analytics-consent-manager";
 import { SiteShell } from "@/components/layout/site-shell";
+import { analyticsConfig } from "@/config/analytics";
 import { seoConfig, toAbsoluteUrl } from "@/config/seo";
 import { siteConfig } from "@/config/site";
 
@@ -55,7 +58,22 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body className={rubik.className}>
+        {analyticsConfig.isConfigured ? (
+          <Script id="mf-consent-default" strategy="beforeInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              window.gtag = window.gtag || function gtag(){window.dataLayer.push(arguments);}
+              window.gtag("consent", "default", {
+                analytics_storage: "denied",
+                ad_storage: "denied",
+                ad_user_data: "denied",
+                ad_personalization: "denied"
+              });
+            `}
+          </Script>
+        ) : null}
         <SiteShell>{children}</SiteShell>
+        <AnalyticsConsentManager />
       </body>
     </html>
   );
