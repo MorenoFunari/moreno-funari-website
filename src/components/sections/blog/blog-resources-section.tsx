@@ -3,7 +3,6 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SurfaceCard } from "@/components/ui/surface-card";
 import { blogPageCopy, blogResourceItems } from "@/config/blog";
-import { siteConfig } from "@/config/site";
 
 import styles from "./blog-resources-section.module.css";
 
@@ -22,8 +21,7 @@ export function BlogResourcesSection() {
       />
       <div className={styles.grid}>
         {blogResourceItems.map((item) => {
-          const href = item.href === "app" ? siteConfig.appUrl : item.href;
-          const isExternal = href === siteConfig.appUrl;
+          const isExternal = item.href.startsWith("https://");
 
           return (
             <SurfaceCard
@@ -38,7 +36,7 @@ export function BlogResourcesSection() {
               <ButtonLink
                 className={styles.cardLink}
                 external={isExternal}
-                href={href}
+                href={item.href}
                 variant="text"
               >
                 {item.cta}

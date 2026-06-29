@@ -113,6 +113,15 @@ The `/blog` page is powered by the local MDX blog engine and shows only publishe
 - Resources: the page links to the eBook, Un Passo Possibile AI and coaching with equal weight.
 - V1: no filters, search, pagination, newsletter or comments.
 
+## Integrazione Un Passo Possibile AI
+
+The app journey is documented in `docs/un-passo-possibile-ai-integration.md`.
+
+- Site URL: `https://morenofunari.it`.
+- App URL: `https://app.morenofunari.it`, centralized as `siteConfig.appUrl`.
+- Links between site and app open in the same tab and do not pass personal data, reflection content, consent state or tracking parameters.
+- The connected app keeps the return URL centralized as `MAIN_SITE_URL`.
+
 ## SEO Foundation
 
 The canonical domain is `https://morenofunari.it`, centralized through `src/config/site.ts` and `src/config/seo.ts`.

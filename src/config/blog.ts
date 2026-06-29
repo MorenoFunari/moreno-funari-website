@@ -1,3 +1,5 @@
+import { siteConfig } from "./site";
+
 export const blogPageCopy = {
   hero: {
     eyebrow: "Blog",
@@ -42,7 +44,7 @@ export const blogResourceItems = [
     description:
       "Quattro domande per fermarti, mettere ordine nei pensieri e scegliere da dove ripartire.",
     cta: "Prova la riflessione",
-    href: "app",
+    href: siteConfig.appUrl,
     note: "Non è terapia e non sostituisce il confronto con un professionista.",
   },
   {
