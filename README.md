@@ -146,6 +146,15 @@ Google Search Console uses a Domain property for `morenofunari.it`, verified man
 - Verification tokens and DNS record values are not stored in the repository.
 - Full operational notes live in `docs/search-console.md`.
 
+## Produzione
+
+The public site is available at `https://morenofunari.it`, with `https://www.morenofunari.it` redirecting to the canonical domain. The connected app lives at `https://app.morenofunari.it`.
+
+Release and QA documentation:
+
+- `docs/final-qa.md`
+- `docs/public-launch.md`
+
 ## Analytics
 
 Analytics uses Google Analytics 4 with the public Measurement ID configured through environment variables.
