@@ -20,7 +20,14 @@ Non e previsto alcuno scambio di sessione tra i domini: niente cookie condivisi,
 - Homepage, strumenti autonomi: la card "Un Passo Possibile AI" punta a `siteConfig.appUrl` con CTA "Prova la riflessione".
 - Blog, risorse: la card "Un Passo Possibile AI" punta a `siteConfig.appUrl` con CTA "Prova la riflessione".
 - Footer, Risorse: il link "Un Passo Possibile AI" punta a `siteConfig.appUrl`.
-- eBook, ecosistema e CTA finale: i link di riflessione guidata puntano a `siteConfig.appUrl`; il collegamento eBook non viene modificato in questa issue.
+- eBook, ecosistema e CTA finale: i link di riflessione guidata puntano a `siteConfig.appUrl`.
+
+## Percorso eBook
+
+La pagina canonica per l'eBook e `https://morenofunari.it/ebook`, esposta nel sito come `siteConfig.ebookPath`.
+Il PDF resta ospitato sul sito principale come `siteConfig.ebookPdfPath` e viene scaricato dalla pagina `/ebook`, senza passare da Google Drive, `dub.sh`, URL temporanei o redirect intermedi.
+
+L'app `un-passo-possibile` deve usare il link configurato `externalLinks.ebook`, costruito a partire da `externalLinks.mainWebsite`, e deve aprirlo nella stessa scheda.
 
 Tutti questi link aprono nella stessa scheda. Il componente `ButtonLink` usa `target` solo quando viene passato esplicitamente, quindi i link all'app non aprono nuove finestre.
 

@@ -4,9 +4,7 @@ const ebookPdfAvailable = true;
 
 export const ebookDownload = {
   isAvailable: ebookPdfAvailable,
-  href: ebookPdfAvailable
-    ? "/documents/un-passo-possibile-moreno-funari.pdf"
-    : "/contatti",
+  href: ebookPdfAvailable ? siteConfig.ebookPdfPath : "/contatti",
   label: ebookPdfAvailable ? "Scarica l’eBook" : "Scrivimi per riceverlo",
   downloadName: "un-passo-possibile-moreno-funari.pdf",
 } as const;

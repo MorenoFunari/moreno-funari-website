@@ -8,6 +8,8 @@ export const siteConfig = {
   siteUrl,
   url: siteUrl,
   appUrl: "https://app.morenofunari.it",
+  ebookPath: "/ebook",
+  ebookPdfPath: "/documents/un-passo-possibile-moreno-funari.pdf",
   email: "moreno.funari@gmail.com",
   instagramUrl: "https://www.instagram.com/moreno.coach86/",
   mainNavigation: [
