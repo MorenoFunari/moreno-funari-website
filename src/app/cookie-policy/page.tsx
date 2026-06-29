@@ -62,8 +62,18 @@ export default function CookiePolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>3. Strumenti tecnici</h2>
-            <div className={styles.tableWrap}>
+            <p className={styles.tableHint} id="technical-storage-table-hint">
+              La tabella può essere fatta scorrere orizzontalmente su schermi
+              stretti.
+            </p>
+            <div
+              aria-describedby="technical-storage-table-hint"
+              aria-label="Strumenti tecnici usati dal sito"
+              className={styles.tableWrap}
+              tabIndex={0}
+            >
               <table className={styles.table}>
+                <caption>Strumenti tecnici usati dal sito</caption>
                 <thead>
                   <tr>
                     <th scope="col">Nome</th>
@@ -94,8 +104,18 @@ export default function CookiePolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>4. Google Analytics 4</h2>
-            <div className={styles.tableWrap}>
+            <p className={styles.tableHint} id="analytics-table-hint">
+              La tabella può essere fatta scorrere orizzontalmente su schermi
+              stretti.
+            </p>
+            <div
+              aria-describedby="analytics-table-hint"
+              aria-label="Cookie Google Analytics 4"
+              className={styles.tableWrap}
+              tabIndex={0}
+            >
               <table className={styles.table}>
+                <caption>Cookie Google Analytics 4</caption>
                 <thead>
                   <tr>
                     <th scope="col">Nome</th>

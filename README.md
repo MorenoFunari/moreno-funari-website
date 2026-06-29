@@ -152,6 +152,16 @@ The site includes public Privacy Policy and Cookie Policy pages, both linked fro
 - The cookie and storage inventory lives in `docs/privacy-and-cookies.md`.
 - The legal documentation must be reviewed whenever services, providers or data flows change.
 
+## Accessibilità
+
+WCAG 2.2 AA is used as the technical reference for accessibility work, without claiming certification or legal conformity.
+
+- The site keeps semantic landmarks, one visible `h1` per route, keyboard-operable navigation and native controls.
+- Focus must remain visible across links, buttons, menu, accordion and cookie preferences.
+- Responsive layout, reflow, text zoom and reduced motion checks are part of the release checklist.
+- Manual verification with keyboard, Lighthouse, axe DevTools and screen reader checks remains required after structural changes.
+- Full notes and the current audit checklist live in `docs/accessibility.md`.
+
 ## Checks
 
 ```bash

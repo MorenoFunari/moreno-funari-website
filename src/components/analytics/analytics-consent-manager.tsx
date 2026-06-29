@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { analyticsConfig } from "@/config/analytics";
 import {
@@ -55,6 +55,7 @@ export function AnalyticsConsentManager() {
     analyticsConfig.isConfigured ? "loading" : "denied",
   );
   const [preferencesOpen, setPreferencesOpen] = useState(false);
+  const preferencesTriggerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (!analyticsConfig.isConfigured) {
@@ -82,7 +83,17 @@ export function AnalyticsConsentManager() {
       return;
     }
 
-    function handlePreferencesOpen() {
+    function handlePreferencesOpen(event: Event) {
+      const trigger =
+        event instanceof CustomEvent &&
+        event.detail &&
+        event.detail.trigger instanceof HTMLElement
+          ? event.detail.trigger
+          : document.activeElement instanceof HTMLElement
+            ? document.activeElement
+            : null;
+
+      preferencesTriggerRef.current = trigger;
       setPreferencesOpen(true);
     }
 
@@ -99,6 +110,14 @@ export function AnalyticsConsentManager() {
     };
   }, []);
 
+  const closePreferences = useCallback(() => {
+    setPreferencesOpen(false);
+    queueMicrotask(() => {
+      preferencesTriggerRef.current?.focus();
+      preferencesTriggerRef.current = null;
+    });
+  }, []);
+
   const acceptAnalytics = useCallback(() => {
     if (!analyticsConfig.isConfigured) {
       return;
@@ -110,12 +129,12 @@ export function AnalyticsConsentManager() {
     updateConsentMode("granted");
     saveAnalyticsConsent("granted");
     setStatus("granted");
-    setPreferencesOpen(false);
+    closePreferences();
 
     if (shouldReload) {
       window.location.reload();
     }
-  }, [status]);
+  }, [closePreferences, status]);
 
   const rejectAnalytics = useCallback(() => {
     if (!analyticsConfig.isConfigured) {
@@ -129,12 +148,12 @@ export function AnalyticsConsentManager() {
     deleteAccessibleGoogleAnalyticsCookies();
     saveAnalyticsConsent("denied");
     setStatus("denied");
-    setPreferencesOpen(false);
+    closePreferences();
 
     if (shouldReload) {
       window.location.reload();
     }
-  }, [status]);
+  }, [closePreferences, status]);
 
   if (!analyticsConfig.isConfigured) {
     return null;
@@ -152,7 +171,7 @@ export function AnalyticsConsentManager() {
           currentStatus={currentStatus}
           mode={preferencesOpen ? "preferences" : "banner"}
           onAccept={acceptAnalytics}
-          onClosePreferences={() => setPreferencesOpen(false)}
+          onClosePreferences={closePreferences}
           onReject={rejectAnalytics}
         />
       ) : null}

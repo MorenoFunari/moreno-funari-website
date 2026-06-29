@@ -81,6 +81,7 @@
 }
 
 .legalButton {
+  min-height: 1.5rem;
   cursor: pointer;
   border: 0;
   background: transparent;

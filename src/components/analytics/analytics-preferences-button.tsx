@@ -17,7 +17,11 @@ export function AnalyticsPreferencesButton({
   }
 
   function openPreferences() {
-    window.dispatchEvent(new Event(analyticsPreferencesEventName));
+    window.dispatchEvent(
+      new CustomEvent(analyticsPreferencesEventName, {
+        detail: { trigger: document.activeElement },
+      }),
+    );
   }
 
   return (

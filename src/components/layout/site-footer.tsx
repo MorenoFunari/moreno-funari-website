@@ -67,18 +67,20 @@ export function SiteFooter() {
 
         <div className={styles.legal}>
           <p>© {year} Moreno Funari. Tutti i diritti riservati.</p>
-          <ul className={styles.legalLinks} aria-label="Link legali">
-            {siteConfig.legalNavigation.map((item) => (
-              <li key={item.href}>
-                <Link className={styles.legalLink} href={item.href}>
-                  {item.label}
-                </Link>
+          <nav aria-label="Link legali e preferenze">
+            <ul className={styles.legalLinks}>
+              {siteConfig.legalNavigation.map((item) => (
+                <li key={item.href}>
+                  <Link className={styles.legalLink} href={item.href}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <AnalyticsPreferencesButton />
               </li>
-            ))}
-            <li>
-              <AnalyticsPreferencesButton />
-            </li>
-          </ul>
+            </ul>
+          </nav>
         </div>
       </Container>
     </footer>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { siteConfig } from "@/config/site";
@@ -14,6 +14,8 @@ export function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const panelId = useId();
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const firstLinkRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     if (!isOpen) {
@@ -22,10 +24,16 @@ export function MobileNavigation() {
     }
 
     document.body.classList.add("is-menu-open");
+    queueMicrotask(() => {
+      firstLinkRef.current?.focus();
+    });
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsOpen(false);
+        queueMicrotask(() => {
+          buttonRef.current?.focus();
+        });
       }
     };
 
@@ -37,7 +45,9 @@ export function MobileNavigation() {
     };
   }, [isOpen]);
 
-  const closeMenu = () => setIsOpen(false);
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
   const toggleMenu = () => setIsOpen((current) => !current);
 
   return (
@@ -48,6 +58,7 @@ export function MobileNavigation() {
         aria-label={isOpen ? "Chiudi menu" : "Apri menu"}
         className={styles.button}
         onClick={toggleMenu}
+        ref={buttonRef}
         type="button"
       >
         <span className={styles.icon} aria-hidden="true">
@@ -71,7 +82,7 @@ export function MobileNavigation() {
             id={panelId}
           >
             <ul className={styles.list}>
-              {siteConfig.mainNavigation.map((item) => {
+              {siteConfig.mainNavigation.map((item, index) => {
                 const isActive = isActivePath(pathname, item.href);
 
                 return (
@@ -86,6 +97,7 @@ export function MobileNavigation() {
                         .join(" ")}
                       href={item.href}
                       onClick={closeMenu}
+                      ref={index === 0 ? firstLinkRef : undefined}
                     >
                       {item.label}
                     </Link>

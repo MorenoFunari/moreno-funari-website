@@ -7,6 +7,20 @@
   pointer-events: none;
 }
 
+.dialog {
+  width: min(calc(100vw - var(--space-lg)), 58rem);
+  max-height: min(42rem, calc(100dvh - var(--space-2xl)));
+  overflow: auto;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.dialog::backdrop {
+  background: var(--color-mobile-overlay);
+}
+
 .panel {
   display: grid;
   width: min(100%, 58rem);
@@ -19,6 +33,10 @@
   box-shadow: var(--shadow-elevated);
   color: var(--color-text);
   pointer-events: auto;
+}
+
+.dialog .panel {
+  width: 100%;
 }
 
 .content {
@@ -105,6 +123,35 @@
   flex-wrap: wrap;
   gap: var(--space-sm);
   align-items: center;
+}
+
+@media (max-width: 560px) {
+  .region {
+    right: var(--space-sm);
+    bottom: var(--space-sm);
+    left: var(--space-sm);
+  }
+
+  .dialog {
+    width: min(calc(100vw - var(--space-md)), 58rem);
+    max-height: calc(100dvh - var(--space-md));
+  }
+
+  .panel {
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .textButton {
+    width: 100%;
+  }
 }
 
 .primaryButton,

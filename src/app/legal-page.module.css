@@ -97,11 +97,28 @@
   background: var(--color-surface);
 }
 
+.tableWrap:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+.tableHint {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body-sm);
+}
+
 .table {
   width: 100%;
   min-width: 42rem;
   border-collapse: collapse;
   font-size: var(--font-size-body-sm);
+}
+
+.table caption {
+  color: var(--color-primary-strong);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--space-sm);
+  text-align: left;
 }
 
 .table th,
