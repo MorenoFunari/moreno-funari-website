@@ -8,9 +8,8 @@ export const contactLinks = {
     emailSubject,
   )}`,
   instagramUrl: siteConfig.instagramUrl,
-  instagramUsername: siteConfig.instagramUrl
-    .replace(/^https?:\/\/(www\.)?instagram\.com\//, "")
-    .replace(/\/$/, ""),
+  instagramAriaLabel: "Instagram di Moreno Funari",
+  instagramUsername: new URL(siteConfig.instagramUrl).pathname.replaceAll("/", ""),
 } as const;
 
 export const messageStarters = [

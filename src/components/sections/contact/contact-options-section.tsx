@@ -51,11 +51,21 @@ export function ContactOptionsSection() {
               un’informazione.
             </p>
             <address className={styles.address}>
-              <a href={contactLinks.instagramUrl}>
+              <a
+                aria-label={`${contactLinks.instagramAriaLabel}, si apre in una nuova scheda`}
+                href={contactLinks.instagramUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 @{contactLinks.instagramUsername}
               </a>
             </address>
-            <ButtonLink href={contactLinks.instagramUrl} external>
+            <ButtonLink
+              ariaLabel={`${contactLinks.instagramAriaLabel}, si apre in una nuova scheda`}
+              href={contactLinks.instagramUrl}
+              external
+              target="_blank"
+            >
               Vai al profilo
             </ButtonLink>
           </SurfaceCard>

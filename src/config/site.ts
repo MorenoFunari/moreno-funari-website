@@ -1,4 +1,5 @@
 const siteUrl = "https://morenofunari.it";
+const instagramUrl = "https://www.instagram.com/moreno.coach86/";
 
 export const siteConfig = {
   name: "Moreno Funari | Mental Coach",
@@ -11,7 +12,14 @@ export const siteConfig = {
   ebookPath: "/ebook",
   ebookPdfPath: "/documents/un-passo-possibile-moreno-funari.pdf",
   email: "moreno.funari@gmail.com",
-  instagramUrl: "https://www.instagram.com/moreno.coach86/",
+  instagramUrl,
+  socialLinks: [
+    {
+      label: "Instagram",
+      ariaLabel: "Instagram di Moreno Funari",
+      href: instagramUrl,
+    },
+  ],
   mainNavigation: [
     { label: "Chi sono", href: "/chi-sono" },
     { label: "Blog", href: "/blog" },
@@ -36,3 +44,4 @@ export type SiteConfig = typeof siteConfig;
 export type MainNavigationItem = (typeof siteConfig.mainNavigation)[number];
 export type FooterNavigationItem = (typeof siteConfig.footerNavigation)[number];
 export type LegalNavigationItem = (typeof siteConfig.legalNavigation)[number];
+export type SocialLinkItem = (typeof siteConfig.socialLinks)[number];

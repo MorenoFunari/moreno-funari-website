@@ -33,9 +33,11 @@ export function ContactHero() {
             Scrivimi via email
           </ButtonLink>
           <ButtonLink
+            ariaLabel={`${contactLinks.instagramAriaLabel}, si apre in una nuova scheda`}
             href={contactLinks.instagramUrl}
             external
             size="large"
+            target="_blank"
             variant="secondary"
           >
             Scrivimi su Instagram

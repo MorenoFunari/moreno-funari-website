@@ -22,7 +22,7 @@ export function createPersonJsonLd(): JsonLdObject {
     url: toAbsoluteUrl("/chi-sono"),
     jobTitle: "Mental Coach",
     image: toAbsoluteUrl("/images/moreno/moreno-about-outdoor.webp"),
-    sameAs: [siteConfig.instagramUrl],
+    sameAs: siteConfig.socialLinks.map((item) => item.href),
   };
 }
 

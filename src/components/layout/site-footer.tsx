@@ -55,11 +55,27 @@ export function SiteFooter() {
                     {siteConfig.email}
                   </a>
                 </li>
-                <li>
-                  <a className={styles.link} href={siteConfig.instagramUrl}>
-                    Instagram
-                  </a>
-                </li>
+              </ul>
+            </section>
+
+            <section aria-labelledby="footer-social-title">
+              <h2 className={styles.columnTitle} id="footer-social-title">
+                Seguimi
+              </h2>
+              <ul className={styles.list}>
+                {siteConfig.socialLinks.map((item) => (
+                  <li key={item.href}>
+                    <a
+                      aria-label={`${item.ariaLabel}, si apre in una nuova scheda`}
+                      className={styles.link}
+                      href={item.href}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </section>
           </div>

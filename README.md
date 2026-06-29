@@ -82,6 +82,10 @@ The `/contatti` route uses dedicated sections in `src/components/sections/contac
 - FAQ: questions use native `<details>` and `<summary>` elements.
 - Boundaries: the page clarifies that coaching does not replace urgent or clinical professional support.
 
+## Collegamenti social
+
+Official social links are centralized in `src/config/site.ts` and documented in `docs/social-links.md`.
+
 ## Motore blog MDX
 
 Local blog content lives in `content/blog` and is rendered through `next-mdx-remote/rsc` with frontmatter parsed by `gray-matter`.
