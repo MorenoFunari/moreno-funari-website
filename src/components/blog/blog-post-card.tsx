@@ -15,6 +15,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
   const href = `/blog/${post.slug}`;
   const categoryLabel = getBlogCategoryLabel(post.category);
   const tags = post.tags.slice(0, 3);
+  const excerpt = post.excerpt ?? post.description;
 
   return (
     <article className={styles.card}>
@@ -43,7 +44,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
         </div>
 
         <h3 className={styles.title}>{post.title}</h3>
-        <p className={styles.description}>{post.description}</p>
+        <p className={styles.description}>{excerpt}</p>
 
         {tags.length > 0 ? (
           <ul className={styles.tags} aria-label="Temi dell’articolo">

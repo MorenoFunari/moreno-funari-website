@@ -34,6 +34,7 @@ export function validateBlogFrontmatter(
     fileName,
     "description",
   );
+  const excerpt = optionalTrimmedString(data.excerpt, fileName, "excerpt");
   const publishedAt = requiredDate(data.publishedAt, fileName, "publishedAt");
   const updatedAt = optionalDate(data.updatedAt, fileName, "updatedAt");
   const category = requiredBlogCategory(data.category, fileName);
@@ -53,6 +54,7 @@ export function validateBlogFrontmatter(
   return {
     title,
     description,
+    ...(excerpt ? { excerpt } : {}),
     publishedAt,
     ...(updatedAt ? { updatedAt } : {}),
     category,

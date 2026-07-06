@@ -17,6 +17,7 @@ export function FeaturedBlogPost({ label, post, titleId }: FeaturedBlogPostProps
   const categoryLabel = getBlogCategoryLabel(post.category);
   const tags = post.tags.slice(0, 3);
   const hasCover = Boolean(post.coverImage && post.coverAlt);
+  const excerpt = post.excerpt ?? post.description;
 
   return (
     <article className={hasCover ? styles.withCover : styles.article}>
@@ -34,7 +35,7 @@ export function FeaturedBlogPost({ label, post, titleId }: FeaturedBlogPostProps
         <h2 className={styles.title} id={titleId}>
           {post.title}
         </h2>
-        <p className={styles.description}>{post.description}</p>
+        <p className={styles.description}>{excerpt}</p>
 
         {tags.length > 0 ? (
           <ul className={styles.tags} aria-label="Temi dell’articolo">

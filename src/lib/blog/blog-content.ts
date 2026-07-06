@@ -127,6 +127,7 @@ function toBlogPostSummary(post: BlogPost): BlogPostSummary {
   return {
     title: post.title,
     description: post.description,
+    ...(post.excerpt ? { excerpt: post.excerpt } : {}),
     publishedAt: post.publishedAt,
     ...(post.updatedAt ? { updatedAt: post.updatedAt } : {}),
     category: post.category,

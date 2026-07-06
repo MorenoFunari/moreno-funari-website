@@ -13,6 +13,7 @@ I contenuti del blog vivono in questa cartella e devono essere file `.mdx` diret
 ---
 title: "Titolo dell'articolo"
 description: "Descrizione breve e concreta dell'articolo."
+excerpt: "Testo breve usato nelle card del Blog, se diverso dalla meta description."
 publishedAt: "2026-06-28"
 updatedAt: "2026-06-28"
 category: "consapevolezza"
@@ -39,6 +40,8 @@ Testo dell'articolo.
 ```
 
 ## Campi
+
+`excerpt` è opzionale. Se manca, le card del Blog usano `description`.
 
 `draft: true` rende l'articolo visibile solo in sviluppo locale e lo esclude dalla build di produzione e dalla sitemap.
 
