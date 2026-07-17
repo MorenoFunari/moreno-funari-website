@@ -137,6 +137,7 @@ The canonical domain is `https://morenofunari.it`, centralized through `src/conf
 - Noindex: legal pages use `noindex, follow`; the eBook PDF stays downloadable but gets `X-Robots-Tag: noindex, follow`.
 - JSON-LD: homepage uses `WebSite` and `Person`, `/chi-sono` uses `ProfilePage`, and articles use `BlogPosting`.
 - Search Console and Analytics are documented separately because they depend on operational configuration outside the static SEO foundation.
+- Content strategy: the long-term SEO content architecture lives in `docs/seo-content-strategy.md`.
 
 ## Google Search Console
 
