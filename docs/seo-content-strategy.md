@@ -27,16 +27,16 @@ Stato iniziale rilevato:
 
 ## Stato attuale del sito
 
-Il sito e' gia' coerente come casa del brand: tono umano, prudente, non aggressivo, con confini professionali chiari. La struttura attuale copre bene il posizionamento generale, ma non presidia ancora in modo sistematico le query informative e commerciali leggere legate a stress, overthinking, fiducia, blocco, lavoro, sport e mental coaching.
+Il sito e' già coerente come casa del brand: tono umano, prudente, non aggressivo, con confini professionali chiari. La struttura attuale copre bene il posizionamento generale, ma non presidia ancora in modo sistematico le query informative e commerciali leggere legate a stress, overthinking, fiducia, blocco, lavoro, sport e mental coaching.
 
 Punti forti:
 
 - Navigazione semplice: `/`, `/chi-sono`, `/blog`, `/ebook`, `/coaching`, `/contatti`.
 - Blog MDX validato e generato staticamente.
-- Metadata e JSON-LD gia' presenti per pagine core e articoli.
+- Metadata e JSON-LD già presenti per pagine core e articoli.
 - Sitemap include pagine pubbliche e articoli pubblicati.
-- Confini tra coaching, psicoterapia e supporto sanitario gia' esplicitati.
-- eBook e Un Passo Possibile AI sono gia' risorse trasversali.
+- Confini tra coaching, psicoterapia e supporto sanitario già esplicitati.
+- eBook e Un Passo Possibile AI sono già risorse trasversali.
 
 Gap principali:
 
@@ -55,24 +55,24 @@ Le pagine legali `/privacy-policy` e `/cookie-policy`, insieme a `/robots.txt` e
 | `/` | Home e snodo iniziale | Capire chi e' Moreno e da dove iniziare | Persone bloccate, sotto pressione o autocritiche | Blocco, pressione, fiducia, primo passo | Blog, AI, coaching, contatti | `/blog`, app esterna, `/coaching`, `/ebook`, `/chi-sono`, `/contatti` | Buono come brand page, debole per query verticali | Hub narrativo e filtro verso percorsi |
 | `/chi-sono` | Profilo professionale e personale | Valutare credibilita' e approccio | Utenti che cercano fiducia prima del contatto | Esperienza, sport, lavoro, principi, confini | Coaching, contatti | `/coaching`, `/contatti`, `/blog` | Buono per E-E-A-T e fiducia, poco orientato a query non branded | Pagina credibilita' collegata da landing e articoli sensibili |
 | `/coaching` | Pagina servizio generale | Capire cosa offre il percorso | Persone che valutano un confronto | Mental coaching, processo, confini, FAQ | Contatti | `/contatti`, `/chi-sono` | Buono come pagina generale, manca profondita' per intenti specifici | Nodo centrale verso landing verticali |
-| `/contatti` | Conversione leggera | Scrivere senza impegno | Utenti gia' caldi o con dubbio pratico | Primo contatto, temi trattabili, confini | Email, Instagram | Privacy policy | Buono come CTA finale, non deve diventare pagina commerciale aggressiva | Punto finale della fiducia, non pagina SEO primaria |
+| `/contatti` | Conversione leggera | Scrivere senza impegno | Utenti già caldi o con dubbio pratico | Primo contatto, temi trattabili, confini | Email, Instagram | Privacy policy | Buono come CTA finale, non deve diventare pagina commerciale aggressiva | Punto finale della fiducia, non pagina SEO primaria |
 | `/blog` | Archivio editoriale | Leggere riflessioni e risorse | Utenti informativi | Fiducia, pressione, errore, sport, vita reale | Articoli, eBook, AI, coaching | Articoli, `/ebook`, app esterna, `/coaching` | Buono come archivio, senza filtri o cluster visibili | Archivio editoriale, non hub principale di vendita |
 | `/ebook` | Risorsa gratuita | Scaricare e usare "Un passo possibile" | Persone bloccate o confuse | Blocco, fiducia, dialogo interno, passo concreto | Download PDF, AI, coaching | PDF, app esterna, `/coaching`, `/chi-sono` | Buono come risorsa trasversale, query specifiche ancora deboli | Lead magnet leggero e supporto ai cluster |
 | `/blog/[slug]` | Articoli editoriali | Rispondere a bisogni informativi specifici | Utenti da Google e lettori ricorrenti | Varia per articolo | eBook, coaching, contatti | `/blog`, `/coaching`, `/contatti`, talvolta `/ebook` e articoli correlati | Variabile: migliore sugli ultimi due articoli SEO oriented | Entry point organico verso pilastri, eBook, AI e contatto |
 
 ## Articoli attuali
 
-Sono presenti cinque articoli pubblicati e una bozza locale d'esempio (`bozza-esempio-mdx`) esclusa dalla strategia perche' `draft: true`.
+Sono presenti cinque articoli pubblicati e una bozza locale d'esempio (`bozza-esempio-mdx`) esclusa dalla strategia perché `draft: true`.
 
 | Titolo | Slug | Categoria | Data | Intento | Query probabile | Tema | Cluster | Pagina pilastro futura | Correlati | Gap interni | Origine SEO |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | La fiducia non arriva sempre prima: a volte cresce dopo il primo passo | `la-fiducia-arriva-dopo-il-primo-passo` | Fiducia e azione | 2026-06-28 | Aiutare chi aspetta sicurezza prima di agire | "come avere fiducia in se stessi", "non mi sento pronto", "fare il primo passo" | Fiducia, dubbio, azione piccola | Fiducia / primo passo | `/coaching/autostima-e-fiducia`, `/coaching/blocco-e-primo-passo` | Autocritica, blocco, eBook | Manca link a articolo autocritica e futura landing blocco | Vicino a contenuto social/riflessione, ma evergreen |
-| Ti parleresti cosi se fossi una persona a cui vuoi bene? | `ti-parleresti-cosi-se-fossi-una-persona-a-cui-vuoi-bene` | Consapevolezza | 2026-06-28 | Ridurre autocritica aggressiva senza negare responsabilita' | "smettere di essere troppo autocritici", "dialogo interno negativo" | Autocritica, dialogo interno, responsabilita' | Fiducia, autostima e autocritica | `/coaching/autostima-e-fiducia` | Articolo fiducia, errore nello sport | Manca collegamento a pilastro e ad articolo errore | Probabile derivazione social, evergreen se rinforzato |
+| Ti parleresti cosi se fossi una persona a cui vuoi bene? | `ti-parleresti-cosi-se-fossi-una-persona-a-cui-vuoi-bene` | Consapevolezza | 2026-06-28 | Ridurre autocritica aggressiva senza negare responsabilità | "smettere di essere troppo autocritici", "dialogo interno negativo" | Autocritica, dialogo interno, responsabilità | Fiducia, autostima e autocritica | `/coaching/autostima-e-fiducia` | Articolo fiducia, errore nello sport | Manca collegamento a pilastro e ad articolo errore | Probabile derivazione social, evergreen se rinforzato |
 | Dopo un errore, torna all'azione successiva | `dopo-un-errore-torna-all-azione-successiva` | Sport e mentalita' | 2026-06-28 | Aiutare sportivi a rientrare nel presente dopo un errore | "come superare un errore nello sport", "mental coaching sportivo errore" | Errore, sport, presenza, pressione | Sport, errore e performance mentale | `/coaching/mental-coaching-sportivo` | Autocritica, fiducia | Manca pagina pilastro sportiva e correlati sportivi | Riflessione evergreen con buon potenziale SEO |
-| Quando hai troppe cose in testa: 5 azioni concrete per ritrovare lucidita' | `quando-hai-troppe-cose-in-testa-5-azioni-per-ritrovare-lucidita` | Pressione e lavoro | 2026-07-07 | Dare azioni pratiche per ridurre confusione mentale | "troppe cose in testa", "sovraccarico mentale", "ritrovare lucidita'" | Sovraccarico mentale, priorita', lucidita' | Stress, pressione e sovraccarico mentale | `/coaching/stress-lavorativo` | Responsabilita' e controllo | Manca link a futura landing stress e ad AI come esercizio naturale | Gia' vicino a contenuto SEO evergreen |
-| Responsabilita' non significa controllo: cosa succede quando provi a gestire tutto | `responsabilita-non-significa-controllo-cosa-succede-quando-provi-a-gestire-tutto` | Pressione e lavoro | 2026-07-07 | Distinguere responsabilita', controllo e delega | "responsabilita e controllo", "difficolta a delegare", "voler controllare tutto" | Responsabilita', controllo, delega, lavoro | Lavoro, responsabilita' e confini | `/coaching/responsabilita-e-controllo` | Sovraccarico mentale | Manca landing responsabilita'/controllo e articolo dire di no | Gia' vicino a contenuto SEO evergreen |
+| Quando hai troppe cose in testa: 5 azioni concrete per ritrovare lucidità | `quando-hai-troppe-cose-in-testa-5-azioni-per-ritrovare-lucidita` | Pressione e lavoro | 2026-07-07 | Dare azioni pratiche per ridurre confusione mentale | "troppe cose in testa", "sovraccarico mentale", "ritrovare lucidità" | Sovraccarico mentale, priorita', lucidità | Stress, pressione e sovraccarico mentale | `/coaching/stress-lavorativo` | responsabilità e controllo | Manca link a futura landing stress e ad AI come esercizio naturale | già vicino a contenuto SEO evergreen |
+| responsabilità non significa controllo: cosa succede quando provi a gestire tutto | `responsabilita-non-significa-controllo-cosa-succede-quando-provi-a-gestire-tutto` | Pressione e lavoro | 2026-07-07 | Distinguere responsabilità, controllo e delega | "responsabilita e controllo", "difficolta a delegare", "voler controllare tutto" | responsabilità, controllo, delega, lavoro | Lavoro, responsabilità e confini | `/coaching/responsabilita-e-controllo` | Sovraccarico mentale | Manca landing responsabilità/controllo e articolo dire di no | già vicino a contenuto SEO evergreen |
 
-## Argomenti gia' coperti
+## Argomenti già coperti
 
 | Argomento | Forza attuale | Contenuti collegati | Copertura | Cosa manca |
 | --- | --- | --- | --- | --- |
@@ -81,9 +81,9 @@ Sono presenti cinque articoli pubblicati e una bozza locale d'esempio (`bozza-es
 | Autocritica | Presente e ben trattata | Articolo autocritica, contatti, eBook | Medio | Landing su autostima/fiducia, articoli su paura del giudizio e dialogo interno |
 | Errore nello sport | Presente con taglio pratico | Articolo errore, pagina chi sono, coaching | Medio | Landing sportiva, articoli su gara, pressione, recupero dopo prestazione negativa |
 | Sovraccarico mentale | Forte negli ultimi contenuti | Articolo troppe cose in testa, coaching, eBook | Buono | Landing stress lavoro, articoli su priorita', pensieri continui, dire di no |
-| Lucidita' | Tema distintivo | Home, coaching, articolo sovraccarico | Medio | Guide pratiche, esercizi, collegamento a AI |
-| Responsabilita' e controllo | Buona base | Articolo controllo, articolo sovraccarico, coaching FAQ | Medio | Landing dedicata, articoli su delega, confini, leadership sostenibile |
-| Delega | Accennata bene | Articolo responsabilita'/controllo | Basso | Articoli specifici su delegare, fidarsi, lasciare autonomia |
+| lucidità | Tema distintivo | Home, coaching, articolo sovraccarico | Medio | Guide pratiche, esercizi, collegamento a AI |
+| responsabilità e controllo | Buona base | Articolo controllo, articolo sovraccarico, coaching FAQ | Medio | Landing dedicata, articoli su delega, confini, leadership sostenibile |
+| Delega | Accennata bene | Articolo responsabilità/controllo | Basso | Articoli specifici su delegare, fidarsi, lasciare autonomia |
 | Mental coaching | Presente come servizio | `/coaching`, FAQ, chi sono, footer articoli | Medio | Landing "cosa fa un mental coach", confronto coaching/psicologia, pagine verticali |
 | eBook | Presente come risorsa | `/ebook`, Home, Blog, articoli | Buono | Collegamenti da cluster specifici, sezioni "quando usarlo" per tema |
 | Un Passo Possibile AI | Presente ma trasversale | Home, `/ebook`, `/blog`, footer | Medio | Esercizi tematici derivati dai cluster, CTA solo su articoli pratici |
@@ -96,7 +96,7 @@ Le priorita' sono qualitative. Non indicano volumi di ricerca. Prima della produ
 
 | Query candidata | Intento | Tipo contenuto | Cluster | Difficolta' stimata | Motivo |
 | --- | --- | --- | --- | --- | --- |
-| troppe cose in testa | Informativo pratico | Articolo guida + esercizio | Stress e sovraccarico | Media | Gia' coperta, da consolidare con cluster |
+| troppe cose in testa | Informativo pratico | Articolo guida + esercizio | Stress e sovraccarico | Media | già coperta, da consolidare con cluster |
 | sovraccarico mentale | Informativo | Landing + guida | Stress e sovraccarico | Media | Tema centrale e coerente con eBook/AI |
 | stress lavorativo | Informativo/commerciale leggero | Landing | Stress e lavoro | Alta | Alta rilevanza per coaching, SERP competitiva |
 | pensare troppo | Informativo | Landing + articoli | Overthinking | Media | Linguaggio utente semplice e vicino al brand |
@@ -104,10 +104,10 @@ Le priorita' sono qualitative. Non indicano volumi di ricerca. Prima della produ
 | blocchi mentali | Informativo | Landing + esercizio | Blocco e primo passo | Media | Coerente con promessa "piccolo passo" |
 | procrastinazione | Informativo | Articolo guida | Blocco e primo passo | Alta | Competitiva ma strategica |
 | fiducia in se stessi | Informativo | Landing + articoli | Fiducia e autocritica | Alta | Tema core ma SERP ampia |
-| autocritica | Informativo pratico | Articolo guida + FAQ | Fiducia e autocritica | Media | Gia' presente, da espandere |
-| responsabilita' e controllo | Informativo | Landing | Lavoro e confini | Bassa/media | Buon differenziale editoriale |
+| autocritica | Informativo pratico | Articolo guida + FAQ | Fiducia e autocritica | Media | già presente, da espandere |
+| responsabilità e controllo | Informativo | Landing | Lavoro e confini | Bassa/media | Buon differenziale editoriale |
 | difficolta' a delegare | Informativo pratico | Articolo guida | Lavoro e confini | Media | Coerente con esperienza Moreno sviluppatore senior |
-| errore nello sport | Informativo | Articolo guida | Sport e performance | Media | Gia' coperto, da consolidare |
+| errore nello sport | Informativo | Articolo guida | Sport e performance | Media | già coperto, da consolidare |
 | mental coaching sportivo | Commerciale leggero | Landing | Sport e performance | Media/alta | Verticale servizio naturale |
 | cosa fa un mental coach | Informativo/commerciale | Landing + FAQ | Metodo e confini | Media | Fondamentale per domanda consapevole |
 | differenza coaching mental coaching psicologia | Informativo prudente | Landing/FAQ | Metodo e confini | Media | Cruciale per confini professionali |
@@ -116,7 +116,7 @@ Le priorita' sono qualitative. Non indicano volumi di ricerca. Prima della produ
 
 | Query candidata | Intento | Tipo contenuto | Cluster | Difficolta' stimata | Motivo |
 | --- | --- | --- | --- | --- | --- |
-| come ritrovare lucidita' | Informativo pratico | Articolo guida | Stress e sovraccarico | Media | Buon ponte verso AI |
+| come ritrovare lucidità | Informativo pratico | Articolo guida | Stress e sovraccarico | Media | Buon ponte verso AI |
 | confusione mentale cosa fare | Informativo | Articolo guida | Stress e sovraccarico | Media | Vicino all'articolo esistente |
 | pressione sul lavoro | Informativo | Landing/articolo | Stress e lavoro | Media | Forte fit con coaching |
 | paura del giudizio | Informativo | Articolo guida | Fiducia e autocritica | Alta | Tema vicino ma da trattare senza clinica |
@@ -143,8 +143,8 @@ Le priorita' sono qualitative. Non indicano volumi di ricerca. Prima della produ
 
 - Obiettivo: diventare il riferimento pratico per chi sente pressione, confusione e troppe cose aperte.
 - Pagina pilastro consigliata: `/coaching/stress-lavorativo`.
-- Articoli gia' esistenti: `quando-hai-troppe-cose-in-testa-5-azioni-per-ritrovare-lucidita`, `responsabilita-non-significa-controllo-cosa-succede-quando-provi-a-gestire-tutto`.
-- Articoli futuri: "Sovraccarico mentale: come capire cosa pesa davvero", "Pressione sul lavoro: cosa fare quando tutto sembra urgente", "Come ritrovare lucidita' prima di prendere una decisione".
+- Articoli già esistenti: `quando-hai-troppe-cose-in-testa-5-azioni-per-ritrovare-lucidita`, `responsabilita-non-significa-controllo-cosa-succede-quando-provi-a-gestire-tutto`.
+- Articoli futuri: "Sovraccarico mentale: come capire cosa pesa davvero", "Pressione sul lavoro: cosa fare quando tutto sembra urgente", "Come ritrovare lucidità prima di prendere una decisione".
 - CTA consigliata: eBook quando il bisogno e' ordine; AI quando serve una riflessione guidata; contatti solo a fine pagina.
 - Collegamento eBook: capitoli su blocco, peso del tutto e passo concreto.
 - Collegamento AI: esercizio "scarica la testa e scegli un passo da 15 minuti".
@@ -155,7 +155,7 @@ Le priorita' sono qualitative. Non indicano volumi di ricerca. Prima della produ
 
 - Obiettivo: intercettare chi cerca parole per "pensare troppo" e trasformare il problema in osservazione concreta.
 - Pagina pilastro consigliata: `/coaching/overthinking`.
-- Articoli gia' esistenti: articolo sovraccarico mentale, articolo fiducia.
+- Articoli già esistenti: articolo sovraccarico mentale, articolo fiducia.
 - Articoli futuri: "Pensare troppo: quando cercare chiarezza diventa un modo per restare fermi", "Come uscire dal loop dei pensieri senza forzarti a essere positivo".
 - CTA consigliata: AI come pausa guidata; eBook per approfondire.
 - Collegamento eBook: blocco, fiducia, dialogo interno.
@@ -167,19 +167,19 @@ Le priorita' sono qualitative. Non indicano volumi di ricerca. Prima della produ
 
 - Obiettivo: posizionare fiducia e autostima come risultato di esperienza, rispetto e azioni sostenibili.
 - Pagina pilastro consigliata: `/coaching/autostima-e-fiducia`.
-- Articoli gia' esistenti: articolo fiducia, articolo autocritica, articolo errore.
-- Articoli futuri: "Come avere piu' fiducia in se stessi senza aspettare di sentirsi pronti", "Autocritica: quando responsabilita' e attacco personale si confondono", "Paura del giudizio: come tornare a cio' che dipende da te".
+- Articoli già esistenti: articolo fiducia, articolo autocritica, articolo errore.
+- Articoli futuri: "Come avere piu' fiducia in se stessi senza aspettare di sentirsi pronti", "Autocritica: quando responsabilità e attacco personale si confondono", "Paura del giudizio: come tornare a cio' che dipende da te".
 - CTA consigliata: eBook per lavoro personale; contatti se il tema blocca scelte concrete.
 - Collegamento eBook: forte.
 - Collegamento AI: esercizi sul dialogo interno e sul primo passo.
-- Derivati social: frasi da riscrivere, differenza responsabilita'/attacco.
+- Derivati social: frasi da riscrivere, differenza responsabilità/attacco.
 - Esercizi AI futuri: riscrittura di una frase dura, passo sostenibile anche con dubbio.
 
 ### 4. Blocco, procrastinazione e primo passo
 
 - Obiettivo: presidiare il cuore del brand: non risolvere tutto, scegliere il primo passo possibile.
 - Pagina pilastro consigliata: `/coaching/blocco-e-primo-passo`.
-- Articoli gia' esistenti: articolo fiducia, articolo sovraccarico, eBook.
+- Articoli già esistenti: articolo fiducia, articolo sovraccarico, eBook.
 - Articoli futuri: "Quando ti senti bloccato: da dove iniziare senza dover risolvere tutto", "Procrastinazione: cosa osservare prima di giudicarti", "Il primo passo possibile: come sceglierlo".
 - CTA consigliata: eBook e AI prima del contatto.
 - Collegamento eBook: centrale.
@@ -187,15 +187,15 @@ Le priorita' sono qualitative. Non indicano volumi di ricerca. Prima della produ
 - Derivati social: "non serve tutto il percorso, serve il prossimo passo".
 - Esercizi AI futuri: riduzione del passo, ostacolo reale vs pressione immaginata.
 
-### 5. Lavoro, responsabilita' e confini
+### 5. Lavoro, responsabilità e confini
 
-- Obiettivo: costruire una verticale professionale su pressione, delega, confini e responsabilita' sostenibile.
+- Obiettivo: costruire una verticale professionale su pressione, delega, confini e responsabilità sostenibile.
 - Pagina pilastro consigliata: `/coaching/responsabilita-e-controllo`.
-- Articoli gia' esistenti: articolo responsabilita'/controllo, articolo sovraccarico.
-- Articoli futuri: "Difficolta' a delegare: perche' fai prima da solo ma paghi dopo", "Dire di no al lavoro senza sentirti irresponsabile", "Confini professionali: cosa dipende davvero da te".
+- Articoli già esistenti: articolo responsabilità/controllo, articolo sovraccarico.
+- Articoli futuri: "Difficolta' a delegare: perché fai prima da solo ma paghi dopo", "Dire di no al lavoro senza sentirti irresponsabile", "Confini professionali: cosa dipende davvero da te".
 - CTA consigliata: coaching come confronto concreto; eBook come risorsa leggera.
 - Collegamento eBook: utile ma secondario.
-- Collegamento AI: esercizio per distinguere responsabilita' e controllo.
+- Collegamento AI: esercizio per distinguere responsabilità e controllo.
 - Derivati social: matrice dipende da me/non dipende da me.
 - Esercizi AI futuri: cosa delegare, confini, richiesta chiara.
 
@@ -203,8 +203,8 @@ Le priorita' sono qualitative. Non indicano volumi di ricerca. Prima della produ
 
 - Obiettivo: presidiare il mental coaching sportivo con linguaggio concreto e non iper-performativo.
 - Pagina pilastro consigliata: `/coaching/mental-coaching-sportivo`.
-- Articoli gia' esistenti: articolo errore, articolo autocritica, articolo fiducia.
-- Articoli futuri: "Pressione nello sport: come restare nel compito", "Come superare un errore in gara senza trascinarlo nell'azione dopo", "Fiducia nello sport: perche' non dipende solo dal risultato".
+- Articoli già esistenti: articolo errore, articolo autocritica, articolo fiducia.
+- Articoli futuri: "Pressione nello sport: come restare nel compito", "Come superare un errore in gara senza trascinarlo nell'azione dopo", "Fiducia nello sport: perché non dipende solo dal risultato".
 - CTA consigliata: coaching sportivo; contatti solo dopo aver chiarito confini e metodo.
 - Collegamento eBook: utile per blocco e dialogo interno.
 - Collegamento AI: esercizio post-errore o pre-gara, con confini chiari.
@@ -215,7 +215,7 @@ Le priorita' sono qualitative. Non indicano volumi di ricerca. Prima della produ
 
 - Obiettivo: rispondere alle query su cosa fa un mental coach e chiarire il posizionamento rispetto a psicologia e terapia.
 - Pagina pilastro consigliata: `/coaching/cosa-fa-un-mental-coach`.
-- Articoli gia' esistenti: `/coaching`, `/chi-sono`, articoli con CTA coaching.
+- Articoli già esistenti: `/coaching`, `/chi-sono`, articoli con CTA coaching.
 - Articoli futuri: "Cosa fa un mental coach in un percorso concreto", "Mental coaching e psicologia: differenze e confini", "Quando puo' essere utile un percorso di mental coaching".
 - CTA consigliata: contatti leggera; link a chi sono; link alle landing verticali.
 - Collegamento eBook: risorsa autonoma, non sostituto del percorso.
@@ -227,11 +227,11 @@ Le priorita' sono qualitative. Non indicano volumi di ricerca. Prima della produ
 
 | Landing futura | Obiettivo | Query target | Intenti collegati | Struttura consigliata | CTA | Articoli esistenti | Articoli futuri | Priorita' |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `/coaching/stress-lavorativo` | Intercettare pressione e sovraccarico nel lavoro | stress lavorativo, pressione sul lavoro, sovraccarico mentale | Capire cosa succede, trovare chiarezza, valutare coaching | Problema, segnali, cosa puo' fare il coaching, cosa non fa, esercizio breve, FAQ, risorse | Contatti leggera, eBook, AI | Sovraccarico mentale, responsabilita' e controllo | Pressione lavoro, lucidita', priorita' | Sprint 1 |
+| `/coaching/stress-lavorativo` | Intercettare pressione e sovraccarico nel lavoro | stress lavorativo, pressione sul lavoro, sovraccarico mentale | Capire cosa succede, trovare chiarezza, valutare coaching | Problema, segnali, cosa puo' fare il coaching, cosa non fa, esercizio breve, FAQ, risorse | Contatti leggera, eBook, AI | Sovraccarico mentale, responsabilità e controllo | Pressione lavoro, lucidità, priorita' | Sprint 1 |
 | `/coaching/overthinking` | Presidiare pensieri continui e blocco da analisi | overthinking, pensare troppo | Informativo, pratico | Linguaggio utente, loop dei pensieri, distinzione fatti/interpretazioni, primo passo, confini clinici | AI, eBook, contatti | Sovraccarico, fiducia | Pensare troppo, loop mentale | Sprint 1 |
-| `/coaching/autostima-e-fiducia` | Collegare fiducia, autocritica e azione concreta | fiducia in se stessi, autostima, autocritica | Informativo/commerciale leggero | Fiducia come esperienza, dialogo interno, responsabilita', percorso, FAQ | eBook, coaching | Fiducia, autocritica, errore | Paura giudizio, autostima concreta | Sprint 1 |
+| `/coaching/autostima-e-fiducia` | Collegare fiducia, autocritica e azione concreta | fiducia in se stessi, autostima, autocritica | Informativo/commerciale leggero | Fiducia come esperienza, dialogo interno, responsabilità, percorso, FAQ | eBook, coaching | Fiducia, autocritica, errore | Paura giudizio, autostima concreta | Sprint 1 |
 | `/coaching/blocco-e-primo-passo` | Rafforzare il concetto proprietario del brand | blocchi mentali, procrastinazione, primo passo | Informativo pratico | Blocco, cause non cliniche, riduzione del passo, eBook/AI, percorso | eBook, AI, contatti | Fiducia, sovraccarico | Procrastinazione, sentirsi bloccati | Sprint 2 |
-| `/coaching/responsabilita-e-controllo` | Verticale lavoro su controllo, delega e confini | responsabilita' e controllo, difficolta' a delegare | Informativo professionale | Differenza responsabilita'/controllo, delega, confini, esempi lavoro, FAQ | Coaching, contatti | Responsabilita'/controllo, sovraccarico | Dire di no, delegare | Sprint 2 |
+| `/coaching/responsabilita-e-controllo` | Verticale lavoro su controllo, delega e confini | responsabilità e controllo, difficolta' a delegare | Informativo professionale | Differenza responsabilità/controllo, delega, confini, esempi lavoro, FAQ | Coaching, contatti | responsabilità/controllo, sovraccarico | Dire di no, delegare | Sprint 2 |
 | `/coaching/mental-coaching-sportivo` | Aprire verticale sportiva concreta | mental coaching sportivo, errore nello sport, pressione nello sport | Commerciale leggero/informativo | Sport e presenza, errore, pressione, percorso, cosa non e', esempi | Contatti, coaching | Errore nello sport, fiducia, autocritica | Pressione sport, gara | Sprint 2 |
 | `/coaching/cosa-fa-un-mental-coach` | Rispondere alla domanda base sul servizio | cosa fa un mental coach, differenza mental coach psicologo | Informativo/commerciale | Definizione, cosa fa, cosa non fa, confini, esempi, quando utile, FAQ | Contatti, chi sono | Coaching, chi sono | Differenze coaching/psicologia | Sprint 3 |
 
@@ -254,7 +254,7 @@ Regole operative:
 | `/coaching` | `/coaching/overthinking` | pensieri continui e bisogno di chiarezza | Intercetta bisogno informativo |
 | `/coaching` | `/coaching/autostima-e-fiducia` | fiducia, autostima e autocritica | Collega servizio a tema core |
 | `/coaching` | `/coaching/blocco-e-primo-passo` | blocco e primo passo possibile | Rafforza il posizionamento proprietario |
-| `/coaching` | `/coaching/responsabilita-e-controllo` | responsabilita', controllo e delega | Verticale lavoro |
+| `/coaching` | `/coaching/responsabilita-e-controllo` | responsabilità, controllo e delega | Verticale lavoro |
 | `/coaching` | `/coaching/mental-coaching-sportivo` | mental coaching sportivo | Verticale sport |
 | `/coaching` | `/coaching/cosa-fa-un-mental-coach` | cosa fa un mental coach | Risponde a query base |
 | Articolo fiducia | `/coaching/autostima-e-fiducia` | fiducia in se stessi e azione concreta | Pilastro coerente |
@@ -265,9 +265,9 @@ Regole operative:
 | Articolo errore sport | `/coaching/mental-coaching-sportivo` | mental coaching sportivo | Verticale servizio |
 | Articolo errore sport | Articolo autocritica | autocritica dopo un errore | Correlato tematico |
 | Articolo sovraccarico | `/coaching/stress-lavorativo` | pressione e sovraccarico mentale | Pilastro coerente |
-| Articolo sovraccarico | Articolo responsabilita'/controllo | bisogno di controllare tutto | Link gia' presente, da mantenere |
-| Articolo responsabilita'/controllo | `/coaching/responsabilita-e-controllo` | responsabilita' e controllo nel lavoro | Pilastro coerente |
-| Articolo responsabilita'/controllo | Articolo sovraccarico | carico di lavoro e sovraccarico mentale | Link gia' presente, da mantenere |
+| Articolo sovraccarico | Articolo responsabilità/controllo | bisogno di controllare tutto | Link già presente, da mantenere |
+| Articolo responsabilità/controllo | `/coaching/responsabilita-e-controllo` | responsabilità e controllo nel lavoro | Pilastro coerente |
+| Articolo responsabilità/controllo | Articolo sovraccarico | carico di lavoro e sovraccarico mentale | Link già presente, da mantenere |
 | `/ebook` | `/coaching/blocco-e-primo-passo` | quando il blocco richiede un confronto | Ponte da risorsa autonoma a percorso |
 | `/ebook` | App AI | riflessione guidata | Uso naturale della risorsa |
 | Landing verticali | `/ebook` | Un passo possibile | Risorsa trasversale leggera |
@@ -315,7 +315,7 @@ Contenuti da accorpare:
 
 - Fiducia, autostima e autocritica possono vivere sotto una stessa landing finche' il cluster non cresce.
 - Blocco, procrastinazione e primo passo possono partire da una landing unica.
-- Responsabilita', controllo, delega e confini possono partire da una verticale lavoro unica.
+- responsabilità, controllo, delega e confini possono partire da una verticale lavoro unica.
 
 Contenuti da non creare:
 
@@ -337,7 +337,7 @@ Ritmo sostenibile:
 | 1 | Overthinking | Landing `/coaching/overthinking` | overthinking, pensare troppo | Informativo | Alta | Chiarire vs rimandare | Fatto/interpretazione/passo |
 | 2 | Fiducia | Landing `/coaching/autostima-e-fiducia` | fiducia in se stessi | Informativo/commerciale | Alta | Fiducia dopo l'azione | Passo con dubbio |
 | 2 | Blocco | Landing `/coaching/blocco-e-primo-passo` | blocchi mentali | Informativo/commerciale | Alta | Ridurre il passo | Primo passo possibile |
-| 3 | Lavoro/confini | Landing `/coaching/responsabilita-e-controllo` | responsabilita' e controllo | Informativo | Alta | Responsabilita' vs controllo | Cosa dipende da me |
+| 3 | Lavoro/confini | Landing `/coaching/responsabilita-e-controllo` | responsabilità e controllo | Informativo | Alta | responsabilità vs controllo | Cosa dipende da me |
 | 3 | Sport | Landing `/coaching/mental-coaching-sportivo` | mental coaching sportivo | Commerciale leggero | Alta | Errore e azione successiva | Segnale di rientro |
 | 4 | Metodo | Landing `/coaching/cosa-fa-un-mental-coach` | cosa fa un mental coach | Informativo/commerciale | Alta | Cosa fa/non fa un coach | Non prioritario |
 | 4 | Stress | Articolo guida | sovraccarico mentale | Informativo | Alta | 5 segnali di carico mentale | Priorita' che riduce pressione |
@@ -349,7 +349,7 @@ Ritmo sostenibile:
 | 7 | Metodo | Articolo/FAQ | differenza coaching psicologia | Informativo prudente | Alta | Confini chiari | Non prioritario |
 | 8 | Lavoro | Articolo guida | dire di no al lavoro | Informativo pratico | Media | Dire no senza sparire | Richiesta/confine |
 | 8 | Fiducia | Articolo guida | paura del giudizio | Informativo | Media | Cosa dipende da te | Azione esposta ma sostenibile |
-| 9 | Stress | Articolo guida | come ritrovare lucidita' | Informativo pratico | Media | Urgente/importante | Decisione da 15 minuti |
+| 9 | Stress | Articolo guida | come ritrovare lucidità | Informativo pratico | Media | Urgente/importante | Decisione da 15 minuti |
 | 9 | Sport | Articolo guida | come superare un errore nello sport | Informativo | Alta | Analisi dopo, presenza durante | Reset post-errore |
 | 10 | Blocco | Articolo guida | sentirsi bloccati cosa fare | Informativo | Alta | Non risolvere tutto | Riduzione del passo |
 | 10 | Lavoro | Articolo guida | confini personali al lavoro | Informativo | Media | Confine non e' rifiuto | Cosa comunico |
@@ -395,9 +395,9 @@ Il sito puo' parlare di:
 - blocco;
 - fiducia;
 - autocritica;
-- lucidita';
+- lucidità;
 - errore;
-- responsabilita';
+- responsabilità;
 - presenza mentale;
 - sport;
 - lavoro;
@@ -423,7 +423,7 @@ Regole di linguaggio:
 
 ## Cosa non fare
 
-- Non creare articoli partendo da un reel o carousel gia' pubblicato.
+- Non creare articoli partendo da un reel o carousel già pubblicato.
 - Non pubblicare landing senza una query target.
 - Non creare pagine cliniche o sanitarie.
 - Non promettere traffico, conversioni o cambiamenti personali garantiti.
