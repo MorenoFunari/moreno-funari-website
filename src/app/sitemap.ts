@@ -10,6 +10,8 @@ const staticRoutes = [
   "/coaching",
   "/coaching/stress-lavorativo",
   "/coaching/overthinking",
+  "/coaching/autostima-e-fiducia",
+  "/coaching/blocco-e-primo-passo",
   "/ebook",
   "/contatti",
   "/blog",

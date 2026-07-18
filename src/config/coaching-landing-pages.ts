@@ -1,7 +1,11 @@
 import { siteConfig } from "./site";
 
 export type CoachingLandingPage = {
-  path: "/coaching/stress-lavorativo" | "/coaching/overthinking";
+  path:
+    | "/coaching/stress-lavorativo"
+    | "/coaching/overthinking"
+    | "/coaching/autostima-e-fiducia"
+    | "/coaching/blocco-e-primo-passo";
   title: string;
   metaTitle: string;
   description: string;
@@ -338,6 +342,172 @@ export const coachingLandingPages = {
       primaryCta: "Parliamone con calma",
     },
   },
+  autostimaEFiducia: {
+    path: "/coaching/autostima-e-fiducia",
+    title: "Coaching per autostima e fiducia in se stessi",
+    metaTitle: "Coaching per autostima e fiducia in se stessi",
+    description:
+      "Ti manca fiducia in te stesso o senti un’autocritica costante? Scopri come il mental coaching può aiutarti a trattarti con più rispetto e scegliere piccoli passi concreti.",
+    eyebrow: "Autostima e fiducia",
+    heroTitle: "Coaching per autostima e fiducia in se stessi",
+    heroText: [
+      "La fiducia non nasce sempre prima di agire. A volte cresce quando inizi a trattarti con più rispetto e scegli un passo sostenibile anche in mezzo ai dubbi.",
+      "Il mental coaching può aiutarti a distinguere ciò che è successo dai giudizi su di te e a costruire fiducia attraverso esperienze concrete.",
+    ],
+    primaryCta: { label: "Raccontami cosa stai vivendo", href: "/contatti" },
+    secondaryCta: { label: "Scarica l'eBook", href: "/ebook" },
+    situations: {
+      eyebrow: "Quando la fiducia manca",
+      title: "Quando non ti senti mai abbastanza pronto.",
+      description:
+        "La poca fiducia può comparire in gesti quotidiani, senza definire il tuo valore o chi sei.",
+      items: [
+        "Rimandi una scelta perché temi di non essere all’altezza.",
+        "Ti confronti con gli altri e noti soprattutto ciò che a te manca.",
+        "Hai paura di sbagliare e trasformi ogni errore in un giudizio personale.",
+        "Cerchi conferme prima di fidarti di una tua decisione.",
+        "Aspetti di sentirti completamente pronto prima di iniziare.",
+      ],
+    },
+    shift: {
+      eyebrow: "Fiducia ed esperienza",
+      title: "Fiducia non significa sentirsi sempre sicuri.",
+      paragraphs: [
+        "Avere fiducia non vuol dire eliminare i dubbi o sapere che andrà tutto bene. Può voler dire riconoscere di poter affrontare ciò che accadrà, anche senza controllare il risultato.",
+        "Spesso la fiducia cresce dopo l’azione: un passo piccolo produce esperienza, l’esperienza porta informazioni reali e quelle informazioni rendono più consapevole il passo successivo.",
+        "L’autocritica eccessiva interrompe questo processo quando confonde responsabilità e attacco personale. Osservare un comportamento aiuta a correggerlo; definirti incapace ti lascia meno spazio per agire.",
+      ],
+      points: [
+        "«Ho sbagliato questa scelta» descrive un fatto; «sbaglio sempre tutto» giudica la persona;",
+        "parlarti con rispetto non significa giustificarti o negare le conseguenze;",
+        "un passo sostenibile può essere fatto anche quando il dubbio è ancora presente;",
+        "riconoscere ciò che hai affrontato rende visibili capacità che l’autocritica nasconde.",
+      ],
+    },
+    coaching: {
+      title: "Cosa può fare il mental coaching",
+      canHelp: [
+        "Osservare il dialogo interno e riconoscere quando aggiunge giudizio senza chiarezza.",
+        "Distinguere fatti, interpretazioni e definizioni personali.",
+        "Scegliere piccoli passi sostenibili anche senza sentirti completamente pronto.",
+        "Allenare presenza, responsabilità e fiducia attraverso l’esperienza.",
+      ],
+      cannotHelp: [
+        "Non formula diagnosi e non tratta disturbi.",
+        "Non è terapia o psicologia clinica.",
+        "Non promette di eliminare insicurezza e dubbi.",
+        "Non sostituisce supporto psicologico, medico o sanitario.",
+      ],
+    },
+    exercise: {
+      title: "Riscrivi una frase dura in modo utile",
+      description:
+        "Non serve trasformarla in una frase positiva: prova a renderla più rispettosa, precisa e concreta.",
+      steps: [
+        "Scrivi una frase dura che ti ripeti quando qualcosa non va.",
+        "Chiediti: la direi così a una persona a cui voglio bene?",
+        "Riscrivila separando il fatto dal giudizio su di te.",
+        "Scegli un passo piccolo che puoi fare anche con il dubbio.",
+      ],
+    },
+    articles: [
+      { title: "La fiducia non arriva sempre prima", description: "Come costruire fiducia attraverso un passo piccolo e un’esperienza reale.", href: "/blog/la-fiducia-arriva-dopo-il-primo-passo" },
+      { title: "Ti parleresti così se fossi una persona a cui vuoi bene?", description: "La differenza tra assumersi una responsabilità e attaccare la propria persona.", href: "/blog/ti-parleresti-cosi-se-fossi-una-persona-a-cui-vuoi-bene" },
+      { title: "Dopo un errore, torna all’azione successiva", description: "Un modo concreto per non portare il giudizio sull’errore nel momento successivo.", href: "/blog/dopo-un-errore-torna-all-azione-successiva" },
+    ],
+    resources: [
+      { title: "Un passo possibile", description: "Una guida gratuita per osservare blocco, fiducia e dialogo interno con domande concrete.", cta: "Scopri l'eBook", href: "/ebook" },
+      { title: "Un Passo Possibile AI", description: "Una riflessione guidata per mettere ordine e individuare un’azione sostenibile.", cta: "Prova la riflessione guidata", href: siteConfig.appUrl, external: true, note: "Non è terapia e non sostituisce il confronto con un professionista." },
+    ],
+    faqs: [
+      { question: "Perché non riesco a fidarmi di me?", answer: "La fiducia può risentire di esperienze, confronti, aspettative e di un dialogo interno molto duro. Invece di cercare una spiegazione unica, può essere utile osservare quando manca, quali giudizi compaiono e quale esperienza piccola potrebbe darti informazioni nuove." },
+      { question: "La fiducia si può allenare?", answer: "Può crescere attraverso azioni sostenibili, osservazione dell’esperienza e un dialogo interno più preciso. Non significa diventare sempre sicuri, ma imparare ad agire anche quando una parte di dubbio resta." },
+      { question: "Il coaching lavora sull’autostima?", answer: "Può lavorare su consapevolezza, dialogo interno, scelte, responsabilità e azioni concrete collegate alla fiducia. Non cura l’autostima bassa e non sostituisce un percorso psicologico." },
+      { question: "Quando è meglio rivolgersi a uno psicologo?", answer: "Quando il disagio è intenso o persistente, interferisce in modo importante con la vita quotidiana oppure è legato a sintomi o sofferenza significativa, è più adatto rivolgersi a un professionista psicologico o sanitario." },
+    ],
+    closing: { title: "Non devi dimostrare di avere già fiducia per chiedere un confronto.", text: "Puoi raccontarmi in poche righe dove ti senti fermo e valutare con calma se il mental coaching è uno spazio adatto alla situazione che stai vivendo.", primaryCta: "Raccontami cosa stai vivendo" },
+  },
+  bloccoEPrimoPasso: {
+    path: "/coaching/blocco-e-primo-passo",
+    title: "Coaching per blocco, procrastinazione e primo passo",
+    metaTitle: "Coaching per blocco, procrastinazione e primo passo",
+    description: "Ti senti bloccato e rimandi continuamente? Scopri come il mental coaching può aiutarti a ridurre il passo, ritrovare chiarezza e iniziare in modo sostenibile.",
+    eyebrow: "Blocco e primo passo",
+    heroTitle: "Coaching per blocco, procrastinazione e primo passo",
+    heroText: [
+      "Quando ti senti fermo, non sempre serve forzarti di più. A volte serve capire cosa rende il passo troppo pesante e trasformarlo in qualcosa che puoi davvero iniziare.",
+      "Rimandare non dimostra che sei pigro: il passo può essere troppo grande, confuso o carico di pressione.",
+    ],
+    primaryCta: { label: "Parliamone con calma", href: "/contatti" },
+    secondaryCta: { label: "Prova Un Passo Possibile AI", href: siteConfig.appUrl, external: true },
+    situations: {
+      eyebrow: "Quando ti senti bloccato",
+      title: "Sai cosa vorresti fare, ma non riesci a partire.",
+      description: "Il blocco può presentarsi in modi molto concreti e non è una definizione della tua volontà.",
+      items: [
+        "Sai cosa dovresti fare, ma continui a spostare l’inizio.",
+        "Aspetti il momento giusto o di sentirti finalmente pronto.",
+        "Apri molte possibilità senza riuscire a sceglierne una.",
+        "Ti senti in ritardo e provi a recuperare chiedendoti un cambiamento enorme.",
+        "Ti giudichi per aver rimandato e il giudizio rende ancora più pesante ripartire.",
+      ],
+    },
+    shift: {
+      eyebrow: "Ridurre il passo",
+      title: "Il blocco non è sempre mancanza di volontà.",
+      paragraphs: [
+        "Dietro un’attività rimandata possono esserci paura di sbagliare, pressione, confusione o un obiettivo ancora troppo ampio. Capire quale elemento pesa permette di intervenire in modo più utile del semplice «devo impegnarmi di più».",
+        "Quando il pensiero è «devo risolvere tutto», anche iniziare sembra richiedere tutte le risposte. Ma partire non significa avere chiaro l’intero percorso: significa rendere osservabile il primo passaggio.",
+      ],
+      points: [
+        "un obiettivo generico rende difficile capire da dove iniziare;",
+        "più il passo è grande e carico di significato, più può aumentare la resistenza;",
+        "la paura di sbagliare può trasformare una prova in un giudizio sul proprio valore;",
+        "una micro-azione serve a produrre informazioni, non a risolvere già tutto.",
+      ],
+    },
+    coaching: {
+      title: "Cosa può fare il mental coaching",
+      canHelp: [
+        "Chiarire cosa rende difficile iniziare, senza ridurlo a mancanza di volontà.",
+        "Distinguere ciò che dipende da te da ciò che non puoi controllare.",
+        "Ridurre un obiettivo ampio a un primo passaggio osservabile.",
+        "Passare dal pensiero a una micro-azione e allenare continuità senza perfezionismo.",
+      ],
+      cannotHelp: [
+        "Non formula diagnosi e non tratta disturbi.",
+        "Non è terapia o psicologia clinica.",
+        "Non impone soluzioni e non promette di eliminare ogni blocco.",
+        "Non sostituisce supporto psicologico, medico o sanitario.",
+      ],
+    },
+    exercise: {
+      title: "Trasforma il problema nel primo passaggio osservabile",
+      description: "L’obiettivo non è completare tutto: è creare abbastanza movimento da vedere meglio cosa viene dopo.",
+      steps: [
+        "Scrivi in una frase ciò che stai rimandando.",
+        "Sostituisci «devo risolvere tutto» con «qual è il primo passaggio osservabile?».",
+        "Riduci quel passaggio a un’attività di 10–15 minuti.",
+        "Decidi quando farla e, dopo, osserva cosa è cambiato.",
+      ],
+    },
+    articles: [
+      { title: "La fiducia non arriva sempre prima", description: "Perché un passo piccolo può venire prima della sicurezza che stai aspettando.", href: "/blog/la-fiducia-arriva-dopo-il-primo-passo" },
+      { title: "Quando hai troppe cose in testa", description: "Cinque azioni per ridurre la confusione e rendere visibile il passo successivo.", href: "/blog/quando-hai-troppe-cose-in-testa-5-azioni-per-ritrovare-lucidita" },
+      { title: "Responsabilità non significa controllo", description: "Come tornare a ciò che dipende da te senza provare a gestire tutto.", href: "/blog/responsabilita-non-significa-controllo-cosa-succede-quando-provi-a-gestire-tutto" },
+    ],
+    resources: [
+      { title: "Un passo possibile", description: "La guida gratuita al cuore di questo approccio: non risolvere tutto, individuare da dove puoi iniziare.", cta: "Scopri l'eBook", href: "/ebook" },
+      { title: "Un Passo Possibile AI", description: "Quattro domande guidate per fermarti, mettere ordine e scegliere una micro-azione concreta.", cta: "Prova Un Passo Possibile AI", href: siteConfig.appUrl, external: true, note: "Non è terapia e non sostituisce il confronto con un professionista." },
+    ],
+    faqs: [
+      { question: "Perché rimando anche cose importanti?", answer: "L’importanza può aumentare pressione e paura di sbagliare. A volte rimandi perché il compito è ancora troppo grande o confuso, non perché non ti interessi. Osservare l’ostacolo concreto aiuta a scegliere un passaggio più sostenibile." },
+      { question: "Come faccio il primo passo se non mi sento pronto?", answer: "Puoi cercare un’azione abbastanza piccola da sostenere anche con il dubbio. Non deve dimostrare che riuscirai in tutto: deve solo essere concreta e darti una nuova informazione." },
+      { question: "Il coaching può aiutarmi con la procrastinazione?", answer: "Può aiutarti a osservare cosa alimenta il rimando, chiarire priorità e trasformare un obiettivo in azioni possibili. Non tratta cause cliniche e non sostituisce un supporto psicologico o sanitario." },
+      { question: "Quando il blocco richiede un altro tipo di supporto?", answer: "Se il blocco è intenso o persistente, causa sofferenza significativa, limita in modo importante la vita quotidiana o si accompagna a sintomi rilevanti, è opportuno rivolgersi a un professionista psicologico o sanitario." },
+    ],
+    closing: { title: "Per iniziare non devi avere già tutto chiaro.", text: "Puoi raccontarmi cosa continui a rimandare e valutare con calma se un confronto può aiutarti a rendere il primo passo più concreto e sostenibile.", primaryCta: "Parliamone con calma" },
+  },
 } as const satisfies Record<string, CoachingLandingPage>;
 
 export const coachingFocusAreas = [
@@ -352,5 +522,17 @@ export const coachingFocusAreas = [
     description:
       "Quando pensare serve sempre meno a chiarire e sempre più a restare fermi.",
     href: coachingLandingPages.overthinking.path,
+  },
+  {
+    title: "Autostima e fiducia",
+    description:
+      "Quando l’autocritica pesa e aspetti di sentirti sicuro prima di fare un passo.",
+    href: coachingLandingPages.autostimaEFiducia.path,
+  },
+  {
+    title: "Blocco e primo passo",
+    description:
+      "Quando continui a rimandare e hai bisogno di rendere l’inizio più chiaro e sostenibile.",
+    href: coachingLandingPages.bloccoEPrimoPasso.path,
   },
 ] as const;

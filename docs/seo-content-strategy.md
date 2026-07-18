@@ -225,6 +225,8 @@ Le priorita' sono qualitative. Non indicano volumi di ricerca. Prima della produ
 
 ## Landing page verticali
 
+Stato di implementazione: Sprint SEO 1 completato con `/coaching/stress-lavorativo` e `/coaching/overthinking`; Sprint SEO 2 completato con `/coaching/autostima-e-fiducia` e `/coaching/blocco-e-primo-passo`.
+
 | Landing futura | Obiettivo | Query target | Intenti collegati | Struttura consigliata | CTA | Articoli esistenti | Articoli futuri | Priorita' |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `/coaching/stress-lavorativo` | Intercettare pressione e sovraccarico nel lavoro | stress lavorativo, pressione sul lavoro, sovraccarico mentale | Capire cosa succede, trovare chiarezza, valutare coaching | Problema, segnali, cosa puo' fare il coaching, cosa non fa, esercizio breve, FAQ, risorse | Contatti leggera, eBook, AI | Sovraccarico mentale, responsabilità e controllo | Pressione lavoro, lucidità, priorita' | Sprint 1 |
