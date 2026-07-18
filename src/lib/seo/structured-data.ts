@@ -59,6 +59,35 @@ export function createProfilePageJsonLd(description: string): JsonLdObject {
   };
 }
 
+export function createCoachingLandingPageJsonLd({
+  title,
+  description,
+  path,
+}: {
+  title: string;
+  description: string;
+  path: `/${string}`;
+}): JsonLdObject {
+  const pageUrl = toAbsoluteUrl(path);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}#web-page`,
+    url: pageUrl,
+    name: title,
+    description,
+    inLanguage: seoConfig.language,
+    isPartOf: {
+      "@id": websiteId,
+    },
+    author: {
+      "@id": personId,
+    },
+    about: createPersonJsonLd(),
+  };
+}
+
 export function createBlogPostingJsonLd(post: BlogPost): JsonLdObject {
   const articleUrl = toAbsoluteUrl(`/blog/${post.slug}`);
   const imageUrl = post.coverImage

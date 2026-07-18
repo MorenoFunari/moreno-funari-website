@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { BoundariesSection } from "@/components/sections/coaching/boundaries-section";
 import { CoachingClosingCta } from "@/components/sections/coaching/coaching-closing-cta";
 import { CoachingDefinitionSection } from "@/components/sections/coaching/coaching-definition-section";
+import { CoachingFocusAreasSection } from "@/components/sections/coaching/coaching-focus-areas-section";
 import { CoachingFaqSection } from "@/components/sections/coaching/coaching-faq-section";
 import { CoachingHero } from "@/components/sections/coaching/coaching-hero";
 import { ExpectationsSection } from "@/components/sections/coaching/expectations-section";
@@ -23,6 +24,7 @@ export default function CoachingPage() {
     <main id="main-content">
       <CoachingHero />
       <UsefulWhenSection />
+      <CoachingFocusAreasSection />
       <CoachingDefinitionSection />
       <ProcessSection />
       <ExpectationsSection />

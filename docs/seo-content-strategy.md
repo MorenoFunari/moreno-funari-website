@@ -414,8 +414,8 @@ Regole di linguaggio:
 
 ## Priorita' operative
 
-1. Creare le prime tre landing: stress lavorativo, overthinking, autostima/fiducia.
-2. Aggiornare `/coaching` per diventare hub verso le landing, quando le landing saranno disponibili.
+1. Completare le prime tre landing: stress lavorativo e overthinking sono state create nello Sprint SEO 1; resta da creare autostima/fiducia.
+2. Mantenere `/coaching` come hub verso le landing disponibili.
 3. Collegare gli articoli esistenti alle landing pilastro dopo la loro pubblicazione.
 4. Scrivere due contenuti evergreen al mese, partendo dalle query prioritarie.
 5. Usare Search Console per aggiornare priorita', title, description e internal linking.
@@ -432,15 +432,24 @@ Regole di linguaggio:
 - Non rendere `/contatti` una pagina di vendita aggressiva.
 - Non inserire Un Passo Possibile AI ovunque: usarlo solo dove aiuta davvero la riflessione.
 
+## Sprint SEO 1
+
+Creato:
+
+- `/coaching/stress-lavorativo`
+- `/coaching/overthinking`
+
+Aggiornato:
+
+- `/coaching` come primo hub verso le landing disponibili.
+- Sitemap pubblica con le due nuove landing.
+- Internal link minimi dagli articoli esistenti verso le landing coerenti.
+
 ## Prossimo sprint consigliato
 
-Sprint 1:
+Sprint 2:
 
-1. Progettare e creare `/coaching/stress-lavorativo`.
-2. Progettare e creare `/coaching/overthinking`.
-3. Progettare e creare `/coaching/autostima-e-fiducia`.
-4. Aggiornare `/coaching` con collegamenti alle nuove landing.
-5. Aggiornare internal link degli articoli esistenti verso le landing pubblicate.
-6. Preparare i primi due articoli evergreen: "sovraccarico mentale" e "pensare troppo".
-
-Prima di iniziare lo sprint, validare SERP e query. Dopo lo sprint, controllare Search Console quando disponibile e aggiornare questa strategia con dati reali.
+1. Progettare e creare `/coaching/autostima-e-fiducia`.
+2. Valutare `/coaching/blocco-e-primo-passo`.
+3. Preparare i primi due articoli evergreen: "sovraccarico mentale" e "pensare troppo".
+4. Aggiornare internal link e priorità usando Search Console quando saranno disponibili dati reali.

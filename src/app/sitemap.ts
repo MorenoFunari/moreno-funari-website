@@ -8,6 +8,8 @@ const staticRoutes = [
   "",
   "/chi-sono",
   "/coaching",
+  "/coaching/stress-lavorativo",
+  "/coaching/overthinking",
   "/ebook",
   "/contatti",
   "/blog",
