@@ -8,7 +8,8 @@ export type CoachingLandingPage = {
     | "/coaching/blocco-e-primo-passo"
     | "/coaching/responsabilita-e-controllo"
     | "/coaching/mental-coaching-sportivo"
-    | "/coaching/cosa-fa-un-mental-coach";
+    | "/coaching/cosa-fa-un-mental-coach"
+    | "/coaching/mental-coach-frascati";
   title: string;
   metaTitle: string;
   description: string;
@@ -781,6 +782,103 @@ export const coachingLandingPages = {
     ],
     closing: { title: "Puoi partire da una situazione, non da una risposta perfetta.", text: "Se vuoi capire se il mental coaching può essere uno spazio adatto a ciò che stai vivendo, puoi raccontarmi il tema in poche righe e valutarlo con calma.", primaryCta: "Raccontami cosa stai vivendo" },
   },
+  mentalCoachFrascati: {
+    path: "/coaching/mental-coach-frascati",
+    title: "Mental coach a Frascati e online",
+    metaTitle: "Mental Coach a Frascati e online",
+    description: "Cerchi un mental coach a Frascati o nei Castelli Romani? Scopri il percorso di Moreno Funari per lavorare su blocco, fiducia, pressione e primi passi concreti.",
+    eyebrow: "Frascati, Castelli Romani e online",
+    heroTitle: "Mental coach a Frascati e online",
+    heroText: [
+      "Un percorso concreto per lavorare su blocco, fiducia, pressione, responsabilità e presenza mentale, anche se non sai ancora da dove iniziare.",
+      "Se vivi a Frascati, nei Castelli Romani, a Roma Sud o anche altrove, puoi valutare un percorso di mental coaching con Moreno Funari, anche online.",
+    ],
+    primaryCta: { label: "Raccontami cosa stai vivendo", href: "/contatti" },
+    secondaryCta: { label: "Scopri cosa fa un mental coach", href: "/coaching/cosa-fa-un-mental-coach" },
+    situations: {
+      eyebrow: "Una presenza vicina",
+      title: "Se vivi a Frascati, nei Castelli Romani o a Roma Sud.",
+      description: "La vicinanza territoriale può rendere più semplice riconoscersi in ritmi, spostamenti e situazioni quotidiane, senza trasformare il percorso in un servizio legato a una sede fisica.",
+      items: [
+        "Puoi vivere a Frascati o in una zona vicina come Grottaferrata, Monte Porzio Catone, Marino o Ciampino.",
+        "Puoi cercare un confronto vicino a Roma Sud senza voler attraversare la città per ogni incontro.",
+        "Puoi preferire la continuità di un percorso online, anche se abiti nei Castelli Romani.",
+        "Puoi voler valutare un incontro in presenza, sapendo che va concordato caso per caso.",
+        "Puoi vivere altrove: il percorso online non è limitato a chi si trova nella zona di Frascati.",
+      ],
+    },
+    shift: {
+      eyebrow: "Online o in presenza",
+      title: "Il percorso può svolgersi online.",
+      paragraphs: [
+        "Gli incontri online permettono di lavorare dalla propria città senza aggiungere spostamenti e possono offrire maggiore continuità tra lavoro, famiglia, sport e altri impegni.",
+        "Per eventuali incontri in presenza nella zona di Frascati e Castelli Romani, ci si può accordare caso per caso, in base alla situazione e alla disponibilità. Non viene indicata una sede fissa perché non c’è uno studio aperto al pubblico da presentare come tale.",
+        "Online e presenza non cambiano i confini del percorso: si parte dalla situazione concreta, si chiarisce il tema e si scelgono domande, esercizi e piccoli passi da verificare nel tempo.",
+      ],
+      points: [
+        "un primo contatto per raccontare in poche righe cosa sta succedendo;",
+        "ascolto della situazione e definizione del tema su cui lavorare;",
+        "domande ed esercizi pratici collegati alla vita reale;",
+        "scelta di piccoli passi osservabili e verifica di ciò che accade;",
+        "continuità sostenibile, senza promesse o formule valide per tutti.",
+      ],
+    },
+    coaching: {
+      title: "Quando può esserti utile un mental coach",
+      canHelp: [
+        "Fare chiarezza quando ti senti bloccato o continui a rimandare.",
+        "Osservare autocritica, poca fiducia e paura di sbagliare.",
+        "Distinguere priorità e responsabilità quando senti pressione al lavoro.",
+        "Riconoscere quando il bisogno di controllo rende difficile staccare o delegare.",
+        "Allenare presenza e gestione dell’errore nello sport.",
+      ],
+      cannotHelp: [
+        "Non è terapia o psicologia clinica.",
+        "Non formula diagnosi e non tratta disturbi.",
+        "Non sostituisce supporto psicologico, medico o sanitario.",
+        "Non promette risultati garantiti.",
+        "Non offre una sede fissa o una disponibilità in presenza automatica.",
+      ],
+    },
+    exercise: {
+      title: "Come può iniziare il percorso",
+      description: "Non serve arrivare con un obiettivo perfetto. Puoi partire da una situazione che oggi occupa troppo spazio.",
+      steps: [
+        "Scrivi in poche righe cosa sta succedendo e da quanto tempo pesa.",
+        "Indica cosa hai già provato e quale parte continua a tenerti fermo.",
+        "Nel primo confronto chiarisci il tema e ciò che vorresti osservare o cambiare.",
+        "Valuta con calma modalità, confini e un primo passo concreto.",
+      ],
+    },
+    relatedContent: {
+      eyebrow: "Aree di lavoro",
+      title: "Approfondisci il tema più vicino a ciò che stai vivendo.",
+      cta: "Esplora l'area",
+    },
+    articles: [
+      { title: "Cosa fa un mental coach", description: "Come funziona un percorso e quali sono i suoi confini rispetto a psicologia e terapia.", href: "/coaching/cosa-fa-un-mental-coach" },
+      { title: "Blocco e primo passo", description: "Quando rimandi, aspetti di sentirti pronto o non sai da dove iniziare.", href: "/coaching/blocco-e-primo-passo" },
+      { title: "Autostima e fiducia", description: "Quando autocritica e paura di sbagliare rendono difficile fidarti di te.", href: "/coaching/autostima-e-fiducia" },
+      { title: "Stress lavorativo", description: "Quando attività, responsabilità e urgenze occupano troppo spazio mentale.", href: "/coaching/stress-lavorativo" },
+      { title: "Overthinking", description: "Quando i pensieri continuano a girare senza portare nuova chiarezza.", href: "/coaching/overthinking" },
+      { title: "Responsabilità e controllo", description: "Quando essere affidabile diventa bisogno di gestire ogni dettaglio.", href: "/coaching/responsabilita-e-controllo" },
+      { title: "Mental coaching sportivo", description: "Per lavorare su errore, pressione, fiducia e presenza nell’azione.", href: "/coaching/mental-coaching-sportivo" },
+    ],
+    resources: [
+      { title: "Un passo possibile", description: "Una guida gratuita per fare chiarezza e individuare un passaggio sostenibile.", cta: "Scopri l'eBook", href: "/ebook" },
+      { title: "Un Passo Possibile AI", description: "Una riflessione guidata per fermarti e scegliere un primo passo concreto.", cta: "Prova la riflessione guidata", href: siteConfig.appUrl, external: true, note: "Non è terapia e non sostituisce il confronto con un professionista." },
+      { title: "Articoli e riflessioni", description: "Contenuti evergreen su fiducia, blocco, pressione, responsabilità e sport.", cta: "Esplora il blog", href: "/blog" },
+    ],
+    faqs: [
+      { question: "Lavori solo con persone di Frascati?", answer: "No. Il riferimento a Frascati e ai Castelli Romani indica una prossimità territoriale reale, ma il percorso online è disponibile anche per chi vive a Roma Sud, in altre zone o fuori regione." },
+      { question: "Il percorso si può fare online?", answer: "Sì. Il percorso può svolgersi online, mantenendo ascolto, domande, esercizi e verifica dei passi concordati senza richiedere spostamenti." },
+      { question: "È possibile incontrarsi in presenza?", answer: "Eventuali incontri in presenza nella zona di Frascati e Castelli Romani possono essere valutati caso per caso, in base alla situazione e alla disponibilità. Non c’è una sede fissa aperta al pubblico indicata sul sito." },
+      { question: "Su quali temi si può lavorare?", answer: "Blocco, fiducia, autocritica, pressione lavorativa o sportiva, responsabilità, controllo, presenza, priorità e primi passi concreti, sempre entro i confini del mental coaching." },
+      { question: "Il mental coaching sostituisce uno psicologo?", answer: "No. Il mental coaching non è terapia, non fa diagnosi e non tratta disturbi. Quando il disagio è intenso o persistente, coinvolge sintomi o sofferenza significativa, è più appropriato rivolgersi a uno psicologo o a un professionista sanitario." },
+      { question: "Come faccio a capire se è il percorso giusto per me?", answer: "Puoi partire descrivendo la situazione e ciò che vorresti affrontare. Un primo confronto serve anche a chiarire aspettative e confini, senza obbligarti a iniziare un percorso." },
+    ],
+    closing: { title: "Possiamo partire da una conversazione semplice.", text: "Se vivi a Frascati, nei Castelli Romani o anche altrove, e senti che c’è un tema che continua a pesarti, possiamo osservare cosa sta succedendo, cosa hai già provato e quale potrebbe essere un primo passo possibile.", primaryCta: "Raccontami cosa stai vivendo" },
+  },
 } as const satisfies Record<string, CoachingLandingPage>;
 
 export const coachingFocusAreas = [
@@ -822,5 +920,10 @@ export const coachingFocusAreas = [
     title: "Cosa fa un mental coach",
     description: "Una guida al percorso, agli strumenti e ai confini professionali del mental coaching.",
     href: coachingLandingPages.cosaFaUnMentalCoach.path,
+  },
+  {
+    title: "Mental coach a Frascati e online",
+    description: "Un riferimento locale per Frascati, Castelli Romani e Roma Sud, con percorso disponibile anche online.",
+    href: coachingLandingPages.mentalCoachFrascati.path,
   },
 ] as const;

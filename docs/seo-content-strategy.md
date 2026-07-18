@@ -446,6 +446,12 @@ Aggiornato:
 - Sitemap pubblica con le due nuove landing.
 - Internal link minimi dagli articoli esistenti verso le landing coerenti.
 
+## Local SEO
+
+È stata aggiunta la landing `/coaching/mental-coach-frascati` come pagina locale reale per Frascati, Castelli Romani, Roma Sud e percorsi online. La pagina non dichiara una sede fissa, un indirizzo o una disponibilità in presenza garantita.
+
+Non vanno create landing duplicate per singoli comuni senza una differenza reale di contenuto, servizio o presenza territoriale: pagine quasi identiche rischierebbero di essere doorway page e non offrirebbero valore aggiuntivo alle persone.
+
 ## Prossimo sprint consigliato
 
 Il primo blocco di sette landing pilastro è completo. Lo Sprint Articoli SEO 1 ha aggiunto due articoli nativi: "Mental coach e psicologo: qual è la differenza?" e "Perché rimandi anche quando sai cosa dovresti fare".

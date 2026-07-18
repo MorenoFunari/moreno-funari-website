@@ -15,6 +15,7 @@ const staticRoutes = [
   "/coaching/responsabilita-e-controllo",
   "/coaching/mental-coaching-sportivo",
   "/coaching/cosa-fa-un-mental-coach",
+  "/coaching/mental-coach-frascati",
   "/ebook",
   "/contatti",
   "/blog",
