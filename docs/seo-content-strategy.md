@@ -448,9 +448,11 @@ Aggiornato:
 
 ## Prossimo sprint consigliato
 
-Il primo blocco di sette landing pilastro è completo. Il prossimo sprint può tornare agli articoli SEO evergreen:
+Il primo blocco di sette landing pilastro è completo. Lo Sprint Articoli SEO 1 ha aggiunto due articoli nativi: "Mental coach e psicologo: qual è la differenza?" e "Perché rimandi anche quando sai cosa dovresti fare".
 
-1. Selezionare le query prioritarie usando i cluster e, quando disponibili, i dati di Search Console.
-2. Preparare articoli evergreen che rispondano a intenti specifici senza sovrapporsi alle landing.
-3. Collegare ogni articolo alla pagina pilastro pertinente e a una risorsa utile.
-4. Aggiornare title, description e internal linking sulla base dei dati reali, senza inventare volumi.
+Il prossimo sprint editoriale consigliato può sviluppare:
+
+1. "Come smettere di controllare tutto senza sentirti irresponsabile".
+2. "Paura di sbagliare nello sport: come tornare all’azione successiva".
+3. Collegare ogni nuovo articolo alla pagina pilastro pertinente e a una risorsa utile.
+4. Aggiornare priorità e internal linking sulla base dei dati reali di Search Console, senza inventare volumi.
