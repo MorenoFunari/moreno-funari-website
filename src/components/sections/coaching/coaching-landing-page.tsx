@@ -139,11 +139,12 @@ export function CoachingLandingPage({ page }: CoachingLandingPageProps) {
         as="section"
         aria-labelledby="related-articles-title"
         className={styles.section}
+        id={page.relatedContent ? "aree-di-lavoro" : undefined}
       >
         <SectionHeading
-          eyebrow="Articoli collegati"
+          eyebrow={page.relatedContent?.eyebrow ?? "Articoli collegati"}
           id="related-articles-title"
-          title="Approfondimenti da leggere con calma."
+          title={page.relatedContent?.title ?? "Approfondimenti da leggere con calma."}
         />
         <div className={styles.cardGrid}>
           {page.articles.map((article) => (
@@ -151,7 +152,7 @@ export function CoachingLandingPage({ page }: CoachingLandingPageProps) {
               <h3 className={styles.cardTitle}>{article.title}</h3>
               <p className={styles.cardText}>{article.description}</p>
               <ButtonLink className={styles.cardAction} href={article.href} variant="text">
-                Leggi l&apos;articolo
+                {page.relatedContent?.cta ?? "Leggi l'articolo"}
               </ButtonLink>
             </SurfaceCard>
           ))}

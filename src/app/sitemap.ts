@@ -14,6 +14,7 @@ const staticRoutes = [
   "/coaching/blocco-e-primo-passo",
   "/coaching/responsabilita-e-controllo",
   "/coaching/mental-coaching-sportivo",
+  "/coaching/cosa-fa-un-mental-coach",
   "/ebook",
   "/contatti",
   "/blog",

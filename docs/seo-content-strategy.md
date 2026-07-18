@@ -225,7 +225,7 @@ Le priorita' sono qualitative. Non indicano volumi di ricerca. Prima della produ
 
 ## Landing page verticali
 
-Stato di implementazione: Sprint SEO 1 completato con `/coaching/stress-lavorativo` e `/coaching/overthinking`; Sprint SEO 2 completato con `/coaching/autostima-e-fiducia` e `/coaching/blocco-e-primo-passo`; Sprint SEO 3 completato con `/coaching/responsabilita-e-controllo` e `/coaching/mental-coaching-sportivo`.
+Stato di implementazione: Sprint SEO 1 completato con `/coaching/stress-lavorativo` e `/coaching/overthinking`; Sprint SEO 2 completato con `/coaching/autostima-e-fiducia` e `/coaching/blocco-e-primo-passo`; Sprint SEO 3 completato con `/coaching/responsabilita-e-controllo` e `/coaching/mental-coaching-sportivo`; il primo blocco di pagine pilastro è stato chiuso con `/coaching/cosa-fa-un-mental-coach`.
 
 | Landing futura | Obiettivo | Query target | Intenti collegati | Struttura consigliata | CTA | Articoli esistenti | Articoli futuri | Priorita' |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -235,7 +235,7 @@ Stato di implementazione: Sprint SEO 1 completato con `/coaching/stress-lavorati
 | `/coaching/blocco-e-primo-passo` | Rafforzare il concetto proprietario del brand | blocchi mentali, procrastinazione, primo passo | Informativo pratico | Blocco, cause non cliniche, riduzione del passo, eBook/AI, percorso | eBook, AI, contatti | Fiducia, sovraccarico | Procrastinazione, sentirsi bloccati | Sprint 2 |
 | `/coaching/responsabilita-e-controllo` | Verticale lavoro su controllo, delega e confini | responsabilità e controllo, difficolta' a delegare | Informativo professionale | Differenza responsabilità/controllo, delega, confini, esempi lavoro, FAQ | Coaching, contatti | responsabilità/controllo, sovraccarico | Dire di no, delegare | Sprint 3 |
 | `/coaching/mental-coaching-sportivo` | Aprire verticale sportiva concreta | mental coaching sportivo, errore nello sport, pressione nello sport | Commerciale leggero/informativo | Sport e presenza, errore, pressione, percorso, cosa non e', esempi | Contatti, coaching | Errore nello sport, fiducia, autocritica | Pressione sport, gara | Sprint 3 |
-| `/coaching/cosa-fa-un-mental-coach` | Rispondere alla domanda base sul servizio | cosa fa un mental coach, differenza mental coach psicologo | Informativo/commerciale | Definizione, cosa fa, cosa non fa, confini, esempi, quando utile, FAQ | Contatti, chi sono | Coaching, chi sono | Differenze coaching/psicologia | Sprint 3 |
+| `/coaching/cosa-fa-un-mental-coach` | Rispondere alla domanda base sul servizio | cosa fa un mental coach, differenza mental coach psicologo | Informativo/commerciale | Definizione, cosa fa, cosa non fa, confini, esempi, quando utile, FAQ | Contatti, chi sono | Coaching, chi sono | Differenze coaching/psicologia | Completata |
 
 ## Internal linking
 
@@ -416,12 +416,11 @@ Regole di linguaggio:
 
 ## Priorita' operative
 
-1. Completare le prime tre landing: stress lavorativo e overthinking sono state create nello Sprint SEO 1; resta da creare autostima/fiducia.
-2. Mantenere `/coaching` come hub verso le landing disponibili.
-3. Collegare gli articoli esistenti alle landing pilastro dopo la loro pubblicazione.
-4. Scrivere due contenuti evergreen al mese, partendo dalle query prioritarie.
-5. Usare Search Console per aggiornare priorita', title, description e internal linking.
-6. Trasformare gli articoli migliori in derivati social e possibili esercizi AI.
+1. Mantenere `/coaching` come hub verso le sette landing pilastro disponibili.
+2. Tornare alla produzione di articoli SEO evergreen, partendo dalle query prioritarie dei cluster.
+3. Collegare ogni nuovo articolo alla landing pilastro più coerente.
+4. Usare Search Console per aggiornare priorita', title, description e internal linking.
+5. Trasformare gli articoli migliori in derivati social e possibili esercizi AI.
 
 ## Cosa non fare
 
@@ -449,9 +448,9 @@ Aggiornato:
 
 ## Prossimo sprint consigliato
 
-Sprint 2:
+Il primo blocco di sette landing pilastro è completo. Il prossimo sprint può tornare agli articoli SEO evergreen:
 
-1. Progettare e creare `/coaching/autostima-e-fiducia`.
-2. Valutare `/coaching/blocco-e-primo-passo`.
-3. Preparare i primi due articoli evergreen: "sovraccarico mentale" e "pensare troppo".
-4. Aggiornare internal link e priorità usando Search Console quando saranno disponibili dati reali.
+1. Selezionare le query prioritarie usando i cluster e, quando disponibili, i dati di Search Console.
+2. Preparare articoli evergreen che rispondano a intenti specifici senza sovrapporsi alle landing.
+3. Collegare ogni articolo alla pagina pilastro pertinente e a una risorsa utile.
+4. Aggiornare title, description e internal linking sulla base dei dati reali, senza inventare volumi.

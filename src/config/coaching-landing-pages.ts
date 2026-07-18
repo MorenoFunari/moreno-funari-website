@@ -7,7 +7,8 @@ export type CoachingLandingPage = {
     | "/coaching/autostima-e-fiducia"
     | "/coaching/blocco-e-primo-passo"
     | "/coaching/responsabilita-e-controllo"
-    | "/coaching/mental-coaching-sportivo";
+    | "/coaching/mental-coaching-sportivo"
+    | "/coaching/cosa-fa-un-mental-coach";
   title: string;
   metaTitle: string;
   description: string;
@@ -51,6 +52,11 @@ export type CoachingLandingPage = {
     description: string;
     href: string;
   }[];
+  relatedContent?: {
+    eyebrow: string;
+    title: string;
+    cta: string;
+  };
   resources: {
     title: string;
     description: string;
@@ -676,6 +682,105 @@ export const coachingLandingPages = {
     ],
     closing: { title: "L’azione successiva non deve cancellare quella precedente.", text: "Può essere il momento in cui torni disponibile al compito. Se vuoi lavorare su errore, pressione o presenza nello sport, puoi raccontarmi la situazione con poche righe.", primaryCta: "Parliamone con calma" },
   },
+  cosaFaUnMentalCoach: {
+    path: "/coaching/cosa-fa-un-mental-coach",
+    title: "Cosa fa un mental coach e quando può esserti utile",
+    metaTitle: "Cosa fa un mental coach e quando può aiutarti",
+    description: "Scopri cosa fa un mental coach, quando può esserti utile e quali sono i confini rispetto a psicologia e terapia. Un approccio concreto per fare chiarezza e scegliere un primo passo.",
+    eyebrow: "Mental coaching",
+    heroTitle: "Cosa fa un mental coach e quando può esserti utile",
+    heroText: [
+      "Il mental coaching può aiutarti a fare chiarezza, osservare ciò che ti blocca e trasformare un problema confuso in un passo concreto. Senza formule magiche, senza giudizio e con confini professionali chiari.",
+      "Non devi essere già pronto o avere un obiettivo perfetto: puoi partire da una situazione reale che oggi occupa troppo spazio.",
+    ],
+    primaryCta: { label: "Raccontami cosa stai vivendo", href: "/contatti" },
+    secondaryCta: { label: "Scopri le aree di lavoro", href: "#aree-di-lavoro" },
+    situations: {
+      eyebrow: "Quando può essere utile",
+      title: "Puoi partire da ciò che stai vivendo adesso.",
+      description: "Il mental coaching non richiede una categoria o una diagnosi. Può essere utile quando vuoi osservare meglio una situazione e tornare a ciò che puoi scegliere o fare.",
+      items: [
+        "Stress lavorativo, sovraccarico e difficoltà a riconoscere le priorità.",
+        "Pensieri continui che producono poca chiarezza e rendono difficile decidere.",
+        "Poca fiducia, autocritica o paura di non essere abbastanza.",
+        "Blocco, procrastinazione o difficoltà a individuare da dove iniziare.",
+        "Responsabilità, bisogno di controllo e fatica nel lasciare spazio agli altri.",
+        "Pressione, errore e presenza mentale nello sport.",
+      ],
+    },
+    shift: {
+      eyebrow: "Come funziona un percorso",
+      title: "Dalla situazione concreta a un passo osservabile.",
+      paragraphs: [
+        "Un percorso parte dall’ascolto della situazione e dalla definizione del tema su cui vuoi lavorare. Attraverso domande ed esercizi pratici osserviamo pensieri, scelte, pressioni e possibilità, senza decidere al posto tuo.",
+        "Non cerchiamo una formula universale. Trasformiamo ciò che appare ampio o confuso in piccoli passi osservabili, verifichiamo cosa funziona e costruiamo una continuità che sia sostenibile nella tua vita reale.",
+        "Il mio approccio è umano, concreto e non giudicante. Porto anche l’esperienza quotidiana di padre, sportivo amatoriale e sviluppatore senior, senza trasformarla in una risposta pronta per la storia di un’altra persona.",
+      ],
+      points: [
+        "ascoltare la situazione e chiarire il tema del confronto;",
+        "distinguere fatti, interpretazioni e ciò che dipende da te;",
+        "usare domande ed esercizi per rendere visibili scelte e priorità;",
+        "scegliere un passo concreto e osservare cosa produce;",
+        "adattare il percorso a ciò che emerge, senza promesse o frasi motivazionali vuote.",
+      ],
+    },
+    coaching: {
+      title: "Cosa fa un mental coach, con confini chiari",
+      canHelp: [
+        "Fare chiarezza su pensieri, obiettivi, blocchi, pressione e decisioni.",
+        "Allenare consapevolezza, presenza, responsabilità e fiducia.",
+        "Trasformare un problema confuso in priorità e azioni concrete.",
+        "Osservare cosa funziona e costruire continuità attraverso piccoli passi.",
+        "Creare uno spazio di confronto senza giudizio e senza decidere al posto tuo.",
+      ],
+      cannotHelp: [
+        "Non è terapia o psicologia clinica.",
+        "Non formula diagnosi e non tratta disturbi.",
+        "Non sostituisce supporto psicologico, medico o sanitario.",
+        "Non offre formule magiche e non promette risultati garantiti.",
+        "Quando il disagio è intenso o persistente, è importante rivolgersi a un professionista sanitario qualificato.",
+      ],
+    },
+    exercise: {
+      title: "Individua il tema da cui potresti partire",
+      description: "Non serve definire l’intero percorso. Puoi iniziare rendendo più leggibile una sola situazione.",
+      steps: [
+        "Scrivi in una frase ciò che in questo momento pesa o ti tiene fermo.",
+        "Distingui ciò che è accaduto dai giudizi e dalle previsioni che lo accompagnano.",
+        "Chiediti quale parte dipende almeno in parte da te.",
+        "Scegli una micro-azione osservabile e valuta se parlarne in un percorso potrebbe esserti utile.",
+      ],
+    },
+    relatedContent: {
+      eyebrow: "Aree di lavoro",
+      title: "Esplora la situazione più vicina a ciò che stai vivendo.",
+      cta: "Approfondisci l'area",
+    },
+    articles: [
+      { title: "Stress lavorativo e sovraccarico", description: "Quando attività, urgenze e responsabilità occupano tutte lo stesso spazio mentale.", href: "/coaching/stress-lavorativo" },
+      { title: "Overthinking e pensieri continui", description: "Quando pensare non porta più chiarezza e rende difficile scegliere un’azione.", href: "/coaching/overthinking" },
+      { title: "Autostima e fiducia", description: "Quando autocritica e paura di sbagliare rendono difficile fidarti delle tue possibilità.", href: "/coaching/autostima-e-fiducia" },
+      { title: "Blocco e primo passo", description: "Quando rimandi, aspetti di sentirti pronto o non riesci a individuare da dove iniziare.", href: "/coaching/blocco-e-primo-passo" },
+      { title: "Responsabilità e controllo", description: "Quando essere affidabile diventa bisogno di gestire tutto e difficoltà a delegare.", href: "/coaching/responsabilita-e-controllo" },
+      { title: "Mental coaching sportivo", description: "Quando errore, pressione e giudizio sottraggono presenza all’azione sportiva.", href: "/coaching/mental-coaching-sportivo" },
+    ],
+    resources: [
+      { title: "Un passo possibile", description: "Una guida gratuita con domande ed esercizi per fare chiarezza e individuare un passaggio sostenibile.", cta: "Scopri l'eBook", href: "/ebook" },
+      { title: "Un Passo Possibile AI", description: "Una riflessione guidata per fermarti, distinguere ciò che sta succedendo e scegliere un passo concreto.", cta: "Prova la riflessione guidata", href: siteConfig.appUrl, external: true, note: "Non è terapia e non sostituisce il confronto con un professionista." },
+      { title: "Articoli e riflessioni", description: "Approfondimenti evergreen su fiducia, pressione, errore, responsabilità e vita quotidiana.", cta: "Esplora il blog", href: "/blog" },
+    ],
+    faqs: [
+      { question: "Cosa fa concretamente un mental coach?", answer: "Ascolta la situazione, pone domande, propone esercizi e aiuta a distinguere fatti, pensieri, priorità e azioni possibili. Non decide al posto tuo: il lavoro serve a rendere più consapevoli e concreti i tuoi passaggi." },
+      { question: "Il mental coaching è terapia?", answer: "No. Il mental coaching lavora su obiettivi, consapevolezza, scelte e azioni concrete. Psicologi e psicoterapeuti operano, secondo le rispettive competenze, anche in ambiti psicologici, sanitari, clinici o terapeutici. Il coaching non fa diagnosi e non tratta disturbi." },
+      { question: "Devo avere un obiettivo preciso?", answer: "No. Puoi arrivare con una situazione confusa, una scelta o qualcosa che continua a pesare. Il primo lavoro può essere proprio chiarire il tema e capire quale parte è utile osservare." },
+      { question: "Quanto dura un percorso?", answer: "Non esiste una durata valida per tutti. Dipende dal tema, dal contesto e da ciò che emerge. Prima di iniziare vengono chiarite modalità e aspettative, senza creare un impegno indefinito." },
+      { question: "Di cosa si parla in una sessione?", answer: "Si parte da episodi, decisioni, pensieri o comportamenti concreti. Il confronto può riguardare lavoro, fiducia, blocco, responsabilità, pressione, sport o un altro obiettivo compatibile con i confini del coaching." },
+      { question: "Quando è meglio rivolgersi a uno psicologo?", answer: "Quando il disagio è intenso o persistente, coinvolge sintomi o sofferenza significativa oppure interferisce in modo importante con la vita quotidiana, è più appropriato rivolgersi a uno psicologo o a un professionista sanitario qualificato." },
+      { question: "Il mental coaching è utile anche nello sport?", answer: "Può essere utile per lavorare su attenzione, presenza, dialogo interno, pressione e gestione dell’errore. Non sostituisce allenamento tecnico o fisico e non garantisce prestazioni o risultati." },
+      { question: "Il mental coaching è utile anche nel lavoro?", answer: "Può aiutare a fare chiarezza su priorità, pressione, responsabilità, controllo, confini e decisioni. Non è consulenza aziendale tecnica e non interviene direttamente sull’organizzazione in cui lavori." },
+    ],
+    closing: { title: "Puoi partire da una situazione, non da una risposta perfetta.", text: "Se vuoi capire se il mental coaching può essere uno spazio adatto a ciò che stai vivendo, puoi raccontarmi il tema in poche righe e valutarlo con calma.", primaryCta: "Raccontami cosa stai vivendo" },
+  },
 } as const satisfies Record<string, CoachingLandingPage>;
 
 export const coachingFocusAreas = [
@@ -712,5 +817,10 @@ export const coachingFocusAreas = [
     title: "Mental coaching sportivo",
     description: "Quando errore, pressione e giudizio rendono più difficile restare presente nell’azione.",
     href: coachingLandingPages.mentalCoachingSportivo.path,
+  },
+  {
+    title: "Cosa fa un mental coach",
+    description: "Una guida al percorso, agli strumenti e ai confini professionali del mental coaching.",
+    href: coachingLandingPages.cosaFaUnMentalCoach.path,
   },
 ] as const;
