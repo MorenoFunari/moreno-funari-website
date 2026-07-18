@@ -12,6 +12,8 @@ const staticRoutes = [
   "/coaching/overthinking",
   "/coaching/autostima-e-fiducia",
   "/coaching/blocco-e-primo-passo",
+  "/coaching/responsabilita-e-controllo",
+  "/coaching/mental-coaching-sportivo",
   "/ebook",
   "/contatti",
   "/blog",

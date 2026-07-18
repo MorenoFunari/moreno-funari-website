@@ -225,7 +225,7 @@ Le priorita' sono qualitative. Non indicano volumi di ricerca. Prima della produ
 
 ## Landing page verticali
 
-Stato di implementazione: Sprint SEO 1 completato con `/coaching/stress-lavorativo` e `/coaching/overthinking`; Sprint SEO 2 completato con `/coaching/autostima-e-fiducia` e `/coaching/blocco-e-primo-passo`.
+Stato di implementazione: Sprint SEO 1 completato con `/coaching/stress-lavorativo` e `/coaching/overthinking`; Sprint SEO 2 completato con `/coaching/autostima-e-fiducia` e `/coaching/blocco-e-primo-passo`; Sprint SEO 3 completato con `/coaching/responsabilita-e-controllo` e `/coaching/mental-coaching-sportivo`.
 
 | Landing futura | Obiettivo | Query target | Intenti collegati | Struttura consigliata | CTA | Articoli esistenti | Articoli futuri | Priorita' |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -233,8 +233,8 @@ Stato di implementazione: Sprint SEO 1 completato con `/coaching/stress-lavorati
 | `/coaching/overthinking` | Presidiare pensieri continui e blocco da analisi | overthinking, pensare troppo | Informativo, pratico | Linguaggio utente, loop dei pensieri, distinzione fatti/interpretazioni, primo passo, confini clinici | AI, eBook, contatti | Sovraccarico, fiducia | Pensare troppo, loop mentale | Sprint 1 |
 | `/coaching/autostima-e-fiducia` | Collegare fiducia, autocritica e azione concreta | fiducia in se stessi, autostima, autocritica | Informativo/commerciale leggero | Fiducia come esperienza, dialogo interno, responsabilità, percorso, FAQ | eBook, coaching | Fiducia, autocritica, errore | Paura giudizio, autostima concreta | Sprint 1 |
 | `/coaching/blocco-e-primo-passo` | Rafforzare il concetto proprietario del brand | blocchi mentali, procrastinazione, primo passo | Informativo pratico | Blocco, cause non cliniche, riduzione del passo, eBook/AI, percorso | eBook, AI, contatti | Fiducia, sovraccarico | Procrastinazione, sentirsi bloccati | Sprint 2 |
-| `/coaching/responsabilita-e-controllo` | Verticale lavoro su controllo, delega e confini | responsabilità e controllo, difficolta' a delegare | Informativo professionale | Differenza responsabilità/controllo, delega, confini, esempi lavoro, FAQ | Coaching, contatti | responsabilità/controllo, sovraccarico | Dire di no, delegare | Sprint 2 |
-| `/coaching/mental-coaching-sportivo` | Aprire verticale sportiva concreta | mental coaching sportivo, errore nello sport, pressione nello sport | Commerciale leggero/informativo | Sport e presenza, errore, pressione, percorso, cosa non e', esempi | Contatti, coaching | Errore nello sport, fiducia, autocritica | Pressione sport, gara | Sprint 2 |
+| `/coaching/responsabilita-e-controllo` | Verticale lavoro su controllo, delega e confini | responsabilità e controllo, difficolta' a delegare | Informativo professionale | Differenza responsabilità/controllo, delega, confini, esempi lavoro, FAQ | Coaching, contatti | responsabilità/controllo, sovraccarico | Dire di no, delegare | Sprint 3 |
+| `/coaching/mental-coaching-sportivo` | Aprire verticale sportiva concreta | mental coaching sportivo, errore nello sport, pressione nello sport | Commerciale leggero/informativo | Sport e presenza, errore, pressione, percorso, cosa non e', esempi | Contatti, coaching | Errore nello sport, fiducia, autocritica | Pressione sport, gara | Sprint 3 |
 | `/coaching/cosa-fa-un-mental-coach` | Rispondere alla domanda base sul servizio | cosa fa un mental coach, differenza mental coach psicologo | Informativo/commerciale | Definizione, cosa fa, cosa non fa, confini, esempi, quando utile, FAQ | Contatti, chi sono | Coaching, chi sono | Differenze coaching/psicologia | Sprint 3 |
 
 ## Internal linking

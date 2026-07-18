@@ -5,7 +5,9 @@ export type CoachingLandingPage = {
     | "/coaching/stress-lavorativo"
     | "/coaching/overthinking"
     | "/coaching/autostima-e-fiducia"
-    | "/coaching/blocco-e-primo-passo";
+    | "/coaching/blocco-e-primo-passo"
+    | "/coaching/responsabilita-e-controllo"
+    | "/coaching/mental-coaching-sportivo";
   title: string;
   metaTitle: string;
   description: string;
@@ -508,6 +510,172 @@ export const coachingLandingPages = {
     ],
     closing: { title: "Per iniziare non devi avere già tutto chiaro.", text: "Puoi raccontarmi cosa continui a rimandare e valutare con calma se un confronto può aiutarti a rendere il primo passo più concreto e sostenibile.", primaryCta: "Parliamone con calma" },
   },
+  responsabilitaEControllo: {
+    path: "/coaching/responsabilita-e-controllo",
+    title: "Coaching per responsabilità, controllo e delega",
+    metaTitle: "Coaching per responsabilità, controllo e delega",
+    description: "Ti senti responsabile di tutto e fai fatica a delegare? Scopri come il mental coaching può aiutarti a distinguere responsabilità, controllo e confini sostenibili.",
+    eyebrow: "Responsabilità e controllo",
+    heroTitle: "Coaching per responsabilità, controllo e delega",
+    heroText: [
+      "Essere responsabile non significa dover controllare tutto. A volte il passo più utile è distinguere cosa dipende davvero da te, cosa puoi condividere e dove puoi lasciare spazio senza perdere presenza.",
+      "Il mental coaching può aiutarti a osservare quando l’affidabilità diventa sovraccarico e a costruire una responsabilità più sostenibile, nel lavoro e nella vita quotidiana.",
+    ],
+    primaryCta: { label: "Raccontami cosa stai vivendo", href: "/contatti" },
+    secondaryCta: { label: "Leggi l'approfondimento", href: "/blog/responsabilita-non-significa-controllo-cosa-succede-quando-provi-a-gestire-tutto" },
+    situations: {
+      eyebrow: "Quando si confondono",
+      title: "Quando responsabilità e controllo diventano la stessa cosa.",
+      description: "Essere competenti e affidabili è una risorsa. Il peso aumenta quando senti che ogni dettaglio deve passare da te.",
+      items: [
+        "Controlli ogni passaggio perché temi che qualcosa possa sfuggire.",
+        "Pensi che spiegare richieda più tempo e finisci per fare tutto da solo.",
+        "Correggi subito gli altri, anche quando potrebbero trovare una soluzione propria.",
+        "Fai fatica a staccare perché continui a sentirti necessario.",
+        "Ogni errore del gruppo ti sembra una responsabilità esclusivamente tua.",
+      ],
+    },
+    shift: {
+      eyebrow: "Sicurezza immediata",
+      title: "Perché controllare tutto sembra più sicuro.",
+      paragraphs: [
+        "Quando hai esperienza, riconosci rapidamente problemi e possibili soluzioni. Nel mio lavoro da sviluppatore senior ho visto quanto possa essere naturale intervenire: nel breve periodo riduce il rischio e dà il sollievo del «faccio prima io».",
+        "Ma ciò che funziona oggi può avere un prezzo nascosto domani. Ogni decisione torna da te, gli altri hanno meno spazio per crescere e staccare diventa sempre più difficile.",
+        "Lasciare spazio non significa perdere responsabilità. Significa chiarire obiettivo, confini e momenti di confronto, accettando che un metodo diverso possa essere comunque adeguato al risultato.",
+      ],
+      points: [
+        "il sovraccarico aumenta quando ogni decisione deve passare da te;",
+        "risolvere sempre può creare dipendenza invece di autonomia;",
+        "controllare ogni dettaglio rende difficile distinguere rischio reale e abitudine;",
+        "una responsabilità sostenibile include anche confini, fiducia e spazio per gli altri.",
+      ],
+    },
+    coaching: {
+      title: "Cosa può fare il mental coaching",
+      canHelp: [
+        "Distinguere responsabilità, controllo e bisogno di intervenire.",
+        "Chiarire cosa dipende davvero da te e quali confini puoi comunicare.",
+        "Osservare dove la paura dell’errore riduce lo spazio lasciato agli altri.",
+        "Allenare delega, fiducia e una responsabilità più sostenibile attraverso passi concreti.",
+      ],
+      cannotHelp: [
+        "Non formula diagnosi e non tratta disturbi.",
+        "Non è terapia o psicologia clinica.",
+        "Non è consulenza aziendale tecnica o organizzativa.",
+        "Non sostituisce supporto psicologico, medico o sanitario.",
+      ],
+    },
+    exercise: {
+      title: "Lascia un micro-spazio senza perdere responsabilità",
+      description: "Scegli una situazione concreta che stai controllando più del necessario e osservala prima di intervenire.",
+      steps: [
+        "Chiediti: è davvero necessario che lo faccia io?",
+        "Osserva se stai aiutando o togliendo all’altra persona lo spazio per imparare.",
+        "Distingui ciò che deve essere identico al tuo metodo da ciò che deve solo essere adeguato all’obiettivo.",
+        "Scegli un piccolo spazio da lasciare, chiarendo risultato, confini e momento di confronto.",
+      ],
+    },
+    articles: [
+      { title: "Responsabilità non significa controllo", description: "Cosa succede quando provi a gestire tutto e diventi indispensabile per gli altri.", href: "/blog/responsabilita-non-significa-controllo-cosa-succede-quando-provi-a-gestire-tutto" },
+      { title: "Quando hai troppe cose in testa", description: "Cinque azioni concrete per ridurre il sovraccarico e ritrovare priorità.", href: "/blog/quando-hai-troppe-cose-in-testa-5-azioni-per-ritrovare-lucidita" },
+      { title: "La fiducia non arriva sempre prima", description: "Perché anche lasciare spazio può richiedere un passo prima di sentirsi completamente sicuri.", href: "/blog/la-fiducia-arriva-dopo-il-primo-passo" },
+    ],
+    resources: [
+      { title: "Un passo possibile", description: "Una guida gratuita per mettere ordine, distinguere ciò che dipende da te e scegliere un passaggio sostenibile.", cta: "Scopri l'eBook", href: "/ebook" },
+      { title: "Un Passo Possibile AI", description: "Una riflessione guidata per osservare una situazione concreta e individuare un primo passo.", cta: "Prova la riflessione guidata", href: siteConfig.appUrl, external: true, note: "Non è terapia e non sostituisce il confronto con un professionista." },
+    ],
+    faqs: [
+      { question: "Perché faccio fatica a delegare?", answer: "Delegare può sembrare più rischioso o lento, soprattutto quando hai esperienza e sai intervenire rapidamente. Può essere utile distinguere il rischio reale dal bisogno abituale di controllare e chiarire quali condizioni renderebbero sostenibile lasciare spazio." },
+      { question: "Delegare significa disinteressarsi?", answer: "No. Può significare chiarire l’obiettivo, condividere informazioni e confini, concordare un confronto e lasciare autonomia sul metodo. La responsabilità resta, ma non richiede controllo continuo." },
+      { question: "Come faccio a fidarmi se gli altri sbagliano?", answer: "La fiducia non richiede di ignorare gli errori. Puoi iniziare da uno spazio limitato, definire ciò che è davvero essenziale e usare l’errore come informazione, invece di riprendere immediatamente tutto sotto il tuo controllo." },
+      { question: "Il coaching può aiutarmi con il controllo?", answer: "Può aiutarti a osservare quando intervieni, cosa temi possa accadere, quali responsabilità sono davvero tue e quale piccolo esperimento puoi fare. Non tratta cause cliniche e non sostituisce un percorso psicologico." },
+      { question: "Quando serve un supporto diverso?", answer: "Quando il bisogno di controllo o il disagio sono intensi, persistenti, causano sofferenza significativa o interferiscono in modo importante con la vita quotidiana, è più adatto rivolgersi a un professionista psicologico o sanitario." },
+    ],
+    closing: { title: "Puoi essere presente senza dover essere indispensabile.", text: "Se responsabilità e controllo stanno occupando troppo spazio, puoi raccontarmi la situazione e valutare con calma se un confronto può aiutarti a distinguere un confine o un primo passo sostenibile.", primaryCta: "Raccontami cosa stai vivendo" },
+  },
+  mentalCoachingSportivo: {
+    path: "/coaching/mental-coaching-sportivo",
+    title: "Mental coaching sportivo per errore, pressione e presenza mentale",
+    metaTitle: "Mental coaching sportivo per errore e pressione",
+    description: "Errore, pressione e fiducia nello sport: scopri come il mental coaching sportivo può aiutarti a restare presente e tornare all’azione successiva.",
+    eyebrow: "Mental coaching sportivo",
+    heroTitle: "Mental coaching sportivo per errore, pressione e presenza mentale",
+    heroText: [
+      "Nello sport non conta solo evitare l’errore. Conta anche imparare a rientrare nell’azione successiva, restare presenti e costruire fiducia senza dipendere soltanto dal risultato.",
+      "Il percorso può offrire strumenti concreti a sportivi, atleti amatoriali e allenatori, senza promettere prestazioni o cancellare pressione e agitazione.",
+    ],
+    primaryCta: { label: "Parliamone con calma", href: "/contatti" },
+    secondaryCta: { label: "Leggi l'articolo sull'errore", href: "/blog/dopo-un-errore-torna-all-azione-successiva" },
+    situations: {
+      eyebrow: "Pressione nello sport",
+      title: "Quando una prestazione occupa più spazio del gioco.",
+      description: "Pressione e aspettative fanno parte dell’esperienza sportiva. Il punto è riconoscere quando tolgono attenzione al compito presente.",
+      items: [
+        "Un errore resta nella mente e condiziona l’azione successiva.",
+        "Prima di una partita importante senti crescere aspettative e agitazione.",
+        "La paura di sbagliare rende più difficile scegliere con libertà.",
+        "Il giudizio sul risultato prende il posto delle informazioni del momento.",
+        "Dopo una prestazione continui a definirti attraverso ciò che non ha funzionato.",
+      ],
+    },
+    shift: {
+      eyebrow: "Errore e presenza",
+      title: "Il problema non è sbagliare.",
+      paragraphs: [
+        "L’errore fa parte della prestazione. Una battuta, una scelta o una giocata finiscono in pochi secondi, ma il pensiero può restare molto più a lungo.",
+        "Quando provi a cancellare subito ciò che è successo, rischi di forzare l’azione seguente o di perderne le informazioni. Tornare presente non significa ignorare l’errore: significa rimandare l’analisi a quando sarà davvero utile.",
+        "La fiducia sportiva non dipende soltanto dal risultato. Può crescere anche dalla capacità di riconoscere ciò che sta accadendo, scegliere un compito concreto e restare disponibile per il momento successivo.",
+      ],
+      points: [
+        "l’attenzione può tornare a posizione, respiro, palla, gesto o comunicazione;",
+        "una parola-ancora o una routine semplice segnala che inizia una nuova azione;",
+        "il dialogo interno è più utile quando descrive il compito invece di giudicare la persona;",
+        "analizzare dopo permette di imparare senza sottrarre presenza durante l’azione.",
+      ],
+    },
+    coaching: {
+      title: "Cosa allena il mental coaching sportivo",
+      canHelp: [
+        "Allenare attenzione e presenza nel compito concreto.",
+        "Osservare il dialogo interno prima, durante e dopo la prestazione.",
+        "Costruire routine semplici per rientrare dopo un errore.",
+        "Lavorare su pressione, scelte e fiducia attraverso l’esperienza.",
+      ],
+      cannotHelp: [
+        "Non garantisce risultati o prestazioni.",
+        "Non sostituisce allenamento tecnico, tattico o fisico.",
+        "Non è terapia, non fa diagnosi e non tratta disturbi.",
+        "Non sostituisce supporto psicologico, medico o sanitario.",
+      ],
+    },
+    exercise: {
+      title: "Crea un segnale per tornare all’azione successiva",
+      description: "Prova questa sequenza in allenamento, così che possa diventare più riconoscibile anche sotto pressione.",
+      steps: [
+        "Dopo un errore, nota il primo pensiero automatico senza discuterci a lungo.",
+        "Fai un respiro e riconosci che quell’azione è finita.",
+        "Scegli una parola-ancora o un gesto semplice collegato al tuo compito.",
+        "Torna all’azione successiva e valuta l’errore dopo, non mentre il gioco continua.",
+      ],
+    },
+    articles: [
+      { title: "Dopo un errore, torna all’azione successiva", description: "Una sequenza concreta per rientrare nel presente senza ignorare ciò che è successo.", href: "/blog/dopo-un-errore-torna-all-azione-successiva" },
+      { title: "La fiducia non arriva sempre prima", description: "Come fare esperienza anche quando non ti senti completamente sicuro.", href: "/blog/la-fiducia-arriva-dopo-il-primo-passo" },
+      { title: "Ti parleresti così se fossi una persona a cui vuoi bene?", description: "Un modo più preciso e rispettoso di osservare errore e autocritica.", href: "/blog/ti-parleresti-cosi-se-fossi-una-persona-a-cui-vuoi-bene" },
+    ],
+    resources: [
+      { title: "Un passo possibile", description: "Una guida gratuita con domande ed esercizi su blocco, fiducia, dialogo interno e azione concreta.", cta: "Scopri l'eBook", href: "/ebook" },
+      { title: "Un Passo Possibile AI", description: "Una pausa guidata per osservare cosa è successo e individuare un passaggio concreto.", cta: "Prova la riflessione guidata", href: siteConfig.appUrl, external: true, note: "Non è terapia e non sostituisce il confronto con un professionista." },
+    ],
+    faqs: [
+      { question: "Cosa fa un mental coach sportivo?", answer: "Lavora con domande, osservazione ed esercizi su attenzione, presenza, dialogo interno, gestione del momento, responsabilità e azioni concrete. Non garantisce risultati e non sostituisce preparazione tecnica, fisica o supporto clinico." },
+      { question: "Il mental coaching serve solo agli atleti professionisti?", answer: "No. Può essere utile anche nello sport amatoriale quando vuoi osservare meglio pressione, errore, concentrazione e rapporto con il risultato, nel rispetto del tuo contesto e dei tuoi obiettivi." },
+      { question: "Come si lavora sulla paura di sbagliare?", answer: "Si può osservare cosa accade prima e dopo l’errore, rendere il dialogo interno più concreto e allenare un riferimento per tornare al compito. L’obiettivo non è eliminare la paura, ma gestire il momento con maggiore presenza." },
+      { question: "Può aiutare anche nello sport amatoriale?", answer: "Sì, quando il tema riguarda consapevolezza, fiducia, pressione e azioni allenabili. Il percorso viene adattato all’esperienza reale della persona, non a uno standard di prestazione professionistica." },
+      { question: "Quando serve uno psicologo dello sport?", answer: "Quando il disagio è intenso o persistente, coinvolge sintomi o sofferenza significativa oppure interferisce in modo importante con sport e vita quotidiana, è più appropriato rivolgersi a uno psicologo dello sport o a un professionista sanitario qualificato." },
+    ],
+    closing: { title: "L’azione successiva non deve cancellare quella precedente.", text: "Può essere il momento in cui torni disponibile al compito. Se vuoi lavorare su errore, pressione o presenza nello sport, puoi raccontarmi la situazione con poche righe.", primaryCta: "Parliamone con calma" },
+  },
 } as const satisfies Record<string, CoachingLandingPage>;
 
 export const coachingFocusAreas = [
@@ -534,5 +702,15 @@ export const coachingFocusAreas = [
     description:
       "Quando continui a rimandare e hai bisogno di rendere l’inizio più chiaro e sostenibile.",
     href: coachingLandingPages.bloccoEPrimoPasso.path,
+  },
+  {
+    title: "Responsabilità e controllo",
+    description: "Quando essere affidabile significa sentirti necessario, controllare ogni dettaglio e fare fatica a delegare.",
+    href: coachingLandingPages.responsabilitaEControllo.path,
+  },
+  {
+    title: "Mental coaching sportivo",
+    description: "Quando errore, pressione e giudizio rendono più difficile restare presente nell’azione.",
+    href: coachingLandingPages.mentalCoachingSportivo.path,
   },
 ] as const;
