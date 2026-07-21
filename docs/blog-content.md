@@ -4,24 +4,28 @@ Il blog pubblica contenuti MDX da `content/blog/`. La pagina `/blog` e la route 
 
 ## Articoli pubblicati
 
-Gli articoli pubblici sono sette. Lo Sprint Articoli SEO 1 ha aggiunto due contenuti nativi progettati a partire da query e intenti di ricerca:
+Gli articoli pubblici sono otto. Lo Sprint Articoli SEO 2 ha aggiunto il contenuto nativo "Chiudere il computer non basta: come lasciare il lavoro fuori dal resto della giornata", progettato per il cluster lavoro, carico mentale e confini:
 
-1. `mental-coach-e-psicologo-qual-e-la-differenza`
-2. `perche-rimandi-anche-quando-sai-cosa-dovresti-fare`
+1. `come-staccare-dal-lavoro-a-fine-giornata`
+
+Lo Sprint Articoli SEO 1 ha aggiunto due contenuti nativi progettati a partire da query e intenti di ricerca:
+
+2. `mental-coach-e-psicologo-qual-e-la-differenza`
+3. `perche-rimandi-anche-quando-sai-cosa-dovresti-fare`
 
 Gli altri articoli pubblicati sono:
 
-3. `quando-hai-troppe-cose-in-testa-5-azioni-per-ritrovare-lucidita`
-4. `responsabilita-non-significa-controllo-cosa-succede-quando-provi-a-gestire-tutto`
-5. `dopo-un-errore-torna-all-azione-successiva`
-6. `la-fiducia-arriva-dopo-il-primo-passo`
-7. `ti-parleresti-cosi-se-fossi-una-persona-a-cui-vuoi-bene`
+4. `quando-hai-troppe-cose-in-testa-5-azioni-per-ritrovare-lucidita`
+5. `responsabilita-non-significa-controllo-cosa-succede-quando-provi-a-gestire-tutto`
+6. `dopo-un-errore-torna-all-azione-successiva`
+7. `la-fiducia-arriva-dopo-il-primo-passo`
+8. `ti-parleresti-cosi-se-fossi-una-persona-a-cui-vuoi-bene`
 
 ## Evidenza e ordinamento
 
 L'articolo in evidenza è `quando-hai-troppe-cose-in-testa-5-azioni-per-ritrovare-lucidita`, tramite `featured: true`.
 
-Gli articoli sono ordinati per `publishedAt` decrescente e, a parità di data, per titolo in italiano. I due articoli dello Sprint Articoli SEO 1 compaiono tra i contenuti più recenti; il contenuto con `featured: true` resta mostrato nella sezione principale del Blog.
+Gli articoli sono ordinati per `publishedAt` decrescente e, a parità di data, per titolo in italiano. L'articolo dello Sprint Articoli SEO 2 è il più recente; il contenuto con `featured: true` resta mostrato nella sezione principale del Blog.
 
 ## Prossimi articoli suggeriti
 

@@ -62,10 +62,11 @@ Le pagine legali `/privacy-policy` e `/cookie-policy`, insieme a `/robots.txt` e
 
 ## Articoli attuali
 
-Sono presenti cinque articoli pubblicati e una bozza locale d'esempio (`bozza-esempio-mdx`) esclusa dalla strategia perché `draft: true`.
+Sono presenti otto articoli pubblicati e una bozza locale d'esempio (`bozza-esempio-mdx`) esclusa dalla strategia perché `draft: true`. Lo Sprint Articoli SEO 2 ha aggiunto "Chiudere il computer non basta: come lasciare il lavoro fuori dal resto della giornata", rafforzando il cluster lavoro, carico mentale e confini.
 
 | Titolo | Slug | Categoria | Data | Intento | Query probabile | Tema | Cluster | Pagina pilastro futura | Correlati | Gap interni | Origine SEO |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Chiudere il computer non basta: come lasciare il lavoro fuori dal resto della giornata | `come-staccare-dal-lavoro-a-fine-giornata` | Pressione e lavoro | 2026-07-21 | Aiutare a creare un confine tra lavoro e vita personale | "come staccare dal lavoro", "penso sempre al lavoro", "stress dopo il lavoro" | Carico mentale, confini, presenza | Lavoro, stress e responsabilità | `/coaching/stress-lavorativo`, `/coaching/responsabilita-e-controllo` | Sovraccarico mentale, responsabilità e controllo | Monitorare query e linking con Search Console | Articolo SEO evergreen dello Sprint Articoli SEO 2 |
 | La fiducia non arriva sempre prima: a volte cresce dopo il primo passo | `la-fiducia-arriva-dopo-il-primo-passo` | Fiducia e azione | 2026-06-28 | Aiutare chi aspetta sicurezza prima di agire | "come avere fiducia in se stessi", "non mi sento pronto", "fare il primo passo" | Fiducia, dubbio, azione piccola | Fiducia / primo passo | `/coaching/autostima-e-fiducia`, `/coaching/blocco-e-primo-passo` | Autocritica, blocco, eBook | Manca link a articolo autocritica e futura landing blocco | Vicino a contenuto social/riflessione, ma evergreen |
 | Ti parleresti cosi se fossi una persona a cui vuoi bene? | `ti-parleresti-cosi-se-fossi-una-persona-a-cui-vuoi-bene` | Consapevolezza | 2026-06-28 | Ridurre autocritica aggressiva senza negare responsabilità | "smettere di essere troppo autocritici", "dialogo interno negativo" | Autocritica, dialogo interno, responsabilità | Fiducia, autostima e autocritica | `/coaching/autostima-e-fiducia` | Articolo fiducia, errore nello sport | Manca collegamento a pilastro e ad articolo errore | Probabile derivazione social, evergreen se rinforzato |
 | Dopo un errore, torna all'azione successiva | `dopo-un-errore-torna-all-azione-successiva` | Sport e mentalita' | 2026-06-28 | Aiutare sportivi a rientrare nel presente dopo un errore | "come superare un errore nello sport", "mental coaching sportivo errore" | Errore, sport, presenza, pressione | Sport, errore e performance mentale | `/coaching/mental-coaching-sportivo` | Autocritica, fiducia | Manca pagina pilastro sportiva e correlati sportivi | Riflessione evergreen con buon potenziale SEO |
@@ -454,7 +455,7 @@ Non vanno create landing duplicate per singoli comuni senza una differenza reale
 
 ## Prossimo sprint consigliato
 
-Il primo blocco di sette landing pilastro è completo. Lo Sprint Articoli SEO 1 ha aggiunto due articoli nativi: "Mental coach e psicologo: qual è la differenza?" e "Perché rimandi anche quando sai cosa dovresti fare".
+Il primo blocco di sette landing pilastro è completo. Lo Sprint Articoli SEO 1 ha aggiunto due articoli nativi: "Mental coach e psicologo: qual è la differenza?" e "Perché rimandi anche quando sai cosa dovresti fare". Lo Sprint Articoli SEO 2 ha aggiunto "Chiudere il computer non basta: come lasciare il lavoro fuori dal resto della giornata".
 
 Il prossimo sprint editoriale consigliato può sviluppare:
 
