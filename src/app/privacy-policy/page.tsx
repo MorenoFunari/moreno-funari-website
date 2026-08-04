@@ -94,10 +94,9 @@ export default function PrivacyPolicyPage() {
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>4. Contatti via email</h2>
             <p>
-              Il sito non invia dati tramite un form applicativo. Se scegli di
-              scrivere via email, possono essere trattati indirizzo email, nome
-              eventualmente indicato, contenuto del messaggio e ulteriori dati
-              comunicati volontariamente.
+              Se scegli di scrivere via email, possono essere trattati indirizzo
+              email, nome eventualmente indicato, contenuto del messaggio e
+              ulteriori dati comunicati volontariamente.
             </p>
             <p>
               I dati sono usati per rispondere alla richiesta, fornire
@@ -122,7 +121,60 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>5. Google Analytics 4</h2>
+            <h2 className={styles.sectionTitle}>
+              5. Guida gratuita e comunicazioni via email
+            </h2>
+            <p>
+              Il sito può offrire la possibilità di richiedere risorse
+              gratuite, come guide pratiche o approfondimenti, tramite moduli di
+              iscrizione gestiti da Brevo.
+            </p>
+            <p>Quando utilizzi questi moduli, possono essere raccolti:</p>
+            <ul className={styles.list}>
+              <li>indirizzo email;</li>
+              <li>nome, se fornito;</li>
+              <li>consenso prestato;</li>
+              <li>data e ora dell’iscrizione;</li>
+              <li>
+                informazioni tecniche e origine del modulo, secondo quanto
+                gestito dal servizio utilizzato.
+              </li>
+            </ul>
+            <p>I dati sono utilizzati per:</p>
+            <ul className={styles.list}>
+              <li>inviarti la risorsa richiesta;</li>
+              <li>
+                inviarti eventuali comunicazioni collegate al progetto Moreno
+                Funari | Mental Coach, se hai prestato il relativo consenso;
+              </li>
+              <li>
+                gestire iscrizione, conferma, disiscrizione e preferenze.
+              </li>
+            </ul>
+            <p>
+              Il servizio utilizzato per la gestione dei moduli, della lista
+              contatti e dell’invio email è Brevo. La base giuridica è il
+              consenso dell’interessato.
+            </p>
+            <p>
+              L’iscrizione può richiedere una conferma tramite email. Puoi
+              revocare il consenso o disiscriverti in qualsiasi momento tramite
+              il link presente nelle email ricevute o contattando il titolare.
+              I dati vengono conservati per il tempo necessario a gestire
+              l’iscrizione e le comunicazioni richieste, fino alla
+              disiscrizione o alla revoca del consenso, fatti salvi eventuali
+              obblighi di legge.
+            </p>
+            <p>
+              Le comunicazioni email possono includere informazioni tecniche
+              necessarie alla gestione dell’invio, della consegna, dell’apertura
+              o dell’interazione con i link, secondo le impostazioni del
+              servizio utilizzato.
+            </p>
+          </section>
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>6. Google Analytics 4</h2>
             <p>
               Il sito può usare Google Analytics 4, Measurement ID
               G-11RJTDXWBS, fornito da Google Ireland Limited. GA4 viene caricato
@@ -131,9 +183,9 @@ export default function PrivacyPolicyPage() {
             <p>
               GA4 usa cookie e identificatori online per misurare utilizzo e
               navigazione del sito. Non riceve dati dei messaggi email, dati
-              inseriti in form, `user_id` o custom events dal codice del sito.
-              Non è collegato a Google Ads; Google Signals e personalizzazione
-              pubblicitaria sono disattivati dal codice.
+              inseriti nel modulo Brevo, user_id o custom events dal codice del
+              sito. Non è collegato a Google Ads; Google Signals e
+              personalizzazione pubblicitaria sono disattivati dal codice.
             </p>
             <p>
               Dopo consenso possono essere trattati identificatori generati dai
@@ -188,7 +240,7 @@ export default function PrivacyPolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              6. Preferenza analytics
+              7. Preferenza analytics
             </h2>
             <p>
               La scelta relativa ad Analytics viene salvata in localStorage con
@@ -205,7 +257,7 @@ export default function PrivacyPolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              7. Destinatari e fornitori
+              8. Destinatari e fornitori
             </h2>
             <ul className={styles.cardList}>
               <li className={styles.card}>
@@ -222,12 +274,20 @@ export default function PrivacyPolicyPage() {
                   della casella Gmail usata per ricevere le comunicazioni.
                 </p>
               </li>
+              <li className={styles.card}>
+                <h3 className={styles.subTitle}>Brevo</h3>
+                <p>
+                  Fornitore del modulo di iscrizione, della gestione della lista
+                  contatti e dell’invio delle email relative alle risorse
+                  richieste e alle comunicazioni consentite.
+                </p>
+              </li>
             </ul>
           </section>
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              8. Trasferimenti internazionali
+              9. Trasferimenti internazionali
             </h2>
             <p>
               Alcuni fornitori possono trattare dati anche al di fuori dello
@@ -260,7 +320,7 @@ export default function PrivacyPolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              9. Diritti dell’interessato
+              10. Diritti dell’interessato
             </h2>
             <p>
               Puoi chiedere accesso, rettifica, cancellazione, limitazione,
@@ -287,19 +347,21 @@ export default function PrivacyPolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              10. Natura del conferimento
+              11. Natura del conferimento
             </h2>
             <p>
               I dati tecnici sono necessari per rendere disponibile il sito.
-              Scrivere via email è facoltativo. Il consenso Analytics è
-              facoltativo: il rifiuto non limita navigazione, contenuti o
-              contatto.
+              Scrivere via email e iscriversi per ricevere una guida sono
+              facoltativi. Senza i dati richiesti e la conferma
+              dell’iscrizione non è possibile inviare la risorsa. Il consenso
+              Analytics è facoltativo: il rifiuto non limita navigazione,
+              contenuti o contatto.
             </p>
           </section>
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              11. Decisioni automatizzate
+              12. Decisioni automatizzate
             </h2>
             <p>
               Il sito non utilizza processi decisionali automatizzati che
@@ -309,7 +371,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>12. Aggiornamenti</h2>
+            <h2 className={styles.sectionTitle}>13. Aggiornamenti</h2>
             <p>
               Questa informativa può essere aggiornata quando cambiano servizi,
               fornitori, funzionalità, norme o modalità di trattamento.

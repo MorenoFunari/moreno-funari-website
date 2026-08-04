@@ -17,6 +17,7 @@ const staticRoutes = [
   "/coaching/cosa-fa-un-mental-coach",
   "/coaching/mental-coach-frascati",
   "/ebook",
+  "/guida-dire-sempre-si",
   "/contatti",
   "/blog",
 ] as const;

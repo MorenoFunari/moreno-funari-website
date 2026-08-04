@@ -56,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it">
+    <html lang="it" data-scroll-behavior="smooth">
       <body className={rubik.className}>
         {analyticsConfig.isConfigured ? (
           <Script id="mf-consent-default" strategy="beforeInteractive">

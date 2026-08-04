@@ -73,6 +73,12 @@ The `/ebook` route presents "Un passo possibile" with dedicated sections in `src
 - FAQ: questions use native `<details>` and `<summary>` elements.
 - V1: no email capture or newsletter flow is included.
 
+## Landing guida “Dire sempre sì”
+
+La route /guida-dire-sempre-si presenta il lead magnet gratuito e incorpora il modulo Brevo tramite iframe. Brevo gestisce form, consenso, double opt-in, lista contatti, invio della guida e disiscrizione; il sito ospita soltanto la landing e il PDF.
+
+La Privacy Policy è stata aggiornata per riflettere l’uso di Brevo e va validata dal titolare o da un consulente privacy prima dell’uso esteso del funnel.
+
 ## Pagina Contatti V1
 
 The `/contatti` route uses dedicated sections in `src/components/sections/contact` and shared contact data in `src/config/contact.ts`.
