@@ -142,21 +142,25 @@
 }
 
 .formEmbed {
-  width: min(100%, 540px);
-  min-height: 305px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 640px;
   margin: var(--space-2xl) auto 0;
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-surface);
   box-shadow: var(--shadow-card);
 }
 
-.formEmbed iframe {
+.brevoIframe {
   display: block;
   width: 100%;
-  max-width: 100%;
+  max-width: 640px;
+  min-height: 760px;
   border: 0;
+  border-radius: inherit;
 }
 
 .privacyNote {
@@ -233,6 +237,27 @@
   }
 
   .formEmbed {
+    --brevo-mobile-width: 560px;
+    --brevo-mobile-height: 760px;
+    --brevo-mobile-scale: min(
+      1,
+      calc((100vw - (2 * var(--space-md))) / var(--brevo-mobile-width))
+    );
+
+    align-items: flex-start;
+    height: calc(
+      var(--brevo-mobile-height) * var(--brevo-mobile-scale)
+    );
     border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .brevoIframe {
+    flex: 0 0 var(--brevo-mobile-width);
+    width: var(--brevo-mobile-width);
+    max-width: none;
+    min-height: var(--brevo-mobile-height);
+    transform: scale(var(--brevo-mobile-scale));
+    transform-origin: top center;
   }
 }

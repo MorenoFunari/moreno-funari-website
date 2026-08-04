@@ -165,13 +165,11 @@ export default function GuidaDireSempreSiPage() {
           <div className={styles.formEmbed}>
             <iframe
               allowFullScreen
-              frameBorder="0"
-              height="305"
+              className={styles.brevoIframe}
               loading="lazy"
-              scrolling="auto"
+              scrolling="no"
               src={BREVO_FORM_URL}
               title="Modulo per ricevere la guida Dire sempre sì"
-              width="540"
             />
           </div>
           <p className={styles.privacyNote}>
