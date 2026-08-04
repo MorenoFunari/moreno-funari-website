@@ -24,7 +24,13 @@ export default function StressLavorativoPage() {
           path: page.path,
         })}
       />
-      <CoachingLandingPage page={page} />
+      <CoachingLandingPage
+        leadMagnet={{
+          placement: "coaching-stress-lavorativo",
+          sourcePath: "/coaching/stress-lavorativo",
+        }}
+        page={page}
+      />
     </main>
   );
 }

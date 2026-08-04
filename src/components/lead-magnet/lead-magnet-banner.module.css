@@ -1,0 +1,136 @@
+.banner {
+  position: relative;
+  display: grid;
+  gap: var(--space-xl);
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  padding: clamp(var(--space-xl), 5vw, var(--space-2xl));
+}
+
+.banner::after {
+  position: absolute;
+  right: -3rem;
+  bottom: -3.5rem;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  background: var(--color-accent-soft);
+  content: "";
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.blog {
+  margin-top: var(--space-3xl);
+}
+
+.coaching {
+  width: min(
+    100% - (var(--page-padding-mobile) * 2),
+    var(--container-width)
+  );
+  margin: 0 auto;
+}
+
+.accent {
+  position: absolute;
+  top: 0;
+  left: clamp(var(--space-xl), 5vw, var(--space-2xl));
+  width: 4.5rem;
+  height: 0.25rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 42rem;
+}
+
+.eyebrow {
+  color: var(--color-accent-strong);
+  font-size: var(--font-size-eyebrow);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-eyebrow);
+  line-height: var(--line-height-label);
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 24ch;
+  margin-top: var(--space-sm);
+  color: var(--color-primary-strong);
+  font-size: clamp(1.5rem, 3vw, 2.15rem);
+  line-height: var(--line-height-heading);
+}
+
+.description {
+  max-width: 58ch;
+  margin-top: var(--space-md);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-intro);
+}
+
+.cta {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 3rem;
+  border: 1px solid var(--color-accent-hover);
+  border-radius: var(--radius-md);
+  background: var(--color-accent);
+  color: var(--color-primary-strong);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-label);
+  padding: 0.875rem 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.cta:hover {
+  border-color: var(--color-accent-strong);
+  background: var(--color-accent-hover);
+  color: var(--color-primary-strong);
+  transform: translateY(-1px);
+}
+
+.cta:active {
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .banner {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .coaching {
+    width: min(
+      100% - (var(--page-padding-desktop) * 2),
+      var(--container-width)
+    );
+  }
+}
+
+@media (max-width: 560px) {
+  .banner {
+    gap: var(--space-lg);
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .cta {
+    width: 100%;
+  }
+}

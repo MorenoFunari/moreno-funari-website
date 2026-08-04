@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 import { mdxComponents } from "@/components/blog/mdx-components";
+import { LeadMagnetBanner } from "@/components/lead-magnet/lead-magnet-banner";
 import { JsonLd } from "@/components/seo/json-ld";
 import { getBlogCategoryLabel } from "@/config/blog-categories";
 import { seoConfig, toAbsoluteUrl } from "@/config/seo";
@@ -25,6 +26,14 @@ import styles from "./article.module.css";
 type BlogArticlePageProps = {
   params: Promise<{ slug: string }>;
 };
+
+const leadMagnetPlacements = {
+  "perche-rimandi-anche-quando-sai-cosa-dovresti-fare": "blog-rimandi",
+  "responsabilita-non-significa-controllo-cosa-succede-quando-provi-a-gestire-tutto":
+    "blog-responsabilita-controllo",
+  "ti-parleresti-cosi-se-fossi-una-persona-a-cui-vuoi-bene":
+    "blog-self-talk",
+} as const;
 
 export const dynamicParams = false;
 
@@ -131,6 +140,12 @@ export default async function BlogArticlePage({
     post.updatedAt && post.updatedAt !== post.publishedAt
       ? formatEditorialDate(post.updatedAt)
       : null;
+  const leadMagnetPlacement =
+    post.slug in leadMagnetPlacements
+      ? leadMagnetPlacements[
+          post.slug as keyof typeof leadMagnetPlacements
+        ]
+      : null;
 
   return (
     <main className={styles.page} id="main-content">
@@ -184,6 +199,14 @@ export default async function BlogArticlePage({
         <div className={styles.content}>
           <MDXRemote components={mdxComponents} source={post.content} />
         </div>
+
+        {leadMagnetPlacement ? (
+          <LeadMagnetBanner
+            placement={leadMagnetPlacement}
+            sourcePath={`/blog/${post.slug}`}
+            variant="blog"
+          />
+        ) : null}
 
         <footer className={styles.footer}>
           <p>

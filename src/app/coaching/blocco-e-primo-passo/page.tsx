@@ -18,7 +18,13 @@ export default function BloccoEPrimoPassoPage() {
   return (
     <main id="main-content">
       <JsonLd data={createCoachingLandingPageJsonLd(page)} />
-      <CoachingLandingPage page={page} />
+      <CoachingLandingPage
+        leadMagnet={{
+          placement: "coaching-blocco-primo-passo",
+          sourcePath: "/coaching/blocco-e-primo-passo",
+        }}
+        page={page}
+      />
     </main>
   );
 }

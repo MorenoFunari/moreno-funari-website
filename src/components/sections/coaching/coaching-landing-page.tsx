@@ -1,6 +1,10 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import {
+  LeadMagnetBanner,
+  type LeadMagnetBannerProps,
+} from "@/components/lead-magnet/lead-magnet-banner";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SurfaceCard } from "@/components/ui/surface-card";
 import type { CoachingLandingPage as CoachingLandingPageContent } from "@/config/coaching-landing-pages";
@@ -8,10 +12,14 @@ import type { CoachingLandingPage as CoachingLandingPageContent } from "@/config
 import styles from "./coaching-landing-page.module.css";
 
 type CoachingLandingPageProps = {
+  leadMagnet?: Omit<LeadMagnetBannerProps, "variant">;
   page: CoachingLandingPageContent;
 };
 
-export function CoachingLandingPage({ page }: CoachingLandingPageProps) {
+export function CoachingLandingPage({
+  leadMagnet,
+  page,
+}: CoachingLandingPageProps) {
   return (
     <>
       <Container
@@ -206,6 +214,14 @@ export function CoachingLandingPage({ page }: CoachingLandingPageProps) {
           ))}
         </div>
       </Container>
+
+      {leadMagnet ? (
+        <LeadMagnetBanner
+          placement={leadMagnet.placement}
+          sourcePath={leadMagnet.sourcePath}
+          variant="coaching"
+        />
+      ) : null}
 
       <Container
         as="section"

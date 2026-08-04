@@ -18,7 +18,13 @@ export default function ResponsabilitaEControlloPage() {
   return (
     <main id="main-content">
       <JsonLd data={createCoachingLandingPageJsonLd(page)} />
-      <CoachingLandingPage page={page} />
+      <CoachingLandingPage
+        leadMagnet={{
+          placement: "coaching-responsabilita-controllo",
+          sourcePath: "/coaching/responsabilita-e-controllo",
+        }}
+        page={page}
+      />
     </main>
   );
 }
