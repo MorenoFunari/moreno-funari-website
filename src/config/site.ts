@@ -11,7 +11,7 @@ export const siteConfig = {
   appUrl: "https://app.morenofunari.it",
   ebookPath: "/ebook",
   ebookPdfPath: "/documents/un-passo-possibile-moreno-funari.pdf",
-  email: "moreno.funari@gmail.com",
+  email: "info@morenofunari.it",
   instagramUrl,
   socialLinks: [
     {

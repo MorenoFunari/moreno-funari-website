@@ -7,6 +7,10 @@ import { createPageMetadata } from "@/lib/seo/metadata";
 
 import styles from "../legal-page.module.css";
 
+const privacyContactEmail = "info@morenofunari.it";
+const privacyLastUpdatedIso = "2026-09-10";
+const privacyLastUpdatedLabel = "10 settembre 2026";
+
 export const metadata: Metadata = createPageMetadata({
   title: "Privacy Policy",
   description:
@@ -28,8 +32,8 @@ export default function PrivacyPolicyPage() {
           </p>
           <p className={styles.updated}>
             Ultimo aggiornamento:{" "}
-            <time dateTime={legalConfig.lastUpdatedIso}>
-              {legalConfig.lastUpdatedLabel}
+            <time dateTime={privacyLastUpdatedIso}>
+              {privacyLastUpdatedLabel}
             </time>
           </p>
         </header>
@@ -55,8 +59,8 @@ export default function PrivacyPolicyPage() {
             <p>{legalConfig.controllerName}</p>
             <p>
               Email:{" "}
-              <a href={`mailto:${legalConfig.contactEmail}`}>
-                {legalConfig.contactEmail}
+              <a href={`mailto:${privacyContactEmail}`}>
+                {privacyContactEmail}
               </a>
             </p>
           </section>
@@ -122,7 +126,166 @@ export default function PrivacyPolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              5. Guida gratuita e comunicazioni via email
+              5. Candidatura e partecipazione al percorso pilota di mental
+              coaching
+            </h2>
+            <p>
+              Quando l’utente compila il modulo di candidatura possono essere
+              trattati:
+            </p>
+            <ul className={styles.list}>
+              <li>nome e cognome;</li>
+              <li>indirizzo email;</li>
+              <li>numero di telefono, se fornito;</li>
+              <li>conferma della maggiore età;</li>
+              <li>
+                informazioni relative alla situazione sulla quale desidera
+                lavorare;
+              </li>
+              <li>aspettative rispetto al percorso;</li>
+              <li>disponibilità per gli incontri;</li>
+              <li>provenienza della candidatura;</li>
+              <li>risposte e comunicazioni inviate volontariamente.</li>
+            </ul>
+            <p className={styles.notice}>
+              Il modulo invita a non inserire diagnosi, informazioni sanitarie
+              o altri dati particolarmente sensibili non necessari. Le
+              informazioni eventualmente comunicate spontaneamente saranno
+              gestite esclusivamente nella misura indispensabile per valutare
+              l’adeguatezza della richiesta e tutelare l’interessato.
+            </p>
+
+            <h3 className={styles.subTitle}>Finalità e base giuridica</h3>
+            <p>I dati vengono utilizzati per:</p>
+            <ul className={styles.list}>
+              <li>ricevere e valutare la candidatura;</li>
+              <li>
+                verificare che la richiesta sia compatibile con il perimetro
+                del mental coaching;
+              </li>
+              <li>ricontattare il candidato;</li>
+              <li>selezionare i partecipanti;</li>
+              <li>organizzare gli incontri;</li>
+              <li>svolgere il percorso pilota;</li>
+              <li>
+                gestire comunicazioni, appuntamenti e osservazioni tra le
+                sessioni;
+              </li>
+              <li>raccogliere un feedback interno e facoltativo;</li>
+              <li>
+                adempiere a obblighi di legge e tutelare eventuali diritti.
+              </li>
+            </ul>
+            <p>Le basi giuridiche del trattamento sono:</p>
+            <ul className={styles.list}>
+              <li>
+                l’esecuzione di misure richieste dall’interessato prima
+                dell’avvio del percorso;
+              </li>
+              <li>
+                l’esecuzione dell’accordo di partecipazione per i candidati
+                selezionati;
+              </li>
+              <li>
+                l’adempimento di obblighi di legge, quando applicabile;
+              </li>
+              <li>
+                il legittimo interesse alla tutela di un diritto, quando
+                applicabile.
+              </li>
+            </ul>
+            <p>
+              I dati raccolti per il percorso pilota non vengono utilizzati
+              automaticamente per newsletter o comunicazioni promozionali.
+              L’iscrizione a tali comunicazioni richiede una scelta separata e
+              facoltativa.
+            </p>
+
+            <h3 className={styles.subTitle}>Modalità e strumenti</h3>
+            <ul className={styles.list}>
+              <li>il modulo è gestito tramite Google Moduli;</li>
+              <li>
+                risposte, comunicazioni ed eventuali materiali di lavoro
+                possono essere conservati tramite Google Drive e Gmail;
+              </li>
+              <li>
+                gli incontri online possono essere svolti tramite Google Meet;
+              </li>
+              <li>
+                le comunicazioni organizzative possono avvenire tramite email
+                o, se scelto dall’interessato, WhatsApp;
+              </li>
+              <li>
+                Brevo può essere utilizzato per la gestione di comunicazioni
+                organizzative o di liste separate;
+              </li>
+              <li>
+                la candidatura non comporta l’iscrizione automatica a
+                newsletter;
+              </li>
+              <li>
+                gli incontri non vengono registrati in audio o video senza un
+                consenso specifico e separato.
+              </li>
+            </ul>
+
+            <h3 className={styles.subTitle}>Conservazione</h3>
+            <ul className={styles.list}>
+              <li>
+                le candidature non selezionate vengono conservate per un
+                massimo di 6 mesi dalla comunicazione dell’esito;
+              </li>
+              <li>
+                i dati dei partecipanti, le comunicazioni organizzative e gli
+                eventuali appunti vengono conservati per un massimo di 12 mesi
+                dalla conclusione del percorso;
+              </li>
+              <li>
+                una conservazione ulteriore avviene solo quando necessaria per
+                obblighi di legge o tutela di un diritto;
+              </li>
+              <li>
+                è possibile richiedere la cancellazione anticipata quando non
+                esistono obblighi o motivi legittimi per conservare i dati.
+              </li>
+            </ul>
+
+            <h3 className={styles.subTitle}>
+              Natura del conferimento e selezione
+            </h3>
+            <ul className={styles.list}>
+              <li>
+                i dati contrassegnati come obbligatori sono necessari per
+                valutare la candidatura;
+              </li>
+              <li>i dati facoltativi possono non essere forniti;</li>
+              <li>la compilazione non garantisce l’accesso al percorso;</li>
+              <li>
+                la valutazione viene effettuata personalmente da Moreno Funari;
+              </li>
+              <li>non vengono utilizzati processi decisionali automatizzati.</li>
+            </ul>
+
+            <h3 className={styles.subTitle}>Riservatezza e testimonianze</h3>
+            <ul className={styles.list}>
+              <li>
+                le informazioni del percorso non vengono pubblicate o
+                condivise per finalità promozionali;
+              </li>
+              <li>
+                il feedback interno è distinto da una testimonianza pubblica;
+              </li>
+              <li>
+                testimonianze, citazioni o contenuti riferibili al partecipante
+                richiedono una richiesta separata e un consenso specifico,
+                libero e revocabile.
+              </li>
+            </ul>
+          </section>
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>
+              6. Guida gratuita e comunicazioni via email
             </h2>
             <p>
               Il sito può offrire la possibilità di richiedere risorse
@@ -174,7 +337,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>6. Google Analytics 4</h2>
+            <h2 className={styles.sectionTitle}>7. Google Analytics 4</h2>
             <p>
               Il sito può usare Google Analytics 4, Measurement ID
               G-11RJTDXWBS, fornito da Google Ireland Limited. GA4 viene caricato
@@ -240,7 +403,7 @@ export default function PrivacyPolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              7. Preferenza analytics
+              8. Preferenza analytics
             </h2>
             <p>
               La scelta relativa ad Analytics viene salvata in localStorage con
@@ -257,7 +420,7 @@ export default function PrivacyPolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              8. Destinatari e fornitori
+              9. Destinatari e fornitori
             </h2>
             <ul className={styles.cardList}>
               <li className={styles.card}>
@@ -270,16 +433,26 @@ export default function PrivacyPolicyPage() {
               <li className={styles.card}>
                 <h3 className={styles.subTitle}>Google Ireland Limited</h3>
                 <p>
-                  Fornitore di Google Analytics 4, soltanto dopo consenso, e
-                  della casella Gmail usata per ricevere le comunicazioni.
+                  Fornitore di Google Moduli, Drive, Gmail e Meet, ciascuno
+                  secondo la propria finalità, e di Google Analytics 4,
+                  soltanto dopo consenso.
                 </p>
               </li>
               <li className={styles.card}>
                 <h3 className={styles.subTitle}>Brevo</h3>
                 <p>
-                  Fornitore del modulo di iscrizione, della gestione della lista
-                  contatti e dell’invio delle email relative alle risorse
-                  richieste e alle comunicazioni consentite.
+                  Fornitore per la gestione di moduli, liste e comunicazioni
+                  email. I dati del percorso pilota non vengono utilizzati
+                  automaticamente per newsletter.
+                </p>
+              </li>
+              <li className={styles.card}>
+                <h3 className={styles.subTitle}>
+                  Meta Platforms Ireland Limited
+                </h3>
+                <p>
+                  Fornitore di WhatsApp, utilizzato facoltativamente per
+                  comunicazioni organizzative.
                 </p>
               </li>
             </ul>
@@ -287,7 +460,7 @@ export default function PrivacyPolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              9. Trasferimenti internazionali
+              10. Trasferimenti internazionali
             </h2>
             <p>
               Alcuni fornitori possono trattare dati anche al di fuori dello
@@ -299,7 +472,7 @@ export default function PrivacyPolicyPage() {
             <ul className={styles.list}>
               <li>
                 <a
-                  href="https://vercel.com/legal/privacy-policy"
+                  href="https://vercel.com/legal/privacy-notice"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -320,7 +493,7 @@ export default function PrivacyPolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              10. Diritti dell’interessato
+              11. Diritti dell’interessato
             </h2>
             <p>
               Puoi chiedere accesso, rettifica, cancellazione, limitazione,
@@ -330,8 +503,8 @@ export default function PrivacyPolicyPage() {
             </p>
             <p>
               Per esercitare i diritti puoi scrivere a{" "}
-              <a href={`mailto:${legalConfig.contactEmail}`}>
-                {legalConfig.contactEmail}
+              <a href={`mailto:${privacyContactEmail}`}>
+                {privacyContactEmail}
               </a>
               . Puoi inoltre proporre reclamo al{" "}
               <a
@@ -347,7 +520,7 @@ export default function PrivacyPolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              11. Natura del conferimento
+              12. Natura del conferimento
             </h2>
             <p>
               I dati tecnici sono necessari per rendere disponibile il sito.
@@ -361,7 +534,7 @@ export default function PrivacyPolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              12. Decisioni automatizzate
+              13. Decisioni automatizzate
             </h2>
             <p>
               Il sito non utilizza processi decisionali automatizzati che
@@ -371,7 +544,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>13. Aggiornamenti</h2>
+            <h2 className={styles.sectionTitle}>14. Aggiornamenti</h2>
             <p>
               Questa informativa può essere aggiornata quando cambiano servizi,
               fornitori, funzionalità, norme o modalità di trattamento.
