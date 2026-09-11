@@ -15,18 +15,6 @@ export function EbookDownloadLink({
     .filter(Boolean)
     .join(" ");
 
-  if (ebookDownload.isAvailable) {
-    return (
-      <a
-        className={classNames}
-        download={ebookDownload.downloadName}
-        href={ebookDownload.href}
-      >
-        <span>{ebookDownload.label}</span>
-      </a>
-    );
-  }
-
   return (
     <a className={classNames} href={ebookDownload.href}>
       <span>{ebookDownload.label}</span>

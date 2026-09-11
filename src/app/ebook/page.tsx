@@ -5,6 +5,7 @@ import { EbookBoundariesSection } from "@/components/sections/ebook/ebook-bounda
 import { EbookClosingCta } from "@/components/sections/ebook/ebook-closing-cta";
 import { EbookFaqSection } from "@/components/sections/ebook/ebook-faq-section";
 import { EbookHero } from "@/components/sections/ebook/ebook-hero";
+import { EbookSignupSection } from "@/components/sections/ebook/ebook-signup-section";
 import { EcosystemSection } from "@/components/sections/ebook/ecosystem-section";
 import { HowToUseSection } from "@/components/sections/ebook/how-to-use-section";
 import { InsideEbookSection } from "@/components/sections/ebook/inside-ebook-section";
@@ -22,6 +23,7 @@ export default function EbookPage() {
   return (
     <main id="main-content">
       <EbookHero />
+      <EbookSignupSection />
       <UsefulWhenSection />
       <InsideEbookSection />
       <HowToUseSection />
