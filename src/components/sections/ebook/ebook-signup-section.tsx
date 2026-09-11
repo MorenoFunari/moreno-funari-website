@@ -20,7 +20,7 @@ export function EbookSignupSection() {
           title="Inserisci la tua email e inizia da un passo possibile."
           description="Dopo l’invio potrai aprire subito il PDF. Userò il tuo indirizzo soltanto per gestire questa richiesta: non verrai iscritto automaticamente alla newsletter."
         />
-        <div className={styles.formFrame}>
+        <div className={styles.formFrame} id="modulo-guida">
           <iframe
             className={styles.form}
             loading="lazy"
