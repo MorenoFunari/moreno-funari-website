@@ -16,6 +16,9 @@ import { MetaPixelLoader } from "./meta-pixel-loader";
 
 type ConsentViewState = "loading" | "undecided" | AnalyticsConsentStatus;
 
+const isConsentManagerConfigured =
+  analyticsConfig.isConfigured || analyticsConfig.metaPixel.isConfigured;
+
 function updateConsentMode(status: AnalyticsConsentStatus) {
   window.gtag?.("consent", "update", {
     analytics_storage: status,
@@ -53,13 +56,13 @@ function deleteAccessibleGoogleAnalyticsCookies() {
 
 export function AnalyticsConsentManager() {
   const [status, setStatus] = useState<ConsentViewState>(
-    analyticsConfig.isConfigured ? "loading" : "denied",
+    isConsentManagerConfigured ? "loading" : "denied",
   );
   const [preferencesOpen, setPreferencesOpen] = useState(false);
   const preferencesTriggerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (!analyticsConfig.isConfigured) {
+    if (!isConsentManagerConfigured) {
       return;
     }
 
@@ -80,7 +83,7 @@ export function AnalyticsConsentManager() {
   }, []);
 
   useEffect(() => {
-    if (!analyticsConfig.isConfigured) {
+    if (!isConsentManagerConfigured) {
       return;
     }
 
@@ -120,7 +123,7 @@ export function AnalyticsConsentManager() {
   }, []);
 
   const acceptAnalytics = useCallback(() => {
-    if (!analyticsConfig.isConfigured) {
+    if (!isConsentManagerConfigured) {
       return;
     }
 
@@ -138,7 +141,7 @@ export function AnalyticsConsentManager() {
   }, [closePreferences, status]);
 
   const rejectAnalytics = useCallback(() => {
-    if (!analyticsConfig.isConfigured) {
+    if (!isConsentManagerConfigured) {
       return;
     }
 
@@ -156,7 +159,7 @@ export function AnalyticsConsentManager() {
     }
   }, [closePreferences, status]);
 
-  if (!analyticsConfig.isConfigured) {
+  if (!isConsentManagerConfigured) {
     return null;
   }
 
