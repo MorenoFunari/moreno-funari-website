@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { PilotCtaBox } from "@/components/pilot/pilot-cta-box";
 import { ContactBoundariesSection } from "@/components/sections/contact/contact-boundaries-section";
 import { ContactClosingCta } from "@/components/sections/contact/contact-closing-cta";
 import { ContactFaqSection } from "@/components/sections/contact/contact-faq-section";
@@ -22,6 +23,7 @@ export default function ContattiPage() {
     <main id="main-content">
       <ContactHero />
       <ContactOptionsSection />
+      <PilotCtaBox />
       <MessageStartersSection />
       <ContactTopicsSection />
       <FirstContactProcessSection />

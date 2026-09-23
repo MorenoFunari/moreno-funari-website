@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { PilotCtaBox } from "@/components/pilot/pilot-cta-box";
 import { BoundariesSection } from "@/components/sections/coaching/boundaries-section";
 import { CoachingClosingCta } from "@/components/sections/coaching/coaching-closing-cta";
 import { CoachingDefinitionSection } from "@/components/sections/coaching/coaching-definition-section";
@@ -29,6 +30,7 @@ export default function CoachingPage() {
       <ProcessSection />
       <ExpectationsSection />
       <FirstContactSection />
+      <PilotCtaBox />
       <BoundariesSection />
       <CoachingFaqSection />
       <CoachingClosingCta />

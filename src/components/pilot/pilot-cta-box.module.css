@@ -1,0 +1,78 @@
+.section {
+  padding-block: clamp(var(--space-2xl), 7vw, var(--space-4xl));
+}
+
+.inline {
+  margin: var(--space-2xl) 0;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.65fr);
+  gap: clamp(var(--space-lg), 4vw, var(--space-2xl));
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: clamp(var(--space-lg), 4vw, var(--space-2xl));
+  background:
+    radial-gradient(circle at 100% 0%, rgb(184 207 120 / 0.16), transparent 18rem),
+    var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.copy {
+  max-width: 42rem;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-accent-strong);
+  font-size: var(--font-size-eyebrow);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.copy h2 {
+  margin: 0 0 var(--space-md);
+  color: var(--color-primary-strong);
+  font-size: clamp(1.6rem, 3.4vw, 2.45rem);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.copy p:not(.eyebrow),
+.microcopy {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: var(--line-height-body);
+}
+
+.copy p + p {
+  margin-top: var(--space-sm);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.microcopy {
+  font-size: var(--font-size-body-sm);
+}
+
+@media (max-width: 48rem) {
+  .panel {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .actions a {
+    width: 100%;
+  }
+}

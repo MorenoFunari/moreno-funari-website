@@ -18,6 +18,7 @@ const staticRoutes = [
   "/coaching/mental-coach-frascati",
   "/ebook",
   "/guida-dire-sempre-si",
+  "/percorso-pilota",
   "/contatti",
   "/blog",
 ] as const;
