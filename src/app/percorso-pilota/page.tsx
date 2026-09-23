@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { pilotInstagramCta, pilotWhatsAppUrl } from "@/config/pilot";
+import { siteConfig } from "@/config/site";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
 import styles from "./page.module.css";
@@ -53,7 +54,16 @@ function PilotActions() {
       <ButtonLink external href={pilotWhatsAppUrl} size="large" target="_blank">
         Scrivimi su WhatsApp
       </ButtonLink>
-      <p className={styles.secondaryCta}>{pilotInstagramCta}</p>
+      <p className={styles.secondaryCta}>
+        <a
+          className={styles.secondaryCtaLink}
+          href={siteConfig.instagramUrl}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {pilotInstagramCta}
+        </a>
+      </p>
       <p className={styles.microcopy}>
         Ti risponderò personalmente. Il link al primo confronto non viene
         inviato in automatico.

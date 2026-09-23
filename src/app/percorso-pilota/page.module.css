@@ -73,6 +73,21 @@
   font-weight: var(--font-weight-semibold);
 }
 
+.secondaryCtaLink {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--color-link-underline);
+  text-underline-offset: 0.18em;
+  transition:
+    color var(--transition-base),
+    text-decoration-color var(--transition-base);
+}
+
+.secondaryCtaLink:hover {
+  color: var(--color-primary);
+  text-decoration-color: currentColor;
+}
+
 .microcopy {
   flex-basis: 100%;
   font-size: var(--font-size-body-sm);
