@@ -49,6 +49,18 @@ export function MetaPixelLoader({ consentGranted }: MetaPixelLoaderProps) {
     <Script
       id="mf-meta-pixel"
       onReady={() => {
+        const currentUrl = `${window.location.pathname}${window.location.search}`;
+
+        trackedUrls.current.add(currentUrl);
+
+        if (
+          window.location.pathname === "/percorso-pilota" &&
+          !trackedCustomEvents.current.has("ViewPilotPage")
+        ) {
+          trackViewPilotPage();
+          trackedCustomEvents.current.add("ViewPilotPage");
+        }
+
         setIsReady(true);
       }}
       strategy="afterInteractive"
@@ -63,6 +75,7 @@ export function MetaPixelLoader({ consentGranted }: MetaPixelLoaderProps) {
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '${analyticsConfig.metaPixel.pixelId}');
+        fbq('track', 'PageView');
       `}
     </Script>
   );
