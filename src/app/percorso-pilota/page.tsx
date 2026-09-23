@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { ButtonLink } from "@/components/ui/button-link";
+import { TrackedWhatsAppButton } from "@/components/analytics/tracked-whatsapp-button";
 import { Container } from "@/components/ui/container";
 import { pilotInstagramCta, pilotWhatsAppUrl } from "@/config/pilot";
 import { siteConfig } from "@/config/site";
@@ -51,9 +51,13 @@ export const metadata: Metadata = createPageMetadata({
 function PilotActions() {
   return (
     <div className={styles.actions} aria-label="Azioni percorso pilota">
-      <ButtonLink external href={pilotWhatsAppUrl} size="large" target="_blank">
+      <TrackedWhatsAppButton
+        href={pilotWhatsAppUrl}
+        location="pilot_page_primary_cta"
+        size="large"
+      >
         Scrivimi su WhatsApp
-      </ButtonLink>
+      </TrackedWhatsAppButton>
       <p className={styles.secondaryCta}>
         <a
           className={styles.secondaryCtaLink}

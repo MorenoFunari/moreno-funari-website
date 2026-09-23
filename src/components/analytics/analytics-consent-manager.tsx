@@ -12,6 +12,7 @@ import {
 
 import { AnalyticsConsentBanner } from "./analytics-consent-banner";
 import { GoogleAnalyticsLoader } from "./google-analytics-loader";
+import { MetaPixelLoader } from "./meta-pixel-loader";
 
 type ConsentViewState = "loading" | "undecided" | AnalyticsConsentStatus;
 
@@ -166,6 +167,7 @@ export function AnalyticsConsentManager() {
   return (
     <>
       <GoogleAnalyticsLoader consentGranted={status === "granted"} />
+      <MetaPixelLoader consentGranted={status === "granted"} />
       {showInitialBanner || preferencesOpen ? (
         <AnalyticsConsentBanner
           currentStatus={currentStatus}

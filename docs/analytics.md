@@ -35,16 +35,30 @@ Conservazione dati a livello utente: 2 mesi
 - Nessun dato viene inviato in caso di rifiuto.
 - Google Tag Manager non viene usato.
 - Google Ads non viene usato.
-- Non sono implementati custom event.
+- Meta Pixel è predisposto ma resta disabilitato finché `NEXT_PUBLIC_META_PIXEL_ENABLED` non viene impostato a `true`.
+- Meta Pixel viene comunque caricato soltanto dopo consenso, mai prima.
+- Il blocco `noscript` di Meta Pixel non viene usato perché non sarebbe compatibile con il gate di consenso.
 
 ## Configurazione
 
 ```text
 NEXT_PUBLIC_GA_ENABLED
 NEXT_PUBLIC_GA_MEASUREMENT_ID
+NEXT_PUBLIC_META_PIXEL_ENABLED
+NEXT_PUBLIC_META_PIXEL_ID
 ```
 
 In produzione `NEXT_PUBLIC_GA_ENABLED` deve essere attivato solo dopo il deploy delle informative aggiornate.
+
+Per attivare Meta Pixel su Vercel:
+
+1. aprire il progetto su Vercel;
+2. andare in `Settings` → `Environment Variables`;
+3. aggiungere `NEXT_PUBLIC_META_PIXEL_ID` con valore `1111563994630198`;
+4. aggiungere `NEXT_PUBLIC_META_PIXEL_ENABLED` con valore `true` solo quando consenso, Privacy Policy e Cookie Policy sono allineati;
+5. rieseguire un deploy.
+
+Se `NEXT_PUBLIC_META_PIXEL_ENABLED` resta `false` o assente, il Pixel non viene caricato anche se il Pixel ID è presente.
 
 ## Preferenza
 
@@ -61,6 +75,15 @@ In produzione `NEXT_PUBLIC_GA_ENABLED` deve essere attivato solo dopo il deploy 
 - La Misurazione avanzata gestisce le modifiche della cronologia del browser.
 - Non viene inviato alcun `page_view` manuale dal codice.
 
+## Meta Pixel
+
+- Pixel ID letto da `NEXT_PUBLIC_META_PIXEL_ID`.
+- Attivazione controllata da `NEXT_PUBLIC_META_PIXEL_ENABLED`.
+- `PageView` inviato globalmente una sola volta per URL dopo consenso.
+- `/percorso-pilota` invia anche `ViewPilotPage`.
+- I link WhatsApp tracciati inviano `ClickWhatsApp`.
+- L'helper `trackLeadConfronto()` è pronto per azioni future legate a `CONFRONTO`.
+
 ## Privacy
 
 - `allow_google_signals: false`.
@@ -68,6 +91,7 @@ In produzione `NEXT_PUBLIC_GA_ENABLED` deve essere attivato solo dopo il deploy 
 - Nessun `user_id`.
 - Nessun dato proveniente dai form.
 - GA4 resta disabilitato in produzione fino al completamento della Issue #19.
+- Meta Pixel deve restare disabilitato finché non viene validata la base privacy/cookie per finalità marketing.
 
 Questa documentazione descrive l'implementazione tecnica e non dichiara conformita legale garantita.
 
@@ -85,3 +109,8 @@ Questa documentazione descrive l'implementazione tecnica e non dichiara conformi
 - [ ] Revoca del consenso funzionante
 - [ ] Cookie GA eliminati dopo la revoca
 - [ ] Produzione ancora disabilitata fino alla Issue #19
+- [ ] Meta Pixel non caricato quando `NEXT_PUBLIC_META_PIXEL_ENABLED=false`
+- [ ] Meta Pixel non caricato prima del consenso quando abilitato
+- [ ] `PageView` Meta inviato una sola volta per URL dopo consenso quando abilitato
+- [ ] `ViewPilotPage` inviato su `/percorso-pilota` quando abilitato
+- [ ] `ClickWhatsApp` inviato dai CTA WhatsApp quando abilitato

@@ -1,3 +1,4 @@
+import { TrackedWhatsAppButton } from "@/components/analytics/tracked-whatsapp-button";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { pilotWhatsAppUrl } from "@/config/pilot";
@@ -25,9 +26,13 @@ export function PilotCtaBox({ className, source = "section" }: PilotCtaBoxProps)
         </p>
       </div>
       <div className={styles.actions}>
-        <ButtonLink external href={pilotWhatsAppUrl} size="large" target="_blank">
+        <TrackedWhatsAppButton
+          href={pilotWhatsAppUrl}
+          location="pilot_cta_box"
+          size="large"
+        >
           Scrivimi su WhatsApp
-        </ButtonLink>
+        </TrackedWhatsAppButton>
         <ButtonLink href="/percorso-pilota" size="large" variant="secondary">
           Scopri il percorso pilota
         </ButtonLink>
