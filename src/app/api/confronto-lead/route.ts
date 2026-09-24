@@ -5,10 +5,10 @@ const brevoTransactionalEmailEndpoint = "https://api.brevo.com/v3/smtp/email";
 const defaultLeadSource = "confronto_landing";
 const allowedLeadSources = new Set([
   "confronto_landing",
-  "home_pilot_block",
+  "home_pilot_form",
   "contatti_form",
-  "coaching_page",
-  "percorso_pilota_page",
+  "coaching_form",
+  "percorso_pilota_form",
 ]);
 
 type ConfrontoLeadPayload = {

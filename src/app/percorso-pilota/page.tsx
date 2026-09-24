@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import { TrackedConfrontoLink } from "@/components/analytics/tracked-confronto-link";
 import { TrackedWhatsAppButton } from "@/components/analytics/tracked-whatsapp-button";
+import { PilotCtaBanner } from "@/components/pilot/pilot-cta-banner";
+import { PilotCtaBox } from "@/components/pilot/pilot-cta-box";
 import { Container } from "@/components/ui/container";
 import { pilotInstagramCta, pilotWhatsAppUrl } from "@/config/pilot";
 import { siteConfig } from "@/config/site";
@@ -333,6 +335,12 @@ export default function PercorsoPilotaPage() {
           <PilotActions />
         </div>
       </Container>
+      <PilotCtaBanner
+        page="/percorso-pilota"
+        source="percorso_pilota_cta"
+        variant="compact"
+      />
+      <PilotCtaBox formMode="compact" formSource="percorso_pilota_form" />
     </main>
   );
 }

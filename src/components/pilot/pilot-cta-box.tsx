@@ -21,7 +21,7 @@ type PilotCtaBoxProps = {
 export function PilotCtaBox({
   className,
   formMode = "none",
-  formSource = "home_pilot_block",
+  formSource = "home_pilot_form",
   showContactDetails = false,
   source = "section",
 }: PilotCtaBoxProps) {
@@ -29,10 +29,14 @@ export function PilotCtaBox({
   const formTitle =
     formSource === "contatti_form"
       ? "Lascia una richiesta"
+      : formSource === "coaching_form"
+        ? "Vuoi partire da una situazione concreta?"
       : "Vuoi capire se il percorso pilota può fare per te?";
   const formIntro =
     formSource === "contatti_form"
       ? "Puoi scrivermi per il percorso pilota, per una domanda sul coaching o per capire se posso aiutarti rispetto a una situazione concreta."
+      : formSource === "coaching_form"
+        ? "Lascia i tuoi dati oppure scrivimi CONFRONTO su WhatsApp. Ti ricontatto io per capire se può avere senso partire da ciò che stai vivendo."
       : "Lascia i tuoi dati: ti ricontatto io per capire se il percorso può essere adatto alla situazione che stai vivendo.";
   const noteLabel =
     formSource === "contatti_form"
@@ -41,9 +45,9 @@ export function PilotCtaBox({
   const page =
     formSource === "contatti_form"
       ? "/contatti"
-      : formSource === "coaching_page"
+      : formSource === "coaching_form"
         ? "/coaching"
-        : formSource === "percorso_pilota_page"
+        : formSource === "percorso_pilota_form"
           ? "/percorso-pilota"
           : "/";
 
@@ -96,6 +100,7 @@ export function PilotCtaBox({
             location={
               showContactDetails ? "contact_pilot_cta" : "pilot_cta_box_primary"
             }
+            page={page}
             size="large"
           >
             Lascia i tuoi dati
@@ -103,6 +108,7 @@ export function PilotCtaBox({
           <TrackedWhatsAppButton
             href={pilotWhatsAppUrl}
             location="pilot_cta_box"
+            page={page}
             size="large"
           >
             Scrivimi su WhatsApp

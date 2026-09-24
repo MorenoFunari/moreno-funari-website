@@ -5,6 +5,7 @@ import {
   LeadMagnetBanner,
   type LeadMagnetBannerProps,
 } from "@/components/lead-magnet/lead-magnet-banner";
+import { PilotCtaBanner } from "@/components/pilot/pilot-cta-banner";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SurfaceCard } from "@/components/ui/surface-card";
 import type { CoachingLandingPage as CoachingLandingPageContent } from "@/config/coaching-landing-pages";
@@ -222,6 +223,12 @@ export function CoachingLandingPage({
           variant="coaching"
         />
       ) : null}
+
+      <PilotCtaBanner
+        page={page.path}
+        source="coaching_pilot_banner"
+        variant="compact"
+      />
 
       <Container
         as="section"
