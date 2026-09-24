@@ -19,6 +19,7 @@ const staticRoutes = [
   "/ebook",
   "/guida-dire-sempre-si",
   "/percorso-pilota",
+  "/confronto",
   "/contatti",
   "/blog",
 ] as const;

@@ -1,0 +1,167 @@
+.page {
+  background:
+    radial-gradient(circle at 84% 4%, rgb(184 207 120 / 0.16), transparent 28rem),
+    linear-gradient(180deg, var(--color-background), var(--color-surface-muted));
+}
+
+.hero {
+  padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-3xl);
+}
+
+.heroInner {
+  max-width: 48rem;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-md);
+  color: var(--color-accent-strong);
+  font-size: var(--font-size-eyebrow);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.copyBlock h2,
+.twoColumns h2,
+.finalPanel h2 {
+  margin: 0;
+  color: var(--color-primary-strong);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.hero h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-tight);
+}
+
+.lead {
+  max-width: 43rem;
+  margin: var(--space-lg) 0 0;
+  color: var(--color-text);
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-intro);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+  margin-top: var(--space-xl);
+}
+
+.microcopy,
+.sectionIntro {
+  margin: var(--space-sm) 0 0;
+  color: var(--color-text-muted);
+  line-height: var(--line-height-body);
+}
+
+.section,
+.finalSection,
+.band,
+.bandSoft {
+  padding-block: var(--section-space);
+}
+
+.band {
+  background: var(--color-surface);
+}
+
+.bandSoft {
+  background: var(--color-primary-soft);
+}
+
+.copyBlock {
+  max-width: var(--content-width);
+}
+
+.copyBlock h2,
+.twoColumns h2,
+.finalPanel h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-heading);
+}
+
+.copyBlock p {
+  margin: var(--space-md) 0 0;
+  color: var(--color-text);
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body);
+}
+
+.twoColumns {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+  gap: clamp(var(--space-xl), 5vw, var(--space-4xl));
+  align-items: start;
+}
+
+.cardList,
+.stepList {
+  display: grid;
+  gap: var(--space-sm);
+  margin: var(--space-lg) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.twoColumns .cardList {
+  margin-top: 0;
+}
+
+.cardList li,
+.stepList li {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+  line-height: var(--line-height-body);
+  box-shadow: var(--shadow-sm);
+}
+
+.stepList {
+  padding-left: 1.5rem;
+  list-style: decimal;
+}
+
+.stepList li {
+  padding-left: var(--space-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.finalPanel {
+  border-radius: var(--radius-lg);
+  padding: clamp(var(--space-xl), 5vw, var(--space-3xl));
+  background: var(--color-primary-strong);
+  color: var(--color-text-on-dark);
+  box-shadow: var(--shadow-elevated);
+}
+
+.finalPanel h2 {
+  max-width: 38rem;
+  color: var(--color-text-on-dark);
+}
+
+@media (max-width: 58rem) {
+  .twoColumns {
+    grid-template-columns: 1fr;
+  }
+
+  .twoColumns .cardList {
+    margin-top: var(--space-lg);
+  }
+}
+
+@media (max-width: 40rem) {
+  .hero {
+    padding-top: calc(var(--header-height) + var(--space-xl));
+  }
+
+  .actions,
+  .actions a {
+    width: 100%;
+  }
+}
