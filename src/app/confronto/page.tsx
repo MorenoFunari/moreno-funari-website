@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 
-import { TrackedWhatsAppButton } from "@/components/analytics/tracked-whatsapp-button";
 import { Container } from "@/components/ui/container";
-import { pilotWhatsAppUrl } from "@/config/pilot";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
+import { ConfrontoLeadForm } from "./confronto-lead-form";
 import styles from "./page.module.css";
 
 const suitedForItems = [
@@ -40,7 +39,7 @@ const takeawayItems = [
 ] as const;
 
 const startSteps = [
-  "Scrivimi CONFRONTO su WhatsApp o Instagram.",
+  "Lascia i tuoi dati nel modulo.",
   "Ti farò alcune domande semplici.",
   "Se il percorso può essere adatto, ti invierò le informazioni da leggere con calma.",
   "Dopo la conferma, fisseremo un primo confronto conoscitivo online di 30 minuti.",
@@ -53,20 +52,6 @@ export const metadata: Metadata = createPageMetadata({
     "Un percorso gratuito individuale per fare chiarezza su una situazione concreta, capire cosa ti blocca e individuare un prossimo passo possibile.",
   path: "/confronto",
 });
-
-function ConfrontoCta({ location }: { location: string }) {
-  return (
-    <div className={styles.actions}>
-      <TrackedWhatsAppButton
-        href={pilotWhatsAppUrl}
-        location={location}
-        size="large"
-      >
-        Scrivimi CONFRONTO
-      </TrackedWhatsAppButton>
-    </div>
-  );
-}
 
 export default function ConfrontoPage() {
   return (
@@ -81,7 +66,16 @@ export default function ConfrontoPage() {
             Un percorso gratuito individuale per fare chiarezza, capire cosa ti
             blocca e individuare un prossimo passo possibile.
           </p>
-          <ConfrontoCta location="confronto_hero_cta" />
+          <div className={styles.actions}>
+            <a className={styles.primaryAnchor} href="#lascia-dati">
+              Lascia i tuoi dati
+            </a>
+          </div>
+          <p className={styles.ctaCopy}>
+            Lascia i tuoi dati, così posso capire se il percorso può essere
+            adatto. Dopo l’invio potrai scrivermi direttamente su WhatsApp con
+            la parola CONFRONTO.
+          </p>
           <p className={styles.microcopy}>
             Massimo 3 posti disponibili per il percorso pilota.
           </p>
@@ -177,10 +171,7 @@ export default function ConfrontoPage() {
       </section>
 
       <Container as="section" className={styles.finalSection}>
-        <div className={styles.finalPanel}>
-          <h2>Vuoi capire se può essere adatto a te?</h2>
-          <ConfrontoCta location="confronto_final_cta" />
-        </div>
+        <ConfrontoLeadForm />
       </Container>
     </main>
   );
