@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
-import { PilotCtaBanner } from "@/components/pilot/pilot-cta-banner";
-import { PilotCtaBox } from "@/components/pilot/pilot-cta-box";
+import { PilotConversionSection } from "@/components/pilot/pilot-conversion-section";
 import { ContactBoundariesSection } from "@/components/sections/contact/contact-boundaries-section";
 import { ContactClosingCta } from "@/components/sections/contact/contact-closing-cta";
 import { ContactFaqSection } from "@/components/sections/contact/contact-faq-section";
@@ -24,15 +23,16 @@ export default function ContattiPage() {
     <main id="main-content">
       <ContactHero />
       <ContactOptionsSection />
-      <PilotCtaBanner
+      <PilotConversionSection
+        eyebrow="Contatto diretto"
+        formIntro="Puoi scrivermi per il percorso pilota, per una domanda sul coaching o per capire se posso aiutarti rispetto a una situazione concreta."
+        formTitle="Lascia una richiesta"
+        noteLabel="Messaggio / situazione concreta"
         page="/contatti"
-        source="contatti_pilot_banner"
-        variant="compact"
-      />
-      <PilotCtaBox
-        formMode="full"
-        formSource="contatti_form"
-        showContactDetails
+        points={[]}
+        source="contatti_form"
+        text="Non serve avere già tutto chiaro o trovare subito le parole giuste. Puoi partire dalla situazione che oggi ti crea più pressione, confusione o blocco."
+        title="Puoi scrivermi anche da qui."
       />
       <MessageStartersSection />
       <ContactTopicsSection />

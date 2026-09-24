@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
-import { PilotCtaBanner } from "@/components/pilot/pilot-cta-banner";
-import { PilotCtaBox } from "@/components/pilot/pilot-cta-box";
+import { PilotConversionSection } from "@/components/pilot/pilot-conversion-section";
 import { JsonLd } from "@/components/seo/json-ld";
 import { AboutPreviewSection } from "@/components/sections/home/about-preview-section";
 import { ApproachSection } from "@/components/sections/home/approach-section";
@@ -35,8 +34,16 @@ export default function Home() {
       <StartPathsSection />
       <ApproachSection />
       <ResourcesSection />
-      <PilotCtaBanner page="/" source="home_pilot_banner" variant="extended" />
-      <PilotCtaBox formMode="compact" formSource="home_pilot_form" />
+      <PilotConversionSection
+        formIntro="Lascia i tuoi dati: ti ricontatto io per capire se il percorso può essere adatto alla situazione che stai vivendo."
+        formTitle="Vuoi capire se può fare per te?"
+        noteLabel="Situazione concreta"
+        page="/"
+        source="home_pilot_form"
+        subtitle="Per chi si sente bloccato, sotto pressione o confuso rispetto a una situazione concreta."
+        text="Non serve avere già tutto chiaro. Partiamo da ciò che stai vivendo davvero e lavoriamo su un prossimo passo possibile."
+        title="Un Passo Possibile — Percorso Pilota gratuito"
+      />
       <AboutPreviewSection />
       <BlogPreviewSection />
       <ClosingCtaSection />

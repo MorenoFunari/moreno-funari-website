@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
-import { PilotCtaBanner } from "@/components/pilot/pilot-cta-banner";
-import { PilotCtaBox } from "@/components/pilot/pilot-cta-box";
+import { PilotConversionSection } from "@/components/pilot/pilot-conversion-section";
 import { BoundariesSection } from "@/components/sections/coaching/boundaries-section";
 import { CoachingClosingCta } from "@/components/sections/coaching/coaching-closing-cta";
 import { CoachingDefinitionSection } from "@/components/sections/coaching/coaching-definition-section";
@@ -31,14 +30,18 @@ export default function CoachingPage() {
       <ProcessSection />
       <ExpectationsSection />
       <FirstContactSection />
-      <PilotCtaBanner
-        page="/coaching"
-        source="coaching_pilot_banner"
-        variant="extended"
-      />
-      <PilotCtaBox formMode="full" formSource="coaching_form" />
       <BoundariesSection />
       <CoachingFaqSection />
+      <PilotConversionSection
+        eyebrow="Percorso pilota"
+        formIntro="Se senti che una scelta, una pressione o un blocco sta diventando difficile da gestire da solo, puoi lasciarmi una richiesta. Ti ricontatto io per capire se il percorso pilota può essere adatto."
+        formTitle="Vuoi partire da una situazione concreta?"
+        noteLabel="Situazione concreta"
+        page="/coaching"
+        source="coaching_form"
+        text="Dopo aver visto cos’è il coaching e quali sono i suoi confini, puoi lasciare una richiesta se senti che c’è una situazione concreta da cui partire."
+        title="Vuoi capire se il percorso pilota può aiutarti?"
+      />
       <CoachingClosingCta />
     </main>
   );

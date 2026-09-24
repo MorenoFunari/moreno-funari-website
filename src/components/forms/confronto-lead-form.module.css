@@ -90,6 +90,16 @@
   box-shadow: var(--shadow-card);
 }
 
+.embedded {
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
 .formIntro h2 {
   margin: 0;
   color: var(--color-primary-strong);

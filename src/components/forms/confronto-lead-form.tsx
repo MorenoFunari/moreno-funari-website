@@ -29,7 +29,7 @@ type ConfrontoLeadFormProps = {
   page: string;
   source: ConfrontoLeadSource;
   title?: string;
-  variant?: "full" | "compact";
+  variant?: "full" | "compact" | "embedded";
 };
 
 const requiredFieldMessage = "Compila questo campo per continuare.";
@@ -144,6 +144,7 @@ export function ConfrontoLeadForm({
       className={[
         styles.formPanel,
         variant === "compact" ? styles.compact : "",
+        variant === "embedded" ? styles.embedded : "",
       ]
         .filter(Boolean)
         .join(" ")}

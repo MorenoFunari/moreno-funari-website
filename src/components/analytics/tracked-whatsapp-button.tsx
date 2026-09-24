@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 import { ButtonLink } from "@/components/ui/button-link";
 import {
   trackClickWhatsApp,
-  trackPilotCtaClick,
+  trackPilotWhatsappClick,
 } from "@/lib/analytics/meta-pixel";
 
 type TrackedWhatsAppButtonProps = {
@@ -37,7 +37,7 @@ export function TrackedWhatsAppButton({
         };
 
         trackClickWhatsApp(eventParameters);
-        trackPilotCtaClick(eventParameters);
+        trackPilotWhatsappClick(eventParameters);
       }}
       size={size}
       target="_blank"

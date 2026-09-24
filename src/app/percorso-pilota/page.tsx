@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 
 import { TrackedConfrontoLink } from "@/components/analytics/tracked-confronto-link";
 import { TrackedWhatsAppButton } from "@/components/analytics/tracked-whatsapp-button";
-import { PilotCtaBanner } from "@/components/pilot/pilot-cta-banner";
-import { PilotCtaBox } from "@/components/pilot/pilot-cta-box";
+import { PilotConversionSection } from "@/components/pilot/pilot-conversion-section";
 import { Container } from "@/components/ui/container";
 import { pilotInstagramCta, pilotWhatsAppUrl } from "@/config/pilot";
 import { siteConfig } from "@/config/site";
@@ -335,12 +334,18 @@ export default function PercorsoPilotaPage() {
           <PilotActions />
         </div>
       </Container>
-      <PilotCtaBanner
+
+      <PilotConversionSection
+        eyebrow="Candidatura percorso pilota"
+        formIntro="Lascia i tuoi dati: ti ricontatto io per capire se il percorso può essere adatto alla situazione che stai vivendo."
+        formTitle="Candidati al percorso pilota"
+        noteLabel="Situazione concreta da cui vorresti partire"
         page="/percorso-pilota"
-        source="percorso_pilota_cta"
-        variant="compact"
+        points={[]}
+        source="percorso_pilota_form"
+        text="Se vuoi capire se questo percorso può fare per te, lascia i tuoi dati e raccontami in poche parole la situazione concreta da cui vorresti partire."
+        title="Vuoi capire se può essere adatto a te?"
       />
-      <PilotCtaBox formMode="compact" formSource="percorso_pilota_form" />
     </main>
   );
 }

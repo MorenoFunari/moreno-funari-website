@@ -1,0 +1,99 @@
+.section {
+  padding-block: clamp(var(--space-2xl), 7vw, var(--space-4xl));
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(20rem, 1fr);
+  gap: clamp(var(--space-xl), 5vw, var(--space-4xl));
+  align-items: start;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: clamp(var(--space-xl), 5vw, var(--space-3xl));
+  background:
+    radial-gradient(circle at 100% 0%, rgb(184 207 120 / 0.16), transparent 18rem),
+    var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.copy {
+  max-width: 42rem;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-accent-strong);
+  font-size: var(--font-size-eyebrow);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.copy h2 {
+  margin: 0;
+  color: var(--color-primary-strong);
+  font-size: clamp(1.7rem, 3.4vw, 2.55rem);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.copy p:not(.eyebrow),
+.formNote {
+  margin: var(--space-md) 0 0;
+  color: var(--color-text-muted);
+  line-height: var(--line-height-body);
+}
+
+.subtitle {
+  color: var(--color-primary-strong) !important;
+  font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-intro) !important;
+}
+
+.points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin: var(--space-lg) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.points li {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 0.7rem;
+  background: var(--color-background);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body-sm);
+  line-height: 1.2;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+.formWrap {
+  min-width: 0;
+}
+
+.formNote {
+  font-size: var(--font-size-body-sm);
+}
+
+@media (max-width: 58rem) {
+  .panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 40rem) {
+  .actions,
+  .actions a {
+    width: 100%;
+  }
+}
