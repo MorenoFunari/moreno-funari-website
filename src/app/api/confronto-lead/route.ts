@@ -14,6 +14,20 @@ function normalizeString(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
 }
 
+function normalizeItalianPhone(value: string) {
+  const compactPhone = value.replace(/[\s().-]/g, "");
+
+  if (compactPhone.startsWith("+") || compactPhone.startsWith("00")) {
+    return compactPhone;
+  }
+
+  if (/^3\d{8,10}$/.test(compactPhone)) {
+    return `+39${compactPhone}`;
+  }
+
+  return compactPhone;
+}
+
 function jsonError(message: string, status: number) {
   return NextResponse.json({ error: message }, { status });
 }
@@ -30,7 +44,7 @@ export async function POST(request: Request) {
   const email = normalizeString(payload.email).toLowerCase();
   const name = normalizeString(payload.name);
   const note = normalizeString(payload.note);
-  const phone = normalizeString(payload.phone);
+  const phone = normalizeItalianPhone(normalizeString(payload.phone));
   const privacyConsent = payload.privacyConsent === true;
 
   if (!name || !email || !phone || !privacyConsent) {
@@ -42,6 +56,12 @@ export async function POST(request: Request) {
   const listId = listIdValue ? Number.parseInt(listIdValue, 10) : NaN;
 
   if (!apiKey || !Number.isInteger(listId)) {
+    console.error("Confronto lead capture is missing Brevo configuration.", {
+      hasApiKey: Boolean(apiKey),
+      hasListId: Boolean(listIdValue),
+      listIdValueIsInteger: Number.isInteger(listId),
+    });
+
     return jsonError("Lead capture is not configured.", 503);
   }
 
@@ -66,6 +86,13 @@ export async function POST(request: Request) {
   });
 
   if (!response.ok) {
+    const errorBody = await response.text();
+
+    console.error("Brevo rejected confronto lead capture request.", {
+      status: response.status,
+      body: errorBody,
+    });
+
     return jsonError("Brevo rejected the lead capture request.", 502);
   }
 
