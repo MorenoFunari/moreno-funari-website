@@ -6,7 +6,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 
 import { mdxComponents } from "@/components/blog/mdx-components";
 import { LeadMagnetBanner } from "@/components/lead-magnet/lead-magnet-banner";
-import { PilotCtaBox } from "@/components/pilot/pilot-cta-box";
+import { PilotCtaBanner } from "@/components/pilot/pilot-cta-banner";
 import { JsonLd } from "@/components/seo/json-ld";
 import { getBlogCategoryLabel } from "@/config/blog-categories";
 import { seoConfig, toAbsoluteUrl } from "@/config/seo";
@@ -35,10 +35,6 @@ const leadMagnetPlacements = {
   "ti-parleresti-cosi-se-fossi-una-persona-a-cui-vuoi-bene":
     "blog-self-talk",
 } as const;
-
-const pilotCtaPosts = new Set([
-  "quando-ti-senti-bloccato-non-devi-cambiare-tutto",
-]);
 
 export const dynamicParams = false;
 
@@ -213,7 +209,11 @@ export default async function BlogArticlePage({
           />
         ) : null}
 
-        {pilotCtaPosts.has(post.slug) ? <PilotCtaBox source="inline" /> : null}
+        <PilotCtaBanner
+          page={`/blog/${post.slug}`}
+          source="blog_pilot_banner"
+          variant="compact"
+        />
 
         <footer className={styles.footer}>
           <p>

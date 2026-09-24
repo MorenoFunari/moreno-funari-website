@@ -163,14 +163,15 @@ export default function GuidaDireSempreSiPage() {
             />
           </div>
           <div className={styles.formEmbed}>
-            <iframe
-              allowFullScreen
-              className={styles.brevoIframe}
-              loading="lazy"
-              scrolling="no"
-              src={BREVO_FORM_URL}
-              title="Modulo per ricevere la guida Dire sempre sì"
-            />
+            <div className={styles.formFallback}>
+              <p>
+                Il modulo si apre in una nuova scheda tramite Brevo. Inserisci
+                nome ed email, poi conferma dalla mail che riceverai.
+              </p>
+              <ButtonLink external href={BREVO_FORM_URL} size="large">
+                Apri il modulo per ricevere la guida
+              </ButtonLink>
+            </div>
           </div>
           <p className={styles.privacyNote}>
             Il modulo è gestito da Brevo. Dopo l’invio riceverai una mail di

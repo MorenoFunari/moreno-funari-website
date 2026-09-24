@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { PilotCtaBanner } from "@/components/pilot/pilot-cta-banner";
 import { PilotCtaBox } from "@/components/pilot/pilot-cta-box";
 import { BoundariesSection } from "@/components/sections/coaching/boundaries-section";
 import { CoachingClosingCta } from "@/components/sections/coaching/coaching-closing-cta";
@@ -30,7 +31,12 @@ export default function CoachingPage() {
       <ProcessSection />
       <ExpectationsSection />
       <FirstContactSection />
-      <PilotCtaBox />
+      <PilotCtaBanner
+        page="/coaching"
+        source="coaching_pilot_banner"
+        variant="extended"
+      />
+      <PilotCtaBox formMode="full" formSource="coaching_form" />
       <BoundariesSection />
       <CoachingFaqSection />
       <CoachingClosingCta />

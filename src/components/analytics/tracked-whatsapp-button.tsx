@@ -3,12 +3,16 @@
 import type { ReactNode } from "react";
 
 import { ButtonLink } from "@/components/ui/button-link";
-import { trackClickWhatsApp } from "@/lib/analytics/meta-pixel";
+import {
+  trackClickWhatsApp,
+  trackPilotCtaClick,
+} from "@/lib/analytics/meta-pixel";
 
 type TrackedWhatsAppButtonProps = {
   children: ReactNode;
   href: string;
   location: string;
+  page?: string;
   size?: "medium" | "large";
 };
 
@@ -16,6 +20,7 @@ export function TrackedWhatsAppButton({
   children,
   href,
   location,
+  page,
   size = "medium",
 }: TrackedWhatsAppButtonProps) {
   return (
@@ -23,9 +28,16 @@ export function TrackedWhatsAppButton({
       external
       href={href}
       onClick={() => {
-        trackClickWhatsApp({
-          location,
-        });
+        const eventParameters = {
+          source: location,
+          page:
+            page ??
+            (typeof window !== "undefined" ? window.location.pathname : ""),
+          funnel: "pilot",
+        };
+
+        trackClickWhatsApp(eventParameters);
+        trackPilotCtaClick(eventParameters);
       }}
       size={size}
       target="_blank"

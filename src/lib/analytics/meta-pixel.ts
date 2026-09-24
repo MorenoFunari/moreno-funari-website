@@ -2,6 +2,7 @@ export type MetaPixelEventName =
   | "PageView"
   | "ViewPilotPage"
   | "ViewConfrontoPage"
+  | "PilotCtaClick"
   | "ClickConfronto"
   | "ClickWhatsApp"
   | "LeadConfronto"
@@ -61,6 +62,10 @@ export function trackViewConfrontoPage() {
 
 export function trackClickConfronto(options?: MetaPixelEventOptions) {
   event("ClickConfronto", options);
+}
+
+export function trackPilotCtaClick(options?: MetaPixelEventOptions) {
+  event("PilotCtaClick", options);
 }
 
 export function trackClickWhatsApp(options?: MetaPixelEventOptions) {

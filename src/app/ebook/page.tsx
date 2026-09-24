@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { PilotCtaBanner } from "@/components/pilot/pilot-cta-banner";
 import { AuthorNoteSection } from "@/components/sections/ebook/author-note-section";
 import { EbookBoundariesSection } from "@/components/sections/ebook/ebook-boundaries-section";
 import { EbookClosingCta } from "@/components/sections/ebook/ebook-closing-cta";
@@ -29,6 +30,7 @@ export default function EbookPage() {
       <HowToUseSection />
       <AuthorNoteSection />
       <EcosystemSection />
+      <PilotCtaBanner page="/ebook" source="ebook_pilot_banner" variant="compact" />
       <EbookBoundariesSection />
       <EbookFaqSection />
       <EbookClosingCta />

@@ -17,10 +17,10 @@ type SubmitState = "idle" | "submitting" | "success" | "error";
 
 export type ConfrontoLeadSource =
   | "confronto_landing"
-  | "home_pilot_block"
+  | "home_pilot_form"
   | "contatti_form"
-  | "coaching_page"
-  | "percorso_pilota_page";
+  | "coaching_form"
+  | "percorso_pilota_form";
 
 type ConfrontoLeadFormProps = {
   ctaLabel?: string;

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { PilotCtaBanner } from "@/components/pilot/pilot-cta-banner";
 import { PilotCtaBox } from "@/components/pilot/pilot-cta-box";
 import { JsonLd } from "@/components/seo/json-ld";
 import { AboutPreviewSection } from "@/components/sections/home/about-preview-section";
@@ -34,7 +35,8 @@ export default function Home() {
       <StartPathsSection />
       <ApproachSection />
       <ResourcesSection />
-      <PilotCtaBox formMode="compact" formSource="home_pilot_block" />
+      <PilotCtaBanner page="/" source="home_pilot_banner" variant="extended" />
+      <PilotCtaBox formMode="compact" formSource="home_pilot_form" />
       <AboutPreviewSection />
       <BlogPreviewSection />
       <ClosingCtaSection />
