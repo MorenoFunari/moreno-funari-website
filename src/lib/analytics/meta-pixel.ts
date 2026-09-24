@@ -4,7 +4,8 @@ export type MetaPixelEventName =
   | "ViewConfrontoPage"
   | "ClickConfronto"
   | "ClickWhatsApp"
-  | "LeadConfronto";
+  | "LeadConfronto"
+  | "LeadConfrontoSubmitted";
 
 export type MetaPixelEventOptions = Record<
   string,
@@ -68,4 +69,10 @@ export function trackClickWhatsApp(options?: MetaPixelEventOptions) {
 
 export function trackLeadConfronto(options?: MetaPixelEventOptions) {
   event("LeadConfronto", options);
+}
+
+export function trackLeadConfrontoSubmitted(
+  options?: MetaPixelEventOptions,
+) {
+  event("LeadConfrontoSubmitted", options);
 }

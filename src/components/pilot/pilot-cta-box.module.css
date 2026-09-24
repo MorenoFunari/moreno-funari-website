@@ -20,6 +20,11 @@
   box-shadow: var(--shadow-card);
 }
 
+.withForm {
+  grid-template-columns: minmax(0, 0.78fr) minmax(18rem, 1fr);
+  align-items: start;
+}
+
 .copy {
   max-width: 42rem;
 }

@@ -34,7 +34,7 @@ export default function Home() {
       <StartPathsSection />
       <ApproachSection />
       <ResourcesSection />
-      <PilotCtaBox />
+      <PilotCtaBox formMode="compact" formSource="home_pilot_block" />
       <AboutPreviewSection />
       <BlogPreviewSection />
       <ClosingCtaSection />

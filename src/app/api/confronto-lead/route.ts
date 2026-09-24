@@ -2,7 +2,14 @@ import { NextResponse } from "next/server";
 
 const brevoContactsEndpoint = "https://api.brevo.com/v3/contacts";
 const brevoTransactionalEmailEndpoint = "https://api.brevo.com/v3/smtp/email";
-const leadSource = "confronto_landing";
+const defaultLeadSource = "confronto_landing";
+const allowedLeadSources = new Set([
+  "confronto_landing",
+  "home_pilot_block",
+  "contatti_form",
+  "coaching_page",
+  "percorso_pilota_page",
+]);
 
 type ConfrontoLeadPayload = {
   email?: unknown;
@@ -10,6 +17,7 @@ type ConfrontoLeadPayload = {
   note?: unknown;
   phone?: unknown;
   privacyConsent?: unknown;
+  source?: unknown;
 };
 
 function normalizeString(value: unknown) {
@@ -66,12 +74,14 @@ async function sendLeadNotification({
   name,
   note,
   phone,
+  source,
 }: {
   apiKey: string;
   email: string;
   name: string;
   note: string;
   phone: string;
+  source: string;
 }) {
   const notificationTo =
     process.env.LEAD_NOTIFICATION_TO || "info@morenofunari.it";
@@ -103,22 +113,22 @@ async function sendLeadNotification({
       ],
       subject: `Nuovo lead CONFRONTO — ${name}`,
       htmlContent: `
-        <p>È arrivata una nuova richiesta dal form /confronto.</p>
+        <p>È arrivata una nuova richiesta dal sito.</p>
         <p><strong>Nome:</strong><br>${safeName}</p>
         <p><strong>Email:</strong><br>${safeEmail}</p>
         <p><strong>Telefono:</strong><br>${safePhone}</p>
         <p><strong>Situazione indicata:</strong><br>${safeNote}</p>
-        <p><strong>Fonte:</strong><br>${leadSource}</p>
+        <p><strong>Fonte:</strong><br>${escapeHtml(source)}</p>
         <p><strong>Azione consigliata:</strong><br>Rispondere entro 24 ore.</p>
       `,
       textContent: [
-        "È arrivata una nuova richiesta dal form /confronto.",
+        "È arrivata una nuova richiesta dal sito.",
         "",
         `Nome: ${name}`,
         `Email: ${email}`,
         `Telefono: ${phone}`,
         `Situazione indicata: ${note || "Non indicata"}`,
-        `Fonte: ${leadSource}`,
+        `Fonte: ${source}`,
         "Azione consigliata: Rispondere entro 24 ore.",
       ].join("\n"),
     }),
@@ -145,6 +155,10 @@ export async function POST(request: Request) {
   const note = normalizeString(payload.note);
   const phone = normalizeItalianPhone(normalizeString(payload.phone));
   const privacyConsent = payload.privacyConsent === true;
+  const requestedSource = normalizeString(payload.source);
+  const leadSource = allowedLeadSources.has(requestedSource)
+    ? requestedSource
+    : defaultLeadSource;
 
   if (!name || !email || !phone || !privacyConsent) {
     return jsonError("Missing required fields.", 400);
@@ -225,11 +239,16 @@ export async function POST(request: Request) {
         "Brevo accepted confronto lead with minimal fallback. Contact attributes may be missing.",
       );
 
-      await sendLeadNotification({ apiKey, email, name, note, phone }).catch(
-        () => {
-          console.error("Brevo lead notification failed.");
-        },
-      );
+      await sendLeadNotification({
+        apiKey,
+        email,
+        name,
+        note,
+        phone,
+        source: leadSource,
+      }).catch(() => {
+        console.error("Brevo lead notification failed.");
+      });
 
       return NextResponse.json({ ok: true });
     }
@@ -239,7 +258,14 @@ export async function POST(request: Request) {
     );
   }
 
-  await sendLeadNotification({ apiKey, email, name, note, phone }).catch(() => {
+  await sendLeadNotification({
+    apiKey,
+    email,
+    name,
+    note,
+    phone,
+    source: leadSource,
+  }).catch(() => {
     console.error("Brevo lead notification failed.");
   });
 
