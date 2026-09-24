@@ -32,6 +32,23 @@ function jsonError(message: string, status: number) {
   return NextResponse.json({ error: message }, { status });
 }
 
+async function createBrevoContact({
+  apiKey,
+  body,
+}: {
+  apiKey: string;
+  body: Record<string, unknown>;
+}) {
+  return fetch(brevoContactsEndpoint, {
+    method: "POST",
+    headers: {
+      "api-key": apiKey,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+}
+
 export async function POST(request: Request) {
   let payload: ConfrontoLeadPayload;
 
@@ -65,24 +82,24 @@ export async function POST(request: Request) {
     return jsonError("Lead capture is not configured.", 503);
   }
 
-  const response = await fetch(brevoContactsEndpoint, {
-    method: "POST",
-    headers: {
-      "api-key": apiKey,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
+  const baseContact = {
+    email,
+    listIds: [listId],
+    updateEnabled: true,
+  };
+
+  const response = await createBrevoContact({
+    apiKey,
+    body: {
+      ...baseContact,
       attributes: {
         CONFRONTO_NOTE: note,
-        FIRSTNAME: name,
+        NOME: name,
         PILOT_SOURCE: "confronto_landing",
         PILOT_TAG: "CONFRONTO",
-        SMS: phone,
+        WHATSAPP: phone,
       },
-      email,
-      listIds: [listId],
-      updateEnabled: true,
-    }),
+    },
   });
 
   if (!response.ok) {
@@ -93,7 +110,31 @@ export async function POST(request: Request) {
       body: errorBody,
     });
 
-    return jsonError("Brevo rejected the lead capture request.", 502);
+    const fallbackResponse = await createBrevoContact({
+      apiKey,
+      body: {
+        ...baseContact,
+        attributes: {
+          NOME: name,
+          WHATSAPP: phone,
+        },
+      },
+    });
+
+    if (!fallbackResponse.ok) {
+      const fallbackErrorBody = await fallbackResponse.text();
+
+      console.error("Brevo rejected confronto fallback lead capture request.", {
+        status: fallbackResponse.status,
+        body: fallbackErrorBody,
+      });
+
+      return jsonError("Brevo rejected the lead capture request.", 502);
+    }
+
+    console.warn(
+      "Brevo accepted confronto lead with fallback attributes. Custom Pilot attributes may be missing.",
+    );
   }
 
   return NextResponse.json({ ok: true });
