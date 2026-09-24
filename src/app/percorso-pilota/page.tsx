@@ -25,11 +25,11 @@ const usefulForItems = [
 ] as const;
 
 const flowSteps = [
-  "Mi scrivi su WhatsApp oppure mi scrivi CONFRONTO su Instagram.",
-  "Mi racconti in modo semplice la situazione da cui vorresti partire.",
-  "Ti rispondo personalmente.",
-  "Se ha senso, fissiamo un primo confronto online da 30 minuti.",
-  "Solo dopo quel confronto decidiamo se iniziare il percorso pilota.",
+  "Mi scrivi su WhatsApp o in DM con la parola CONFRONTO.",
+  "Ti faccio alcune domande semplici per capire meglio la situazione.",
+  "Se il percorso è coerente, ti invio informazioni e documenti da leggere con calma.",
+  "Dopo conferma e documenti, fissiamo un primo confronto conoscitivo online di 30 minuti.",
+  "Se ha senso per entrambi, avviamo il percorso pilota.",
 ] as const;
 
 const notItems = [
@@ -39,6 +39,23 @@ const notItems = [
   "non promette risultati automatici",
   "non sostituisce figure professionali specialistiche",
   "non è uno spazio in cui qualcuno decide al posto tuo",
+] as const;
+
+const workOnItems = [
+  "messa a fuoco della situazione concreta",
+  "ostacoli, automatismi e pensieri ricorrenti",
+  "pressione, autocritica o paura di sbagliare",
+  "alternative realistiche",
+  "piccolo passo concreto tra un incontro e l’altro",
+  "direzione finale più chiara",
+] as const;
+
+const takeawayItems = [
+  "situazione di partenza",
+  "cosa ti bloccava",
+  "risorse emerse",
+  "alternative viste",
+  "prossimo passo possibile",
 ] as const;
 
 export const metadata: Metadata = createPageMetadata({
@@ -56,7 +73,7 @@ function PilotActions() {
         location="pilot_page_primary_cta"
         size="large"
       >
-        Scrivimi su WhatsApp
+        Scrivimi CONFRONTO
       </TrackedWhatsAppButton>
       <p className={styles.secondaryCta}>
         <a
@@ -87,9 +104,15 @@ export default function PercorsoPilotaPage() {
               Uno spazio pilota per fermarti su una situazione concreta
             </h1>
             <p className={styles.lead}>
-              Non sempre serve capire tutta la vita. A volte serve guardare
-              meglio un blocco, una pressione o una scelta che stai vivendo
-              adesso.
+              Un percorso gratuito individuale di 6 incontri online per lavorare
+              su una situazione concreta che oggi senti bloccata, confusa o
+              sotto pressione.
+            </p>
+            <p className={styles.lead}>
+              Non serve avere già tutto chiaro. Partiamo da ciò che stai vivendo
+              davvero e lo guardiamo con calma, per distinguere cosa ti sta
+              bloccando, cosa dipende da te e quale può essere il prossimo passo
+              possibile.
             </p>
             <PilotActions />
           </div>
@@ -148,6 +171,39 @@ export default function PercorsoPilotaPage() {
             automatico. Il primo confronto viene proposto solo dopo una
             valutazione minima.
           </p>
+        </div>
+      </Container>
+
+      <section className={styles.band}>
+        <Container className={styles.twoColumns}>
+          <div>
+            <h2>Durante il percorso lavoriamo su</h2>
+            <p className={styles.sectionIntro}>
+              Non su tutto insieme, ma su ciò che oggi è abbastanza concreto da
+              poter essere osservato e affrontato un passo alla volta.
+            </p>
+          </div>
+          <ul className={styles.checkList}>
+            {workOnItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      <Container as="section" className={styles.section}>
+        <div className={styles.twoColumns}>
+          <div>
+            <h2>Cosa ti porti via</h2>
+            <p className={styles.sectionIntro}>
+              Alla fine non una formula magica, ma una traccia più chiara con:
+            </p>
+          </div>
+          <ul className={styles.checkList}>
+            {takeawayItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </div>
       </Container>
 
@@ -238,6 +294,7 @@ export default function PercorsoPilotaPage() {
               Da un punto reale, osservabile, che oggi senti bloccante o sotto
               pressione.
             </p>
+            <p>Vuoi capire se può essere adatto a te? Scrivimi CONFRONTO.</p>
           </div>
           <PilotActions />
         </div>
