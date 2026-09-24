@@ -154,15 +154,6 @@
   box-shadow: var(--shadow-card);
 }
 
-.brevoIframe {
-  display: block;
-  width: 100%;
-  max-width: 680px;
-  min-height: 760px;
-  border: 0;
-  border-radius: inherit;
-}
-
 .privacyNote {
   max-width: 720px;
   margin: var(--space-lg) auto 0;
@@ -175,6 +166,22 @@
 .privacyNote a {
   color: var(--color-primary-strong);
   font-weight: var(--font-weight-semibold);
+}
+
+.formFallback {
+  display: grid;
+  gap: var(--space-lg);
+  justify-items: center;
+  padding: clamp(var(--space-xl), 5vw, var(--space-3xl));
+  text-align: center;
+}
+
+.formFallback p {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-intro);
 }
 
 .closing {
@@ -237,27 +244,11 @@
   }
 
   .formEmbed {
-    --brevo-mobile-width: 560px;
-    --brevo-mobile-height: 760px;
-    --brevo-mobile-scale: min(
-      1,
-      calc((100vw - (2 * var(--space-md))) / var(--brevo-mobile-width))
-    );
-
-    align-items: flex-start;
-    height: calc(
-      var(--brevo-mobile-height) * var(--brevo-mobile-scale)
-    );
     border-radius: var(--radius-md);
-    overflow: hidden;
   }
 
-  .brevoIframe {
-    flex: 0 0 var(--brevo-mobile-width);
-    width: var(--brevo-mobile-width);
-    max-width: none;
-    min-height: var(--brevo-mobile-height);
-    transform: scale(var(--brevo-mobile-scale));
-    transform-origin: top center;
+  .formFallback a {
+    width: 100%;
+    justify-content: center;
   }
 }

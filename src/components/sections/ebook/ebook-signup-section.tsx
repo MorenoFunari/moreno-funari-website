@@ -21,13 +21,16 @@ export function EbookSignupSection() {
           description="Dopo l’invio potrai aprire subito il PDF. Userò il tuo indirizzo soltanto per gestire questa richiesta: non verrai iscritto automaticamente alla newsletter."
         />
         <div className={styles.formFrame} id="modulo-guida">
-          <iframe
-            className={styles.form}
-            loading="lazy"
-            scrolling="no"
-            src={brevoFormUrl}
-            title="Modulo per ricevere la guida Un passo possibile"
-          />
+          <div className={styles.formFallback}>
+            <p>
+              Il modulo si apre in una nuova scheda tramite Brevo, così puoi
+              lasciare la tua email e ricevere la guida senza blocchi del
+              browser.
+            </p>
+            <a href={brevoFormUrl} rel="noopener noreferrer" target="_blank">
+              Apri il modulo per ricevere la guida
+            </a>
+          </div>
         </div>
         <p className={styles.privacy}>
           Inviando il modulo dichiari di aver letto la nostra{" "}
