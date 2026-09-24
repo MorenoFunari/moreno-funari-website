@@ -129,7 +129,30 @@ export async function POST(request: Request) {
         body: fallbackErrorBody,
       });
 
-      return jsonError("Brevo rejected the lead capture request.", 502);
+      const minimalFallbackResponse = await createBrevoContact({
+        apiKey,
+        body: baseContact,
+      });
+
+      if (!minimalFallbackResponse.ok) {
+        const minimalFallbackErrorBody = await minimalFallbackResponse.text();
+
+        console.error(
+          "Brevo rejected confronto minimal fallback lead capture request.",
+          {
+            status: minimalFallbackResponse.status,
+            body: minimalFallbackErrorBody,
+          },
+        );
+
+        return jsonError("Brevo rejected the lead capture request.", 502);
+      }
+
+      console.warn(
+        "Brevo accepted confronto lead with minimal fallback. Contact attributes may be missing.",
+      );
+
+      return NextResponse.json({ ok: true });
     }
 
     console.warn(
