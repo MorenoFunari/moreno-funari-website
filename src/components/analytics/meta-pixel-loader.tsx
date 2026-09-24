@@ -5,7 +5,11 @@ import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 
 import { analyticsConfig } from "@/config/analytics";
-import { pageview, trackViewPilotPage } from "@/lib/analytics/meta-pixel";
+import {
+  pageview,
+  trackViewConfrontoPage,
+  trackViewPilotPage,
+} from "@/lib/analytics/meta-pixel";
 
 type MetaPixelLoaderProps = {
   consentGranted: boolean;
@@ -39,6 +43,14 @@ export function MetaPixelLoader({ consentGranted }: MetaPixelLoaderProps) {
       trackViewPilotPage();
       trackedCustomEvents.current.add("ViewPilotPage");
     }
+
+    if (
+      pathname === "/confronto" &&
+      !trackedCustomEvents.current.has("ViewConfrontoPage")
+    ) {
+      trackViewConfrontoPage();
+      trackedCustomEvents.current.add("ViewConfrontoPage");
+    }
   }, [consentGranted, isReady, pathname]);
 
   if (!analyticsConfig.metaPixel.isConfigured || !consentGranted) {
@@ -59,6 +71,14 @@ export function MetaPixelLoader({ consentGranted }: MetaPixelLoaderProps) {
         ) {
           trackViewPilotPage();
           trackedCustomEvents.current.add("ViewPilotPage");
+        }
+
+        if (
+          window.location.pathname === "/confronto" &&
+          !trackedCustomEvents.current.has("ViewConfrontoPage")
+        ) {
+          trackViewConfrontoPage();
+          trackedCustomEvents.current.add("ViewConfrontoPage");
         }
 
         setIsReady(true);

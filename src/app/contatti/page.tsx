@@ -23,7 +23,7 @@ export default function ContattiPage() {
     <main id="main-content">
       <ContactHero />
       <ContactOptionsSection />
-      <PilotCtaBox />
+      <PilotCtaBox showContactDetails />
       <MessageStartersSection />
       <ContactTopicsSection />
       <FirstContactProcessSection />

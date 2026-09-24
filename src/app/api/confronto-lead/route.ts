@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 
 const brevoContactsEndpoint = "https://api.brevo.com/v3/contacts";
+const brevoTransactionalEmailEndpoint = "https://api.brevo.com/v3/smtp/email";
+const leadSource = "confronto_landing";
 
 type ConfrontoLeadPayload = {
   email?: unknown;
@@ -49,6 +51,86 @@ async function createBrevoContact({
   });
 }
 
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+async function sendLeadNotification({
+  apiKey,
+  email,
+  name,
+  note,
+  phone,
+}: {
+  apiKey: string;
+  email: string;
+  name: string;
+  note: string;
+  phone: string;
+}) {
+  const notificationTo =
+    process.env.LEAD_NOTIFICATION_TO || "info@morenofunari.it";
+  const senderEmail =
+    process.env.BREVO_SENDER_EMAIL || "info@morenofunari.it";
+  const senderName =
+    process.env.BREVO_SENDER_NAME || "Moreno Funari | Mental Coach";
+
+  const safeName = escapeHtml(name);
+  const safeEmail = escapeHtml(email);
+  const safePhone = escapeHtml(phone);
+  const safeNote = escapeHtml(note || "Non indicata");
+
+  const response = await fetch(brevoTransactionalEmailEndpoint, {
+    method: "POST",
+    headers: {
+      "api-key": apiKey,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      sender: {
+        email: senderEmail,
+        name: senderName,
+      },
+      to: [
+        {
+          email: notificationTo,
+        },
+      ],
+      subject: `Nuovo lead CONFRONTO — ${name}`,
+      htmlContent: `
+        <p>È arrivata una nuova richiesta dal form /confronto.</p>
+        <p><strong>Nome:</strong><br>${safeName}</p>
+        <p><strong>Email:</strong><br>${safeEmail}</p>
+        <p><strong>Telefono:</strong><br>${safePhone}</p>
+        <p><strong>Situazione indicata:</strong><br>${safeNote}</p>
+        <p><strong>Fonte:</strong><br>${leadSource}</p>
+        <p><strong>Azione consigliata:</strong><br>Rispondere entro 24 ore.</p>
+      `,
+      textContent: [
+        "È arrivata una nuova richiesta dal form /confronto.",
+        "",
+        `Nome: ${name}`,
+        `Email: ${email}`,
+        `Telefono: ${phone}`,
+        `Situazione indicata: ${note || "Non indicata"}`,
+        `Fonte: ${leadSource}`,
+        "Azione consigliata: Rispondere entro 24 ore.",
+      ].join("\n"),
+    }),
+  });
+
+  if (!response.ok) {
+    console.error("Brevo lead notification failed.", {
+      status: response.status,
+    });
+  }
+}
+
 export async function POST(request: Request) {
   let payload: ConfrontoLeadPayload;
 
@@ -95,7 +177,7 @@ export async function POST(request: Request) {
       attributes: {
         CONFRONTO_NOTE: note,
         NOME: name,
-        PILOT_SOURCE: "confronto_landing",
+        PILOT_SOURCE: leadSource,
         PILOT_TAG: "CONFRONTO",
         WHATSAPP: phone,
       },
@@ -103,11 +185,8 @@ export async function POST(request: Request) {
   });
 
   if (!response.ok) {
-    const errorBody = await response.text();
-
     console.error("Brevo rejected confronto lead capture request.", {
       status: response.status,
-      body: errorBody,
     });
 
     const fallbackResponse = await createBrevoContact({
@@ -122,11 +201,8 @@ export async function POST(request: Request) {
     });
 
     if (!fallbackResponse.ok) {
-      const fallbackErrorBody = await fallbackResponse.text();
-
       console.error("Brevo rejected confronto fallback lead capture request.", {
         status: fallbackResponse.status,
-        body: fallbackErrorBody,
       });
 
       const minimalFallbackResponse = await createBrevoContact({
@@ -135,13 +211,10 @@ export async function POST(request: Request) {
       });
 
       if (!minimalFallbackResponse.ok) {
-        const minimalFallbackErrorBody = await minimalFallbackResponse.text();
-
         console.error(
           "Brevo rejected confronto minimal fallback lead capture request.",
           {
             status: minimalFallbackResponse.status,
-            body: minimalFallbackErrorBody,
           },
         );
 
@@ -152,6 +225,12 @@ export async function POST(request: Request) {
         "Brevo accepted confronto lead with minimal fallback. Contact attributes may be missing.",
       );
 
+      await sendLeadNotification({ apiKey, email, name, note, phone }).catch(
+        () => {
+          console.error("Brevo lead notification failed.");
+        },
+      );
+
       return NextResponse.json({ ok: true });
     }
 
@@ -159,6 +238,10 @@ export async function POST(request: Request) {
       "Brevo accepted confronto lead with fallback attributes. Custom Pilot attributes may be missing.",
     );
   }
+
+  await sendLeadNotification({ apiKey, email, name, note, phone }).catch(() => {
+    console.error("Brevo lead notification failed.");
+  });
 
   return NextResponse.json({ ok: true });
 }

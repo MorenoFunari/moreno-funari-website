@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { TrackedConfrontoLink } from "@/components/analytics/tracked-confronto-link";
 import { TrackedWhatsAppButton } from "@/components/analytics/tracked-whatsapp-button";
 import { Container } from "@/components/ui/container";
 import { pilotInstagramCta, pilotWhatsAppUrl } from "@/config/pilot";
@@ -25,7 +26,7 @@ const usefulForItems = [
 ] as const;
 
 const flowSteps = [
-  "Mi scrivi su WhatsApp o in DM con la parola CONFRONTO.",
+  "Lasci i tuoi dati nel modulo /confronto, oppure mi scrivi su WhatsApp con la parola CONFRONTO.",
   "Ti faccio alcune domande semplici per capire meglio la situazione.",
   "Se il percorso è coerente, ti invio informazioni e documenti da leggere con calma.",
   "Dopo conferma e documenti, fissiamo un primo confronto conoscitivo online di 30 minuti.",
@@ -58,6 +59,16 @@ const takeawayItems = [
   "prossimo passo possibile",
 ] as const;
 
+const trustItems = [
+  "percorso gratuito in fase di validazione",
+  "massimo 3 partecipanti",
+  "6 incontri online",
+  "lavoro su una situazione concreta",
+  "nessuna promessa miracolosa",
+  "nessuna testimonianza obbligatoria",
+  "approccio pratico, umano, non motivazionale",
+] as const;
+
 export const metadata: Metadata = createPageMetadata({
   title: "Percorso Pilota — Un passo possibile",
   description:
@@ -68,9 +79,12 @@ export const metadata: Metadata = createPageMetadata({
 function PilotActions() {
   return (
     <div className={styles.actions} aria-label="Azioni percorso pilota">
+      <TrackedConfrontoLink location="pilot_page_primary_cta" size="large">
+        Lascia i tuoi dati
+      </TrackedConfrontoLink>
       <TrackedWhatsAppButton
         href={pilotWhatsAppUrl}
-        location="pilot_page_primary_cta"
+        location="pilot_page_secondary_whatsapp"
         size="large"
       >
         Scrivimi CONFRONTO
@@ -140,6 +154,26 @@ export default function PercorsoPilotaPage() {
           </p>
         </div>
       </Container>
+
+      <section className={styles.bandSoft}>
+        <Container className={styles.twoColumns}>
+          <div>
+            <h2>Perché un percorso pilota</h2>
+            <p className={styles.sectionIntro}>
+              Prima di renderlo un’offerta stabile, voglio validare il percorso
+              con poche persone, attenzione reale e confini chiari.
+            </p>
+            <p className={styles.trustStatement}>
+              Attenzione, chiarezza e azione proporzionata.
+            </p>
+          </div>
+          <ul className={styles.checkList}>
+            {trustItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </Container>
+      </section>
 
       <section className={styles.band}>
         <Container className={styles.twoColumns}>

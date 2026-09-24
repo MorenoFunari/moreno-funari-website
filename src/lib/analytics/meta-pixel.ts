@@ -1,6 +1,8 @@
 export type MetaPixelEventName =
   | "PageView"
   | "ViewPilotPage"
+  | "ViewConfrontoPage"
+  | "ClickConfronto"
   | "ClickWhatsApp"
   | "LeadConfronto";
 
@@ -48,6 +50,16 @@ export function trackViewPilotPage() {
   event("ViewPilotPage", {
     page_path: "/percorso-pilota",
   });
+}
+
+export function trackViewConfrontoPage() {
+  event("ViewConfrontoPage", {
+    page_path: "/confronto",
+  });
+}
+
+export function trackClickConfronto(options?: MetaPixelEventOptions) {
+  event("ClickConfronto", options);
 }
 
 export function trackClickWhatsApp(options?: MetaPixelEventOptions) {
