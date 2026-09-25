@@ -170,7 +170,7 @@ export default function ConfrontoPage() {
         </Container>
       </section>
 
-      <Container as="section" className={styles.finalSection}>
+      <Container as="section" id="lascia-dati" className={styles.finalSection}>
         <ConfrontoLeadForm page="/confronto" source="confronto_landing" />
       </Container>
     </main>
