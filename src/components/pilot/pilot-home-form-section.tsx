@@ -35,17 +35,17 @@ export function PilotHomeFormSection() {
 
       <div className={styles.formArea}>
         <ConfrontoLeadForm
-          ctaLabel="Invia richiesta"
-          introText="Lascia i tuoi dati e raccontami in poche parole da quale situazione concreta vorresti partire."
+          ctaLabel="Invia la tua richiesta"
+          introText="Raccontami in poche parole da quale situazione concreta vorresti partire. Ti rispondo io personalmente."
           noteLabel="Situazione concreta"
           page="/"
           source="home_pilot_form"
-          title="Lascia una richiesta"
+          title="Vuoi capire se può fare per te?"
           variant="embedded"
         />
         <p className={styles.formNote}>
-          Il form non iscrive alla newsletter: serve solo per essere
-          ricontattati sulla richiesta inviata.
+          Il form non ti iscrive alla newsletter. Serve solo per ricontattarti
+          rispetto a questa richiesta.
         </p>
         <div className={styles.secondaryAction}>
           <TrackedWhatsAppButton
