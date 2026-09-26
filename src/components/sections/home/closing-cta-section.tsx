@@ -20,11 +20,11 @@ export function ClosingCtaSection() {
           insieme.
         </p>
         <div className={styles.actions}>
-          <ButtonLink href="#inizia-da-qui" variant="ghost">
+          <ButtonLink href="/inizia-da-qui" variant="ghost">
             Inizia da qui
           </ButtonLink>
-          <ButtonLink href="/contatti" variant="text">
-            Oppure scrivimi
+          <ButtonLink href="/confronto" variant="text">
+            Scopri CONFRONTO
           </ButtonLink>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { ConcreteSituationProcess } from "@/components/coaching/concrete-situation-process";
 import { PilotConversionSection } from "@/components/pilot/pilot-conversion-section";
 import { BoundariesSection } from "@/components/sections/coaching/boundaries-section";
 import { CoachingClosingCta } from "@/components/sections/coaching/coaching-closing-cta";
@@ -28,6 +29,7 @@ export default function CoachingPage() {
       <CoachingFocusAreasSection />
       <CoachingDefinitionSection />
       <ProcessSection />
+      <ConcreteSituationProcess />
       <ExpectationsSection />
       <FirstContactSection />
       <BoundariesSection />

@@ -45,6 +45,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/percorso-pilota",
+        destination: "/confronto",
+        permanent: true,
+      },
+      {
         source: "/wa",
         destination:
           "https://wa.me/393793408630?text=Ciao%20Moreno%2C%20vorrei%20info%20sul%20percorso%20pilota",

@@ -21,6 +21,7 @@ export const siteConfig = {
     },
   ],
   mainNavigation: [
+    { label: "Inizia da qui", href: "/inizia-da-qui" },
     { label: "Chi sono", href: "/chi-sono" },
     { label: "Blog", href: "/blog" },
     { label: "eBook", href: "/ebook" },
@@ -28,6 +29,7 @@ export const siteConfig = {
   ],
   footerNavigation: [
     { label: "Home", href: "/" },
+    { label: "Inizia da qui", href: "/inizia-da-qui" },
     { label: "Chi sono", href: "/chi-sono" },
     { label: "Blog", href: "/blog" },
     { label: "eBook", href: "/ebook" },

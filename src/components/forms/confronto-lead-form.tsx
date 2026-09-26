@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useId, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { TrackedWhatsAppButton } from "@/components/analytics/tracked-whatsapp-button";
 import { pilotWhatsAppUrl } from "@/config/pilot";
@@ -51,6 +52,7 @@ export function ConfrontoLeadForm({
   variant = "full",
 }: ConfrontoLeadFormProps) {
   const formId = useId().replace(/:/g, "");
+  const router = useRouter();
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [errors, setErrors] = useState<FieldErrors>({});
 
@@ -109,10 +111,11 @@ export function ConfrontoLeadForm({
         readAnalyticsConsent()?.status === "granted"
       ) {
         window.gtag?.("event", "lead_confronto_submitted", eventParameters);
+        window.gtag?.("event", "confronto_form_submit", eventParameters);
       }
 
       form.reset();
-      setSubmitState("success");
+      router.push("/grazie-confronto");
     } catch {
       setSubmitState("error");
     }
@@ -224,7 +227,7 @@ export function ConfrontoLeadForm({
             {noteLabel}
             <span> Facoltativo</span>
           </label>
-          <textarea id={`${formId}-note`} name="note" rows={4} />
+          <textarea id={`${formId}-note`} name="note" placeholder="Es. Mi sento bloccato davanti a una scelta lavorativa / continuo a rimandare / sento molta pressione dopo un errore / faccio fatica a mettere un confine." rows={4} />
         </div>
 
         <div className={styles.privacyField}>
@@ -264,6 +267,7 @@ export function ConfrontoLeadForm({
         >
           {submitState === "submitting" ? "Invio in corso..." : ctaLabel}
         </button>
+        <p className={styles.privacyHelp}>Inviare la richiesta non significa entrare automaticamente nel percorso. La candidatura viene letta e valutata manualmente.</p>
 
         {submitState === "error" ? (
           <div className={styles.formError} role="alert">

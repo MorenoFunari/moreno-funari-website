@@ -28,11 +28,11 @@ export function CoachingHero() {
           </p>
         </div>
         <div className={styles.actions} aria-label="Azioni principali">
-          <ButtonLink href="/contatti" size="large">
-            Raccontami da cosa vorresti partire
+          <ButtonLink href="/confronto" size="large">
+            Raccontami la situazione concreta
           </ButtonLink>
-          <ButtonLink href="#come-funziona" size="large" variant="secondary">
-            Scopri come funziona
+          <ButtonLink href="/confronto#cosa-succede-dopo" size="large" variant="secondary">
+            Leggi cosa succede nel Pilot
           </ButtonLink>
         </div>
       </div>

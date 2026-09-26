@@ -127,7 +127,7 @@ export function MobileNavigation() {
             <ButtonLink
               className={styles.cta}
               fullWidth
-              href="/#inizia-da-qui"
+              href="/inizia-da-qui"
               onClick={closeMenu}
             >
               Inizia da qui

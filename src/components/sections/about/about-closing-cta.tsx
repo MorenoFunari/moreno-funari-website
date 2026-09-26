@@ -23,8 +23,8 @@ export function AboutClosingCta() {
           <ButtonLink href="/coaching" size="large" variant="ghost">
             Scopri il coaching
           </ButtonLink>
-          <ButtonLink href="/contatti" size="large" variant="text">
-            Scrivimi
+          <ButtonLink href="/confronto" size="large" variant="text">
+            Vai a CONFRONTO
           </ButtonLink>
         </div>
       </div>

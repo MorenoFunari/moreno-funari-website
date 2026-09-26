@@ -25,11 +25,11 @@ export function HomeHero() {
           puoi iniziare facendo chiarezza e trovando un passo possibile.
         </p>
         <div className={styles.actions} aria-label="Azioni principali">
-          <ButtonLink href="#inizia-da-qui" size="large">
+          <ButtonLink href="/inizia-da-qui" size="large">
             Inizia da qui
           </ButtonLink>
-          <ButtonLink href="/chi-sono" size="large" variant="secondary">
-            Conosci Moreno
+          <ButtonLink href="/confronto" size="large" variant="secondary">
+            Scopri CONFRONTO
           </ButtonLink>
         </div>
       </div>

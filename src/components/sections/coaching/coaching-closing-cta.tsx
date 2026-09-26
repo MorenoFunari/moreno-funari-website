@@ -20,8 +20,8 @@ export function CoachingClosingCta() {
           a capire se questo spazio può esserti utile.
         </p>
         <div className={styles.actions}>
-          <ButtonLink href="/contatti" size="large" variant="ghost">
-            Scrivimi
+          <ButtonLink href="/confronto" size="large" variant="ghost">
+            Raccontami la situazione
           </ButtonLink>
           <ButtonLink href="/chi-sono" size="large" variant="text">
             Conosci meglio Moreno

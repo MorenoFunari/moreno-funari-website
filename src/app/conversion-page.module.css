@@ -1,0 +1,21 @@
+.page { background: linear-gradient(180deg, var(--color-background), var(--color-surface-muted)); }
+.hero, .section, .closing { padding-block: var(--section-space); }
+.hero { padding-top: calc(var(--header-height) + var(--space-3xl)); }
+.heroInner, .copy { max-width: 50rem; }
+.eyebrow { margin: 0 0 var(--space-md); color: var(--color-accent-strong); font-size: var(--font-size-eyebrow); font-weight: var(--font-weight-bold); letter-spacing: .08em; text-transform: uppercase; }
+.hero h1, .section h2, .closing h2 { margin: 0; color: var(--color-primary-strong); line-height: var(--line-height-heading); letter-spacing: var(--letter-spacing-tight); }
+.hero h1 { font-size: var(--font-size-h1); line-height: var(--line-height-tight); }
+.hero p, .copy p, .closing p { margin: var(--space-md) 0 0; color: var(--color-text); font-size: var(--font-size-body-lg); line-height: var(--line-height-intro); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-xl); }
+.muted { border-block: 1px solid var(--color-border); background: var(--color-surface); }
+.grid { display: grid; gap: var(--space-lg); margin-top: var(--space-2xl); }
+.card { display: flex; flex-direction: column; align-items: flex-start; height: 100%; }
+.card h2, .card h3 { margin: 0; color: var(--color-primary-strong); font-size: 1.35rem; line-height: var(--line-height-heading); }
+.card p { flex: 1; margin: var(--space-md) 0 var(--space-lg); color: var(--color-text-muted); line-height: var(--line-height-body); }
+.list { display: grid; gap: var(--space-sm); margin: var(--space-xl) 0 0; padding: 0; list-style: none; }
+.list li { border-left: 3px solid var(--color-accent); padding: var(--space-sm) var(--space-md); background: var(--color-primary-soft); color: var(--color-text); line-height: var(--line-height-body); }
+.closing { text-align: center; }
+.closingInner { max-width: 48rem; }
+.closing .actions { justify-content: center; }
+@media (min-width: 760px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .actions, .actions > * { width: 100%; } }
