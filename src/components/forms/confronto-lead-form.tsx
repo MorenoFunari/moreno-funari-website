@@ -251,8 +251,11 @@ export function ConfrontoLeadForm({
           </label>
         </div>
         <p className={styles.privacyHelp} id={`${formId}-privacy-help`}>
-          Il consenso riguarda questa richiesta di contatto, non l’iscrizione a
-          una newsletter.
+          I dati inseriti saranno utilizzati per valutare la richiesta e
+          ricontattarti in merito al percorso o al confronto conoscitivo. Non
+          inserire informazioni sanitarie, cliniche o dati particolarmente
+          sensibili non necessari. Il consenso non comporta l’iscrizione a una
+          newsletter.
         </p>
         {errors.privacyConsent ? (
           <p className={styles.fieldError} id={`${formId}-privacy-error`}>

@@ -149,8 +149,34 @@ export default function CookiePolicyPage() {
           </section>
 
           <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>5. Meta Pixel</h2>
+            <p>
+              Se configurato, il Meta Pixel viene caricato soltanto dopo il tuo
+              consenso. Può misurare visite e interazioni con le pagine del sito
+              e può utilizzare identificatori come il cookie `_fbp`. Il sito
+              non lo carica se rifiuti gli analytics.
+            </p>
+            <p>
+              Il Pixel è fornito da Meta Platforms Ireland Limited. La durata e
+              le modalità degli eventuali cookie dipendono dalle impostazioni e
+              dalle regole del servizio Meta.
+            </p>
+            <ul className={styles.list}>
+              <li>
+                <a
+                  href="https://www.facebook.com/privacy/policy/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Informativa privacy di Meta
+                </a>
+              </li>
+            </ul>
+          </section>
+
+          <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              5. Cosa accade in base alla scelta
+              6. Cosa accade in base alla scelta
             </h2>
             <ul className={styles.cardList}>
               <li className={styles.card}>
@@ -186,7 +212,7 @@ export default function CookiePolicyPage() {
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>6. Modificare la scelta</h2>
+            <h2 className={styles.sectionTitle}>7. Modificare la scelta</h2>
             <div className={styles.actionBox}>
               <p>
                 Puoi modificare la scelta in qualsiasi momento dal footer del
@@ -198,7 +224,7 @@ export default function CookiePolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              7. Impostazioni del browser
+              8. Impostazioni del browser
             </h2>
             <p>
               Puoi cancellare cookie e dati del sito dalle impostazioni del tuo
@@ -208,7 +234,7 @@ export default function CookiePolicyPage() {
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>8. Collegamenti esterni</h2>
+            <h2 className={styles.sectionTitle}>9. Collegamenti esterni</h2>
             <ul className={styles.list}>
               <li>
                 <a
@@ -239,6 +265,10 @@ export default function CookiePolicyPage() {
               </li>
             </ul>
           </section>
+          <p className={styles.notice}>
+            Questa informativa ha finalità informativa e può essere oggetto di
+            revisione professionale.
+          </p>
         </div>
       </Container>
     </main>

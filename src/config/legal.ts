@@ -5,6 +5,6 @@ export const legalConfig = {
   contactEmail: siteConfig.email,
   websiteName: siteConfig.name,
   websiteUrl: siteConfig.siteUrl,
-  lastUpdatedIso: "2026-08-04",
-  lastUpdatedLabel: "4 agosto 2026",
+  lastUpdatedIso: "2026-09-26",
+  lastUpdatedLabel: "26 settembre 2026",
 } as const;

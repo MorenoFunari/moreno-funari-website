@@ -35,9 +35,9 @@ export function ContactOptionsSection() {
               </a>
             </address>
             <p className={styles.privacyNote}>
-              Nel primo messaggio evita di inserire dati sanitari, diagnosi o
-              altre informazioni particolarmente sensibili. Per sapere come
-              vengono gestiti i dati puoi leggere la{" "}
+              Utilizzerò i dati inseriti solo per rispondere alla tua richiesta.
+              Evita di inserire informazioni particolarmente sensibili non
+              necessarie. Prima di scrivere, leggi la{" "}
               <Link href="/privacy-policy">Privacy Policy</Link>.
             </p>
             <ButtonLink href={contactLinks.emailHref} external>

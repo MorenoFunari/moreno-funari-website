@@ -8,8 +8,8 @@ import { createPageMetadata } from "@/lib/seo/metadata";
 import styles from "../legal-page.module.css";
 
 const privacyContactEmail = "info@morenofunari.it";
-const privacyLastUpdatedIso = "2026-09-10";
-const privacyLastUpdatedLabel = "10 settembre 2026";
+const privacyLastUpdatedIso = "2026-09-26";
+const privacyLastUpdatedLabel = "26 settembre 2026";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Privacy Policy",
@@ -57,11 +57,15 @@ export default function PrivacyPolicyPage() {
               2. Titolare del trattamento
             </h2>
             <p>{legalConfig.controllerName}</p>
+            <p>P.IVA: {siteConfig.vatNumber}</p>
             <p>
               Email:{" "}
               <a href={`mailto:${privacyContactEmail}`}>
                 {privacyContactEmail}
               </a>
+            </p>
+            <p>
+              PEC: <a href={`mailto:${siteConfig.pec}`}>{siteConfig.pec}</a>
             </p>
           </section>
 
@@ -96,11 +100,21 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>4. Contatti via email</h2>
+            <h2 className={styles.sectionTitle}>
+              4. Contatti via email, PEC, WhatsApp e social
+            </h2>
             <p>
               Se scegli di scrivere via email, possono essere trattati indirizzo
               email, nome eventualmente indicato, contenuto del messaggio e
               ulteriori dati comunicati volontariamente.
+            </p>
+            <p>
+              Le stesse finalità si applicano quando scegli di contattarmi via
+              PEC, WhatsApp Business o messaggio diretto sui profili social. In
+              questi casi il canale scelto può trattare anche identificativo del
+              profilo, numero di telefono, metadati della comunicazione e
+              contenuto del messaggio, secondo le impostazioni del relativo
+              fornitore.
             </p>
             <p>
               I dati sono usati per rispondere alla richiesta, fornire
@@ -210,6 +224,11 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 gli incontri online possono essere svolti tramite Google Meet;
+              </li>
+              <li>
+                Google Calendar o Calendly possono essere utilizzati per
+                organizzare gli appuntamenti, quando il relativo link viene
+                messo a disposizione;
               </li>
               <li>
                 le comunicazioni organizzative possono avvenire tramite email
@@ -433,9 +452,16 @@ export default function PrivacyPolicyPage() {
               <li className={styles.card}>
                 <h3 className={styles.subTitle}>Google Ireland Limited</h3>
                 <p>
-                  Fornitore di Google Moduli, Drive, Gmail e Meet, ciascuno
-                  secondo la propria finalità, e di Google Analytics 4,
-                  soltanto dopo consenso.
+                  Fornitore di Google Moduli, Drive, Gmail, Calendar e Meet,
+                  ciascuno secondo la propria finalità, e di Google Analytics
+                  4, soltanto dopo consenso.
+                </p>
+              </li>
+              <li className={styles.card}>
+                <h3 className={styles.subTitle}>Calendly</h3>
+                <p>
+                  Può essere usato per permettere la prenotazione di un
+                  appuntamento dopo i passaggi preliminari previsti.
                 </p>
               </li>
               <li className={styles.card}>
@@ -451,11 +477,37 @@ export default function PrivacyPolicyPage() {
                   Meta Platforms Ireland Limited
                 </h3>
                 <p>
-                  Fornitore di WhatsApp, utilizzato facoltativamente per
-                  comunicazioni organizzative.
+                  Fornitore di WhatsApp e dei servizi social Meta, utilizzati
+                  per comunicazioni facoltative, e del Meta Pixel, caricato sul
+                  sito soltanto dopo consenso.
+                </p>
+              </li>
+              <li className={styles.card}>
+                <h3 className={styles.subTitle}>MongoDB e OpenAI</h3>
+                <p>
+                  Sono utilizzati nell’app separata Un Passo Possibile AI:
+                  MongoDB/MongoDB Atlas per esigenze tecniche e applicative e
+                  OpenAI API per elaborare i contenuti necessari a generare la
+                  restituzione richiesta dall’utente.
                 </p>
               </li>
             </ul>
+            <p className={styles.notice}>
+              Gli strumenti digitali e i servizi online utilizzati hanno
+              finalità organizzative, tecniche, comunicative o di supporto al
+              funzionamento dei servizi. I contenuti delle sessioni individuali
+              di coaching non vengono inviati a strumenti di intelligenza
+              artificiale salvo informativa preventiva e consenso specifico
+              dell’interessato.
+            </p>
+            <p>
+              Un Passo Possibile AI è uno strumento digitale distinto dai
+              servizi individuali di coaching. Può trattare i contenuti inseriti
+              dall’utente per fornire un supporto riflessivo non clinico. Dati
+              tecnici e di utilizzo possono essere analizzati in forma aggregata
+              o pseudonimizzata per migliorare chiarezza, usabilità e qualità,
+              senza finalità diagnostiche o di profilazione psicologica.
+            </p>
           </section>
 
           <section className={styles.section}>
@@ -548,6 +600,10 @@ export default function PrivacyPolicyPage() {
             <p>
               Questa informativa può essere aggiornata quando cambiano servizi,
               fornitori, funzionalità, norme o modalità di trattamento.
+            </p>
+            <p className={styles.notice}>
+              Questo testo ha finalità informativa e può essere oggetto di
+              revisione professionale.
             </p>
           </section>
         </div>

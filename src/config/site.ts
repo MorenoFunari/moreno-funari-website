@@ -12,6 +12,9 @@ export const siteConfig = {
   ebookPath: "/ebook",
   ebookPdfPath: "/documents/un-passo-possibile-moreno-funari.pdf",
   email: "info@morenofunari.it",
+  pec: "moreno.funari@pec.it",
+  vatNumber: "18698851005",
+  whatsapp: "+39 379 340 8630",
   instagramUrl,
   socialLinks: [
     {

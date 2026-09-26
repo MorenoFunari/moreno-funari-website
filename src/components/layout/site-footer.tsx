@@ -83,6 +83,7 @@ export function SiteFooter() {
 
         <div className={styles.legal}>
           <p>© {year} Moreno Funari. Tutti i diritti riservati.</p>
+          <p>P.IVA {siteConfig.vatNumber}</p>
           <nav aria-label="Link legali e preferenze">
             <ul className={styles.legalLinks}>
               {siteConfig.legalNavigation.map((item) => (
