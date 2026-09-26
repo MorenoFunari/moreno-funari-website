@@ -13,7 +13,7 @@ export function SiteHeader() {
         <SiteBrand />
         <DesktopNavigation />
         <div className={styles.desktopAction}>
-          <ButtonLink href="/#inizia-da-qui">Inizia da qui</ButtonLink>
+          <ButtonLink href="/confronto">CONFRONTO</ButtonLink>
         </div>
         <MobileNavigation />
       </Container>

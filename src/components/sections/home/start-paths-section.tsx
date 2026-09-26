@@ -11,7 +11,6 @@ export function StartPathsSection() {
     <Container
       as="section"
       className={styles.section}
-      id="inizia-da-qui"
       aria-labelledby="start-title"
     >
       <SectionHeading

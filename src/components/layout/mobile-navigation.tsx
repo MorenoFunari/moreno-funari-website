@@ -127,10 +127,10 @@ export function MobileNavigation() {
             <ButtonLink
               className={styles.cta}
               fullWidth
-              href="/inizia-da-qui"
+              href="/confronto"
               onClick={closeMenu}
             >
-              Inizia da qui
+              CONFRONTO
             </ButtonLink>
           </nav>
         </>
