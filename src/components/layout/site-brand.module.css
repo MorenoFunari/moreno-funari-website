@@ -41,8 +41,27 @@
   line-height: var(--line-height-label);
 }
 
-.footer {
+.footer,
+.footer:visited,
+.footer:hover,
+.footer:active {
   color: var(--color-text-on-dark);
+}
+
+.footer {
+  --footer-brand-accent: #b7d52a;
+}
+
+.footer:hover .name {
+  text-decoration: underline;
+  text-decoration-color: var(--footer-brand-accent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+.footer:focus-visible {
+  color: var(--color-text-on-dark);
+  outline-color: var(--footer-brand-accent);
 }
 
 .footer .mark {
@@ -50,6 +69,10 @@
   width: 2.5rem;
 }
 
-.footer .role {
+.footer .role,
+.footer:visited .role,
+.footer:hover .role,
+.footer:focus-visible .role,
+.footer:active .role {
   color: var(--color-text-on-dark-muted);
 }
