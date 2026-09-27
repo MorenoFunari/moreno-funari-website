@@ -171,6 +171,16 @@
   background: var(--color-primary-hover);
 }
 
+.preferenceButton:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.preferenceButton:active {
+  background: var(--color-primary-hover);
+  color: var(--color-text-on-dark);
+}
+
 .content a {
   color: var(--color-primary);
   font-weight: var(--font-weight-medium);

@@ -54,6 +54,21 @@
   text-decoration: none;
 }
 
+.formFallback a:hover {
+  background: var(--color-primary-hover);
+  color: var(--color-text-on-dark);
+}
+
+.formFallback a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.formFallback a:active {
+  background: var(--color-primary-hover);
+  color: var(--color-text-on-dark);
+}
+
 @media (max-width: 560px) {
   .inner {
     padding-block: var(--space-3xl);

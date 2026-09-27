@@ -75,7 +75,7 @@
 
 .primaryAnchor:hover,
 .submitButton:hover {
-  background: var(--color-primary-strong);
+  background: var(--color-primary-hover);
   color: var(--color-text-on-dark);
   transform: translateY(-1px);
 }
@@ -89,7 +89,7 @@
 
 .primaryAnchor:active,
 .submitButton:active {
-  background: var(--color-primary-strong);
+  background: var(--color-primary-hover);
   color: var(--color-text-on-dark);
   transform: translateY(0);
 }
@@ -105,6 +105,8 @@
 
 .submitButton:disabled {
   cursor: wait;
+  background: var(--color-primary-strong);
+  color: var(--color-text-on-dark);
   opacity: 0.75;
   transform: none;
 }
