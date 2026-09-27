@@ -13,8 +13,8 @@ export default function AppleIcon() {
       <div
         style={{
           alignItems: "center",
-          background: "#0f3f46",
-          color: "#fff8e7",
+          background: "#071C2D",
+          color: "#FFFFFF",
           display: "flex",
           fontFamily: "Arial, sans-serif",
           fontSize: 68,
@@ -27,7 +27,7 @@ export default function AppleIcon() {
       >
         <span
           style={{
-            background: "#b8d66d",
+            background: "#B7D52A",
             bottom: 34,
             display: "block",
             height: 8,
