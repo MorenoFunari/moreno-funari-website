@@ -359,7 +359,7 @@ export default function PrivacyPolicyPage() {
             <h2 className={styles.sectionTitle}>7. Google Analytics 4</h2>
             <p>
               Il sito può usare Google Analytics 4, Measurement ID
-              G-11RJTDXWBS, fornito da Google Ireland Limited. GA4 viene caricato
+              G-Z7E9BSCE4N, fornito da Google Ireland Limited. GA4 viene caricato
               soltanto dopo consenso e non viene caricato se l’utente rifiuta.
             </p>
             <p>

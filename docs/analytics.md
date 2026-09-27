@@ -4,14 +4,14 @@
 
 ```text
 Google Analytics 4
-Measurement ID: G-11RJTDXWBS
+Measurement ID: G-Z7E9BSCE4N
 Consent Mode: Basic
 ```
 
 ## Stato richiesto della proprietà GA4
 
 ```text
-Measurement ID: G-11RJTDXWBS
+Measurement ID: G-Z7E9BSCE4N
 Google Signals: disattivato
 Personalizzazione pubblicitaria: disattivata
 Collegamento Google Ads: assente
@@ -43,7 +43,6 @@ Conservazione dati a livello utente: 2 mesi
 
 ```text
 NEXT_PUBLIC_GA_ENABLED
-NEXT_PUBLIC_GA_MEASUREMENT_ID
 NEXT_PUBLIC_META_PIXEL_ENABLED
 NEXT_PUBLIC_META_PIXEL_ID
 ```

@@ -26,7 +26,7 @@ declare global {
   interface Window {
     dataLayer?: GtagCommand[];
     gtag?: (...command: GtagCommand) => void;
-    "ga-disable-G-11RJTDXWBS"?: boolean;
+    [gaDisableKey: `ga-disable-G-${string}`]: boolean | undefined;
   }
 }
 

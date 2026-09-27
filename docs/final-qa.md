@@ -172,7 +172,7 @@ Produzione:
 Configurazione locale:
 
 - `.env.local`: `NEXT_PUBLIC_GA_ENABLED=true`
-- Measurement ID valido: `G-11RJTDXWBS`
+- Measurement ID valido: `G-Z7E9BSCE4N`
 
 Verificato localmente:
 

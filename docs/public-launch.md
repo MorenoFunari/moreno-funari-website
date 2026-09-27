@@ -119,7 +119,7 @@ Search Console:
 Measurement ID verificato:
 
 ```text
-G-11RJTDXWBS
+G-Z7E9BSCE4N
 ```
 
 Produzione:
@@ -129,7 +129,7 @@ Produzione:
 - banner visibile per nuovo utente
 - dopo accettazione: caricato `gtag/js`
 - dopo accettazione: richiesta `g/collect` presente
-- dopo accettazione: cookie `_ga` e `_ga_11RJTDXWBS` presenti
+- dopo accettazione: cookie `_ga` e `_ga_Z7E9BSCE4N` presenti
 - revoca: cookie analytics rimossi
 - revoca: preferenza aggiornata a `denied`
 - pannello Preferenze apribile
