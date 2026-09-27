@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 88" role="img" aria-labelledby="title desc">
+  <title id="title">Moreno Funari Mental Coach</title>
+  <desc id="desc">Versione chiara del monogramma MF con denominazione Moreno Funari e ruolo Mental Coach</desc>
+  <g transform="translate(8 12) scale(.95)">
+    <path d="M11 50V14L27 36L43 14V50M43 14H55M43 32H52" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M50 14H55" fill="none" stroke="#B7D52A" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <text x="82" y="39" fill="#FFFFFF" font-family="Rubik, Arial, Helvetica, sans-serif" font-size="25" font-weight="700">Moreno Funari</text>
+  <text x="82" y="63" fill="#FFFFFF" fill-opacity=".76" font-family="Rubik, Arial, Helvetica, sans-serif" font-size="15" font-weight="500" letter-spacing=".3">Mental Coach</text>
+</svg>

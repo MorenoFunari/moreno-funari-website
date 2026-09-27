@@ -13,29 +13,30 @@ export default function Icon() {
       <div
         style={{
           alignItems: "center",
-          background: "#0f3f46",
-          color: "#fff8e7",
+          background: "#071C2D",
           display: "flex",
-          fontFamily: "Arial, sans-serif",
-          fontSize: 14,
-          fontWeight: 800,
           height: "100%",
           justifyContent: "center",
-          position: "relative",
           width: "100%",
         }}
       >
-        <span
-          style={{
-            background: "#b8d66d",
-            bottom: 4,
-            display: "block",
-            height: 3,
-            position: "absolute",
-            width: 14,
-          }}
-        />
-        MF
+        <svg viewBox="0 0 64 64" width="27" height="27">
+          <path
+            d="M11 50V14L27 36L43 14V50M43 14H55M43 32H52"
+            fill="none"
+            stroke="#FFFFFF"
+            strokeWidth="7"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M50 14H55"
+            fill="none"
+            stroke="#B7D52A"
+            strokeWidth="7"
+            strokeLinecap="round"
+          />
+        </svg>
       </div>
     ),
     size,
