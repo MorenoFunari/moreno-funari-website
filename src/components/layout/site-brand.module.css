@@ -76,3 +76,6 @@
 .footer:active .role {
   color: var(--color-text-on-dark-muted);
 }
+.footer .mark {
+  display: none;
+}
