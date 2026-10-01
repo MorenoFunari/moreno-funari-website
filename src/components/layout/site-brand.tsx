@@ -22,8 +22,8 @@ export function SiteBrand({ variant = "header" }: SiteBrandProps) {
         className={styles.mark}
         src={
           variant === "footer"
-            ? "/images/brand/logo-mf-icon-white.svg"
-            : "/images/brand/logo-mf-icon.svg"
+            ? "/images/brand/logo-mf-icon.png"
+            : "/images/brand/logo-mf-icon.png"
         }
         alt=""
         width={64}
