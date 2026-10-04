@@ -19,8 +19,19 @@ type ConsentViewState = "loading" | "undecided" | AnalyticsConsentStatus;
 const isConsentManagerConfigured =
   analyticsConfig.isConfigured || analyticsConfig.metaPixel.isConfigured;
 
+function ensureGoogleTagQueue() {
+  window.dataLayer ??= [];
+  window.gtag ??= (...command) => {
+    window.dataLayer?.push(command);
+  };
+
+  return window.gtag;
+}
+
 function updateConsentMode(status: AnalyticsConsentStatus) {
-  window.gtag?.("consent", "update", {
+  const gtag = ensureGoogleTagQueue();
+
+  gtag("consent", "update", {
     analytics_storage: status,
     ad_storage: "denied",
     ad_user_data: "denied",
@@ -166,11 +177,14 @@ export function AnalyticsConsentManager() {
   const showInitialBanner = status === "undecided";
   const currentStatus =
     status === "granted" || status === "denied" ? status : null;
+  // Il banner raccoglie esclusivamente il consenso analytics. Finche non
+  // esiste una scelta marketing separata, Meta Pixel deve restare disattivato.
+  const marketingConsentGranted = false;
 
   return (
     <>
       <GoogleAnalyticsLoader consentGranted={status === "granted"} />
-      <MetaPixelLoader consentGranted={status === "granted"} />
+      <MetaPixelLoader consentGranted={marketingConsentGranted} />
       {showInitialBanner || preferencesOpen ? (
         <AnalyticsConsentBanner
           currentStatus={currentStatus}

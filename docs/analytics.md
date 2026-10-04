@@ -39,7 +39,13 @@ Conservazione dati a livello utente: 2 mesi
   event possono essere configurati fuori dal codice nella proprietà GA4 o nel
   Google tag. Devono essere verificati dopo ogni modifica al funnel.
 - Meta Pixel è predisposto ma resta disabilitato finché `NEXT_PUBLIC_META_PIXEL_ENABLED` non viene impostato a `true`.
-- Meta Pixel viene comunque caricato soltanto dopo consenso, mai prima.
+- Il consenso raccolto dal banner attuale riguarda esclusivamente gli
+  analytics: non concede finalità marketing o pubblicitarie.
+- Meta Pixel resta quindi disattivato anche se configurato, finché non verrà
+  introdotta una scelta marketing separata ed esplicita.
+- Finché non viene richiesto un consenso marketing, è atteso che la diagnostica
+  Google possa indicare un tasso di consenso ads dello 0%: `ad_storage`,
+  `ad_user_data` e `ad_personalization` restano intenzionalmente `denied`.
 - Il blocco `noscript` di Meta Pixel non viene usato perché non sarebbe compatibile con il gate di consenso.
 
 ## Configurazione
@@ -52,15 +58,18 @@ NEXT_PUBLIC_META_PIXEL_ID
 
 In produzione `NEXT_PUBLIC_GA_ENABLED` deve essere attivato solo dopo il deploy delle informative aggiornate.
 
-Per attivare Meta Pixel su Vercel:
+Configurazione predisposta per una futura attivazione di Meta Pixel:
 
 1. aprire il progetto su Vercel;
 2. andare in `Settings` → `Environment Variables`;
 3. aggiungere `NEXT_PUBLIC_META_PIXEL_ID` con valore `1111563994630198`;
-4. aggiungere `NEXT_PUBLIC_META_PIXEL_ENABLED` con valore `true` solo quando consenso, Privacy Policy e Cookie Policy sono allineati;
+4. aggiungere `NEXT_PUBLIC_META_PIXEL_ENABLED` con valore `true` solo quando
+   esiste anche una scelta marketing separata e consenso, Privacy Policy e
+   Cookie Policy sono allineati;
 5. rieseguire un deploy.
 
-Se `NEXT_PUBLIC_META_PIXEL_ENABLED` resta `false` o assente, il Pixel non viene caricato anche se il Pixel ID è presente.
+Il Pixel non viene caricato con il solo consenso analytics, anche se ID e flag
+sono configurati.
 
 ## Preferenza
 
