@@ -17,16 +17,14 @@ export function SiteBrand({ variant = "header" }: SiteBrandProps) {
 
   return (
     <Link className={classNames} href="/" aria-label="Moreno Funari homepage">
-      {variant === "header" ? (
-        <Image
-          aria-hidden="true"
-          className={styles.mark}
-          src="/images/brand/logo-mf-icon.png"
-          alt=""
-          width={64}
-          height={64}
-        />
-      ) : null}
+      <Image
+        aria-hidden="true"
+        className={styles.mark}
+        src="/images/brand/logo-mf-icon.png"
+        alt=""
+        width={64}
+        height={64}
+      />
       <span className={styles.wordmark}>
         <span className={styles.name}>Moreno Funari</span>
         <span className={styles.role}>Mental Coach</span>
