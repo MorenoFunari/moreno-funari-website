@@ -75,7 +75,9 @@ The `/ebook` route presents "Un passo possibile" with dedicated sections in `src
 
 ## Landing guida “Dire sempre sì”
 
-La route /guida-dire-sempre-si presenta il lead magnet gratuito e incorpora il modulo Brevo tramite iframe. Brevo gestisce form, consenso, double opt-in, lista contatti, invio della guida e disiscrizione; il sito ospita soltanto la landing e il PDF.
+Le route `/passo` e `/guida-dire-sempre-si` collegano a un modulo ospitato da Brevo in una nuova scheda. Brevo gestisce form, consenso, eventuale double opt-in, lista contatti, invio della guida e disiscrizione; il sito ospita landing, PDF e pagina `/grazie-passo`.
+
+Il redirect post-submit deve essere configurato nel pannello Brevo verso `https://morenofunari.it/grazie-passo`. Il sito non può verificare direttamente il submit del form esterno: gli eventi `passo_thank_you_view`, `passo_lead_created` e `generate_lead` vengono quindi emessi dalla thank-you page, dopo consenso Analytics.
 
 La Privacy Policy è stata aggiornata per riflettere l’uso di Brevo e va validata dal titolare o da un consulente privacy prima dell’uso esteso del funnel.
 

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import styles from "./site-brand.module.css";
@@ -16,8 +17,20 @@ export function SiteBrand({ variant = "header" }: SiteBrandProps) {
 
   return (
     <Link className={classNames} href="/" aria-label="Moreno Funari homepage">
-      <span className={styles.name}>Moreno Funari</span>
-      <span className={styles.role}>Mental Coach</span>
+      {variant === "header" ? (
+        <Image
+          aria-hidden="true"
+          className={styles.mark}
+          src="/images/brand/logo-mf-icon.png"
+          alt=""
+          width={64}
+          height={64}
+        />
+      ) : null}
+      <span className={styles.wordmark}>
+        <span className={styles.name}>Moreno Funari</span>
+        <span className={styles.role}>Mental Coach</span>
+      </span>
     </Link>
   );
 }

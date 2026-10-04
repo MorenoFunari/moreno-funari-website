@@ -18,7 +18,12 @@ type ConfrontoLeadPayload = {
   phone?: unknown;
   privacyConsent?: unknown;
   source?: unknown;
+  startedAt?: unknown;
+  website?: unknown;
 };
+
+const minimumCompletionTimeMs = 1_200;
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function normalizeString(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
@@ -137,8 +142,13 @@ async function sendLeadNotification({
   if (!response.ok) {
     console.error("Brevo lead notification failed.", {
       status: response.status,
+      source,
     });
+
+    return false;
   }
+
+  return true;
 }
 
 export async function POST(request: Request) {
@@ -156,11 +166,44 @@ export async function POST(request: Request) {
   const phone = normalizeItalianPhone(normalizeString(payload.phone));
   const privacyConsent = payload.privacyConsent === true;
   const requestedSource = normalizeString(payload.source);
+  const startedAt =
+    typeof payload.startedAt === "number" ? payload.startedAt : NaN;
+  const website = normalizeString(payload.website);
   const leadSource = allowedLeadSources.has(requestedSource)
     ? requestedSource
     : defaultLeadSource;
 
-  if (!name || !email || !phone || !privacyConsent) {
+  if (website) {
+    console.warn("Confronto lead rejected by honeypot.", {
+      source: leadSource,
+    });
+    return jsonError("Invalid submission.", 400);
+  }
+
+  const completionTimeMs = Date.now() - startedAt;
+
+  if (
+    !Number.isFinite(startedAt) ||
+    completionTimeMs < minimumCompletionTimeMs
+  ) {
+    console.warn("Confronto lead rejected for implausible completion time.", {
+      source: leadSource,
+    });
+    return jsonError("Invalid submission.", 400);
+  }
+
+  const phoneDigitCount = phone.replace(/\D/g, "").length;
+
+  if (
+    !name ||
+    name.length > 200 ||
+    !emailPattern.test(email) ||
+    email.length > 320 ||
+    phoneDigitCount < 8 ||
+    phoneDigitCount > 15 ||
+    note.length > 3_000 ||
+    !privacyConsent
+  ) {
     return jsonError("Missing required fields.", 400);
   }
 
@@ -239,7 +282,7 @@ export async function POST(request: Request) {
         "Brevo accepted confronto lead with minimal fallback. Contact attributes may be missing.",
       );
 
-      await sendLeadNotification({
+      const notificationSent = await sendLeadNotification({
         apiKey,
         email,
         name,
@@ -247,10 +290,17 @@ export async function POST(request: Request) {
         phone,
         source: leadSource,
       }).catch(() => {
-        console.error("Brevo lead notification failed.");
+        console.error("Brevo lead notification failed.", {
+          source: leadSource,
+        });
+        return false;
       });
 
-      return NextResponse.json({ ok: true });
+      return NextResponse.json({
+        leadCreated: true,
+        notificationSent,
+        ok: true,
+      });
     }
 
     console.warn(
@@ -258,7 +308,7 @@ export async function POST(request: Request) {
     );
   }
 
-  await sendLeadNotification({
+  const notificationSent = await sendLeadNotification({
     apiKey,
     email,
     name,
@@ -266,8 +316,15 @@ export async function POST(request: Request) {
     phone,
     source: leadSource,
   }).catch(() => {
-    console.error("Brevo lead notification failed.");
+    console.error("Brevo lead notification failed.", {
+      source: leadSource,
+    });
+    return false;
   });
 
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({
+    leadCreated: true,
+    notificationSent,
+    ok: true,
+  });
 }

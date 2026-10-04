@@ -8,6 +8,8 @@ export type StoredAnalyticsConsent = {
 
 export const analyticsConsentStorageKey = "mf_analytics_consent";
 export const analyticsPreferencesEventName = "mf:analytics-preferences";
+export const analyticsConsentChangedEventName =
+  "mf:analytics-consent-changed";
 
 const consentVersion = 1;
 const consentMaxAgeMonths = 6;
@@ -96,6 +98,7 @@ export function saveAnalyticsConsent(
       analyticsConsentStorageKey,
       JSON.stringify(value),
     );
+    window.dispatchEvent(new Event(analyticsConsentChangedEventName));
   } catch {
     return null;
   }

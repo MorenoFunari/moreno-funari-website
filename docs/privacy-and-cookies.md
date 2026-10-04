@@ -46,7 +46,8 @@
 - [ ] Personalizzazione pubblicitaria disattivata
 - [ ] Conservazione GA4 impostata a 2 mesi
 - [ ] Dati condivisi con prodotti Google disattivati
-- [ ] Nessun collegamento Google Ads
+- [ ] Verificare eventuali collegamenti Google Ads e mantenere la visita a
+  `/confronto` esclusa dalle conversioni lead
 - [ ] Produzione abilitata solo dopo deploy delle informative
 
 ## Nota di revisione

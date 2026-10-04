@@ -14,9 +14,9 @@ Consent Mode: Basic
 Measurement ID: G-Z7E9BSCE4N
 Google Signals: disattivato
 Personalizzazione pubblicitaria: disattivata
-Collegamento Google Ads: assente
+Collegamento Google Ads: da verificare e gestire nel pannello GA4/Google Ads
 User ID: non utilizzato
-Custom events: assenti
+Custom events: presenti, elencati in questo documento
 Page view manuali: assenti
 Consent Mode: Basic
 Conservazione dati a livello utente: 2 mesi
@@ -25,7 +25,8 @@ Conservazione dati a livello utente: 2 mesi
 - [ ] Google Signals disattivato nella proprietà GA4
 - [ ] Personalizzazione pubblicitaria disattivata nella proprietà GA4
 - [ ] Conservazione dati a livello utente impostata a 2 mesi
-- [ ] Nessun collegamento Google Ads
+- [ ] Eliminare la conversione basata sulla semplice visita a `/confronto`
+- [ ] Usare `generate_lead` come conversione solo dopo un lead reale
 - [ ] Dati condivisi con prodotti Google disattivati
 
 ## Caricamento
@@ -34,7 +35,9 @@ Conservazione dati a livello utente: 2 mesi
 - GA4 viene caricato soltanto dopo accettazione.
 - Nessun dato viene inviato in caso di rifiuto.
 - Google Tag Manager non viene usato.
-- Google Ads non viene usato.
+- Il repository non carica direttamente un tag `AW-*`, ma conversioni e key
+  event possono essere configurati fuori dal codice nella proprietà GA4 o nel
+  Google tag. Devono essere verificati dopo ogni modifica al funnel.
 - Meta Pixel è predisposto ma resta disabilitato finché `NEXT_PUBLIC_META_PIXEL_ENABLED` non viene impostato a `true`.
 - Meta Pixel viene comunque caricato soltanto dopo consenso, mai prima.
 - Il blocco `noscript` di Meta Pixel non viene usato perché non sarebbe compatibile con il gate di consenso.
@@ -73,22 +76,44 @@ Se `NEXT_PUBLIC_META_PIXEL_ENABLED` resta `false` o assente, il Pixel non viene 
 - Le page view sono gestite automaticamente da GA4.
 - La Misurazione avanzata gestisce le modifiche della cronologia del browser.
 - Non viene inviato alcun `page_view` manuale dal codice.
+- Una visita a `/confronto` non deve essere considerata un lead o una
+  conversione. Qualsiasi regola remota che trasformi quella page view in
+  `ads_conversion_Invio_modulo_per_i_lead_1` deve essere rimossa in GA4.
+
+## Eventi lead e CTA
+
+| Evento | Significato |
+| --- | --- |
+| `cta_click_passo` | Click verso il form Brevo PASSO; non è un lead. |
+| `passo_thank_you_view` | Visualizzazione di `/grazie-passo` dopo il redirect configurato in Brevo. |
+| `passo_lead_created` | Lead PASSO attribuito alla thank-you page Brevo. |
+| `confronto_form_submit_attempt` | Tentativo di invio del form CONFRONTO, valido o non valido. |
+| `confronto_lead_created` | Il backend ha ricevuto conferma della creazione/aggiornamento del contatto Brevo. |
+| `confronto_notification_sent` | Brevo ha accettato la notifica email destinata a Moreno. |
+| `confronto_notification_failed` | Il lead è stato creato, ma la notifica email non è stata accettata o è fallita. |
+| `generate_lead` | Evento standard inviato solo dopo lead CONFRONTO reale o sulla thank-you page PASSO. |
+| `whatsapp_click_confronto` | Click su un CTA WhatsApp del funnel CONFRONTO. |
+
+Gli eventi vengono inviati a GA4 solo dopo consenso. Il redirect successivo al
+submit CONFRONTO attende il callback di `generate_lead`, con timeout massimo di
+800 ms per non appesantire l'esperienza.
 
 ## Meta Pixel
 
 - Pixel ID letto da `NEXT_PUBLIC_META_PIXEL_ID`.
 - Attivazione controllata da `NEXT_PUBLIC_META_PIXEL_ENABLED`.
 - `PageView` inviato globalmente una sola volta per URL dopo consenso.
-- `/percorso-pilota` invia anche `ViewPilotPage`.
+- `/confronto` invia anche `ViewConfrontoPage` al Meta Pixel.
 - I link WhatsApp tracciati inviano `ClickWhatsApp`.
-- L'helper `trackLeadConfronto()` è pronto per azioni future legate a `CONFRONTO`.
+- Il submit CONFRONTO riuscito invia `LeadConfrontoSubmitted`.
 
 ## Privacy
 
 - `allow_google_signals: false`.
 - `allow_ad_personalization_signals: false`.
 - Nessun `user_id`.
-- Nessun dato proveniente dai form.
+- Gli eventi analytics non contengono nome, email, telefono o testo libero dei
+  form; usano solo pagina, sorgente e nome del funnel.
 - GA4 resta disabilitato in produzione fino al completamento della Issue #19.
 - Meta Pixel deve restare disabilitato finché non viene validata la base privacy/cookie per finalità marketing.
 
@@ -111,5 +136,9 @@ Questa documentazione descrive l'implementazione tecnica e non dichiara conformi
 - [ ] Meta Pixel non caricato quando `NEXT_PUBLIC_META_PIXEL_ENABLED=false`
 - [ ] Meta Pixel non caricato prima del consenso quando abilitato
 - [ ] `PageView` Meta inviato una sola volta per URL dopo consenso quando abilitato
-- [ ] `ViewPilotPage` inviato su `/percorso-pilota` quando abilitato
+- [ ] `ViewConfrontoPage` inviato su `/confronto` quando abilitato
 - [ ] `ClickWhatsApp` inviato dai CTA WhatsApp quando abilitato
+- [ ] `confronto_form_submit_attempt` visibile in DebugView al tentativo
+- [ ] `confronto_lead_created` e `generate_lead` visibili dopo risposta API positiva
+- [ ] Evento notifica `sent` o `failed` coerente con la risposta API
+- [ ] `passo_thank_you_view`, `passo_lead_created` e `generate_lead` visibili dopo redirect Brevo

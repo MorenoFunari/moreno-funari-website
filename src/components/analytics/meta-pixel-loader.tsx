@@ -8,7 +8,6 @@ import { analyticsConfig } from "@/config/analytics";
 import {
   pageview,
   trackViewConfrontoPage,
-  trackViewPilotPage,
 } from "@/lib/analytics/meta-pixel";
 
 type MetaPixelLoaderProps = {
@@ -37,14 +36,6 @@ export function MetaPixelLoader({ consentGranted }: MetaPixelLoaderProps) {
     trackedUrls.current.add(currentUrl);
 
     if (
-      pathname === "/percorso-pilota" &&
-      !trackedCustomEvents.current.has("ViewPilotPage")
-    ) {
-      trackViewPilotPage();
-      trackedCustomEvents.current.add("ViewPilotPage");
-    }
-
-    if (
       pathname === "/confronto" &&
       !trackedCustomEvents.current.has("ViewConfrontoPage")
     ) {
@@ -64,14 +55,6 @@ export function MetaPixelLoader({ consentGranted }: MetaPixelLoaderProps) {
         const currentUrl = `${window.location.pathname}${window.location.search}`;
 
         trackedUrls.current.add(currentUrl);
-
-        if (
-          window.location.pathname === "/percorso-pilota" &&
-          !trackedCustomEvents.current.has("ViewPilotPage")
-        ) {
-          trackViewPilotPage();
-          trackedCustomEvents.current.add("ViewPilotPage");
-        }
 
         if (
           window.location.pathname === "/confronto" &&

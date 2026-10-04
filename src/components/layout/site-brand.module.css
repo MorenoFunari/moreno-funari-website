@@ -1,10 +1,24 @@
 .brand {
   display: inline-flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
   justify-content: center;
   min-height: 2.75rem;
   color: var(--color-primary-strong);
   text-decoration: none;
+}
+
+.mark {
+  display: block;
+  flex: 0 0 auto;
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .brand:hover {
@@ -27,10 +41,38 @@
   line-height: var(--line-height-label);
 }
 
-.footer {
+.footer,
+.footer:visited,
+.footer:hover,
+.footer:active {
   color: var(--color-text-on-dark);
 }
 
-.footer .role {
+.footer {
+  --footer-brand-accent: #b7d52a;
+}
+
+.footer:hover .name {
+  text-decoration: underline;
+  text-decoration-color: var(--footer-brand-accent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+.footer:focus-visible {
+  color: var(--color-text-on-dark);
+  outline-color: var(--footer-brand-accent);
+}
+
+.footer .mark {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.footer .role,
+.footer:visited .role,
+.footer:hover .role,
+.footer:focus-visible .role,
+.footer:active .role {
   color: var(--color-text-on-dark-muted);
 }

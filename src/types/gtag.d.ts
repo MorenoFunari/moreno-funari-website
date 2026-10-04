@@ -13,7 +13,10 @@ type GtagConfigSettings = {
 };
 
 type GtagSetSettings = Record<string, string | number | boolean | null>;
-type GtagEventSettings = Record<string, string | number | boolean | null>;
+type GtagEventSettings = Record<
+  string,
+  string | number | boolean | null | undefined | (() => void)
+>;
 
 type GtagCommand =
   | ["js", Date]

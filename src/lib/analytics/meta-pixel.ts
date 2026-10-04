@@ -1,6 +1,5 @@
 export type MetaPixelEventName =
   | "PageView"
-  | "ViewPilotPage"
   | "ViewConfrontoPage"
   | "PilotCtaClick"
   | "PilotWhatsappClick"
@@ -47,12 +46,6 @@ export function event(
   }
 
   fbq("trackCustom", name);
-}
-
-export function trackViewPilotPage() {
-  event("ViewPilotPage", {
-    page_path: "/percorso-pilota",
-  });
 }
 
 export function trackViewConfrontoPage() {

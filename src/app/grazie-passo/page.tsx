@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { PassoThankYouAnalytics } from "@/components/analytics/passo-thank-you-analytics";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { createPageMetadata } from "@/lib/seo/metadata";
@@ -16,6 +17,7 @@ export const metadata: Metadata = createPageMetadata({
 export default function GraziePassoPage() {
   return (
     <main className={styles.page} id="main-content">
+      <PassoThankYouAnalytics />
       <section className={styles.hero}>
         <Container className={styles.heroInner}>
           <p className={styles.eyebrow}>PASSO</p>

@@ -1,4 +1,6 @@
 .footer {
+  --footer-link-accent: #b7d52a;
+
   background: var(--color-footer-background);
   color: var(--color-text-on-dark);
 }
@@ -42,7 +44,8 @@
   padding: 0;
 }
 
-.link {
+.link,
+.link:visited {
   display: inline-flex;
   width: fit-content;
   min-height: 2rem;
@@ -53,7 +56,19 @@
 }
 
 .link:hover {
-  color: var(--color-accent);
+  color: var(--footer-link-accent);
+  text-decoration-color: currentColor;
+}
+
+.link:focus-visible {
+  color: var(--color-text-on-dark);
+  outline-color: var(--footer-link-accent);
+  text-decoration-color: var(--footer-link-accent);
+}
+
+.link:active {
+  color: var(--color-text-on-dark);
+  text-decoration-color: var(--footer-link-accent);
 }
 
 .legal {
@@ -76,7 +91,8 @@
   padding: 0;
 }
 
-.legalLink {
+.legalLink,
+.legalLink:visited {
   color: var(--color-text-on-dark);
 }
 
@@ -95,7 +111,21 @@
 
 .legalLink:hover,
 .legalButton:hover {
-  color: var(--color-accent);
+  color: var(--footer-link-accent);
+  text-decoration-color: currentColor;
+}
+
+.legalLink:focus-visible,
+.legalButton:focus-visible {
+  color: var(--color-text-on-dark);
+  outline-color: var(--footer-link-accent);
+  text-decoration-color: var(--footer-link-accent);
+}
+
+.legalLink:active,
+.legalButton:active {
+  color: var(--color-text-on-dark);
+  text-decoration-color: var(--footer-link-accent);
 }
 
 @media (min-width: 680px) {

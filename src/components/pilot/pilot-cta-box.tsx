@@ -48,7 +48,7 @@ export function PilotCtaBox({
       : formSource === "coaching_form"
         ? "/coaching"
         : formSource === "percorso_pilota_form"
-          ? "/percorso-pilota"
+          ? "/confronto"
           : "/";
 
   const content = (

@@ -7,6 +7,7 @@ import {
   trackClickWhatsApp,
   trackPilotWhatsappClick,
 } from "@/lib/analytics/meta-pixel";
+import { readAnalyticsConsent } from "@/lib/analytics/consent";
 
 type TrackedWhatsAppButtonProps = {
   children: ReactNode;
@@ -38,6 +39,17 @@ export function TrackedWhatsAppButton({
 
         trackClickWhatsApp(eventParameters);
         trackPilotWhatsappClick(eventParameters);
+
+        if (
+          typeof window !== "undefined" &&
+          readAnalyticsConsent()?.status === "granted"
+        ) {
+          window.gtag?.(
+            "event",
+            "whatsapp_click_confronto",
+            eventParameters,
+          );
+        }
       }}
       size={size}
       target="_blank"

@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   authors: [{ name: "Moreno Funari" }],
   creator: "Moreno Funari",
   publisher: "Moreno Funari",
+  icons: {
+    icon: "/images/brand/logo-mf-square-dark.png",
+    apple: "/images/brand/logo-mf-square-dark.png",
+  },
   openGraph: {
     type: "website",
     siteName: seoConfig.siteName,

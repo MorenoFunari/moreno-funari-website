@@ -11,8 +11,9 @@ import styles from "../conversion-page.module.css";
 
 const brevoFormUrl = "https://4ae90352.sibforms.com/v2/serve/MUIFAF3R0KInBJVk_kmECZkaXzq2_daQViUFZkWFOCEtwGcMkyR0o_4B94Aub0MSG4ZB_Gbj_azBiW2IZk_W0d6sDsAOY9aQCVvxc8sKrG4dKp3cMdtJ-DiFH5PSmDmEW3iO7KURNoxN512-jmOyhkLsMkIzBDHs7g6LCpFiZIceKiHRasW1A5u6abNZ1lD7NsiPHYLqrOdHoIqvRQ==";
 
-// TODO(Brevo): set the successful form submission redirect to /grazie-passo
-// and emit passo_form_submit from the Brevo confirmation flow.
+// Brevo must redirect successful submissions to
+// https://morenofunari.it/grazie-passo. The thank-you page emits the lead
+// events because this external form does not expose a reliable site callback.
 
 export const metadata: Metadata = createPageMetadata({ title: "Dire sempre sì ti sta costando più di quanto pensi", description: "Scarica la guida gratuita in 5 passi per iniziare a mettere confini senza sentirti egoista.", path: "/passo", absoluteTitle: true });
 
