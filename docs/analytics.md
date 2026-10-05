@@ -93,9 +93,9 @@ sono configurati.
 
 | Evento | Significato |
 | --- | --- |
-| `cta_click_passo` | Click verso il form Brevo PASSO; non è un lead. |
-| `passo_thank_you_view` | Visualizzazione di `/grazie-passo` dopo il redirect configurato in Brevo. |
-| `passo_lead_created` | Lead PASSO attribuito alla thank-you page Brevo. |
+| `cta_click_passo` | Click verso il form interno PASSO; non è un lead. |
+| `passo_thank_you_view` | Visualizzazione di `/grazie-passo` dopo la conferma server-side di Brevo. |
+| `passo_lead_created` | Lead PASSO attribuito alla thank-you page dopo creazione/aggiornamento del contatto e accettazione dell’email guida. |
 | `confronto_form_submit_attempt` | Tentativo di invio del form CONFRONTO, valido o non valido. |
 | `confronto_lead_created` | Il backend ha ricevuto conferma della creazione/aggiornamento del contatto Brevo. |
 | `confronto_notification_sent` | Brevo ha accettato la notifica email destinata a Moreno. |

@@ -23,13 +23,13 @@ export default function GraziePassoPage() {
           <p className={styles.eyebrow}>PASSO</p>
           <h1>La richiesta è arrivata.</h1>
           <p>
-            Controlla la tua email: se tutto è andato correttamente, riceverai
-            la guida tra poco.
+            Controlla la tua email: la guida dovrebbe arrivare tra pochi minuti.
+            Se non la vedi, controlla anche Spam e Promozioni.
           </p>
           <p>
             Prendila con calma. Non serve leggerla tutta subito: puoi partire
             anche da una sola domanda, quella che senti più vicina in questo
-            momento.
+            momento. Nessuna pressione.
           </p>
           <div className={styles.actions}>
             <ButtonLink href="/passo">Torna alla pagina PASSO</ButtonLink>

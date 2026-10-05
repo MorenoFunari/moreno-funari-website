@@ -75,9 +75,9 @@ The `/ebook` route presents "Un passo possibile" with dedicated sections in `src
 
 ## Landing guida “Dire sempre sì”
 
-Le route `/passo` e `/guida-dire-sempre-si` collegano a un modulo ospitato da Brevo in una nuova scheda. Brevo gestisce form, consenso, eventuale double opt-in, lista contatti, invio della guida e disiscrizione; il sito ospita landing, PDF e pagina `/grazie-passo`.
+La route `/passo` contiene un form interno che invia i dati all’API server-side `/api/passo-lead`. L’API crea o aggiorna il contatto nella lista Brevo configurata, registra gli attributi di consenso disponibili e invia subito il template email della guida, senza double opt-in. Dopo la conferma di Brevo, il client porta l’utente a `/grazie-passo`.
 
-Il redirect post-submit deve essere configurato nel pannello Brevo verso `https://morenofunari.it/grazie-passo`. Il sito non può verificare direttamente il submit del form esterno: gli eventi `passo_thank_you_view`, `passo_lead_created` e `generate_lead` vengono quindi emessi dalla thank-you page, dopo consenso Analytics.
+Gli eventi `passo_thank_you_view`, `passo_lead_created` e `generate_lead` vengono emessi dalla thank-you page dopo consenso Analytics. La route legacy `/guida-dire-sempre-si` conserva ancora il collegamento al modulo Brevo esterno e va trattata separatamente.
 
 La Privacy Policy è stata aggiornata per riflettere l’uso di Brevo e va validata dal titolare o da un consulente privacy prima dell’uso esteso del funnel.
 

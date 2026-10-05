@@ -84,10 +84,10 @@ export function PassoForm() {
           value="1"
         />
         <label htmlFor="passo-consent">
-          Desidero ricevere la guida gratuita “Dire sempre sì ti sta costando
-          più di quanto pensi” e accetto di ricevere comunicazioni via email da
-          Moreno Funari | Mental Coach. Posso revocare il consenso in qualsiasi
-          momento.
+          Ho letto la <Link href="/privacy-policy">Privacy Policy</Link> e
+          acconsento al trattamento dei miei dati per ricevere la guida gratuita
+          richiesta e contenuti pratici collegati a consapevolezza, confini e
+          primi passi possibili. Potrò cancellarmi in qualsiasi momento.
         </label>
       </div>
       <div aria-hidden="true" className={styles.honeypot}>
@@ -115,8 +115,9 @@ export function PassoForm() {
         </p>
       ) : null}
       <p className={styles.formFallback}>
-        Il modulo è gestito in modo sicuro da Brevo. Puoi cancellarti quando
-        vuoi. Consulta la <Link href="/privacy-policy">Privacy Policy</Link>.
+        Userò i dati inseriti per inviarti la guida e, ogni tanto, contenuti
+        utili collegati al lavoro di Moreno Funari | Mental Coach. Nessuno spam,
+        nessuna pressione.
       </p>
     </form>
   );
