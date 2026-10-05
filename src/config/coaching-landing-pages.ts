@@ -440,7 +440,7 @@ export const coachingLandingPages = {
     path: "/coaching/blocco-e-primo-passo",
     title: "Coaching per blocco, procrastinazione e primo passo",
     metaTitle: "Coaching per blocco, procrastinazione e primo passo",
-    description: "Ti senti bloccato e rimandi continuamente? Scopri come il mental coaching può aiutarti a ridurre il passo, ritrovare chiarezza e iniziare in modo sostenibile.",
+    description: "Cerchi un modo concreto per superare un blocco senza forzarti? Il mental coaching può aiutarti a fare chiarezza, ridurre il passo e iniziare in modo sostenibile.",
     eyebrow: "Blocco e primo passo",
     heroTitle: "Coaching per blocco, procrastinazione e primo passo",
     heroText: [

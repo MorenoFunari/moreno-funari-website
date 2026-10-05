@@ -21,8 +21,9 @@ export function HomeHero() {
           Non devi risolvere tutto oggi.
         </h1>
         <p className={styles.text}>
-          Se ti senti bloccato, sotto pressione o troppo duro con te stesso,
-          puoi iniziare facendo chiarezza e trovando un passo possibile.
+          Se nel lavoro, nello sport o nella vita personale ti senti bloccato,
+          sotto pressione o troppo duro con te stesso, puoi iniziare facendo
+          chiarezza e trovando un primo passo possibile.
         </p>
         <div className={styles.actions} aria-label="Azioni principali">
           <ButtonLink href="/inizia-da-qui" size="large">

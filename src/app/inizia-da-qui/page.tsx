@@ -17,7 +17,7 @@ const startLevels = [
 export const metadata: Metadata = createPageMetadata({
   title: "Inizia da qui",
   description:
-    "Scegli un primo passo sostenibile: leggere, fare qualcosa in autonomia oppure raccontare una situazione concreta.",
+    "Se ti senti in un blocco o sotto pressione, scegli un primo passo possibile: leggere, fare qualcosa in autonomia o raccontare una situazione.",
   path: "/inizia-da-qui",
 });
 
@@ -31,8 +31,9 @@ export default function IniziaDaQuiPage() {
             Non devi capire tutto subito. Parti da ciò che riesci a fare adesso.
           </h1>
           <p className={styles.lead}>
-            Qui trovi modi diversi per iniziare: leggere, fare un esercizio in
-            autonomia, ricevere una guida o raccontare una situazione concreta.
+            Se ti senti in un blocco o sotto pressione, qui trovi modi diversi
+            per iniziare: leggere, fare un esercizio in autonomia, ricevere una
+            guida o raccontare una situazione concreta.
           </p>
           <nav className={styles.levelNav} aria-label="Scegli come iniziare">
             {startLevels.map((level, index) => (

@@ -64,9 +64,9 @@ const faqs = [
 ] as const;
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Percorso Pilota — Un Passo Possibile",
+  title: "CONFRONTO: mental coaching online",
   description:
-    "Un percorso gratuito individuale per fare chiarezza su una situazione concreta, capire cosa ti blocca e individuare un prossimo passo possibile.",
+    "Racconta una situazione concreta di blocco o pressione e valuta con Moreno un percorso pilota gratuito di mental coaching online, senza automatismi.",
   path: "/confronto",
 });
 

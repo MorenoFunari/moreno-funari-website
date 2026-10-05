@@ -15,9 +15,9 @@ import { UsefulWhenSection } from "@/components/sections/coaching/useful-when-se
 import { createPageMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Coaching",
+  title: "Mental coaching online",
   description:
-    "Uno spazio umano e concreto per fare chiarezza, affrontare blocco e pressione e individuare piccoli passi sostenibili.",
+    "Un percorso di mental coaching online, umano e concreto, per fare chiarezza su blocco, pressione, fiducia e individuare un primo passo possibile.",
   path: "/coaching",
 });
 

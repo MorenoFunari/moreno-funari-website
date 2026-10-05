@@ -22,9 +22,9 @@ export function CoachingHero() {
             mettere ordine nei pensieri e capire da quale passo ripartire.
           </p>
           <p>
-            Nel coaching non ricevi una risposta pronta. Lavoriamo insieme sulla
-            situazione che stai vivendo, sulle risorse che hai già e su ciò che
-            può dipendere davvero da te.
+            In un percorso di mental coaching online non ricevi una risposta
+            pronta. Lavoriamo insieme sulla situazione che stai vivendo, sulle
+            risorse che hai già e su ciò che può dipendere davvero da te.
           </p>
         </div>
         <div className={styles.actions} aria-label="Azioni principali">

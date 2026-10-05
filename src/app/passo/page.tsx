@@ -37,9 +37,9 @@ const notForItems = [
 ] as const;
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Dire sempre sì ti sta costando più di quanto pensi",
+  title: "Guida gratuita PASSO: dire sempre sì e mettere confini",
   description:
-    "Scarica la guida gratuita in 5 passi per iniziare a mettere confini senza sentirti egoista.",
+    "Ricevi la guida gratuita PASSO: 5 domande ed esercizi per riconoscere i sì automatici, mettere un primo confine possibile e non sentirti egoista.",
   path: "/passo",
   absoluteTitle: true,
 });
