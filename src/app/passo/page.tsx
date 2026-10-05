@@ -6,10 +6,8 @@ import { TrackedCtaLink } from "@/components/analytics/tracked-cta-link";
 import { Container } from "@/components/ui/container";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
+import { PassoForm } from "./passo-form";
 import styles from "./page.module.css";
-
-const brevoFormUrl =
-  "https://4ae90352.sibforms.com/v2/serve/MUIFAF3R0KInBJVk_kmECZkaXzq2_daQViUFZkWFOCEtwGcMkyR0o_4B94Aub0MSG4ZB_Gbj_azBiW2IZk_W0d6sDsAOY9aQCVvxc8sKrG4dKp3cMdtJ-DiFH5PSmDmEW3iO7KURNoxN512-jmOyhkLsMkIzBDHs7g6LCpFiZIceKiHRasW1A5u6abNZ1lD7NsiPHYLqrOdHoIqvRQ==";
 
 const usefulWhenItems = [
   "dici sì prima ancora di capire se puoi davvero",
@@ -37,9 +35,6 @@ const notForItems = [
   "non sostituisce un percorso terapeutico",
   "non promette di risolvere tutto in 5 passaggi",
 ] as const;
-
-// Brevo gestisce invio, consenso e redirect a /grazie-passo. La thank-you
-// page registra il lead perché il POST esterno non espone un callback client sicuro.
 
 export const metadata: Metadata = createPageMetadata({
   title: "Dire sempre sì ti sta costando più di quanto pensi",
@@ -129,73 +124,7 @@ export default function PassoPage() {
             </p>
           </div>
           <div className={styles.formEmbed}>
-            <form
-              acceptCharset="UTF-8"
-              action={brevoFormUrl}
-              className={styles.brevoForm}
-              method="post"
-            >
-              <div className={styles.field}>
-                <label htmlFor="passo-name">
-                  Nome <span>Facoltativo</span>
-                </label>
-                <input
-                  autoComplete="name"
-                  id="passo-name"
-                  maxLength={200}
-                  name="NOME"
-                  type="text"
-                />
-              </div>
-              <div className={styles.field}>
-                <label htmlFor="passo-email">Email</label>
-                <input
-                  autoComplete="email"
-                  id="passo-email"
-                  name="EMAIL"
-                  required
-                  type="email"
-                />
-                <p>Qui riceverai il link alla guida.</p>
-              </div>
-              <div className={styles.consentField}>
-                <input
-                  id="passo-consent"
-                  name="CONSENSO"
-                  required
-                  type="checkbox"
-                  value="1"
-                />
-                <label htmlFor="passo-consent">
-                  Desidero ricevere la guida gratuita “Dire sempre sì ti sta
-                  costando più di quanto pensi” e accetto di ricevere
-                  comunicazioni via email da Moreno Funari | Mental Coach.
-                  Posso revocare il consenso in qualsiasi momento.
-                </label>
-              </div>
-              <div aria-hidden="true" className={styles.honeypot}>
-                <label htmlFor="passo-email-check">Lascia vuoto</label>
-                <input
-                  autoComplete="off"
-                  id="passo-email-check"
-                  name="email_address_check"
-                  tabIndex={-1}
-                  type="text"
-                />
-              </div>
-              <input name="locale" type="hidden" value="it" />
-              <button className={styles.submitButton} type="submit">
-                Ricevi la guida
-              </button>
-            </form>
-            <p className={styles.formFallback}>
-              Il modulo è gestito in modo sicuro da Brevo. Se incontri un
-              problema, puoi{" "}
-              <a href={brevoFormUrl} rel="noopener noreferrer" target="_blank">
-                aprirlo in una nuova scheda
-              </a>
-              .
-            </p>
+            <PassoForm />
           </div>
         </Container>
       </section>

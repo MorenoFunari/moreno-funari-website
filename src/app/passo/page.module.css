@@ -325,6 +325,27 @@
   transform: translateY(0);
 }
 
+.submitButton:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+}
+
+.formError {
+  margin: 0;
+  border-left: 3px solid var(--color-accent);
+  padding: var(--space-md);
+  background: var(--color-surface);
+  color: var(--color-primary-strong);
+  line-height: var(--line-height-body);
+}
+
+.formError a {
+  color: inherit;
+  font-weight: var(--font-weight-bold);
+  text-underline-offset: 0.18em;
+}
+
 .formFallback {
   margin: var(--space-md) 0 0;
   color: var(--color-text-muted);
