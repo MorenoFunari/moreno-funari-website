@@ -7,10 +7,7 @@
 }
 
 .heroInner {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(15rem, 0.7fr);
-  gap: clamp(var(--space-2xl), 6vw, var(--space-4xl));
-  align-items: center;
+  max-width: 52rem;
 }
 
 .heroCopy {
@@ -70,14 +67,9 @@
   text-underline-offset: 0.2em;
 }
 
-.heroPreview {
-  margin: 0;
-  text-align: center;
-}
-
 .coverImage {
   display: block;
-  width: min(100%, 22rem);
+  width: min(100%, 16rem);
   height: auto;
   margin-inline: auto;
   border: 1px solid var(--color-border);
@@ -85,7 +77,7 @@
   box-shadow: var(--shadow-elevated);
 }
 
-.heroPreview figcaption {
+.guidePreview figcaption {
   margin-top: var(--space-md);
   color: var(--color-text-muted);
   font-size: var(--font-size-body-sm);
@@ -95,6 +87,38 @@
 .section,
 .closing {
   padding-block: var(--section-space);
+}
+
+.previewSection {
+  border-block: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.previewLayout {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.6fr) minmax(0, 1fr);
+  gap: clamp(var(--space-xl), 5vw, var(--space-4xl));
+  align-items: center;
+}
+
+.guidePreview {
+  margin: 0;
+  text-align: center;
+}
+
+.previewBenefits {
+  display: grid;
+  gap: var(--space-sm);
+  margin: var(--space-xl) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.previewBenefits li {
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-md);
+  color: var(--color-text);
+  line-height: var(--line-height-body);
 }
 
 .muted,
@@ -325,15 +349,34 @@
     padding-top: calc(var(--header-height) + var(--space-xl));
   }
 
-  .heroInner,
   .twoColumns,
   .formLayout,
   .fitGrid {
     grid-template-columns: 1fr;
   }
 
+  .previewLayout {
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    gap: var(--space-md);
+    align-items: start;
+  }
+
   .coverImage {
-    width: min(64vw, 16rem);
+    width: 8.5rem;
+  }
+
+  .guidePreview figcaption {
+    margin-top: var(--space-sm);
+    font-size: 0.75rem;
+  }
+
+  .previewBenefits {
+    gap: var(--space-xs);
+    margin-top: var(--space-md);
+  }
+
+  .previewBenefits li {
+    padding-left: var(--space-sm);
   }
 
   .section,

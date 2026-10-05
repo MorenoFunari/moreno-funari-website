@@ -80,80 +80,31 @@ export default function PassoPage() {
               </a>
             </div>
           </div>
+        </Container>
+      </section>
 
-          <figure className={styles.heroPreview}>
+      <section className={`${styles.section} ${styles.previewSection}`}>
+        <Container className={styles.previewLayout}>
+          <figure className={styles.guidePreview}>
             <Image
               alt="Copertina della guida Dire sempre sì ti sta costando più di quanto pensi"
               className={styles.coverImage}
               height={1010}
               priority
-              sizes="(max-width: 759px) 72vw, 22rem"
+              sizes="(max-width: 759px) 9rem, 16rem"
               src="/images/ebook/dire-sempre-si-cover.webp"
               width={714}
             />
             <figcaption>8 pagine da leggere con calma, al tuo ritmo.</figcaption>
           </figure>
-        </Container>
-      </section>
-
-      <section className={styles.section}>
-        <Container className={styles.twoColumns}>
-          <div>
-            <p className={styles.eyebrow}>Quando può esserti utile</p>
-            <h2>Forse il sì arriva prima di te.</h2>
-            <p className={styles.sectionIntro}>
-              Questa guida può aiutarti a fermarti un momento se:
-            </p>
-          </div>
-          <ul className={styles.list}>
-            {usefulWhenItems.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </Container>
-      </section>
-
-      <section className={`${styles.section} ${styles.muted}`} id="cosa-trovi">
-        <Container className={styles.twoColumns}>
-          <div>
-            <p className={styles.eyebrow}>Dentro la guida</p>
-            <h2>Cinque passi semplici, senza forzarti.</h2>
-            <p className={styles.sectionIntro}>
-              Non devi cambiare tutto. Puoi partire osservando una risposta che
-              di solito dai in automatico.
-            </p>
-          </div>
-          <ul className={styles.list}>
-            {insideItems.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </Container>
-      </section>
-
-      <section className={styles.section}>
-        <Container>
-          <div className={styles.sectionHeading}>
-            <p className={styles.eyebrow}>Per orientarti</p>
-            <h2>Una guida pratica, con confini chiari.</h2>
-          </div>
-          <div className={styles.fitGrid}>
-            <div className={styles.fitCard}>
-              <h3>Può esserti utile se</h3>
-              <ul>
-                {suitedForItems.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div className={styles.fitCard}>
-              <h3>Cosa non è</h3>
-              <ul>
-                {notForItems.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
+          <div className={styles.previewCopy}>
+            <p className={styles.eyebrow}>Cosa ricevi</p>
+            <h2>Una guida breve da usare, non da studiare.</h2>
+            <ul className={styles.previewBenefits}>
+              <li>5 passaggi semplici e concreti</li>
+              <li>domande ed esercizi da provare nella vita reale</li>
+              <li>uno spazio per osservare cosa succede prima di dire sì</li>
+            </ul>
           </div>
         </Container>
       </section>
@@ -245,6 +196,68 @@ export default function PassoPage() {
               </a>
               .
             </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className={styles.section}>
+        <Container className={styles.twoColumns}>
+          <div>
+            <p className={styles.eyebrow}>Quando può esserti utile</p>
+            <h2>Forse il sì arriva prima di te.</h2>
+            <p className={styles.sectionIntro}>
+              Questa guida può aiutarti a fermarti un momento se:
+            </p>
+          </div>
+          <ul className={styles.list}>
+            {usefulWhenItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      <section className={`${styles.section} ${styles.muted}`} id="cosa-trovi">
+        <Container className={styles.twoColumns}>
+          <div>
+            <p className={styles.eyebrow}>Dentro la guida</p>
+            <h2>Cinque passi semplici, senza forzarti.</h2>
+            <p className={styles.sectionIntro}>
+              Non devi cambiare tutto. Puoi partire osservando una risposta che
+              di solito dai in automatico.
+            </p>
+          </div>
+          <ul className={styles.list}>
+            {insideItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      <section className={styles.section}>
+        <Container>
+          <div className={styles.sectionHeading}>
+            <p className={styles.eyebrow}>Per orientarti</p>
+            <h2>Una guida pratica, con confini chiari.</h2>
+          </div>
+          <div className={styles.fitGrid}>
+            <div className={styles.fitCard}>
+              <h3>Può esserti utile se</h3>
+              <ul>
+                {suitedForItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className={styles.fitCard}>
+              <h3>Cosa non è</h3>
+              <ul>
+                {notForItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </Container>
       </section>
