@@ -7,7 +7,7 @@ export type LeadMagnetBannerProps = {
   variant?: "blog" | "coaching";
 };
 
-const destination = "/guida-dire-sempre-si";
+const destination = "/passo";
 
 export function LeadMagnetBanner({
   placement,

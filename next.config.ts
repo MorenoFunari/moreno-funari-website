@@ -50,6 +50,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/guida-dire-sempre-si",
+        destination: "/passo",
+        statusCode: 301,
+      },
+      {
         source: "/wa",
         destination:
           "https://wa.me/393793408630?text=Ciao%20Moreno%2C%20vorrei%20info%20sul%20percorso%20pilota",

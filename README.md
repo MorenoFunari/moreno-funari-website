@@ -77,7 +77,7 @@ The `/ebook` route presents "Un passo possibile" with dedicated sections in `src
 
 La route `/passo` contiene un form interno che invia i dati all’API server-side `/api/passo-lead`. L’API crea o aggiorna il contatto nella lista Brevo configurata, registra gli attributi di consenso disponibili e invia subito il template email della guida, senza double opt-in. Dopo la conferma di Brevo, il client porta l’utente a `/grazie-passo`.
 
-Gli eventi `passo_thank_you_view`, `passo_lead_created` e `generate_lead` vengono emessi dalla thank-you page dopo consenso Analytics. La route legacy `/guida-dire-sempre-si` conserva ancora il collegamento al modulo Brevo esterno e va trattata separatamente.
+Gli eventi `passo_thank_you_view`, `passo_lead_created` e `generate_lead` vengono emessi dalla thank-you page dopo consenso Analytics. `/passo` è la landing attiva; la route legacy `/guida-dire-sempre-si` reindirizza in modo permanente a `/passo`. Il vecchio form Brevo e il template `PASSO 01 — Conferma email` restano temporaneamente attivi come misura di sicurezza per eventuali collegamenti esterni e vanno rivalutati dopo 30 giorni.
 
 La Privacy Policy è stata aggiornata per riflettere l’uso di Brevo e va validata dal titolare o da un consulente privacy prima dell’uso esteso del funnel.
 

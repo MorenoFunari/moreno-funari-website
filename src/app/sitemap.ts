@@ -19,7 +19,6 @@ const staticRoutes = [
   "/ebook",
   "/inizia-da-qui",
   "/passo",
-  "/guida-dire-sempre-si",
   "/confronto",
   "/contatti",
   "/blog",
