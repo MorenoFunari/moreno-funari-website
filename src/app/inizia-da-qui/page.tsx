@@ -6,30 +6,182 @@ import { SurfaceCard } from "@/components/ui/surface-card";
 import { siteConfig } from "@/config/site";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
-import styles from "../conversion-page.module.css";
+import styles from "./page.module.css";
 
-const paths = [
-  { title: "Se vuoi leggere con calma", text: "Parti dagli articoli del blog. Trovi riflessioni semplici su blocco, pressione, fiducia, autocritica, lavoro, sport e vita quotidiana.", cta: "Leggi gli articoli", href: "/blog" },
-  { title: "Se vuoi fare un esercizio da solo", text: "Usa Un Passo Possibile AI: una riflessione guidata per mettere ordine in una situazione concreta, senza dover risolvere tutto insieme.", cta: "Fai una riflessione guidata", href: siteConfig.appUrl, external: true },
-  { title: "Se fai fatica a mettere confini", text: "Scarica la guida gratuita “Dire sempre sì ti sta costando più di quanto pensi”. È pensata per chi dice sì automaticamente e poi si ritrova stanco, pieno o in colpa.", cta: "Scarica la guida PASSO", href: "/passo" },
-  { title: "Se vuoi portare una situazione reale", text: "Puoi candidarti al percorso pilota gratuito scrivendo o lasciando i tuoi dati. Moreno leggerà personalmente la richiesta e valuterà se il percorso può essere adatto.", cta: "Vai a CONFRONTO", href: "/confronto" },
+const startLevels = [
+  { label: "Voglio solo capire meglio", href: "#capire" },
+  { label: "Voglio fare qualcosa in autonomia", href: "#autonomia" },
+  { label: "Voglio raccontare una situazione", href: "#raccontare" },
 ] as const;
 
-export const metadata: Metadata = createPageMetadata({ title: "Inizia da qui", description: "Uno spazio per orientarti tra articoli, risorse gratuite, riflessioni guidate e percorso pilota CONFRONTO.", path: "/inizia-da-qui" });
+export const metadata: Metadata = createPageMetadata({
+  title: "Inizia da qui",
+  description:
+    "Scegli un primo passo sostenibile: leggere, fare qualcosa in autonomia oppure raccontare una situazione concreta.",
+  path: "/inizia-da-qui",
+});
 
 export default function IniziaDaQuiPage() {
-  return <main className={styles.page} id="main-content">
-    <section className={styles.hero}><Container className={styles.heroInner}>
-      <p className={styles.eyebrow}>Inizia da qui</p>
-      <h1>Non devi capire tutto subito. Parti dal punto in cui sei.</h1>
-      <p>Questo spazio nasce per chi si sente bloccato, sotto pressione o confuso davanti a una situazione concreta. Non trovi promesse facili, ma strumenti semplici per fare chiarezza e scegliere un primo passo possibile.</p>
-    </Container></section>
-    <section className={`${styles.section} ${styles.muted}`} aria-labelledby="paths-title"><Container>
-      <div className={styles.copy}><h2 id="paths-title">Scegli il punto di partenza più sostenibile</h2></div>
-      <div className={styles.grid}>{paths.map((path) => <SurfaceCard className={styles.card} key={path.title}>
-        <h3>{path.title}</h3><p>{path.text}</p><TrackedCtaLink eventName={path.href === "/confronto" ? "cta_click_confronto" : path.href === "/passo" ? "cta_click_passo" : "cta_click_inizia_da_qui"} external={"external" in path} href={path.href} location={`start_hub_${path.href}`}>{path.cta}</TrackedCtaLink>
-      </SurfaceCard>)}</div>
-    </Container></section>
-    <section className={styles.closing}><Container className={styles.closingInner}><h2>Non serve scegliere il percorso perfetto.</h2><p>Scegli quello più sostenibile per te adesso. Anche questo è già un primo passo.</p></Container></section>
-  </main>;
+  return (
+    <main className={styles.page} id="main-content">
+      <section className={styles.hero} aria-labelledby="start-title">
+        <Container className={styles.heroInner}>
+          <p className={styles.eyebrow}>Inizia da qui</p>
+          <h1 id="start-title">
+            Non devi capire tutto subito. Parti da ciò che riesci a fare adesso.
+          </h1>
+          <p className={styles.lead}>
+            Qui trovi modi diversi per iniziare: leggere, fare un esercizio in
+            autonomia, ricevere una guida o raccontare una situazione concreta.
+          </p>
+          <nav className={styles.levelNav} aria-label="Scegli come iniziare">
+            {startLevels.map((level, index) => (
+              <a href={level.href} key={level.href}>
+                <span aria-hidden="true">{index + 1}</span>
+                {level.label}
+              </a>
+            ))}
+          </nav>
+        </Container>
+      </section>
+
+      <section
+        className={styles.levelSection}
+        id="capire"
+        aria-labelledby="capire-title"
+      >
+        <Container className={styles.levelLayout}>
+          <div className={styles.levelHeading}>
+            <p className={styles.levelNumber}>Livello 1</p>
+            <h2 id="capire-title">Voglio solo capire meglio</h2>
+          </div>
+          <div className={styles.levelContent}>
+            <p>
+              Se adesso vuoi solo orientarti, puoi partire da un articolo. Non
+              devi lasciare dati né raccontare qualcosa di personale.
+            </p>
+            <TrackedCtaLink
+              eventName="cta_click_inizia_da_qui"
+              href="/blog"
+              location="start_hub_level_1_blog"
+              size="large"
+              variant="secondary"
+            >
+              Leggi gli articoli
+            </TrackedCtaLink>
+          </div>
+        </Container>
+      </section>
+
+      <section
+        className={`${styles.levelSection} ${styles.autonomySection}`}
+        id="autonomia"
+        aria-labelledby="autonomia-title"
+      >
+        <Container>
+          <div className={styles.levelIntro}>
+            <p className={styles.levelNumber}>Livello 2</p>
+            <h2 id="autonomia-title">Voglio fare qualcosa in autonomia</h2>
+            <p>
+              Puoi scegliere lo strumento più vicino alla situazione che stai
+              vivendo, senza dover parlare subito con qualcuno.
+            </p>
+          </div>
+
+          <div className={styles.autonomyGrid}>
+            <SurfaceCard
+              as="article"
+              className={`${styles.optionCard} ${styles.passoCard}`}
+              aria-labelledby="passo-title"
+            >
+              <p className={styles.optionLabel}>Guida gratuita</p>
+              <h3 id="passo-title">Dire sempre sì ti pesa?</h3>
+              <p>
+                Puoi ricevere la guida gratuita PASSO e iniziare da qualche
+                domanda concreta sui sì automatici e sui confini.
+              </p>
+              <TrackedCtaLink
+                eventName="cta_click_passo"
+                href="/passo"
+                location="start_hub_level_2_passo"
+                size="large"
+              >
+                Ricevi la guida PASSO
+              </TrackedCtaLink>
+            </SurfaceCard>
+
+            <SurfaceCard
+              as="article"
+              className={styles.optionCard}
+              variant="outlined"
+              aria-labelledby="ai-title"
+            >
+              <p className={styles.optionLabel}>Esercizio guidato</p>
+              <h3 id="ai-title">
+                Vuoi fare un primo esercizio in autonomia?
+              </h3>
+              <p>
+                Puoi usare Un Passo Possibile AI per mettere ordine in una
+                situazione e individuare un primo passo possibile.
+              </p>
+              <TrackedCtaLink
+                eventName="cta_click_inizia_da_qui"
+                external
+                href={siteConfig.appUrl}
+                location="start_hub_level_2_ai"
+                size="large"
+                variant="secondary"
+              >
+                Prova l’esercizio guidato
+              </TrackedCtaLink>
+            </SurfaceCard>
+          </div>
+        </Container>
+      </section>
+
+      <section
+        className={styles.levelSection}
+        id="raccontare"
+        aria-labelledby="raccontare-title"
+      >
+        <Container className={styles.levelLayout}>
+          <div className={styles.levelHeading}>
+            <p className={styles.levelNumber}>Livello 3</p>
+            <h2 id="raccontare-title">
+              Voglio raccontare direttamente cosa sta succedendo
+            </h2>
+          </div>
+          <div className={styles.levelContent}>
+            <p>
+              Se c’è una situazione di lavoro, sport o vita personale che ti
+              pesa, puoi raccontarla a Moreno. Prima la richiesta viene letta e
+              valutata con calma.
+            </p>
+            <TrackedCtaLink
+              eventName="cta_click_confronto"
+              href="/confronto"
+              location="start_hub_level_3_confronto"
+              size="large"
+            >
+              Vai a CONFRONTO
+            </TrackedCtaLink>
+            <p className={styles.reassurance}>
+              Inviarla non significa iniziare automaticamente. È solo un primo
+              passaggio per capire se ha senso proseguire.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className={styles.closing} aria-labelledby="closing-title">
+        <Container className={styles.closingInner}>
+          <h2 id="closing-title">Puoi anche iniziare solo leggendo.</h2>
+          <p>
+            Il primo passo non deve essere grande: deve essere possibile per te
+            adesso.
+          </p>
+        </Container>
+      </section>
+    </main>
+  );
 }
