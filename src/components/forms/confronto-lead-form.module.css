@@ -188,7 +188,8 @@
   outline-offset: 2px;
 }
 
-.field input[aria-invalid="true"] {
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"] {
   border-color: var(--color-error, #b42318);
 }
 

@@ -172,6 +172,7 @@ export async function POST(request: Request) {
   const leadSource = allowedLeadSources.has(requestedSource)
     ? requestedSource
     : defaultLeadSource;
+  const isConfrontoLanding = leadSource === "confronto_landing";
 
   if (website) {
     console.warn("Confronto lead rejected by honeypot.", {
@@ -199,8 +200,9 @@ export async function POST(request: Request) {
     name.length > 200 ||
     !emailPattern.test(email) ||
     email.length > 320 ||
-    phoneDigitCount < 8 ||
-    phoneDigitCount > 15 ||
+    (phone && (phoneDigitCount < 8 || phoneDigitCount > 15)) ||
+    (!phone && !isConfrontoLanding) ||
+    (isConfrontoLanding && !note) ||
     note.length > 3_000 ||
     !privacyConsent
   ) {
@@ -236,7 +238,7 @@ export async function POST(request: Request) {
         NOME: name,
         PILOT_SOURCE: leadSource,
         PILOT_TAG: "CONFRONTO",
-        WHATSAPP: phone,
+        ...(phone ? { WHATSAPP: phone } : {}),
       },
     },
   });
@@ -252,7 +254,7 @@ export async function POST(request: Request) {
         ...baseContact,
         attributes: {
           NOME: name,
-          WHATSAPP: phone,
+          ...(phone ? { WHATSAPP: phone } : {}),
         },
       },
     });

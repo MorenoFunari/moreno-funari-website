@@ -11,7 +11,7 @@ import { trackLeadConfrontoSubmitted } from "@/lib/analytics/meta-pixel";
 import styles from "./confronto-lead-form.module.css";
 
 type FieldErrors = Partial<
-  Record<"name" | "email" | "phone" | "privacyConsent", string>
+  Record<"name" | "email" | "phone" | "note" | "privacyConsent", string>
 >;
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
@@ -27,7 +27,10 @@ type ConfrontoLeadFormProps = {
   ctaLabel?: string;
   introText?: string;
   noteLabel?: string;
+  notePlaceholder?: string;
+  noteRequired?: boolean;
   page: string;
+  phoneRequired?: boolean;
   source: ConfrontoLeadSource;
   title?: string;
   variant?: "full" | "compact" | "embedded";
@@ -97,7 +100,10 @@ export function ConfrontoLeadForm({
   ctaLabel = "Invia i dati",
   introText = "Ti ricontatterò solo per capire se il percorso pilota può essere adatto alla situazione che stai vivendo.",
   noteLabel = "In una frase, su cosa vorresti fare chiarezza?",
+  notePlaceholder = "Es. Mi sento bloccato davanti a una scelta lavorativa / continuo a rimandare / sento molta pressione dopo un errore / faccio fatica a mettere un confine.",
+  noteRequired = false,
   page,
+  phoneRequired = true,
   source,
   title = "Lascia i tuoi dati",
   variant = "full",
@@ -127,7 +133,8 @@ export function ConfrontoLeadForm({
 
     if (!name) nextErrors.name = requiredFieldMessage;
     if (!email) nextErrors.email = requiredFieldMessage;
-    if (!phone) nextErrors.phone = requiredFieldMessage;
+    if (phoneRequired && !phone) nextErrors.phone = requiredFieldMessage;
+    if (noteRequired && !note) nextErrors.note = requiredFieldMessage;
     if (!privacyConsent) nextErrors.privacyConsent = privacyMessage;
 
     setErrors(nextErrors);
@@ -289,7 +296,10 @@ export function ConfrontoLeadForm({
         </div>
 
         <div className={styles.field}>
-          <label htmlFor={`${formId}-phone`}>Telefono</label>
+          <label htmlFor={`${formId}-phone`}>
+            Telefono
+            {!phoneRequired ? <span> Facoltativo</span> : null}
+          </label>
           <input
             aria-describedby={
               errors.phone ? `${formId}-phone-error` : undefined
@@ -298,6 +308,7 @@ export function ConfrontoLeadForm({
             autoComplete="tel"
             id={`${formId}-phone`}
             name="phone"
+            required={phoneRequired}
             type="tel"
           />
           {errors.phone ? (
@@ -310,9 +321,24 @@ export function ConfrontoLeadForm({
         <div className={styles.field}>
           <label htmlFor={`${formId}-note`}>
             {noteLabel}
-            <span> Facoltativo</span>
+            {!noteRequired ? <span> Facoltativo</span> : null}
           </label>
-          <textarea id={`${formId}-note`} name="note" placeholder="Es. Mi sento bloccato davanti a una scelta lavorativa / continuo a rimandare / sento molta pressione dopo un errore / faccio fatica a mettere un confine." rows={4} />
+          <textarea
+            aria-describedby={
+              errors.note ? `${formId}-note-error` : undefined
+            }
+            aria-invalid={Boolean(errors.note)}
+            id={`${formId}-note`}
+            name="note"
+            placeholder={notePlaceholder}
+            required={noteRequired}
+            rows={5}
+          />
+          {errors.note ? (
+            <p className={styles.fieldError} id={`${formId}-note-error`}>
+              {errors.note}
+            </p>
+          ) : null}
         </div>
 
         <div className={styles.privacyField}>
