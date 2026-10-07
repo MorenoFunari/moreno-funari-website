@@ -1,0 +1,93 @@
+/* Scope the shared chrome override to this landing's presence, including
+   after client navigation: other routes keep their header and footer. */
+:global(body):has(.landing) :global(header),
+:global(body):has(.landing) :global(footer) {
+  display: none;
+}
+
+.landing {
+  display: grid;
+  align-items: center;
+  min-height: 100dvh;
+  padding: 2rem 1.25rem;
+  background: var(--color-background);
+  color: var(--color-primary);
+}
+
+.content {
+  width: 100%;
+  max-width: 38rem;
+  margin-inline: auto;
+}
+
+.identity {
+  margin-bottom: 1.75rem;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.landing h1 {
+  max-width: 34rem;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  line-height: 1.12;
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.action {
+  margin-top: 1.5rem;
+}
+
+.action a {
+  width: 100%;
+  min-height: 3.5rem;
+  font-size: 1.0625rem;
+}
+
+.points {
+  display: grid;
+  gap: 0.625rem;
+  margin: 1.75rem 0;
+  padding-left: 1.25rem;
+  line-height: 1.5;
+}
+
+.points li::marker {
+  color: var(--color-accent-strong);
+}
+
+.reassurance {
+  display: grid;
+  gap: 0.625rem;
+  line-height: 1.5;
+}
+
+.boundary {
+  font-weight: 600;
+}
+
+.note {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--color-border-strong);
+  padding-top: 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .landing {
+    padding: 3rem 1.5rem;
+  }
+
+  .action a {
+    width: auto;
+    min-width: 18rem;
+  }
+}
