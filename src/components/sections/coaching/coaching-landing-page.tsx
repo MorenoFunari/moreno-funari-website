@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
@@ -36,6 +38,11 @@ export function CoachingLandingPage({
           <div className={styles.heroCopy}>
             {page.heroText.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
+            ))}
+            {page.heroLinks?.map((link) => (
+              <p key={link.href}>
+                {link.before}<Link href={link.href}>{link.label}</Link>{link.after}
+              </p>
             ))}
           </div>
           <div className={styles.actions} aria-label="Azioni principali">
@@ -90,6 +97,11 @@ export function CoachingLandingPage({
             {page.shift.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+            {page.shift.links?.map((link) => (
+              <p key={link.href}>
+                {link.before}<Link href={link.href}>{link.label}</Link>{link.after}
+              </p>
+            ))}
           </div>
           <ul className={styles.checkList}>
             {page.shift.points.map((point) => (
@@ -104,7 +116,11 @@ export function CoachingLandingPage({
         aria-labelledby="coaching-help-title"
         className={styles.section}
       >
-        <SectionHeading id="coaching-help-title" title={page.coaching.title} />
+        <SectionHeading
+          id="coaching-help-title"
+          title={page.coaching.title}
+          description={page.coaching.description}
+        />
         <div className={styles.twoColumns}>
           <SurfaceCard as="article" className={styles.infoCard}>
             <h3 className={styles.cardTitle}>Nel percorso possiamo lavorare su</h3>
@@ -240,7 +256,7 @@ export function CoachingLandingPage({
             {page.closing.title}
           </h2>
           <p>{page.closing.text}</p>
-          <ButtonLink href="/contatti" size="large" variant="ghost">
+          <ButtonLink href={page.closing.href ?? "/contatti"} size="large" variant="ghost">
             {page.closing.primaryCta}
           </ButtonLink>
         </div>

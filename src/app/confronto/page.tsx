@@ -15,11 +15,12 @@ const situations = [
 ] as const;
 
 const nextSteps = [
-  ["Scrivi cosa stai vivendo", "Bastano poche righe su una situazione concreta."],
+  ["Scrivi cosa stai vivendo", "Scrivi CONFRONTO o compila il form: bastano poche righe su una situazione concreta."],
   ["Leggo personalmente", "Valuto con calma se questo può essere il contesto giusto."],
-  ["Ricevi informazioni e documenti", "Solo se ha senso approfondire, senza impegni automatici."],
-  ["Valutiamo un primo confronto", "Il confronto conoscitivo si fissa solo dopo l’eventuale firma dei documenti."],
-  ["Decidiamo entrambi", "Il percorso parte soltanto se entrambe le parti confermano."],
+  ["Ricevi il link Calendly", "Se ha senso proseguire, ti mando il link per fissare il confronto conoscitivo."],
+  ["Ci conosciamo", "Facciamo una call conoscitiva gratuita di 30 minuti, senza impegno a iniziare."],
+  ["Decidiamo entrambi", "Solo se entrambi confermiamo, ti invio l’Accordo Pilot e il Privacy Pack."],
+  ["Parte il Pilot", "Il percorso inizia dopo la firma e il completamento dei documenti."],
 ] as const;
 
 const boundaries = [
@@ -37,7 +38,7 @@ const formatItems = [
   "massimo 3 partecipanti",
   "si parte da una situazione concreta",
   "lavoro orientato alla chiarezza e a un passo possibile",
-  "informazioni e documenti prima del confronto conoscitivo",
+  "call conoscitiva gratuita prima dei documenti; Pilot dopo la firma",
 ] as const;
 
 const faqs = [

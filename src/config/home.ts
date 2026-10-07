@@ -77,20 +77,23 @@ export const resources = [
 export const plannedBlogPosts = [
   {
     category: "Blocco e primo passo",
-    title: "Quando ti senti bloccato, non devi risolvere tutto",
+    title: "Quando ti senti bloccato, non sempre devi cambiare tutto",
     description:
       "Per ripartire non serve sempre una soluzione completa. A volte basta capire qual è la parte più piccola su cui puoi agire.",
+    href: "/blog/quando-ti-senti-bloccato-non-devi-cambiare-tutto",
   },
   {
     category: "Fiducia",
-    title: "La fiducia non arriva sempre prima di iniziare",
+    title: "La fiducia non arriva sempre prima: a volte cresce dopo il primo passo",
     description:
       "Aspettare di sentirti sicuro può tenerti fermo. La fiducia, spesso, cresce dopo che hai iniziato a muoverti.",
+    href: "/blog/la-fiducia-arriva-dopo-il-primo-passo",
   },
   {
     category: "Lavoro e pressione",
-    title: "Non tutti i problemi si risolvono insistendo",
+    title: "Chiudere il computer non basta: come lasciare il lavoro fuori dal resto della giornata",
     description:
-      "Quando continuare a spingere non funziona, fermarti può aiutarti a vedere ciò che la pressione ti stava nascondendo.",
+      "A volte il lavoro continua nella testa anche quando la giornata è finita. Puoi iniziare da un confine più chiaro tra ciò che resta aperto e il resto della giornata.",
+    href: "/blog/come-staccare-dal-lavoro-a-fine-giornata",
   },
 ] as const;

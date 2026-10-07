@@ -9,8 +9,29 @@
 }
 
 .card {
+  position: relative;
   min-height: 16rem;
   box-shadow: none;
+}
+
+.cardLink {
+  text-decoration: none;
+}
+
+.cardLink::after {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  content: "";
+}
+
+.card:focus-within {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+.cardLink:hover {
+  text-decoration: underline;
 }
 
 .category {

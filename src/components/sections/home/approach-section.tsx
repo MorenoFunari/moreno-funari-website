@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -16,6 +18,13 @@ export function ApproachSection() {
             title="Non si tratta di dirti cosa fare."
             description="Il coaching non offre una formula pronta. Crea uno spazio in cui puoi fermarti, ascoltarti e scegliere con maggiore consapevolezza."
           />
+
+          <p>
+            Se vuoi capire meglio il ruolo e i suoi confini, puoi leggere{" "}
+            <Link href="/coaching/cosa-fa-un-mental-coach">
+              cosa fa un mental coach
+            </Link>.
+          </p>
 
           <ButtonLink href="/coaching" variant="secondary">
             Scopri come lavoro

@@ -1,5 +1,12 @@
 import { siteConfig } from "./site";
 
+type ContextualLink = {
+  before: string;
+  label: string;
+  href: string;
+  after: string;
+};
+
 export type CoachingLandingPage = {
   path:
     | "/coaching/stress-lavorativo"
@@ -16,6 +23,7 @@ export type CoachingLandingPage = {
   eyebrow: string;
   heroTitle: string;
   heroText: string[];
+  heroLinks?: ContextualLink[];
   primaryCta: {
     label: string;
     href: string;
@@ -36,10 +44,12 @@ export type CoachingLandingPage = {
     eyebrow: string;
     title: string;
     paragraphs: string[];
+    links?: ContextualLink[];
     points: string[];
   };
   coaching: {
     title: string;
+    description?: string;
     canHelp: string[];
     cannotHelp: string[];
   };
@@ -74,6 +84,7 @@ export type CoachingLandingPage = {
     title: string;
     text: string;
     primaryCta: string;
+    href?: string;
   };
 };
 
@@ -468,6 +479,10 @@ export const coachingLandingPages = {
         "Dietro un’attività rimandata possono esserci paura di sbagliare, pressione, confusione o un obiettivo ancora troppo ampio. Capire quale elemento pesa permette di intervenire in modo più utile del semplice «devo impegnarmi di più».",
         "Quando il pensiero è «devo risolvere tutto», anche iniziare sembra richiedere tutte le risposte. Ma partire non significa avere chiaro l’intero percorso: significa rendere osservabile il primo passaggio.",
       ],
+      links: [
+        { before: "Per osservare il rimando in autonomia, puoi leggere ", label: "perché rimandi anche quando sai cosa dovresti fare", href: "/blog/perche-rimandi-anche-quando-sai-cosa-dovresti-fare", after: ". Trovi domande ed esempi da provare con i tuoi tempi." },
+        { before: "Se ti sembra di dover cambiare tutto insieme, l’articolo ", label: "quando ti senti bloccato, non sempre devi cambiare tutto", href: "/blog/quando-ti-senti-bloccato-non-devi-cambiare-tutto", after: " può aiutarti a ridurre il punto di partenza." },
+      ],
       points: [
         "un obiettivo generico rende difficile capire da dove iniziare;",
         "più il passo è grande e carico di significato, più può aumentare la resistenza;",
@@ -476,7 +491,8 @@ export const coachingLandingPages = {
       ],
     },
     coaching: {
-      title: "Cosa può fare il mental coaching",
+      title: "Come lavoriamo su una situazione che continui a rimandare",
+      description: "Gli articoli sono risorse pratiche da usare in autonomia. Nel percorso con me partiamo invece dalla tua situazione: attraverso ascolto, domande ed esercizi osserviamo cosa rende difficile iniziare e verifichiamo nel tempo i passi che scegli. Le decisioni restano tue.",
       canHelp: [
         "Chiarire cosa rende difficile iniziare, senza ridurlo a mancanza di volontà.",
         "Distinguere ciò che dipende da te da ciò che non puoi controllare.",
@@ -515,7 +531,7 @@ export const coachingLandingPages = {
       { question: "Il coaching può aiutarmi con la procrastinazione?", answer: "Può aiutarti a osservare cosa alimenta il rimando, chiarire priorità e trasformare un obiettivo in azioni possibili. Non tratta cause cliniche e non sostituisce un supporto psicologico o sanitario." },
       { question: "Quando il blocco richiede un altro tipo di supporto?", answer: "Se il blocco è intenso o persistente, causa sofferenza significativa, limita in modo importante la vita quotidiana o si accompagna a sintomi rilevanti, è opportuno rivolgersi a un professionista psicologico o sanitario." },
     ],
-    closing: { title: "Per iniziare non devi avere già tutto chiaro.", text: "Puoi raccontarmi cosa continui a rimandare e valutare con calma se un confronto può aiutarti a rendere il primo passo più concreto e sostenibile.", primaryCta: "Parliamone con calma" },
+    closing: { title: "Per iniziare non devi avere già tutto chiaro.", text: "Puoi raccontarmi cosa continui a rimandare e valutare con calma se un confronto può aiutarti a rendere il primo passo più concreto e sostenibile.", primaryCta: "Raccontami la situazione che stai rimandando", href: "/confronto" },
   },
   responsabilitaEControllo: {
     path: "/coaching/responsabilita-e-controllo",
@@ -691,8 +707,12 @@ export const coachingLandingPages = {
     eyebrow: "Mental coaching",
     heroTitle: "Cosa fa un mental coach e quando può esserti utile",
     heroText: [
-      "Il mental coaching può aiutarti a fare chiarezza, osservare ciò che ti blocca e trasformare un problema confuso in un passo concreto. Senza formule magiche, senza giudizio e con confini professionali chiari.",
+      "Un mental coach accompagna a chiarire un obiettivo o una situazione concreta attraverso ascolto, domande ed esercizi. Le decisioni restano tue.",
       "Non devi essere già pronto o avere un obiettivo perfetto: puoi partire da una situazione reale che oggi occupa troppo spazio.",
+    ],
+    heroLinks: [
+      { before: "Per conoscere la persona dietro questo approccio, puoi leggere ", label: "la mia storia e la mia formazione", href: "/chi-sono", after: "." },
+      { before: "Se vuoi chiarire i confini rispetto al supporto psicologico, trovi un approfondimento su ", label: "mental coach e psicologo: qual è la differenza", href: "/blog/mental-coach-e-psicologo-qual-e-la-differenza", after: "." },
     ],
     primaryCta: { label: "Raccontami cosa stai vivendo", href: "/contatti" },
     secondaryCta: { label: "Scopri le aree di lavoro", href: "#aree-di-lavoro" },
@@ -792,6 +812,9 @@ export const coachingLandingPages = {
     heroText: [
       "Un percorso concreto per lavorare su blocco, fiducia, pressione, responsabilità e presenza mentale, anche se non sai ancora da dove iniziare.",
       "Se vivi a Frascati, nei Castelli Romani, a Roma Sud o anche altrove, puoi valutare un percorso di mental coaching con Moreno Funari, anche online.",
+    ],
+    heroLinks: [
+      { before: "Prima di scegliere un percorso, puoi conoscere ", label: "la mia storia e il mio modo di lavorare", href: "/chi-sono", after: "." },
     ],
     primaryCta: { label: "Raccontami cosa stai vivendo", href: "/contatti" },
     secondaryCta: { label: "Scopri cosa fa un mental coach", href: "/coaching/cosa-fa-un-mental-coach" },

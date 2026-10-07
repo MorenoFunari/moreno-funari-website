@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -29,7 +31,11 @@ export function BlogPreviewSection() {
             variant="outlined"
           >
             <p className={styles.category}>{post.category}</p>
-            <h3 className={styles.cardTitle}>{post.title}</h3>
+            <h3 className={styles.cardTitle}>
+              <Link className={styles.cardLink} href={post.href}>
+                {post.title}
+              </Link>
+            </h3>
             <p className={styles.cardText}>{post.description}</p>
           </SurfaceCard>
         ))}
