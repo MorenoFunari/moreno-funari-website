@@ -15,6 +15,11 @@
   max-width: 24rem;
 }
 
+.signature {
+  color: var(--color-text-on-dark);
+  font-weight: var(--font-weight-semibold);
+}
+
 .tagline {
   margin-top: var(--space-md);
   color: var(--color-text-on-dark-muted);

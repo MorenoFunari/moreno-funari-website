@@ -4,7 +4,6 @@ import { AnalyticsPreferencesButton } from "@/components/analytics/analytics-pre
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 
-import { SiteBrand } from "./site-brand";
 import styles from "./site-footer.module.css";
 
 export function SiteFooter() {
@@ -15,7 +14,7 @@ export function SiteFooter() {
       <Container size="wide">
         <div className={styles.inner}>
           <div className={styles.identity}>
-            <SiteBrand variant="footer" />
+            <p className={styles.signature}>Moreno Funari | Mental Coach</p>
             <p className={styles.tagline}>
               Piccoli passi concreti per fare chiarezza.
             </p>
