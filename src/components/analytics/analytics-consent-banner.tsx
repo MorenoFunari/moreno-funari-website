@@ -72,7 +72,8 @@ export function AnalyticsConsentBanner({
         </h2>
         <p className={styles.text} id={descriptionId}>
           Google Analytics mi aiuta a capire quali contenuti vengono letti e
-          come migliorare il sito. Si attiva solo se scegli di accettare.
+          come migliorare il sito. Prima della scelta o in caso di rifiuto invia
+          misurazioni senza cookie. I cookie analytics si attivano solo se accetti.
           Potrai cambiare scelta in qualsiasi momento dal footer.
         </p>
         {mode === "preferences" ? (
@@ -90,7 +91,8 @@ export function AnalyticsConsentBanner({
               <div>
                 <strong>Cookie analytics</strong>
                 <span>
-                  Misurano l’utilizzo del sito soltanto dopo consenso.
+                  Si attivano solo dopo consenso; senza consenso restano
+                  misurazioni senza cookie.
                 </span>
               </div>
               <span className={styles.badge}>
@@ -113,7 +115,7 @@ export function AnalyticsConsentBanner({
           onClick={onReject}
           type="button"
         >
-          Continua senza analytics
+          Continua senza cookie analytics
         </button>
         <button
           className={styles.primaryButton}

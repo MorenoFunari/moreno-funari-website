@@ -5,7 +5,7 @@
 ```text
 Google Analytics 4
 Measurement ID: G-Z7E9BSCE4N
-Consent Mode: Basic
+Consent Mode: Advanced v2
 ```
 
 ## Stato richiesto della proprietà GA4
@@ -18,7 +18,7 @@ Collegamento Google Ads: da verificare e gestire nel pannello GA4/Google Ads
 User ID: non utilizzato
 Custom events: presenti, elencati in questo documento
 Page view manuali: assenti
-Consent Mode: Basic
+Consent Mode: Advanced v2
 Conservazione dati a livello utente: 2 mesi
 ```
 
@@ -31,9 +31,11 @@ Conservazione dati a livello utente: 2 mesi
 
 ## Caricamento
 
-- Nessun tag Google viene caricato prima del consenso.
-- GA4 viene caricato soltanto dopo accettazione.
-- Nessun dato viene inviato in caso di rifiuto.
+- Il bootstrap Google viene eseguito nell’HTML iniziale prima dell’hydration.
+- Il default imposta i quattro segnali di consenso a `denied` prima di config/event.
+- `gtag.js` viene caricato subito anche senza consenso; GA4 invia ping cookieless.
+- L’accettazione aggiorna `analytics_storage` a `granted`; rifiuto e revoca lo mantengono a `denied`, senza disabilitare GA4 o ricaricare la pagina.
+- I segnali pubblicitari restano `denied`: il banner raccoglie solo consenso Analytics.
 - Google Tag Manager non viene usato.
 - Il repository non carica direttamente un tag `AW-*`, ma conversioni e key
   event possono essere configurati fuori dal codice nella proprietà GA4 o nel
@@ -133,9 +135,9 @@ Questa documentazione descrive l'implementazione tecnica e non dichiara conformi
 - [ ] Nessuna richiesta Google prima della scelta
 - [ ] Nessun cookie `_ga` prima della scelta
 - [ ] Rifiuto memorizzato
-- [ ] Nessun tag dopo il rifiuto
+- [ ] Dopo il rifiuto: Google tag attivo in denied, nessun cookie GA, ping cookieless
 - [ ] Accettazione memorizzata
-- [ ] `gtag.js` caricato dopo l'accettazione
+- [ ] `gtag.js` caricato anche prima dell’accettazione, con default denied
 - [ ] Richiesta `g/collect` visibile dopo l'accettazione
 - [ ] Visita visibile in Tempo reale
 - [ ] Navigazioni client-side rilevate una sola volta
@@ -151,3 +153,54 @@ Questa documentazione descrive l'implementazione tecnica e non dichiara conformi
 - [ ] `confronto_lead_created` e `generate_lead` visibili dopo risposta API positiva
 - [ ] Evento notifica `sent` o `failed` coerente con la risposta API
 - [ ] `passo_thank_you_view`, `passo_lead_created` e `generate_lead` visibili dopo redirect Brevo
+
+
+## Apertura landing Ads /ads/confronto
+
+Il bootstrap invia `ads_conversion_apertura_confronto_ads_1` nell’HTML iniziale,
+prima dell’hydration e senza dipendere da consenso, scroll o click. Include
+`page_location` (URL effettivo, inclusi eventuali parametri Ads) e `page_title`
+`CONFRONTO | Moreno Funari Mental Coach`. Un flag sul documento impedisce duplicati
+tra bootstrap, hydration, remount React e aggiornamenti del consenso. Il fallback
+React copre la navigazione client-side verso la landing. Un reload crea un nuovo
+caricamento e quindi un nuovo evento. Le page view restano automatiche GA4.
+
+Verifica locale:
+
+```bash
+NEXT_PUBLIC_GA_ENABLED=true npm run build
+npm run start -- --port 3100
+```
+
+Aprire `/ads/confronto` in incognito, con Network aperto e nessun consenso.
+Filtrare `g/collect` e controllare URL/query e payload (Google può usare POST):
+`en=page_view` e `en=ads_conversion_apertura_confronto_ads_1`, `dl` contenente
+`/ads/confronto`, titolo coerente e nessun cookie `_ga*` prima del consenso.
+In produzione `dl` deve essere `https://morenofunari.it/ads/confronto` (eventuali
+parametri campagna sono conservati). In locale usa l’origine localhost.
+Rifiutare, poi aprire Preferenze cookie (la landing Ads non ha footer; in locale
+si può usare `window.dispatchEvent(new Event("mf:analytics-preferences"))`), accettare: nessun reload e nessun secondo
+invio dell’evento apertura. In console:
+
+```js
+window.dataLayer.filter(x => x[0] === "consent").map(x => Array.from(x))
+window.dataLayer.filter(x => x[0] === "event" && x[1] === "ads_conversion_apertura_confronto_ads_1").length
+```
+
+L’ultimo update deve avere `analytics_storage: "granted"`; i tre segnali Ads
+restano denied finché non esiste consenso pubblicitario esplicito. Ricaricare
+per verificare la preferenza salvata e un solo evento nel nuovo documento.
+
+Il test browser con il tag reale ha rilevato una regola esterna che genera
+lo stesso evento dal page_view: due ping Network, a fronte di una sola chiamata
+esplicita nel dataLayer. Prima del deploy rimuovere/disattivare quella regola
+“Crea evento” in GA4/Google tag, mantenendo il key event e l’import Ads.
+La deduplicazione React non può rimuovere la copia generata fuori dal repository. Controllare key event,
+collegamento e import in Google Ads. Ping cookieless, eventi GA4 e conversioni
+Ads attribuite non sono conteggi equivalenti: importazione, attribuzione,
+modellazione, filtri e blocchi browser possono produrre differenze.
+Il codice non modifica configurazioni GA4/Ads esterne né aggiunge tag AW.
+
+Il banner e le sezioni tecniche delle informative descrivono il caricamento
+del tag in denied e le misurazioni senza cookie. Il consenso raccolto resta
+limitato ai cookie Analytics; i tre segnali pubblicitari restano denied.

@@ -53,10 +53,10 @@ export default function CookiePolicyPage() {
               2. Situazione predefinita
             </h2>
             <p>
-              Al primo accesso Google Analytics non viene caricato e non vengono
-              creati cookie analytics. Prima della scelta può essere usato
-              soltanto ciò che è strettamente necessario al funzionamento e alla
-              gestione della preferenza.
+              Al primo accesso il tag Google viene caricato con i quattro segnali
+              di Consent Mode v2 impostati a denied. Google Analytics può inviare
+              misurazioni senza cookie anche prima della scelta o in caso di
+              rifiuto. I cookie analytics vengono attivati solo dopo consenso.
             </p>
           </section>
 
@@ -181,17 +181,19 @@ export default function CookiePolicyPage() {
             <ul className={styles.cardList}>
               <li className={styles.card}>
                 <h3 className={styles.subTitle}>
-                  Continua senza analytics
+                  Continua senza cookie analytics
                 </h3>
                 <p>
-                  Nessun caricamento del tag Google, nessun cookie `_ga`, sito
-                  interamente utilizzabile e scelta ricordata per sei mesi.
+                  Il tag Google resta caricato in modalità denied e può inviare
+                  misurazioni senza cookie. Nessun cookie `_ga` viene creato;
+                  il sito resta utilizzabile e la scelta è ricordata per sei mesi.
                 </p>
               </li>
               <li className={styles.card}>
                 <h3 className={styles.subTitle}>Accetta analytics</h3>
                 <p>
-                  GA4 viene caricato, i cookie analytics possono essere creati,
+                  Il consenso analytics viene aggiornato a granted, i cookie
+                  analytics possono essere creati,
                   le misurazioni vengono inviate e la scelta è ricordata per sei
                   mesi.
                 </p>
@@ -199,9 +201,9 @@ export default function CookiePolicyPage() {
               <li className={styles.card}>
                 <h3 className={styles.subTitle}>Revoca</h3>
                 <p>
-                  Analytics viene disabilitato, i cookie GA accessibili vengono
-                  eliminati, la pagina viene ricaricata e non avviene nuova
-                  raccolta fino a una nuova accettazione.
+                  Il consenso analytics torna a denied e i cookie GA accessibili
+                  vengono eliminati. La pagina non viene ricaricata; possono
+                  continuare le misurazioni senza cookie.
                 </p>
               </li>
             </ul>

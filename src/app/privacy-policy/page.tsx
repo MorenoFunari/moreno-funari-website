@@ -359,14 +359,18 @@ export default function PrivacyPolicyPage() {
             <h2 className={styles.sectionTitle}>7. Google Analytics 4</h2>
             <p>
               Il sito può usare Google Analytics 4, Measurement ID
-              G-Z7E9BSCE4N, fornito da Google Ireland Limited. GA4 viene caricato
-              soltanto dopo consenso e non viene caricato se l’utente rifiuta.
+              G-Z7E9BSCE4N, fornito da Google Ireland Limited. Il tag viene caricato
+              con Consent Mode v2 e consenso predefinito denied. Prima della
+              scelta o in caso di rifiuto può inviare misurazioni senza cookie;
+              i cookie analytics vengono attivati soltanto dopo consenso.
             </p>
             <p>
               GA4 usa cookie e identificatori online per misurare utilizzo e
               navigazione del sito. Non riceve dati dei messaggi email, dati
-              inseriti nel modulo Brevo, user_id o custom events dal codice del
-              sito. Non è collegato a Google Ads; Google Signals e
+              inseriti nel modulo Brevo o user_id dal codice del sito. Gli eventi
+              includono aperture della landing Ads e interazioni con le CTA;
+              possono essere importati in Google Ads per misurare le campagne.
+              Google Signals e
               personalizzazione pubblicitaria sono disattivati dal codice.
             </p>
             <p>
@@ -379,8 +383,8 @@ export default function PrivacyPolicyPage() {
             </p>
             <p>
               La finalità è comprendere in modo statistico come viene usato il
-              sito e migliorare contenuti, navigazione e prestazioni. La base
-              giuridica è il consenso dell’interessato.
+              sito e migliorare contenuti, navigazione e prestazioni. Per l’uso
+              dei cookie analytics la base giuridica è il consenso dell’interessato.
             </p>
             <p>
               I cookie GA4 hanno la durata indicata nella Cookie Policy. La
@@ -454,7 +458,7 @@ export default function PrivacyPolicyPage() {
                 <p>
                   Fornitore di Google Moduli, Drive, Gmail, Calendar e Meet,
                   ciascuno secondo la propria finalità, e di Google Analytics
-                  4, soltanto dopo consenso.
+                  4 con Consent Mode v2, come descritto nella sezione dedicata.
                 </p>
               </li>
               <li className={styles.card}>

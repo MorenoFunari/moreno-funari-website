@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { AdsConfrontoOpenAnalytics } from "@/components/analytics/ads-confronto-open-analytics";
 import { TrackedWhatsAppButton } from "@/components/analytics/tracked-whatsapp-button";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
@@ -17,6 +18,7 @@ export const metadata: Metadata = createPageMetadata({
 export default function AdsConfrontoPage() {
   return (
     <main className={styles.landing} id="main-content">
+      <AdsConfrontoOpenAnalytics />
       <div className={styles.content}>
         <p className={styles.identity}>Moreno Funari | Mental Coach</p>
         <h1>Bloccato su una scelta concreta?</h1>

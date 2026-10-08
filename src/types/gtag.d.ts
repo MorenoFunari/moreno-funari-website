@@ -27,6 +27,8 @@ type GtagCommand =
 
 declare global {
   interface Window {
+    mfGoogleTagInitialized?: boolean;
+    mfAdsConfrontoOpenSent?: boolean;
     dataLayer?: GtagCommand[];
     gtag?: (...command: GtagCommand) => void;
     [gaDisableKey: `ga-disable-G-${string}`]: boolean | undefined;

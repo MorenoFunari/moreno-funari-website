@@ -11,7 +11,6 @@ import {
 } from "@/lib/analytics/consent";
 
 import { AnalyticsConsentBanner } from "./analytics-consent-banner";
-import { GoogleAnalyticsLoader } from "./google-analytics-loader";
 import { MetaPixelLoader } from "./meta-pixel-loader";
 
 type ConsentViewState = "loading" | "undecided" | AnalyticsConsentStatus;
@@ -86,7 +85,6 @@ export function AnalyticsConsentManager() {
       return;
     }
 
-    window[analyticsConfig.gaDisableKey] = storedConsent.status === "denied";
     updateConsentMode(storedConsent.status);
     queueMicrotask(() => {
       setStatus(storedConsent.status);
@@ -138,37 +136,23 @@ export function AnalyticsConsentManager() {
       return;
     }
 
-    const shouldReload = status === "denied";
-
-    window[analyticsConfig.gaDisableKey] = false;
     updateConsentMode("granted");
     saveAnalyticsConsent("granted");
     setStatus("granted");
     closePreferences();
-
-    if (shouldReload) {
-      window.location.reload();
-    }
-  }, [closePreferences, status]);
+  }, [closePreferences]);
 
   const rejectAnalytics = useCallback(() => {
     if (!isConsentManagerConfigured) {
       return;
     }
 
-    const shouldReload = status === "granted";
-
-    window[analyticsConfig.gaDisableKey] = true;
     updateConsentMode("denied");
     deleteAccessibleGoogleAnalyticsCookies();
     saveAnalyticsConsent("denied");
     setStatus("denied");
     closePreferences();
-
-    if (shouldReload) {
-      window.location.reload();
-    }
-  }, [closePreferences, status]);
+  }, [closePreferences]);
 
   if (!isConsentManagerConfigured) {
     return null;
@@ -183,7 +167,6 @@ export function AnalyticsConsentManager() {
 
   return (
     <>
-      <GoogleAnalyticsLoader consentGranted={status === "granted"} />
       <MetaPixelLoader consentGranted={marketingConsentGranted} />
       {showInitialBanner || preferencesOpen ? (
         <AnalyticsConsentBanner
