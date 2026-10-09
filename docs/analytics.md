@@ -204,3 +204,12 @@ Il codice non modifica configurazioni GA4/Ads esterne né aggiunge tag AW.
 Il banner e le sezioni tecniche delle informative descrivono il caricamento
 del tag in denied e le misurazioni senza cookie. Il consenso raccolto resta
 limitato ai cookie Analytics; i tre segnali pubblicitari restano denied.
+
+
+## Click WhatsApp sulla landing Ads
+
+Su `/ads/confronto`, `whatsapp_click_confronto` viene inviato a GA4 al click
+anche senza consenso, attraverso il Google tag già inizializzato in denied.
+Cookie Analytics soltanto dopo granted. Sulle altre pagine resta il gate
+Analytics precedente. Meta Pixel e i suoi controlli non cambiano. Si tratta
+di un click verso WhatsApp, non della conferma di un messaggio inviato.

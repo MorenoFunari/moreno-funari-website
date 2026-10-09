@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 
+import { analyticsConfig } from "@/config/analytics";
 import { ButtonLink } from "@/components/ui/button-link";
 import {
   trackClickWhatsApp,
@@ -42,7 +43,9 @@ export function TrackedWhatsAppButton({
 
         if (
           typeof window !== "undefined" &&
-          readAnalyticsConsent()?.status === "granted"
+          analyticsConfig.isConfigured &&
+          (window.location.pathname.replace(/\/$/, "") === "/ads/confronto" ||
+            readAnalyticsConsent()?.status === "granted")
         ) {
           window.gtag?.(
             "event",
