@@ -246,3 +246,56 @@
     transition: none;
   }
 }
+
+
+/* Only the initial banner on /ads/confronto uses this compact variant. */
+.compactRegion {
+  right: 0.5rem;
+  bottom: max(0.5rem, env(safe-area-inset-bottom));
+  left: 0.5rem;
+}
+
+.compactPanel {
+  width: min(100%, 42rem);
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  padding: 0.75rem;
+}
+
+.compactPanel .content {
+  gap: 0.25rem;
+}
+
+.compactPanel .title {
+  font-size: 0.9375rem;
+  line-height: 1.3;
+}
+
+.compactPanel .text,
+.compactPanel .link {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.compactPanel .actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.5rem;
+}
+
+.compactPanel .primaryButton,
+.compactPanel .secondaryButton {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.625rem;
+  font-size: 0.8125rem;
+}
+
+/* Short screens keep the card in document flow, below the landing, so it
+   cannot cover the headline or WhatsApp CTA. */
+@media (max-height: 640px) {
+  .compactRegion {
+    position: static;
+    padding: 0.5rem;
+  }
+}

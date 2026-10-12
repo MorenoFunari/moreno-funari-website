@@ -8,6 +8,7 @@ import type { AnalyticsConsentStatus } from "@/lib/analytics/consent";
 import styles from "./analytics-consent-banner.module.css";
 
 type AnalyticsConsentBannerProps = {
+  compact?: boolean;
   currentStatus: AnalyticsConsentStatus | null;
   mode: "banner" | "preferences";
   onAccept: () => void;
@@ -24,6 +25,7 @@ function getAssistiveStatusLabel(status: AnalyticsConsentStatus | null) {
 }
 
 export function AnalyticsConsentBanner({
+  compact = false,
   currentStatus,
   mode,
   onAccept,
@@ -63,18 +65,26 @@ export function AnalyticsConsentBanner({
     };
   }, [mode]);
 
+  const isCompact = compact && mode === "banner";
+
   const content = (
-    <div className={styles.panel}>
+    <div className={`${styles.panel} ${isCompact ? styles.compactPanel : ""}`}>
       <div className={styles.content}>
-        <p className={styles.eyebrow}>Privacy</p>
+        {!isCompact ? <p className={styles.eyebrow}>Privacy</p> : null}
         <h2 className={styles.title} id={titleId}>
-          Posso usare cookie analytics?
+          {isCompact ? "Analytics opzionali" : "Posso usare cookie analytics?"}
         </h2>
         <p className={styles.text} id={descriptionId}>
-          Google Analytics mi aiuta a capire quali contenuti vengono letti e
-          come migliorare il sito. Prima della scelta o in caso di rifiuto invia
-          misurazioni senza cookie. I cookie analytics si attivano solo se accetti.
-          Potrai cambiare scelta in qualsiasi momento dal footer.
+          {isCompact ? (
+            "Puoi continuare senza cookie analytics. Se accetti, ci aiuti a migliorare la pagina."
+          ) : (
+            <>
+              Google Analytics mi aiuta a capire quali contenuti vengono letti e
+              come migliorare il sito. Prima della scelta o in caso di rifiuto
+              invia misurazioni senza cookie. I cookie analytics si attivano solo
+              se accetti. Potrai cambiare scelta in qualsiasi momento dal footer.
+            </>
+          )}
         </p>
         {mode === "preferences" ? (
           <div className={styles.preferences} aria-label="Stato cookie">
@@ -105,7 +115,7 @@ export function AnalyticsConsentBanner({
           </div>
         ) : null}
         <Link className={styles.link} href="/cookie-policy">
-          Leggi la Cookie Policy
+          {isCompact ? "Cookie Policy" : "Leggi la Cookie Policy"}
         </Link>
       </div>
 
@@ -115,14 +125,14 @@ export function AnalyticsConsentBanner({
           onClick={onReject}
           type="button"
         >
-          Continua senza cookie analytics
+          {isCompact ? "Continua senza cookie" : "Continua senza cookie analytics"}
         </button>
         <button
           className={styles.primaryButton}
           onClick={onAccept}
           type="button"
         >
-          Accetta analytics
+          {isCompact ? "Accetta" : "Accetta analytics"}
         </button>
         {mode === "preferences" && onClosePreferences ? (
           <button
@@ -156,7 +166,7 @@ export function AnalyticsConsentBanner({
     <section
       aria-describedby={descriptionId}
       aria-labelledby={titleId}
-      className={styles.region}
+      className={`${styles.region} ${isCompact ? styles.compactRegion : ""}`}
       role="region"
     >
       {content}

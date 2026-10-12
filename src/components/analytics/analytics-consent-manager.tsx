@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { analyticsConfig } from "@/config/analytics";
@@ -65,6 +66,7 @@ function deleteAccessibleGoogleAnalyticsCookies() {
 }
 
 export function AnalyticsConsentManager() {
+  const pathname = usePathname();
   const [status, setStatus] = useState<ConsentViewState>(
     isConsentManagerConfigured ? "loading" : "denied",
   );
@@ -170,6 +172,7 @@ export function AnalyticsConsentManager() {
       <MetaPixelLoader consentGranted={marketingConsentGranted} />
       {showInitialBanner || preferencesOpen ? (
         <AnalyticsConsentBanner
+          compact={pathname === "/ads/confronto"}
           currentStatus={currentStatus}
           mode={preferencesOpen ? "preferences" : "banner"}
           onAccept={acceptAnalytics}
