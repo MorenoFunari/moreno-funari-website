@@ -243,7 +243,7 @@ Verificato:
 
 Verificato:
 
-- Instagram: `https://www.instagram.com/moreno.coach86/`
+- Instagram: `https://www.instagram.com/morenofunari.coach/`
 - Facebook: dato non configurato
 - Threads: dato non configurato
 - footer: link Instagram presente

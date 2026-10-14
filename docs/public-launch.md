@@ -173,7 +173,7 @@ Dall'app:
 
 ### Instagram
 
-- Instagram configurato: `https://www.instagram.com/moreno.coach86/`
+- Instagram configurato: `https://www.instagram.com/morenofunari.coach/`
 - footer verificato
 - pagina Contatti verificata
 - nuova scheda

@@ -1,5 +1,5 @@
 const siteUrl = "https://morenofunari.it";
-const instagramUrl = "https://www.instagram.com/moreno.coach86/";
+const instagramUrl = "https://www.instagram.com/morenofunari.coach/";
 
 export const siteConfig = {
   name: "Moreno Funari | Mental Coach",

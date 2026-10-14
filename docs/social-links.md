@@ -6,7 +6,7 @@ Collegare il sito ai profili social ufficiali di Moreno Funari.
 
 ## Profili
 
-- Instagram: `https://www.instagram.com/moreno.coach86/`
+- Instagram: `https://www.instagram.com/morenofunari.coach/`
 - Facebook: dato mancante, non configurato
 - Threads: dato mancante, non configurato
 
