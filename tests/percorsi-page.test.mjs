@@ -84,3 +84,31 @@ test('coaching FAQ changes are exact and no unrelated answers changed', () => {
     'Sì. Un primo confronto può servire a fare chiarezza e a capire se desideri proseguire. Non comporta l’obbligo di iniziare un percorso.',
   ]) assert.ok(coaching.includes(text), text);
 });
+
+// Privacy correction: verify the actual built destination and accessible warning.
+test('privacy link resolves to the built policy; warning is associated with the free-text field', () => {
+  const policy = readFileSync(new URL('../.next/server/app/privacy-policy.html', import.meta.url), 'utf8');
+  assert.match(main, /href="\/privacy-policy"/);
+  assert.ok(policy.includes('<h1'));
+  const note = main.match(/<textarea\b[^>]*name="note"[^>]*>/)[0];
+  const helpId = note.match(/aria-describedby="([^"]+)"/)[1];
+  assert.ok(main.includes(`id="${helpId}">Non inserire informazioni sanitarie, cliniche o dati particolarmente sensibili non necessari.</p>`));
+  const checkbox = main.match(/<input\b[^>]*name="privacyConsent"[^>]*>/)[0];
+  assert.ok(!checkbox.includes('checked'));
+  for (const route of ['confronto', 'passo']) {
+    const other = readFileSync(new URL(`../.next/server/app/${route}.html`, import.meta.url), 'utf8');
+    assert.ok(other.includes('href="/privacy-policy"'));
+  }
+});
+test('built policy explicitly covers commercial purpose, notification, retention and optional Analytics', () => {
+  const policy = decode(readFileSync(new URL('../.next/server/app/privacy-policy.html', import.meta.url), 'utf8').split('</main>')[0].replace(/<[^>]+>/g, ''));
+  for (const text of [
+    'percorso individuale a pagamento',
+    'Brevo inoltra a Moreno la notifica della richiesta',
+    'senza iscrizione automatica a liste newsletter o Pilot',
+    '/percorsi e le relative notifiche email',
+    'tempo necessario a gestire la richiesta e l’eventuale rapporto conseguente',
+    'Il telefono è facoltativo.',
+    'Analytics è separata e il rifiuto non impedisce l’invio della richiesta commerciale.',
+  ]) assert.ok(policy.includes(text), `Missing privacy disclosure: ${text}`);
+});

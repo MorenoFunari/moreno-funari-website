@@ -69,7 +69,8 @@ export function PercorsiLeadForm({ notePlaceholder }: Props) {
       </div>
       <div className={styles.field}>
         <label htmlFor={`${id}-note`}>Raccontami brevemente la situazione che vorresti affrontare</label>
-        <textarea id={`${id}-note`} name="note" placeholder={notePlaceholder} rows={5} maxLength={3_000} required />
+        <textarea id={`${id}-note`} name="note" aria-describedby={`${id}-note-help`} placeholder={notePlaceholder} rows={5} maxLength={3_000} required />
+        <p className={styles.privacyHelp} id={`${id}-note-help`}>Non inserire informazioni sanitarie, cliniche o dati particolarmente sensibili non necessari.</p>
       </div>
       <div className={styles.field}>
         <label htmlFor={`${id}-phone`}>Telefono</label>

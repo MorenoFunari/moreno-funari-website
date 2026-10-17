@@ -57,9 +57,10 @@ Non usare il preload in produzione.
 
 1. Confermare l’idoneità privacy. L’informativa attuale tratta i contatti
    email/PEC/WhatsApp/social nella sezione 4 e il Pilot nella sezione 5; il nuovo
-   modulo commerciale con notifica Brevo non è descritto esplicitamente.
-   La lettura del codice non costituisce conferma legale. Link esistente
-   riutilizzato, testo privacy non modificato.
+   modulo commerciale con notifica Brevo è ora descritto nelle sezioni 4, 9 e 12.
+   Restano la validazione professionale e i controlli operativi di conservazione,
+   destinatario e fornitori descritti in `percorsi-privacy-review.md`.
+   L’aggiornamento del testo non costituisce conferma legale definitiva.
 2. Collaudare la consegna reale con BREVO_API_KEY, BREVO_SENDER_EMAIL e
    destinatario verificato. Le credenziali non sono disponibili localmente:
    il successo simulato non dimostra ricezione in casella.
