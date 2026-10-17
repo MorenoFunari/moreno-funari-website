@@ -22,7 +22,6 @@ export function PercorsiPricingSection({ pricing = percorsiConfig }: { pricing?:
         {isLaunch ? <p>Il prezzo di lancio è riservato ai primi cinque partecipanti.</p> : null}
         {isLaunch ? <p>Il percorso è lo stesso a entrambi i prezzi: il prezzo di lancio non corrisponde a un servizio ridotto.</p> : null}
         <p>{percorsiConfig.finalPriceNotice}</p>
-        {/* TODO: fiscal wording must be confirmed; do not infer or compute VAT. */}
         {percorsiConfig.fiscalWording ? <p>{percorsiConfig.fiscalWording}</p> : null}
       </div>
       <div><ButtonLink href="#richiesta">Richiedi un colloquio conoscitivo</ButtonLink></div>

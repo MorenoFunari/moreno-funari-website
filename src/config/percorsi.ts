@@ -6,8 +6,7 @@ export const percorsiConfig = {
   finalPriceNotice: "Importi finali, senza maggiorazioni.",
   launchEnabled: true,
   launchPlacesAvailable: 5,
-  // TODO: obtain and approve the exact fiscal wording before publication.
-  fiscalWording: null as string | null,
+  fiscalWording: "IVA inclusa",
   // TODO: approve coverage of the paid-path form in /privacy-policy.
   privacyConfirmed: false,
   showOfferSchema: false,

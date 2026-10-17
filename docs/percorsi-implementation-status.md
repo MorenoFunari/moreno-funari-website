@@ -10,7 +10,7 @@ Nessun push, merge o deploy autorizzato.
   confrontato con i testi renderizzati. Nessun testo [DA CONFERMARE] pubblico.
 - Prezzi centralizzati in `src/config/percorsi.ts`: 700 EUR lancio, 1100 EUR
   ordinario, cinque posti; importi finali senza maggiorazioni. Esaurendo i posti
-  o disabilitando il lancio resta solo il prezzo ordinario. TODO fiscale aperto.
+  o disabilitando il lancio resta solo il prezzo ordinario. Dicitura fiscale approvata: «IVA inclusa».
 - Form commerciale dedicato con validazione, messaggi approvati e nessun redirect.
   Evento `submit_percorsi` solo dopo successo e consenso Analytics, senza PII.
 - Endpoint `/api/percorsi-lead`: validazione server, same-origin, JSON, body
@@ -55,16 +55,15 @@ Non usare il preload in produzione.
 
 ## Blocchi prima di pubblicare
 
-1. Confermare la dicitura fiscale: nessuna dicitura IVA inventata o pubblicata.
-2. Confermare l’idoneità privacy. L’informativa attuale tratta i contatti
+1. Confermare l’idoneità privacy. L’informativa attuale tratta i contatti
    email/PEC/WhatsApp/social nella sezione 4 e il Pilot nella sezione 5; il nuovo
    modulo commerciale con notifica Brevo non è descritto esplicitamente.
    La lettura del codice non costituisce conferma legale. Link esistente
    riutilizzato, testo privacy non modificato.
-3. Collaudare la consegna reale con BREVO_API_KEY, BREVO_SENDER_EMAIL e
+2. Collaudare la consegna reale con BREVO_API_KEY, BREVO_SENDER_EMAIL e
    destinatario verificato. Le credenziali non sono disponibili localmente:
    il successo simulato non dimostra ricezione in casella.
-4. Mantenere `PERCORSI_LEADS_ENABLED=false` fino alle conferme e al collaudo.
+3. Mantenere `PERCORSI_LEADS_ENABLED=false` fino alle conferme e al collaudo.
    Destinatario: PERCORSI_NOTIFICATION_TO, altrimenti LEAD_NOTIFICATION_TO,
    altrimenti info@morenofunari.it. Non committare credenziali.
 

@@ -23,15 +23,16 @@ const { PercorsiPricingSection } = load('../src/components/sections/percorsi/per
   '../coaching/expectations-section.module.css': {},
 });
 const render = pricing => renderToStaticMarkup(React.createElement(PercorsiPricingSection, { pricing }));
-test('five launch places: final 700 EUR, ordinary 1100 EUR, no tax additions or invented wording', () => {
+test('five launch places: final 700 EUR, ordinary 1100 EUR, approved VAT wording without tax additions', () => {
   assert.equal(config.percorsiConfig.launchPlacesAvailable, 5);
   assert.equal(config.getPercorsiPrice(), 700);
   const html = render();
   assert.match(html, /700\s*€/); assert.match(html, /1\.100\s*€/);
   assert.ok(html.includes('Importi finali, senza maggiorazioni.'));
   assert.ok(html.includes('Il prezzo di lancio è riservato ai primi cinque partecipanti.'));
-  assert.doesNotMatch(html, /\+\s*IVA|IVA inclusa|IVA esclusa|franchigia|Offer/);
-  assert.equal(config.percorsiConfig.fiscalWording, null);
+  assert.doesNotMatch(html, /\+\s*IVA|IVA esclusa|franchigia|Offer/);
+  assert.equal(config.percorsiConfig.fiscalWording, "IVA inclusa");
+  assert.ok(html.includes("IVA inclusa"));
   assert.equal(config.percorsiConfig.showOfferSchema, false);
   assert.equal(config.percorsiConfig.privacyConfirmed, false);
   assert.ok(html.includes('id="prezzo"')); assert.ok(html.includes('href="#richiesta"'));
@@ -43,6 +44,7 @@ for (const [label, changes] of [['exhausted launch', { launchPlacesAvailable: 0 
     const html = render(pricing);
     assert.match(html, /1\.100\s*€/); assert.doesNotMatch(html, /700|Prezzo di lancio|cinque partecipanti/);
     assert.ok(html.includes('Importi finali, senza maggiorazioni.'));
+    assert.ok(html.includes('IVA inclusa'));
   });
 }
 test('remaining availability retains the launch price; price updates are read from the same configuration', () => {
