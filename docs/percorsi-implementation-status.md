@@ -23,6 +23,9 @@ ricevuto né nei file sorgente forniti. Non inventare o ricostruire quei testi.
   Analytics, senza dati personali e senza alterare gli eventi CONFRONTO.
 - Config unica: lancio 700 EUR, ordinario 1100 EUR, cinque posti. Esaurendo i
   posti o disabilitando il lancio, `getPercorsiPrice()` restituisce 1100.
+- Importi finali confermati, senza maggiorazioni né calcoli IVA. Sezione
+  commerciale pronta nel componente PercorsiPricingSection; da integrare nella
+  pagina quando sarà disponibile il copy completo.
 - TODO fiscali/privacy espliciti; `showOfferSchema` resta false.
 
 ## Verifica

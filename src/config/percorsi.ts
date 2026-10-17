@@ -3,6 +3,7 @@ export const percorsiConfig = {
   launchPrice: 700,
   ordinaryPrice: 1_100,
   currency: "EUR",
+  finalPriceNotice: "Importi finali, senza maggiorazioni.",
   launchEnabled: true,
   launchPlacesAvailable: 5,
   // TODO: obtain and approve the exact fiscal wording before publication.
@@ -12,10 +13,19 @@ export const percorsiConfig = {
   showOfferSchema: false,
 } as const;
 
-export function getPercorsiPrice() {
-  return percorsiConfig.launchEnabled && percorsiConfig.launchPlacesAvailable > 0
-    ? percorsiConfig.launchPrice
-    : percorsiConfig.ordinaryPrice;
+export type PercorsiPriceSettings = {
+  launchPrice: number;
+  ordinaryPrice: number;
+  launchEnabled: boolean;
+  launchPlacesAvailable: number;
+};
+
+export function isPercorsiLaunchAvailable(pricing: PercorsiPriceSettings = percorsiConfig) {
+  return pricing.launchEnabled && pricing.launchPlacesAvailable > 0;
+}
+
+export function getPercorsiPrice(pricing: PercorsiPriceSettings = percorsiConfig) {
+  return isPercorsiLaunchAvailable(pricing) ? pricing.launchPrice : pricing.ordinaryPrice;
 }
 
 export const percorsiConfirmation =
