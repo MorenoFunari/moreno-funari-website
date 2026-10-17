@@ -38,14 +38,22 @@ test('one H1, exactly ten H2s in approved order; method H3s, semantic inclusions
 test('approved absolute SEO title, canonical, descriptions, robots and social metadata', () => {
   assert.ok(html.includes('<title>Percorso di mental coaching individuale | Moreno Funari</title>'));
   const description = 'Un Passo Possibile: 6 incontri individuali online di Mental Coaching per fare chiarezza su una situazione concreta. Cosa comprende, prezzi e come iniziare.';
-  for (const attribute of ['name="description"', 'property="og:description"', 'name="twitter:description"']) assert.ok(html.includes(`${attribute} content="${description}"`));
+  assert.ok(html.includes(`name="description" content="${description}"`));
+  const socialDescription = '6 incontri online per fare chiarezza su una situazione concreta e individuare il prossimo passo possibile. Scopri come funziona il percorso.';
+  for (const attribute of ['property="og:description"', 'name="twitter:description"']) assert.ok(html.includes(`${attribute} content="${socialDescription}"`));
   assert.ok(html.includes('rel="canonical" href="https://morenofunari.it/percorsi"'));
   assert.ok(html.includes('name="robots" content="index, follow"'));
-  assert.ok(html.includes('property="og:title" content="Percorso di mental coaching individuale"'));
-  assert.ok(html.includes('name="twitter:title" content="Percorso di mental coaching individuale"'));
+  assert.ok(html.includes('property="og:title" content="Un Passo Possibile | Percorso individuale di Mental Coaching"'));
+  assert.ok(html.includes('name="twitter:title" content="Un Passo Possibile | Percorso individuale di Mental Coaching"'));
   assert.ok(html.includes('property="og:url" content="https://morenofunari.it/percorsi"'));
   assert.ok(html.includes('property="og:type" content="website"'));
-  assert.ok(html.includes('https://morenofunari.it/opengraph-image'));
+  assert.ok(html.includes('name="twitter:card" content="summary_large_image"'));
+  for (const [attribute, path] of [['property="og:image"', '/percorsi/opengraph-image'], ['name="twitter:image"', '/percorsi/twitter-image']]) {
+    const url = html.match(new RegExp(`<meta ${attribute} content="([^"]+)"`))[1];
+    assert.equal(new URL(url).origin, 'https://morenofunari.it');
+    assert.equal(new URL(url).pathname, path);
+  }
+  for (const [key, value] of [['og:image:width', '1200'], ['og:image:height', '630']]) assert.ok(html.includes(`property="${key}" content="${value}"`));
 });
 test('Service and BreadcrumbList valid; no Offer/reviews invented', () => {
   const schema = JSON.parse(main.match(/<script type="application\/ld\+json">(.*?)<\/script>/)[1]);
