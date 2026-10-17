@@ -6,7 +6,6 @@ import { readAnalyticsConsent } from "@/lib/analytics/consent";
 import styles from "./confronto-lead-form.module.css";
 
 type Props = {
-  // Required from the approved B.9 copy; do not invent the missing placeholder.
   notePlaceholder: string;
 };
 
@@ -42,7 +41,9 @@ export function PercorsiLeadForm({ notePlaceholder }: Props) {
       setState("success");
       if (!tracked.current && readAnalyticsConsent()?.status === "granted") {
         tracked.current = true;
-        window.gtag?.("event", "submit_percorsi", { tipo_richiesta: "percorso_pagamento", origine: "/percorsi" });
+        try {
+          window.gtag?.("event", "submit_percorsi", { tipo_richiesta: "percorso_pagamento", origine: "/percorsi" });
+        } catch { /* Analytics failure must not turn a delivered request into a form error. */ }
       }
       form.reset();
     } catch { setState("error"); }
@@ -59,24 +60,24 @@ export function PercorsiLeadForm({ notePlaceholder }: Props) {
         <input id={`${id}-website`} name="website" tabIndex={-1} autoComplete="off" />
       </div>
       <div className={styles.field}>
-        <label htmlFor={`${id}-name`}>Nome</label>
+        <label htmlFor={`${id}-name`}>Come ti chiami?</label>
         <input id={`${id}-name`} name="name" autoComplete="name" maxLength={200} required />
       </div>
       <div className={styles.field}>
-        <label htmlFor={`${id}-email`}>Email</label>
+        <label htmlFor={`${id}-email`}>La tua email</label>
         <input id={`${id}-email`} name="email" type="email" autoComplete="email" maxLength={320} required />
       </div>
       <div className={styles.field}>
-        <label htmlFor={`${id}-note`}>Situazione</label>
+        <label htmlFor={`${id}-note`}>Raccontami brevemente la situazione che vorresti affrontare</label>
         <textarea id={`${id}-note`} name="note" placeholder={notePlaceholder} rows={5} maxLength={3_000} required />
       </div>
       <div className={styles.field}>
-        <label htmlFor={`${id}-phone`}>Telefono <span>Facoltativo</span></label>
+        <label htmlFor={`${id}-phone`}>Telefono</label>
         <input id={`${id}-phone`} name="phone" type="tel" autoComplete="tel" />
       </div>
       <div className={styles.privacyField}>
         <input id={`${id}-privacy`} name="privacyConsent" type="checkbox" required />
-        <label htmlFor={`${id}-privacy`}>Ho letto l’<a href="/privacy-policy">informativa privacy</a> e acconsento a essere ricontattato in merito alla richiesta inviata.</label>
+        <label htmlFor={`${id}-privacy`}>Ho letto l’<a href="/privacy-policy">informativa privacy</a></label>
       </div>
       <button type="submit" className={styles.submitButton} disabled={state === "sending"}>Invia la richiesta</button>
       {state === "error" ? <p className={styles.fieldError} role="alert">Qualcosa non ha funzionato. Puoi riprovare tra poco.</p> : null}

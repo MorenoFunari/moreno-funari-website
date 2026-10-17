@@ -1,0 +1,158 @@
+B. COPY DEFINITIVO DELLA PAGINA
+1. Hero
+H1: Quando hai troppe cose in testa, da dove cominci?
+Magari c’è una decisione che rimandi da settimane. Una situazione lavorativa che continua a pesarti. Oppure qualcosa che vorresti cambiare, ma ogni volta che ci pensi ti sembra troppo complicato.
+Non sempre manca la volontà di agire. A volte è difficile capire da quale parte iniziare.
+Un Passo Possibile è un percorso individuale di Mental Coaching per lavorare su una situazione concreta, fare chiarezza e individuare passi che puoi iniziare ad affrontare nella vita di tutti i giorni.
+6 incontri individuali online · circa 6 settimane
+CTA primaria: Richiedi un colloquio conoscitivo
+CTA secondaria: Scopri come funziona il percorso
+La CTA secondaria porta a #come-lavoriamo.
+2. Quando può esserti utile
+H2: Forse ti riconosci in una di queste situazioni
+- Al lavoro continui a prenderti responsabilità, anche quando senti di averne già troppe sulle spalle.
+- Hai una decisione da prendere, ma più ci pensi e più trovi motivi per aspettare.
+- Sai che qualcosa non ti sta più bene, però non riesci a capire quale cambiamento sia davvero possibile.
+- Sei così concentrato su quello che potrebbe andare storto da non riuscire a vedere cosa puoi fare adesso.
+- Hai troppe cose in testa e non riesci a capire da dove partire.
+Non devi riconoscerti in tutte. Ne basta una su cui senti il bisogno di fare chiarezza.
+Il percorso è pensato soprattutto per lavoratori e professionisti. Non serve arrivare con un obiettivo già definito: una parte del lavoro consiste proprio nel rendere più leggibile quello che stai vivendo.
+3. Che cos’è Un Passo Possibile
+H2: Un percorso individuale, partendo da una situazione concreta
+Non è un insieme di consigli pronti da applicare.
+È uno spazio di lavoro in cui partiamo dalla situazione che stai vivendo e proviamo a separare ciò che si è mescolato: quello che sai, quello che immagini, quello che temi, quello su cui puoi intervenire e quello che non dipende da te.
+Il percorso ha una struttura, ma non è uguale per tutti. Esercizi e passi concreti vengono scelti in base a quello che emerge durante gli incontri.
+Cosa puoi aspettarti
+Fare chiarezza su una situazione che ti sta bloccando, iniziare ad affrontarla un passo alla volta e acquisire un metodo che puoi riutilizzare anche in futuro.
+Non posso prometterti che le difficoltà spariscano o un risultato garantito. Posso lavorare con te perché tu veda meglio la situazione e il prossimo passo che puoi scegliere di fare.
+4. Cosa comprende
+H2: Cosa comprende il percorso
+Incontri individuali
+6 incontri online di circa 60 minuti.
+Durata
+Circa 6 settimane, un incontro a settimana.
+Lavoro tra gli incontri
+Osservazioni, esercizi e piccoli esperimenti nella vita di tutti i giorni.
+Documento condiviso
+Uno spazio personale per raccogliere quello che emerge nel percorso.
+Supporto WhatsApp
+Per aggiornamenti brevi e dubbi sugli esercizi, entro confini concordati.
+Follow-up
+Un incontro di circa 30 minuti, indicativamente un mese dopo l’ultimo incontro.
+5. Come lavoreremo
+Ancora: #come-lavoriamo
+H2: Come lavoreremo, concretamente
+Non partiamo da un obiettivo perfetto. Partiamo da quello che stai vivendo.
+Il percorso segue sei momenti di lavoro.
+01 — ANALIZZO
+Rendiamo leggibile la situazione. Distinguiamo i fatti dalle ipotesi e dai timori, ciò che dipende da te da ciò che non dipende da te, le persone coinvolte e le decisioni rimandate. Prima separiamo, poi interpretiamo.
+02 — CREO LE CONDIZIONI
+Guardiamo cosa potrebbe rendere la situazione un po’ più affrontabile. Distinguiamo dove puoi intervenire, dove puoi influenzare e cosa non dipende da te.
+03 — FACCIO UN PASSO
+Scegli tu un’azione concreta e possibile. Non deve essere perfetta: deve dipendere almeno in parte da te e avere senso per la tua situazione.
+04 — OSSERVO
+Non ci chiediamo solo se ha funzionato. Ci chiediamo cosa è successo, per imparare dall’esperienza senza giudicare la prestazione.
+05 — RIPROVO
+Sulla base di quello che hai osservato, decidi se continuare, modificare, ridimensionare o cambiare direzione.
+06 — VALUTO
+Riguardiamo il percorso: cosa è più chiaro, cosa è cambiato, cosa rimane difficile, cosa hai fatto diversamente e cosa puoi riutilizzare anche in futuro.
+Questa sequenza non è rigida. Quando serve, si torna su una fase precedente.
+6. Cosa non è
+H2: Cosa Un Passo Possibile non è
+- Non è un elenco di soluzioni pronte.
+- Non decido io al posto tuo.
+- Non è pensato per renderti dipendente dal coach: l’autonomia fa parte dell’obiettivo.
+- Non è psicologia, psicoterapia o medicina, e non le sostituisce quando sono necessarie.
+7. Quanto costa
+Ancora: #prezzo
+H2: Quanto costa il percorso
+Un Passo Possibile
+6 incontri individuali online · circa 6 settimane · follow-up incluso
+Prezzo di lancio: 700 €
+Prezzo ordinario: 1.100 €
+Il prezzo di lancio è riservato ai primi cinque partecipanti.
+Il percorso è lo stesso a entrambi i prezzi: il prezzo di lancio non corrisponde a un servizio ridotto.
+Importi finali, senza maggiorazioni.
+CTA: Richiedi un colloquio conoscitivo
+Il colloquio serve a capire se il percorso è adatto alla situazione che vuoi affrontare. Non comporta alcun obbligo di iniziare.
+Nota tecnica non pubblicabile: integrare il componente prezzi già implementato e testato nel commit d48a6f2. Utilizzare la disponibilità centralizzata e la logica che mostra soltanto 1.100 € al termine della fase di lancio. Non duplicare la logica.
+8. Chi ti accompagna
+H2: Non sono qui per decidere al posto tuo
+Sono Moreno Funari, Mental Coach.
+Non sono qui per dirti cosa fare. Ti aiuto a fare abbastanza chiarezza da poter tornare a scegliere tu.
+Nel percorso ti accompagno a guardare la situazione da prospettive diverse, distinguere ciò che conta e individuare possibilità concrete. Un buon percorso, per me, non dovrebbe renderti dipendente dal coach: dovrebbe aiutarti a riconoscere e usare sempre meglio le tue risorse.
+Link: Scopri chi sono
+Destinazione: /chi-sono.
+9. Come iniziare
+Ancora: #richiesta
+H2: Il primo passo è parlarne
+1. Mi racconti brevemente la situazione che vorresti affrontare, compilando il modulo qui sotto.
+2. Leggo la tua richiesta e ti rispondo personalmente.
+3. Se ha senso, fissiamo un colloquio conoscitivo per capire se il Mental Coaching è il contesto giusto e se Un Passo Possibile può rispondere alla tua esigenza.
+4. Se entrambi lo riteniamo utile, definiamo modalità, condizioni e avvio del percorso.
+Se dalla tua richiesta emerge che serve un’altra figura professionale, te lo dico con chiarezza.
+Modulo di richiesta
+Nome
+Etichetta: Come ti chiami?
+Obbligatorio: sì.
+Email
+Etichetta: La tua email
+Obbligatorio: sì.
+Situazione
+Etichetta: Raccontami brevemente la situazione che vorresti affrontare
+Placeholder: Bastano poche righe. Non serve che sia già tutto chiaro.
+Obbligatorio: sì.
+Telefono
+Etichetta: Telefono
+Obbligatorio: no.
+Privacy
+Etichetta: Ho letto l’informativa privacy
+Inserire il collegamento all’informativa appropriata già presente sul sito, previa verifica.
+Obbligatorio: sì.
+Pulsante: Invia la richiesta
+Messaggio dopo l’invio:
+«Grazie, ho ricevuto la tua richiesta. La leggo personalmente e ti rispondo appena possibile.»
+Non promettere tempi di risposta non concordati.
+10. Domande frequenti
+H2: Domande frequenti
+Utilizzare integralmente le FAQ della sezione D riportata sotto.
+11. Chiusura
+H2: Non devi avere già tutte le risposte
+Puoi iniziare raccontando dove ti trovi adesso. Da lì capiamo insieme se ha senso fare un pezzo di strada insieme.
+CTA: Richiedi un colloquio conoscitivo
+Moreno Funari | Mental Coach
+C. CTA DEFINITIVE
+Posizione	Testo	Destinazione
+Hero primaria	Richiedi un colloquio conoscitivo	#richiesta
+Hero secondaria	Scopri come funziona il percorso	#come-lavoriamo
+Sezione Prezzo	Richiedi un colloquio conoscitivo	#richiesta
+Chi ti accompagna	Scopri chi sono	/chi-sono
+Modulo	Invia la richiesta	Endpoint commerciale
+Chiusura	Richiedi un colloquio conoscitivo	#richiesta
+
+
+Non utilizzare su questa pagina:
+- Scrivimi CONFRONTO.
+- Scrivi PASSO.
+- /confronto come CTA principale.
+D. FAQ DEFINITIVE
+Devo avere già un obiettivo preciso?
+No. Puoi partire anche da una situazione che non riesci ancora a definire. Una parte del lavoro serve proprio a renderla più chiara.
+Gli incontri sono individuali?
+Sì. Il percorso prevede sei incontri individuali online di circa 60 minuti, uno a settimana.
+Tra un incontro e l’altro devo fare degli esercizi?
+Possiamo concordare osservazioni, esercizi o piccoli esperimenti legati alla tua situazione. Non sono compiti standard uguali per tutti e non devono diventare un impegno scolastico.
+Posso scriverti tra un incontro e l’altro?
+Sì, su WhatsApp, per aggiornamenti brevi e dubbi sugli esercizi. Quello che richiede più spazio lo riprendiamo durante gli incontri. Non è un servizio di emergenza.
+Chi sceglie i passi da fare?
+Tu. Ti accompagno a individuarli, ma il passo è sempre una tua scelta.
+Cosa succede se un passo non va come speravo?
+Lo osserviamo insieme. Un risultato diverso da quello sperato non è un fallimento: è un’informazione che serve a decidere se continuare, modificare, ridimensionare o cambiare direzione.
+Il percorso garantisce che risolverò il problema?
+No, e non sarebbe corretto prometterlo. Lavoriamo per aumentare la chiarezza sulla situazione, sperimentare passi possibili e imparare dall’esperienza.
+È una terapia?
+No. Il Mental Coaching non è psicoterapia, non formula diagnosi e non sostituisce interventi sanitari quando sono necessari.
+Che differenza c’è con il Pilot gratuito?
+Il Pilot è una fase di validazione del metodo, gratuita e limitata a un massimo di tre partecipanti, con un proprio percorso di accesso. Un Passo Possibile, su questa pagina, è il percorso individuale a pagamento: la struttura di riferimento è la stessa, condizioni e modalità di accesso sono diverse.
+Il colloquio conoscitivo mi impegna a iniziare?
+No. Serve a capire se il percorso è adatto alla tua situazione. Decidiamo insieme se ha senso proseguire.

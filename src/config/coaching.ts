@@ -1,3 +1,6 @@
+import { createElement } from "react";
+import Link from "next/link";
+
 export const coachingSituations = [
   "Ti senti bloccato e continui a rimandare una scelta o un’azione.",
   "Vivi pressione nel lavoro, nello sport o nella vita personale.",
@@ -112,7 +115,12 @@ export const coachingFaqs = [
   {
     question: "Quante sessioni servono?",
     answer:
-      "Non esiste un numero uguale per tutti. Dipende dalla situazione, dall’obiettivo e da ciò che emerge durante il percorso. Non vengono proposti pacchetti standard prima di comprendere il bisogno.",
+      createElement(
+        "span", null,
+        "Il percorso individuale ",
+        createElement(Link, { href: "/percorsi" }, "Un Passo Possibile"),
+        " prevede 6 incontri online di circa 60 minuti, uno a settimana. Prima di iniziare verifichiamo insieme se è adatto alla situazione che vuoi affrontare.",
+      ),
   },
   {
     question: "Posso iniziare con un solo confronto?",
@@ -127,6 +135,11 @@ export const coachingFaqs = [
   {
     question: "Dove trovo durata, modalità e costi?",
     answer:
-      "Queste informazioni vengono chiarite prima di fissare un eventuale incontro, così puoi valutare con trasparenza e senza impegno.",
+      createElement(
+        "span", null,
+        "Durata, modalità e prezzi del percorso individuale sono indicati nella pagina ",
+        createElement(Link, { href: "/percorsi" }, "Un Passo Possibile"),
+        ". Il percorso pilota gratuito ha condizioni e accesso separati.",
+      ),
   },
 ] as const;

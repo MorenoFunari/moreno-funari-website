@@ -94,8 +94,8 @@ export async function POST(request: Request) {
         to: [{ email: recipient }],
         replyTo: { email, name },
         subject: "Percorso a pagamento — /percorsi",
-        textContent: `Percorso a pagamento — /percorsi\n\nNome: ${name}\nEmail: ${email}\nTelefono: ${phone || "Non indicato"}\nSituazione: ${note}\n\nTipo richiesta: percorso_pagamento\nOrigine: /percorsi\nPrivacy accettata: sì`,
-        htmlContent: `<h1>Percorso a pagamento — /percorsi</h1><p>Nome: ${escapeHtml(name)}</p><p>Email: ${escapeHtml(email)}</p><p>Telefono: ${escapeHtml(phone || "Non indicato")}</p><p>Situazione: ${escapeHtml(note).replace(/\n/g, "<br>")}</p><p>Tipo richiesta: percorso_pagamento<br>Origine: /percorsi<br>Privacy accettata: sì</p>`,
+        textContent: `Percorso a pagamento — /percorsi\n\nNome: ${name}\nEmail: ${email}\nTelefono: ${phone || "Non indicato"}\nSituazione: ${note}\n\nTipo richiesta: percorso_pagamento\nOrigine: /percorsi\nInformativa privacy letta: sì`,
+        htmlContent: `<h1>Percorso a pagamento — /percorsi</h1><p>Nome: ${escapeHtml(name)}</p><p>Email: ${escapeHtml(email)}</p><p>Telefono: ${escapeHtml(phone || "Non indicato")}</p><p>Situazione: ${escapeHtml(note).replace(/\n/g, "<br>")}</p><p>Tipo richiesta: percorso_pagamento<br>Origine: /percorsi<br>Informativa privacy letta: sì</p>`,
       }),
     });
     const result = response.ok ? await response.json() as { messageId?: unknown } : null;

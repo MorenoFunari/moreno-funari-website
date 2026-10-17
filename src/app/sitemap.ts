@@ -8,6 +8,7 @@ const staticRoutes = [
   "",
   "/chi-sono",
   "/coaching",
+  "/percorsi",
   "/coaching/stress-lavorativo",
   "/coaching/overthinking",
   "/coaching/autostima-e-fiducia",
