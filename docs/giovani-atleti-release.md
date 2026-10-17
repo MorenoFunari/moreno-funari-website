@@ -1,7 +1,10 @@
-# Giovani atleti — blocco concreto prima della pubblicazione
+# Giovani atleti — note di rilascio
 
 Branch: feat/mental-coach-giovani-atleti. Implementazione e test locali pronti.
-Non è un audit generale: queste sono le sole decisioni rimaste per il rilascio.
+Il titolare ha successivamente richiesto di applicare la proposta e pubblicare.
+L’integrazione fattuale è ora applicata nelle sezioni 4, 9 e 12 della policy;
+publicationReady=true. Le note sotto conservano il contesto della revisione
+iniziale e i controlli operativi, senza attestare conformità GDPR definitiva.
 
 ## Informativa: integrazione minima proposta, non applicata
 
@@ -106,3 +109,13 @@ Nessun test post-deploy o invio reale eseguito: non c’è un deploy di questa
 branch. Anche la verifica di indicizzabilità finale index/follow resta da
 eseguire dopo la validazione privacy; la sitemap è già testata in entrambi gli
 stati del flag di pubblicazione.
+
+
+## Autorizzazione successiva e rilascio
+
+Il titolare ha autorizzato «applica e manda su»: applicate le integrazioni
+fattuali proposte senza inventare nuovi periodi o basi giuridiche.
+Rimosso il blocco di pubblicazione: produzione index/follow, sitemap e link
+in ingresso attivi. La revisione professionale e la gestione operativa dei
+fornitori/sessioni restano responsabilità del titolare; il checkbox non le
+sostituisce. Nessun cambiamento al backend o ai funnel esistenti.

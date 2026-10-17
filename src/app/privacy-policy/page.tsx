@@ -101,7 +101,7 @@ export default function PrivacyPolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              4. Contatti e richieste commerciali tramite il modulo /percorsi
+              4. Contatti e richieste tramite i moduli del sito
             </h2>
             <p>
               Se scegli di scrivere via email, possono essere trattati indirizzo
@@ -131,7 +131,26 @@ export default function PrivacyPolicyPage() {
               eventuale colloquio conoscitivo richiesto.
             </p>
             <p>
-              Il modulo è gestito tramite l’infrastruttura del sito su Vercel e
+              Il modulo <a href="/coaching/mental-coach-giovani-atleti">Giovani atleti</a>{" "}
+              raccoglie il nome e l’email del richiedente, il suo ruolo (genitore,
+              tutore o atleta maggiorenne), la fascia d’età dell’atleta, lo sport
+              praticato e una breve descrizione della situazione, oltre alla
+              conferma di lettura dell’informativa e, per genitori e tutori, alla
+              dichiarazione del ruolo. Telefono e preferenza per gli incontri
+              sono facoltativi. I dati servono a leggere e valutare la richiesta
+              di informazioni e ricontattare il richiedente. Il primo colloquio
+              relativo a un minorenne è con il genitore o tutore. Il modulo non
+              richiede nome, data di nascita, scuola o squadra del minore e invita
+              a non inserire informazioni sanitarie.
+            </p>
+            <p>
+              La presa visione dell’informativa e la dichiarazione del ruolo non
+              autorizzano l’avvio di incontri con il minore: modalità,
+              autorizzazioni e limiti della riservatezza vengono definiti prima
+              dell’eventuale avvio.
+            </p>
+            <p>
+              I moduli sono gestiti tramite l’infrastruttura del sito su Vercel e
               la richiesta viene inoltrata a Moreno tramite email transazionale
               Brevo. L’invio non comporta iscrizione automatica a liste
               newsletter o Pilot, né l’attivazione di automazioni promozionali.
@@ -146,7 +165,8 @@ export default function PrivacyPolicyPage() {
             </p>
             <p>
               I messaggi, comprese le richieste commerciali inviate tramite
-              /percorsi e le relative notifiche email, vengono conservati per il
+              /percorsi e le relative notifiche email, e le richieste del modulo
+              Giovani atleti con le relative notifiche, vengono conservati per il
               tempo necessario a gestire la richiesta e l’eventuale rapporto
               conseguente, oltre il quale
               possono essere mantenuti soltanto quando necessario per obblighi di
@@ -493,8 +513,8 @@ export default function PrivacyPolicyPage() {
                 <p>
                   Fornitore per la gestione di moduli, liste e comunicazioni
                   email. I dati del percorso pilota non vengono utilizzati
-                  automaticamente per newsletter. Per il modulo /percorsi,
-                  Brevo inoltra a Moreno la notifica della richiesta tramite
+                  automaticamente per newsletter. Per i moduli /percorsi e
+                  Giovani atleti, Brevo inoltra a Moreno la notifica della richiesta tramite
                   email transazionale, senza iscrizione automatica a liste
                   newsletter o Pilot.
                 </p>
@@ -617,6 +637,15 @@ export default function PrivacyPolicyPage() {
               di lettura non è un consenso marketing o Analytics: la scelta
               Analytics è separata e il rifiuto non impedisce l’invio della
               richiesta commerciale.
+            </p>
+            <p>
+              Anche l’uso del modulo Giovani atleti è facoltativo. Per l’invio
+              sono necessari ruolo, nome e email del richiedente, fascia d’età
+              dell’atleta, sport, breve situazione e presa visione
+              dell’informativa; per genitori e tutori è necessaria anche la
+              dichiarazione del ruolo. Telefono e preferenza per gli incontri
+              sono facoltativi. Il consenso Analytics è separato: il rifiuto non
+              impedisce l’invio e la richiesta non comporta consenso marketing.
             </p>
           </section>
 

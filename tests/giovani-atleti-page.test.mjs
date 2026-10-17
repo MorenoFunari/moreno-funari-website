@@ -19,11 +19,11 @@ test('all approved copy and twelve FAQs are present verbatim in initial HTML', (
   assert.equal((main.match(/<h2\b/g) || []).length, 10);
   assert.equal((main.match(/<summary\b/g) || []).length, 12);
 });
-test('absolute metadata, canonical, dedicated OG and publication lock', () => {
+test('absolute metadata, canonical, dedicated OG and production indexability', () => {
   assert.ok(html.includes('<title>Mental coach per giovani atleti | Frascati e online | Moreno Funari</title>'));
   assert.ok(html.includes('name="description" content="Per genitori di giovani sportivi: errore, pressione e fiducia nello sport. Mental coaching online o a Frascati e nei Castelli Romani. Richiedi informazioni."'));
   assert.ok(html.includes('rel="canonical" href="https://morenofunari.it/coaching/mental-coach-giovani-atleti"'));
-  assert.ok(html.includes('name="robots" content="noindex, follow"'));
+  assert.ok(html.includes('name="robots" content="index, follow"'));
   assert.ok(html.includes('property="og:image" content="https://morenofunari.it/coaching/mental-coach-giovani-atleti/opengraph-image"'));
   assert.ok(html.includes('name="twitter:card" content="summary_large_image"'));
 });
@@ -62,4 +62,15 @@ test('sitemap publication switch includes the route only when approved, without 
   }
   const robots = readFileSync(new URL('../src/app/robots.ts', import.meta.url), 'utf8');
   assert.match(robots, /userAgent: "\*"/); assert.match(robots, /allow: "\/"/);
+});
+
+test('privacy disclosure covers young-athlete requests without turning role declaration into session authorization', () => {
+  const policy = readFileSync(new URL('../.next/server/app/privacy-policy.html', import.meta.url), 'utf8').split('</main>')[0].replace(/<[^>]+>/g, '');
+  for (const text of ['fascia d’età dell’atleta', 'dichiarazione del ruolo', 'non autorizzano l’avvio di incontri con il minore', 'il rifiuto non impedisce l’invio']) assert.ok(policy.includes(text), text);
+  for (const route of ['coaching', 'coaching/mental-coaching-sportivo']) {
+    const linked = readFileSync(new URL(`../.next/server/app/${route}.html`, import.meta.url), 'utf8');
+    assert.ok(linked.includes('href="/coaching/mental-coach-giovani-atleti"'));
+  }
+  const sitemap = readFileSync(new URL('../.next/server/app/sitemap.xml.body', import.meta.url), 'utf8');
+  assert.ok(sitemap.includes('https://morenofunari.it/coaching/mental-coach-giovani-atleti'));
 });

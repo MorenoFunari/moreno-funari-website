@@ -4,6 +4,6 @@ export const athleteDescription = "Per genitori di giovani sportivi: errore, pre
 export const athleteRoles = ["Genitore", "Tutore", "Atleta maggiorenne"] as const;
 export const athleteAges = ["7–10", "11–13", "14–17", "18+"] as const;
 export const athleteModes = ["Online", "In presenza (Castelli Romani)", "Da valutare"] as const;
-// Publication is blocked until the specific privacy disclosure is validated.
-export const athletePublicationReady = false;
+// Factual disclosure approved for application/publication by the site owner.
+export const athletePublicationReady = true;
 export const athleteConfirmation = "Grazie, ho ricevuto la tua richiesta. La leggo personalmente e ti rispondo appena possibile.";
