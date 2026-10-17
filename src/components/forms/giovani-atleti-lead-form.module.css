@@ -1,0 +1,7 @@
+.form { max-width: 52rem; }
+.form select { width: 100%; min-width: 0; min-height: 3rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-sm); padding: .8rem; background: var(--color-surface); color: var(--color-text); font: inherit; }
+.form select:focus-visible { outline: 2px solid var(--color-accent-strong); outline-offset: 2px; }
+.form select:disabled { opacity: .75; }
+.pair { display: grid; gap: var(--space-md); }
+.notice, .success { padding: var(--space-md); background: var(--color-accent-soft); border-radius: var(--radius-sm); }
+@media (min-width: 640px) { .pair { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

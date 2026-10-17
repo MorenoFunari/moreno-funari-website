@@ -1,0 +1,1233 @@
+PROGETTO
+Moreno Funari | Mental Coach
+
+TASK
+Implementazione e pubblicazione della landing SEO:
+Mental Coaching Sportivo — Giovani Atleti
+
+REPOSITORY LOCALE
+/Users/morenofunari/Desktop/progetti/moreno-funari-website
+
+URL DA CREARE
+https://morenofunari.it/coaching/mental-coach-giovani-atleti
+
+============================================================
+OBIETTIVO
+============================================================
+
+Realizzare e pubblicare una pagina di acquisizione
+dedicata ai giovani sportivi e alle loro famiglie.
+
+La pagina deve essere:
+
+- professionale;
+- coerente con il brand;
+- ottimizzata per Google;
+- strutturata per essere comprensibile anche
+  ai motori di ricerca basati su AI;
+- facilmente leggibile da smartphone;
+- orientata alla richiesta di informazioni;
+- integrata nel sito esistente.
+
+Non voglio un altro audit generale.
+
+Non voglio un altro documento strategico.
+
+Voglio una pagina realmente pubblicata,
+con modulo funzionante e SEO verificabile.
+
+TUTTO IL COPY APPROVATO È INCLUSO IN QUESTO PROMPT.
+
+Non cercare allegati.
+Non chiedere altri documenti per il copy.
+Non riscrivere i testi approvati.
+
+============================================================
+FASE 0 — VERIFICA REPOSITORY
+============================================================
+
+Prima di modificare:
+
+1. Controlla branch corrente.
+2. Controlla git status.
+3. Verifica che main sia aggiornato.
+4. Controlla struttura Next.js App Router.
+5. Esamina la pagina sportiva esistente.
+6. Esamina /percorsi.
+7. Esamina i moduli e gli endpoint esistenti.
+8. Esamina la Privacy Policy.
+9. Verifica come vengono generati:
+   - metadata
+   - sitemap
+   - JSON-LD
+   - canonical
+   - Open Graph
+10. Identifica componenti UI riutilizzabili.
+
+Lavora su branch dedicato.
+
+Non modificare /confronto, /percorsi e /passo,
+salvo eventuali collegamenti espressamente autorizzati
+in questo task (attualmente nessuno).
+
+Non modificare i funnel esistenti.
+
+Se emergono modifiche locali non tue,
+non sovrascriverle.
+
+============================================================
+IDENTITÀ E POSIZIONAMENTO
+============================================================
+
+BRAND
+Moreno Funari | Mental Coach
+
+PALETTE
+Blu notte: #071C2D
+Lime: #B7D52A
+Avorio: #F5F1E8
+Bianco caldo: #FFFDF8
+Grigio scuro: #263538
+Grigio secondario: #5F6D70
+
+Usa prioritariamente design token,
+font e componenti già esistenti nel repository.
+
+STILE
+Professionale ma umano.
+Pulito.
+Caldo.
+Credibile.
+Non da guru.
+Non eccessivamente patinato.
+
+Se disponibili, usa fotografie autentiche di Moreno.
+
+Non generare volti artificiali.
+
+============================================================
+PUBBLICO E REGOLE OPERATIVE
+============================================================
+
+PUBBLICO
+
+Giovani sportivi dai 7–8 anni in su.
+
+Fasce:
+7–10 anni
+11–13 anni
+14–17 anni
+18+ anni
+
+PRIMO COLLOQUIO
+
+Per ogni atleta minorenne,
+il primo colloquio è con il genitore o tutore.
+
+Dai 18 anni l'atleta può contattare direttamente Moreno.
+
+COINVOLGIMENTO SUCCESSIVO
+
+Dipende dall'età e dalla situazione.
+
+Può comprendere:
+- incontri con il giovane atleta;
+- incontri con i genitori;
+- momenti condivisi.
+
+Non presentare un percorso standard per tutti.
+
+La partecipazione diretta del minore
+deve essere volontaria, appropriata all'età
+e subordinata alle autorizzazioni necessarie.
+
+RISERVATEZZA
+
+I genitori vengono informati
+sull'andamento generale.
+
+Non ricevono automaticamente
+il contenuto di ogni conversazione.
+
+Modalità e limiti della riservatezza
+vengono concordati prima di iniziare.
+
+Non promettere riservatezza assoluta.
+
+ALLENATORE
+
+Nessun coinvolgimento automatico.
+
+Eventuali contatti vengono valutati
+e autorizzati.
+
+FORMAZIONE
+
+Moreno Funari:
+- Formazione Mental Coach CSEN.
+- Smart Coach FIPAV.
+
+Non inventare:
+- certificazioni ulteriori;
+- specializzazioni cliniche;
+- esperienze professionali con minori;
+- testimonianze;
+- risultati garantiti.
+
+MODALITÀ
+
+Online quando appropriato.
+
+Possibilità di incontri in presenza
+nella zona di Frascati e Castelli Romani,
+da concordare caso per caso.
+
+Non inventare una sede o un indirizzo.
+
+OFFERTA
+
+Non inserire prezzi.
+
+Non inventare numero di incontri,
+durata complessiva o pacchetti.
+
+Non utilizzare automaticamente
+i prezzi del percorso adulti.
+
+La conversione è una richiesta di informazioni.
+
+============================================================
+SEO — SPECIFICHE APPROVATE
+============================================================
+
+URL
+/coaching/mental-coach-giovani-atleti
+
+TITLE
+Mental coach per giovani atleti | Frascati e online | Moreno Funari
+
+META DESCRIPTION
+Per genitori di giovani sportivi: errore, pressione e fiducia nello sport. Mental coaching online o a Frascati e nei Castelli Romani. Richiedi informazioni.
+
+H1
+Mental coach per giovani atleti, online e nei Castelli Romani
+
+KEYWORD PRINCIPALE
+mental coach giovani atleti
+
+KEYWORD SECONDARIE
+mental coach sportivo per ragazzi
+mental coach sportivo Frascati
+mental coach Castelli Romani
+mental coaching sportivo online
+
+RICERCHE CONVERSAZIONALI
+paura di sbagliare in partita
+differenza tra mental coach e psicologo dello sport
+mental coaching per bambini nello sport
+
+REQUISITI SEO
+
+- Una sola H1.
+- H2 secondo il copy approvato.
+- Canonical assoluto sulla pagina stessa.
+- Metadata server-side.
+- Contenuto presente nell'HTML iniziale.
+- FAQ presenti nell'HTML.
+- Layout mobile-first.
+- Nessuna keyword stuffing.
+- Nessun dato strutturato inventato.
+- Nessuna recensione inventata.
+- Nessun indirizzo professionale inventato.
+
+OPEN GRAPH
+
+Configura OG title, description e image
+coerenti con questa specifica.
+
+Riutilizza l'infrastruttura OG del sito.
+
+Se manca un'immagine dedicata,
+usa una soluzione tipografica con la palette ufficiale.
+
+Non inventare fotografie di Moreno.
+
+============================================================
+COPY APPROVATO — NON RISCRIVERE
+============================================================
+
+SEZIONE 1 — HERO
+
+H1:
+Mental coach per giovani atleti, online e nei Castelli Romani
+
+TESTO:
+
+Immagina un ragazzo che si allena con entusiasmo tutta la settimana. Poi, in partita, sbaglia una palla facile. Da lì qualcosa si spegne: si irrigidisce, sbaglia ancora, a fine gara non vuole parlarne.
+
+Come genitore lo vedi e ti chiedi se sia normale, se passerà da solo, se puoi fare qualcosa.
+
+Spesso passa. A volte no: l’errore pesa sempre di più, le partite diventano un esame, lo sport smette di essere un piacere.
+
+Non si tratta soltanto di migliorare la prestazione. Si tratta anche di aiutare il giovane atleta a vivere lo sport in modo più consapevole: con l’errore, con la pressione, con le aspettative, sue e degli altri.
+
+CTA:
+Richiedi informazioni
+
+DESTINAZIONE CTA:
+#richiesta
+
+
+------------------------------------------------------------
+SEZIONE 2 — SITUAZIONI RICONOSCIBILI
+------------------------------------------------------------
+
+H2:
+Forse hai notato qualcosa di simile
+
+TESTO:
+
+- Dopo un errore si abbatte e non riesce più a rientrare in partita.
+- In allenamento rende bene, in gara si blocca.
+- Prima delle partite è teso, nervoso, dice di non avere voglia di andare.
+- Si confronta continuamente con i compagni e si sente sempre un passo indietro.
+- Ha paura di deludere te, l’allenatore o la squadra.
+- Ama il suo sport, ma ultimamente sembra viverlo più come un peso che come un piacere.
+
+Queste situazioni fanno parte della vita sportiva di molti ragazzi. Riconoscerne una non significa che ci sia un problema da risolvere: a volte basta parlarne in famiglia, con l’allenatore, o dare tempo. Questa pagina serve anche a capire quando può avere senso qualcosa in più.
+
+
+------------------------------------------------------------
+SEZIONE 3 — QUANDO VALUTARE UN SUPPORTO
+------------------------------------------------------------
+
+H2:
+Quando può essere utile un mental coach sportivo per ragazzi
+
+TESTO:
+
+Può avere senso valutarlo quando:
+
+- la stessa difficoltà si ripete da tempo, nonostante incoraggiamenti e pazienza;
+- tuo figlio, o tua figlia, vorrebbe vivere lo sport in modo diverso ma non sa da dove partire;
+- in famiglia sentite di aver provato ciò che potevate, e uno sguardo esterno potrebbe aiutare;
+- c’è il desiderio, anche del ragazzo, di lavorare su errore, fiducia o pressione.
+
+Quando invece serve un’altra figura.
+
+Se le difficoltà vanno oltre lo sport e toccano sonno, alimentazione, umore, scuola o relazioni in modo persistente, il primo riferimento è il pediatra, il medico o uno psicologo. Il Mental Coaching non tratta ansia clinica, depressione o disturbi psicologici. Se dalla tua richiesta emerge questa esigenza, te lo dico con chiarezza.
+
+
+------------------------------------------------------------
+SEZIONE 4 — ETÀ E SITUAZIONE
+------------------------------------------------------------
+
+H2:
+Un percorso che rispetta l’età e la situazione
+
+TESTO:
+
+Non tutti i ragazzi hanno bisogno dello stesso approccio. Un bambino di 8 anni e un atleta di 17 vivono lo sport in modo diverso, e anche il ruolo dei genitori cambia in base all’età e alla situazione.
+
+Per questo non esiste una sequenza standard uguale per tutti. Per ogni minorenne il primo colloquio conoscitivo avviene sempre con il genitore o tutore. Da lì si valuta insieme come procedere: incontri con il giovane atleta, incontri con i genitori, momenti condivisi, oppure nessun percorso se non è la strada giusta.
+
+La partecipazione diretta di un minore è sempre adatta alla sua età, volontaria e possibile solo con le autorizzazioni necessarie.
+
+7–10 anni
+
+Il primo colloquio è con i genitori. A questa età molto passa da loro: come parlare dell’errore, come vivere il prima e il dopo partita, come non trasformare il gioco in una prova. Un eventuale coinvolgimento diretto del bambino si valuta solo dopo, con cautela e in forme adatte all’età.
+
+11–13 anni
+
+Il primo colloquio è con i genitori. I ragazzi iniziano a confrontarsi di più con gli altri e con le aspettative: se il ragazzo lo desidera e ha senso, si può valutare di coinvolgerlo direttamente, con i genitori informati e parte delle decisioni.
+
+14–17 anni
+
+Il primo colloquio è con i genitori. A questa età il ragazzo porta di più la propria esperienza e può avere più spazio diretto, se lo vuole. Prima di iniziare si concorda insieme cosa viene condiviso con i genitori e come.
+
+18+ anni
+
+L’atleta maggiorenne può contattarmi direttamente e decide per sé.
+
+
+------------------------------------------------------------
+SEZIONE 5 — RUOLI
+------------------------------------------------------------
+
+H2:
+Il giovane atleta, i genitori, l’allenatore
+
+TESTO:
+
+Il giovane atleta non è un problema da sistemare. È una persona con la sua esperienza, i suoi tempi e il suo modo di vivere lo sport. Niente si fa contro la sua volontà.
+
+I genitori sono il primo contatto per ogni minorenne e restano informati sull’andamento generale del lavoro. Non ricevono automaticamente il contenuto di ogni conversazione: le modalità e i limiti della riservatezza si concordano prima di iniziare, nel rispetto della tutela del ragazzo. In alcune situazioni coinvolgere i genitori è comunque necessario: per questo non è possibile promettere una riservatezza assoluta.
+
+L’allenatore resta il riferimento tecnico e sportivo. Il Mental Coaching non entra nelle scelte tecniche né le sostituisce. L’allenatore non viene coinvolto in automatico: un eventuale contatto si valuta insieme e avviene solo se autorizzato.
+
+
+------------------------------------------------------------
+SEZIONE 6 — APPROCCIO DI MORENO
+------------------------------------------------------------
+
+H2:
+Non costruire campioni: aiutare a vivere meglio lo sport
+
+TESTO:
+
+Non prometto di trasformare un ragazzo in un campione. Non è il mio lavoro, e non sarebbe corretto prometterlo.
+
+Il lavoro si concentra su:
+
+- il rapporto con l’errore
+- la fiducia
+- la pressione e le aspettative
+- la consapevolezza di quello che succede in gara
+- il rapporto con il proprio sport
+- piccoli passi possibili, adatti all’età
+
+Lo sport lo conosco anche da dentro: gioco a pallavolo, e so cosa vuol dire sbagliare una palla e restare con la testa lì mentre la partita va avanti. Per questo non parto dalla prestazione da migliorare, ma da come il ragazzo vive quel momento.
+
+
+------------------------------------------------------------
+SEZIONE 7 — FORMAZIONE
+------------------------------------------------------------
+
+H2:
+La mia formazione: CSEN e Smart Coach FIPAV
+
+TESTO:
+
+Formazione Mental Coach CSEN, applicabile anche al contesto sportivo.
+
+Smart Coach FIPAV, formazione della Federazione Italiana Pallavolo legata all’ambiente sportivo.
+
+Non sono psicologo né psicologo dello sport, e non ho una specializzazione in psicologia infantile. Il mio lavoro resta nei confini del Mental Coaching.
+
+
+------------------------------------------------------------
+SEZIONE 8 — MODALITÀ
+------------------------------------------------------------
+
+H2:
+Online o in presenza nei Castelli Romani
+
+TESTO:
+
+Gli incontri possono svolgersi online, quando è adatto all’età e alla situazione.
+
+Nella zona di Frascati e dei Castelli Romani è possibile valutare incontri in presenza, da concordare caso per caso.
+
+La modalità si decide insieme, dopo la richiesta di informazioni.
+
+
+------------------------------------------------------------
+SEZIONE 9 — COME RICHIEDERE INFORMAZIONI
+------------------------------------------------------------
+
+ID SEZIONE:
+richiesta
+
+H2:
+Come richiedere informazioni
+
+TESTO:
+
+Se l’atleta è minorenne, la richiesta la invia il genitore o tutore:
+
+1. Compili il modulo raccontando brevemente cosa hai notato.
+2. Leggo la richiesta e ti rispondo personalmente.
+3. Se ha senso, facciamo un primo colloquio conoscitivo tra me e te, genitore o tutore, per capire se il Mental Coaching è adatto all’età e alla situazione di tuo figlio o tua figlia.
+4. Se c’è una strada possibile, valutiamo insieme come procedere e con quale coinvolgimento del ragazzo.
+5. Se non è la strada giusta, te lo dico, e se possibile ti indico a chi rivolgerti.
+
+Se sei un atleta maggiorenne, puoi compilare tu stesso il modulo e contattarmi direttamente.
+
+Numero di incontri, durata e condizioni vengono definiti solo dopo il primo colloquio, in base all’età e alla situazione.
+
+CTA:
+Richiedi informazioni
+
+DESTINAZIONE:
+#richiesta
+
+
+------------------------------------------------------------
+SEZIONE 10 — DOMANDE FREQUENTI
+------------------------------------------------------------
+
+H2:
+Domande frequenti
+
+FAQ COMPLETE RIPORTATE PIÙ AVANTI.
+
+Utilizzarle integralmente.
+
+
+------------------------------------------------------------
+SEZIONE 11 — CHIUSURA
+------------------------------------------------------------
+
+H2:
+Lo sport può restare un piacere, anche quando si sbaglia
+
+TESTO:
+
+Se vedi tuo figlio o tua figlia in difficoltà con l’errore, la pressione o le aspettative, puoi iniziare raccontando la situazione. Da lì capiamo insieme se e come posso essere utile.
+
+CTA:
+Richiedi informazioni
+
+DESTINAZIONE:
+#richiesta
+
+FIRMA:
+Moreno Funari | Mental Coach
+
+
+============================================================
+FAQ COMPLETE APPROVATE
+============================================================
+
+FAQ 1
+
+DOMANDA:
+Quando può essere utile un mental coach sportivo per ragazzi?
+
+RISPOSTA:
+Quando una difficoltà legata allo sport si ripete nel tempo (rapporto con l’errore, tensione prima delle gare, paura di deludere, calo di fiducia) e in famiglia si sente il bisogno di uno sguardo esterno. Non ogni difficoltà sportiva richiede un coach: spesso tempo, dialogo in famiglia e un buon rapporto con l’allenatore sono sufficienti.
+
+
+FAQ 2
+
+DOMANDA:
+Mio figlio ha paura di sbagliare durante le partite: cosa posso fare?
+
+RISPOSTA:
+Alcune cose utili anche senza un coach: dopo la partita, chiedigli come si è sentito prima di parlare del risultato; evita di commentare ogni errore; dai valore all’impegno e al divertimento, non solo all’esito. Se la paura cresce, lo blocca o gli toglie il piacere di giocare, può essere utile parlarne con l’allenatore e valutare un supporto.
+
+
+FAQ 3
+
+DOMANDA:
+Il mental coaching sportivo è adatto a un bambino di 8 anni?
+
+RISPOSTA:
+Dipende dal bambino e dalla situazione. Il primo colloquio avviene sempre con i genitori. Un eventuale coinvolgimento diretto del bambino si valuta solo dopo, con cautela, in forme adatte all’età e solo se il bambino è d’accordo. Non c’è un percorso standard applicato in automatico.
+
+
+FAQ 4
+
+DOMANDA:
+Come vengono coinvolti i genitori?
+
+RISPOSTA:
+Per ogni atleta minorenne il primo colloquio conoscitivo avviene con il genitore o tutore. Poi il coinvolgimento si valuta caso per caso: possono esserci incontri con il ragazzo, incontri con i genitori o momenti condivisi. I genitori restano informati sull’andamento generale del lavoro.
+
+
+FAQ 5
+
+DOMANDA:
+Cosa viene detto ai genitori di quello che emerge negli incontri?
+
+RISPOSTA:
+I genitori restano informati sull’andamento generale, ma non ricevono automaticamente il contenuto di ogni conversazione. Modalità e limiti della riservatezza si concordano prima di iniziare, nel rispetto della tutela del ragazzo. Con un minorenne non è possibile garantire una riservatezza assoluta: in alcune situazioni coinvolgere i genitori è necessario.
+
+
+FAQ 6
+
+DOMANDA:
+Mio figlio ha 18 anni: può contattarti direttamente?
+
+RISPOSTA:
+Sì. Dai 18 anni l’atleta può contattarmi direttamente e decide per sé.
+
+
+FAQ 7
+
+DOMANDA:
+L’allenatore viene coinvolto?
+
+RISPOSTA:
+Non in automatico. L’allenatore resta il riferimento tecnico; un eventuale contatto si valuta insieme e avviene solo se autorizzato.
+
+
+FAQ 8
+
+DOMANDA:
+Che differenza c’è tra mental coach e psicologo dello sport?
+
+RISPOSTA:
+Lo psicologo dello sport è uno psicologo iscritto all’Albo, con una formazione specifica in ambito sportivo: può valutare e trattare difficoltà psicologiche. Il mental coach non fa diagnosi né terapia: lavora su consapevolezza, rapporto con l’errore, pressione e piccoli passi concreti. Se una difficoltà richiede uno psicologo, è a lui che bisogna rivolgersi.
+
+
+FAQ 9
+
+DOMANDA:
+È possibile lavorare online?
+
+RISPOSTA:
+Sì, quando è adatto all’età e alla situazione. Per i più piccoli l’online va valutato con attenzione.
+
+
+FAQ 10
+
+DOMANDA:
+Esiste un mental coach sportivo nella zona di Frascati?
+
+RISPOSTA:
+Sì: oltre all’online, nella zona di Frascati e dei Castelli Romani è possibile valutare incontri in presenza, da concordare caso per caso.
+
+
+FAQ 11
+
+DOMANDA:
+Il mental coaching può trasformare mio figlio in un campione?
+
+RISPOSTA:
+No, e non sarebbe corretto prometterlo. L’obiettivo è aiutarlo a vivere lo sport in modo più consapevole: con l’errore, la pressione e le aspettative.
+
+
+FAQ 12
+
+DOMANDA:
+Quanto costa e quanti incontri servono?
+
+RISPOSTA:
+Non c’è un pacchetto uguale per tutti. Numero di incontri, durata e condizioni vengono definiti dopo il primo colloquio, in base all’età e alla situazione, e solo se il percorso è appropriato.
+
+
+============================================================
+CTA APPROVATE
+============================================================
+
+HERO
+Richiedi informazioni
+→ #richiesta
+
+SEZIONE COME INIZIARE
+Richiedi informazioni
+→ #richiesta
+
+CHIUSURA
+Richiedi informazioni
+→ #richiesta
+
+MODULO
+Invia la richiesta
+
+NON UTILIZZARE:
+Scrivimi CONFRONTO
+Scrivi PASSO
+Prenota
+Inizia il percorso
+
+NON COLLEGARE QUESTA PAGINA AI FUNNEL:
+/confronto
+/percorsi
+/passo
+
+
+============================================================
+MODULO DI RICHIESTA — SPECIFICHE
+============================================================
+
+DESTINATARI
+Genitore o tutore del minore.
+Atleta maggiorenne.
+
+CAMPI
+
+1. Ruolo
+
+Etichetta:
+Chi compila la richiesta?
+
+Opzioni:
+- Genitore
+- Tutore
+- Atleta maggiorenne
+
+Obbligatorio.
+
+
+2. Nome
+
+Etichetta:
+Il tuo nome
+
+Tipo:
+Testo
+
+Obbligatorio.
+
+
+3. Email
+
+Etichetta:
+La tua email
+
+Tipo:
+Email
+
+Obbligatorio.
+
+
+4. Telefono
+
+Etichetta:
+Telefono
+
+Facoltativo.
+
+
+5. Fascia d'età
+
+Etichetta:
+Età dell'atleta
+
+Opzioni:
+- 7–10
+- 11–13
+- 14–17
+- 18+
+
+Obbligatorio.
+
+
+6. Sport
+
+Etichetta:
+Che sport pratica?
+
+Tipo:
+Testo breve.
+
+Obbligatorio.
+
+
+7. Modalità
+
+Etichetta:
+Preferenza per gli incontri
+
+Opzioni:
+- Online
+- In presenza (Castelli Romani)
+- Da valutare
+
+Facoltativo.
+
+
+8. Situazione
+
+Etichetta:
+Raccontami brevemente cosa hai notato
+
+Tipo:
+Area di testo.
+
+Nota sotto il campo:
+Bastano poche righe. Non serve inserire informazioni sanitarie.
+
+Obbligatorio.
+
+
+9. Conferma ruolo
+
+Etichetta:
+Dichiaro di essere genitore o tutore dell’atleta minorenne
+
+Visibile se ruolo = Genitore o Tutore.
+
+Obbligatorio quando visibile.
+
+
+10. Privacy
+
+Etichetta:
+Ho letto l’informativa privacy
+
+Checkbox obbligatoria,
+non preselezionata,
+con link all'informativa corretta.
+
+Non utilizzare un generico consenso marketing.
+
+
+LOGICA CONDIZIONALE
+
+Se ruolo = Atleta maggiorenne:
+
+- fascia d'età = 18+;
+- campo età non modificabile;
+- checkbox genitore/tutore nascosta.
+
+Se ruolo = Genitore o Tutore
+e fascia = 18+:
+
+Mostrare:
+"Dai 18 anni l’atleta può contattarmi direttamente. Puoi comunque inviare la richiesta."
+
+
+VALIDAZIONE
+
+Implementare sia client-side sia server-side.
+
+Non fidarsi dei campi nascosti
+inviati dal browser.
+
+Applicare protezioni antispam
+coerenti con il progetto.
+
+Non raccogliere:
+
+- nome del minore;
+- data di nascita;
+- scuola;
+- squadra;
+- informazioni sanitarie.
+
+Limitare il testo libero
+e impedire l'inserimento di dati non necessari
+per quanto tecnicamente ragionevole.
+
+Non utilizzare il contenuto delle richieste
+per newsletter o profilazione pubblicitaria.
+
+
+IDENTIFICAZIONE INTERNA
+
+tipo_richiesta = giovani_atleti
+
+origine = /coaching/mental-coach-giovani-atleti
+
+
+NOTIFICA
+
+Destinatario:
+utilizzare la configurazione di notifica
+già prevista dal progetto.
+
+Oggetto riconoscibile:
+Giovani atleti — richiesta informazioni
+
+Contenuto:
+- nome del richiedente;
+- email;
+- telefono, se presente;
+- ruolo;
+- fascia d'età;
+- sport;
+- modalità preferita;
+- situazione descritta.
+
+Non aggiungere dati personali non necessari.
+
+
+DOPO L'INVIO
+
+Mostrare:
+
+"Grazie, ho ricevuto la tua richiesta. La leggo personalmente e ti rispondo appena possibile."
+
+Non effettuare prenotazioni automatiche.
+
+Non iscrivere il contatto a newsletter.
+
+Non iscrivere a liste Brevo Pilot.
+
+Non attivare automazioni del funnel /percorsi.
+
+Non usare /grazie-confronto.
+
+Non utilizzare il flusso PASSO.
+
+
+============================================================
+PRIVACY E MINORENNI — VINCOLO OPERATIVO
+============================================================
+
+La pagina può essere resa pubblica
+soltanto quando il modulo dispone
+di un'informativa privacy adeguata
+alle richieste relative a giovani atleti.
+
+Prima del deploy:
+
+1. Leggi la Privacy Policy esistente.
+2. Verifica se copre la nuova finalità.
+3. Verifica categorie di dati e destinatari.
+4. Verifica conservazione e cancellazione.
+5. Verifica eventuali trasferimenti tramite Brevo.
+6. Verifica il ruolo di genitore/tutore.
+7. Verifica che il modulo non richieda
+   dati identificativi del minore.
+8. Verifica che la richiesta non attivi
+   consensi marketing o Analytics.
+9. Non presentare il checkbox informativo
+   come autorizzazione sufficiente
+   per iniziare sessioni con il minore.
+
+Se l'informativa è insufficiente,
+proponi la modifica minima necessaria.
+
+Non inventare:
+- basi giuridiche;
+- tempi di conservazione;
+- clausole legali;
+- consensi professionali.
+
+Se è necessaria validazione professionale,
+indicala chiaramente.
+
+Non dichiarare conformità GDPR definitiva
+sulla sola base dei test tecnici.
+
+L'acquisizione di una richiesta da un genitore
+non equivale ad autorizzazione
+a iniziare un percorso con il minore.
+
+============================================================
+DATI STRUTTURATI
+============================================================
+
+Implementare JSON-LD appropriati.
+
+SERVICE
+
+@type:
+Service
+
+name:
+Mental coaching sportivo per giovani atleti
+
+serviceType:
+Mental coaching sportivo
+
+provider:
+Person — Moreno Funari
+
+areaServed:
+Frascati
+Castelli Romani
+
+availableChannel:
+Online o in presenza da concordare
+
+url:
+https://morenofunari.it/coaching/mental-coach-giovani-atleti
+
+Non inserire Offer o prezzi.
+
+PERSON
+
+@type:
+Person
+
+name:
+Moreno Funari
+
+jobTitle:
+Mental Coach
+
+url:
+https://morenofunari.it
+
+Utilizzare sameAs soltanto per profili reali
+già verificati nel repository.
+
+Non inventare hasCredential.
+Aggiungerlo solo con credenziali verificate.
+
+FAQPAGE
+
+Generare dai 12 testi FAQ approvati.
+
+Domande e risposte nel markup
+devono essere identiche
+a quelle visibili sulla pagina.
+
+Non promettere rich result Google.
+
+BREADCRUMBLIST
+
+Se coerente con la struttura del sito:
+
+Home → Coaching → Giovani atleti
+
+Non usare:
+
+LocalBusiness con indirizzo inventato
+Review
+AggregateRating
+Offer con prezzi inesistenti
+
+
+============================================================
+COLLEGAMENTI INTERNI
+============================================================
+
+IN USCITA
+
+Link contestuale alla pagina:
+ /chi-sono
+
+Utilizzare anchor naturale:
+"chi sono"
+
+IN INGRESSO
+
+Alla pubblicazione aggiungere:
+
+1. Un collegamento coerente
+   dalla pagina sportiva esistente.
+
+2. Una card o link contestuale
+   dalla pagina /coaching, se appropriato.
+
+3. Valutare un collegamento da /chi-sono,
+   senza appesantire la pagina.
+
+Non modificare i metadata SEO
+della pagina /coaching.
+
+Non riscrivere il contenuto
+della pagina sportiva esistente.
+
+Per ogni intervento su pagine esistenti,
+apportare soltanto modifiche minime.
+
+Non modificare:
+/confronto
+/percorsi
+/passo
+
+============================================================
+VISUAL DESIGN
+============================================================
+
+La pagina deve avere una resa
+professionale da sito commerciale.
+
+Non usare sezioni enormi
+con troppo spazio vuoto.
+
+Abbiamo già riscontrato questo problema
+sulla pagina /percorsi.
+
+Indicazioni:
+
+- Spaziature equilibrate.
+- Hero leggibile da smartphone.
+- CTA evidente ma non aggressiva.
+- Card delle situazioni riconoscibili.
+- Fasce d'età chiaramente distinguibili.
+- Metodo e ruoli rappresentati con semplicità.
+- FAQ facilmente consultabili.
+- Modulo leggibile e usabile su mobile.
+- Nessun effetto decorativo inutile.
+- Nessuna animazione che rallenti la pagina.
+
+Usa il design system esistente.
+
+Non modificare il copy
+per adattarlo al layout.
+
+Adatta il layout ai testi approvati.
+
+============================================================
+FASE IMPLEMENTAZIONE
+============================================================
+
+1. Crea un branch dedicato.
+
+2. Implementa la route Next.js.
+
+3. Inserisci il copy completo.
+
+4. Inserisci le 12 FAQ.
+
+5. Implementa il modulo dedicato.
+
+6. Implementa un endpoint dedicato
+   oppure riutilizza componenti backend
+   appropriati, mantenendo la separazione
+   logica dalle richieste esistenti.
+
+7. Configura notifica Brevo transazionale.
+
+8. Verifica Privacy Policy e consenso.
+
+9. Implementa metadata e Open Graph.
+
+10. Implementa JSON-LD.
+
+11. Aggiorna sitemap.
+
+12. Aggiungi collegamenti interni minimi.
+
+13. Verifica rendering desktop e mobile.
+
+14. Verifica che la pagina sia indicizzabile
+    soltanto quando pronta alla pubblicazione.
+
+15. Controlla robots.txt e i crawler rilevanti,
+    inclusi Googlebot e OAI-SearchBot,
+    senza alterare arbitrariamente
+    le policy globali del sito.
+
+============================================================
+TEST OBBLIGATORI
+============================================================
+
+Esegui:
+
+- lint;
+- TypeScript;
+- build;
+- test dei componenti;
+- test endpoint;
+- validazione server-side;
+- controllo antispam;
+- controllo separazione funnel;
+- verifica JSON-LD;
+- verifica metadata;
+- verifica canonical;
+- verifica sitemap;
+- test mobile;
+- test desktop.
+
+Per il modulo:
+
+Testa:
+- genitore con atleta minorenne;
+- tutore con atleta minorenne;
+- atleta maggiorenne;
+- assenza checkbox obbligatoria;
+- fascia d'età incoerente;
+- dati non validi;
+- richiesta antispam;
+- errore Brevo;
+- invio riuscito.
+
+Nessun test deve generare iscrizioni
+nelle liste Pilot o newsletter.
+
+============================================================
+PUBBLICAZIONE
+============================================================
+
+L'obiettivo è la produzione.
+
+Non creare ulteriori fasi documentali
+se non strettamente necessarie.
+
+Se i controlli tecnici sono superati,
+le qualifiche sono riportate correttamente
+e la privacy del modulo è adeguata
+e validata per la pubblicazione:
+
+1. Crea commit.
+2. Esegui push.
+3. Apri PR.
+4. Verifica la PR.
+5. Esegui merge.
+6. Attendi deploy produzione.
+7. Verifica la pagina pubblica.
+8. Verifica modulo.
+9. Verifica sitemap.
+10. Verifica indicizzabilità.
+
+Non inserire noindex sulla versione
+definitiva pubblicata.
+
+Non lasciare la pagina fuori dalla sitemap.
+
+Se emergono blocchi concreti relativi
+a credenziali professionali, privacy
+o trattamento dei dati di minori,
+fermati prima del merge/deploy
+e riporta esattamente il problema.
+
+Non aggirare un controllo necessario
+soltanto per accelerare la pubblicazione.
+
+============================================================
+VERIFICA POST-DEPLOY
+============================================================
+
+Controlla:
+
+URL pubblico:
+https://morenofunari.it/coaching/mental-coach-giovani-atleti
+
+- HTTP 200;
+- title corretto;
+- description corretta;
+- canonical corretta;
+- nessun noindex;
+- sitemap aggiornata;
+- OG corretto;
+- dati strutturati validi;
+- FAQ visibili;
+- layout mobile corretto;
+- modulo utilizzabile.
+
+Per testare le email:
+
+- usa dati fittizi;
+- effettua un solo invio controllato;
+- verifica HTTP 200;
+- verifica accettazione Brevo;
+- verifica consegna effettiva quando possibile;
+- verifica assenza iscrizioni
+  nei funnel esistenti.
+
+Non pubblicare nei log:
+- API key;
+- token;
+- credenziali;
+- dati personali reali.
+
+============================================================
+OUTPUT FINALE
+============================================================
+
+Restituisci:
+
+1. Branch utilizzato.
+2. Commit creati.
+3. File modificati.
+4. Risultati dei test.
+5. Verifica Privacy Policy.
+6. Verifica separazione funnel.
+7. PR e merge, se autorizzabili.
+8. Stato deploy.
+9. URL pubblico.
+10. Stato indicizzazione.
+11. Eventuali problemi realmente aperti.
+
+IMPORTANTE
+
+Non richiedere nuovamente il copy.
+
+Tutti i testi approvati sono presenti
+integralmente in questo prompt.
+
+Non riscrivere contenuti.
+
+Non ripartire dalla progettazione.
+
+Lavora sul repository reale.
+
+OBIETTIVO FINALE
+
+Pubblicare una landing SEO professionale
+per giovani atleti e famiglie,
+capace di intercettare ricerche Google
+e richieste provenienti dagli assistenti AI,
+con un modulo commerciale funzionante
+e un trattamento dei dati appropriato.
+
+PROCEDI.
