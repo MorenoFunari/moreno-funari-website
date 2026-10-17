@@ -6,14 +6,16 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { percorsiContent as copy, percorsiFaqs } from "@/config/percorsi-content";
 import { createPageMetadata } from "@/lib/seo/metadata";
+import { toAbsoluteUrl } from "@/config/seo";
 import { createPercorsiJsonLd } from "@/lib/seo/percorsi";
 import hero from "@/components/sections/coaching/coaching-hero.module.css";
 import faq from "@/components/sections/coaching/coaching-faq-section.module.css";
 import styles from "./page.module.css";
 
-const socialTitle = "Percorso di mental coaching individuale";
+const socialTitle = "Un Passo Possibile | Percorso individuale di Mental Coaching";
+const socialDescription = "6 incontri online per fare chiarezza su una situazione concreta e individuare il prossimo passo possibile. Scopri come funziona il percorso.";
 const baseMetadata = createPageMetadata({
-  title: `${socialTitle} | Moreno Funari`,
+  title: "Percorso di mental coaching individuale | Moreno Funari",
   absoluteTitle: true,
   description: "Un Passo Possibile: 6 incontri individuali online di Mental Coaching per fare chiarezza su una situazione concreta. Cosa comprende, prezzi e come iniziare.",
   path: "/percorsi",
@@ -21,8 +23,19 @@ const baseMetadata = createPageMetadata({
 });
 export const metadata: Metadata = {
   ...baseMetadata,
-  openGraph: { ...baseMetadata.openGraph, title: socialTitle },
-  twitter: { ...baseMetadata.twitter, title: socialTitle },
+  openGraph: {
+    ...baseMetadata.openGraph,
+    title: socialTitle,
+    description: socialDescription,
+    images: [{ url: toAbsoluteUrl("/percorsi/opengraph-image"), width: 1200, height: 630, alt: "Un Passo Possibile | Moreno Funari — Mental Coach" }],
+  },
+  twitter: {
+    ...baseMetadata.twitter,
+    title: socialTitle,
+    description: socialDescription,
+    card: "summary_large_image",
+    images: [toAbsoluteUrl("/percorsi/twitter-image")],
+  },
 };
 
 function Paragraphs({ items }: { items: readonly string[] }) {
