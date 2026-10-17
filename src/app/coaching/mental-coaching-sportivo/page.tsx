@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { Container } from "@/components/ui/container";
+import { athletePublicationReady, athletePath } from "@/config/giovani-atleti";
 import type { Metadata } from "next";
 
 import { CoachingLandingPage } from "@/components/sections/coaching/coaching-landing-page";
@@ -19,6 +22,7 @@ export default function MentalCoachingSportivoPage() {
     <main id="main-content">
       <JsonLd data={createCoachingLandingPageJsonLd(page)} />
       <CoachingLandingPage page={page} />
+      {athletePublicationReady ? <Container as="section"><p>Per giovani sportivi e famiglie: <Link href={athletePath}>mental coaching per giovani atleti</Link>.</p></Container> : null}
     </main>
   );
 }

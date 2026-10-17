@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+import { athletePublicationReady, athletePath } from "@/config/giovani-atleti";
 import { toAbsoluteUrl } from "@/config/seo";
 import { getPublishedBlogPosts } from "@/lib/blog/blog-content";
 import { editorialDateToIso } from "@/lib/blog/blog-date";
@@ -27,7 +28,8 @@ const staticRoutes = [
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPublishedBlogPosts();
-  const staticEntries = staticRoutes.map((route) => ({
+  const routes = athletePublicationReady ? [...staticRoutes, athletePath] : staticRoutes;
+  const staticEntries = routes.map((route) => ({
     url: toAbsoluteUrl(route === "" ? "/" : route),
   }));
   const blogEntries = posts.map((post) => ({

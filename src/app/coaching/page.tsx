@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { Container } from "@/components/ui/container";
+import { athletePublicationReady, athletePath } from "@/config/giovani-atleti";
 import type { Metadata } from "next";
 
 import { ConcreteSituationProcess } from "@/components/coaching/concrete-situation-process";
@@ -27,6 +30,7 @@ export default function CoachingPage() {
       <CoachingHero />
       <UsefulWhenSection />
       <CoachingFocusAreasSection />
+      {athletePublicationReady ? <Container as="section"><p>Sport, errore e pressione: <Link href={athletePath}>mental coaching per giovani atleti e famiglie</Link>.</p></Container> : null}
       <CoachingDefinitionSection />
       <ProcessSection />
       <ConcreteSituationProcess />
