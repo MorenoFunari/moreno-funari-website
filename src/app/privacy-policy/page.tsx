@@ -8,8 +8,8 @@ import { createPageMetadata } from "@/lib/seo/metadata";
 import styles from "../legal-page.module.css";
 
 const privacyContactEmail = "info@morenofunari.it";
-const privacyLastUpdatedIso = "2026-09-26";
-const privacyLastUpdatedLabel = "26 settembre 2026";
+const privacyLastUpdatedIso = "2026-10-17";
+const privacyLastUpdatedLabel = "17 ottobre 2026";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Privacy Policy",
@@ -101,7 +101,7 @@ export default function PrivacyPolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              4. Contatti via email, PEC, WhatsApp e social
+              4. Contatti e richieste commerciali tramite il modulo /percorsi
             </h2>
             <p>
               Se scegli di scrivere via email, possono essere trattati indirizzo
@@ -122,13 +122,33 @@ export default function PrivacyPolicyPage() {
               e gestire comunicazioni richieste dall’interessato.
             </p>
             <p>
+              Quando compili il modulo della pagina <a href="/percorsi">/percorsi</a>,
+              vengono raccolti nome, indirizzo email, una breve descrizione della
+              situazione che desideri affrontare e la conferma di lettura
+              dell’informativa; il numero di telefono è facoltativo. Moreno Funari
+              usa questi dati per leggere e valutare la richiesta relativa al
+              percorso individuale a pagamento, rispondere e organizzare un
+              eventuale colloquio conoscitivo richiesto.
+            </p>
+            <p>
+              Il modulo è gestito tramite l’infrastruttura del sito su Vercel e
+              la richiesta viene inoltrata a Moreno tramite email transazionale
+              Brevo. L’invio non comporta iscrizione automatica a liste
+              newsletter o Pilot, né l’attivazione di automazioni promozionali.
+              Per prevenire abusi e invii duplicati vengono utilizzati anche
+              marcatori tecnici dell’invio, data e ora di avvio del modulo e un
+              hash dell’indirizzo IP.
+            </p>
+            <p>
               La base giuridica è l’esecuzione di misure precontrattuali
               richieste dall’interessato e, per le comunicazioni generali, il
               legittimo interesse a rispondere alle richieste ricevute.
             </p>
             <p>
-              I messaggi vengono conservati per il tempo necessario a gestire la
-              richiesta e l’eventuale rapporto conseguente, oltre il quale
+              I messaggi, comprese le richieste commerciali inviate tramite
+              /percorsi e le relative notifiche email, vengono conservati per il
+              tempo necessario a gestire la richiesta e l’eventuale rapporto
+              conseguente, oltre il quale
               possono essere mantenuti soltanto quando necessario per obblighi di
               legge o tutela dei diritti.
             </p>
@@ -473,7 +493,10 @@ export default function PrivacyPolicyPage() {
                 <p>
                   Fornitore per la gestione di moduli, liste e comunicazioni
                   email. I dati del percorso pilota non vengono utilizzati
-                  automaticamente per newsletter.
+                  automaticamente per newsletter. Per il modulo /percorsi,
+                  Brevo inoltra a Moreno la notifica della richiesta tramite
+                  email transazionale, senza iscrizione automatica a liste
+                  newsletter o Pilot.
                 </p>
               </li>
               <li className={styles.card}>
@@ -585,6 +608,15 @@ export default function PrivacyPolicyPage() {
               dell’iscrizione non è possibile inviare la risorsa. Il consenso
               Analytics è facoltativo: il rifiuto non limita navigazione,
               contenuti o contatto.
+            </p>
+            <p>
+              L’uso del modulo /percorsi è facoltativo. Per inviare la richiesta
+              sono obbligatori nome, indirizzo email, descrizione della situazione
+              e conferma di lettura dell’informativa; senza questi elementi il
+              modulo non può inoltrarla. Il telefono è facoltativo. La conferma
+              di lettura non è un consenso marketing o Analytics: la scelta
+              Analytics è separata e il rifiuto non impedisce l’invio della
+              richiesta commerciale.
             </p>
           </section>
 

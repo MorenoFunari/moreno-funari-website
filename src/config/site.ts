@@ -37,6 +37,7 @@ export const siteConfig = {
     { label: "Blog", href: "/blog" },
     { label: "eBook", href: "/ebook" },
     { label: "Coaching", href: "/coaching" },
+    { label: "Percorsi", href: "/percorsi" },
     { label: "Contatti", href: "/contatti" },
   ],
   legalNavigation: [
