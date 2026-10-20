@@ -64,15 +64,14 @@ export default function AdsConfrontoPage() {
         <section className={styles.process} aria-labelledby="confronto-process">
           <h2 id="confronto-process">Cosa succede se mi scrivi</h2>
           <ol>
-            <li>Scrivi CONFRONTO su WhatsApp e raccontami la situazione in poche righe.</li>
-            <li>Leggo e valuto personalmente la tua richiesta.</li>
-            <li>Se ha senso approfondire, ti propongo un confronto conoscitivo online gratuito di 30 minuti.</li>
-            <li>Gli eventuali passi successivi li valutiamo insieme.</li>
+            <li>Mi scrivi su WhatsApp e mi racconti brevemente cosa stai vivendo.</li>
+            <li>Leggo personalmente il tuo messaggio.</li>
+            <li>Se ha senso approfondire, valutiamo un primo confronto conoscitivo online di 30 minuti, senza impegno.</li>
+            <li>Solo successivamente, se lo riteniamo utile entrambi, possiamo parlare di un eventuale percorso.</li>
           </ol>
         </section>
         <p className={styles.note}>
-          Non entri automaticamente nel Pilot gratuito. I tuoi dati vengono usati
-          per gestire la richiesta, nel rispetto della privacy.
+          I tuoi dati vengono usati per gestire la richiesta, nel rispetto della privacy.
         </p>
       </div>
     </main>
