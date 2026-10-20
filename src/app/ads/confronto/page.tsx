@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { AdsConfrontoOpenAnalytics } from "@/components/analytics/ads-confronto-open-analytics";
 import { TrackedWhatsAppButton } from "@/components/analytics/tracked-whatsapp-button";
@@ -20,40 +21,57 @@ export default function AdsConfrontoPage() {
     <main className={styles.landing} id="main-content">
       <AdsConfrontoOpenAnalytics />
       <div className={styles.content}>
-        <p className={styles.identity}>Moreno Funari | Mental Coach</p>
-        <h1>Bloccato su una scelta concreta?</h1>
-        <p className={styles.subtitle}>
-          Fermati, guarda meglio la situazione e trova un primo passo possibile.
-        </p>
+        <section className={styles.hero} aria-labelledby="confronto-title">
+          <div className={styles.portrait}>
+            <Image
+              src="/images/moreno/moreno-hero-outdoor.webp"
+              alt="Moreno Funari"
+              fill
+              preload
+              sizes="(min-width: 800px) 360px, 88px"
+            />
+          </div>
+          <p className={styles.identity}>Moreno Funari <span>| Mental Coach</span></p>
+          <div className={styles.introduction}>
+            <h1 id="confronto-title">La giornata finisce, ma i pensieri restano lì?</h1>
+            <p className={styles.subtitle}>
+              Una decisione che rimandi. La pressione al lavoro. Il pensiero di
+              non essere all’altezza.
+            </p>
+            <p className={styles.approach}>
+              Sono Moreno. Ti ascolto e ti aiuto a mettere ordine, partendo da
+              una situazione che stai vivendo.
+            </p>
+            <p className={styles.contactHint}>
+              Se ha senso approfondire: 30 minuti online, gratuiti e senza impegno.
+            </p>
+            <div className={styles.action}>
+              <TrackedWhatsAppButton
+                href="https://wa.me/393793408630?text=CONFRONTO"
+                location="ads_confronto"
+                page="/ads/confronto"
+                size="large"
+              >
+                Scrivi CONFRONTO su WhatsApp
+              </TrackedWhatsAppButton>
+            </div>
+            <p className={styles.reassurance}>
+              Scrivere non comporta iscrizioni automatiche, obblighi o acquisti.
+            </p>
+          </div>
+        </section>
 
-        <div className={styles.action}>
-          <TrackedWhatsAppButton
-            href="https://wa.me/393793408630?text=CONFRONTO"
-            location="ads_confronto"
-            page="/ads/confronto"
-            size="large"
-          >
-            Scrivi CONFRONTO
-          </TrackedWhatsAppButton>
-        </div>
-
-        <ul className={styles.points}>
-          <li>Metti ordine tra pensieri, pressione e dubbi.</li>
-          <li>Distingui cosa dipende da te e cosa no.</li>
-          <li>Individui un passo piccolo, concreto, sostenibile.</li>
-        </ul>
-
-        <div className={styles.reassurance}>
-          <p>Scrivi CONFRONTO e racconta in poche righe cosa stai vivendo.</p>
-          <p>
-            Leggerò personalmente la tua richiesta. Se ha senso proseguire, ti
-            spiegherò con calma i passaggi successivi.
-          </p>
-          <p className={styles.boundary}>Non entri automaticamente in nulla.</p>
-        </div>
-
+        <section className={styles.process} aria-labelledby="confronto-process">
+          <h2 id="confronto-process">Cosa succede se mi scrivi</h2>
+          <ol>
+            <li>Scrivi CONFRONTO su WhatsApp e raccontami la situazione in poche righe.</li>
+            <li>Leggo e valuto personalmente la tua richiesta.</li>
+            <li>Se ha senso approfondire, ti propongo un confronto conoscitivo online gratuito di 30 minuti.</li>
+            <li>Gli eventuali passi successivi li valutiamo insieme.</li>
+          </ol>
+        </section>
         <p className={styles.note}>
-          Nessun impegno, nessuna promessa forzata. I tuoi dati vengono usati solo
+          Non entri automaticamente nel Pilot gratuito. I tuoi dati vengono usati
           per gestire la richiesta, nel rispetto della privacy.
         </p>
       </div>
