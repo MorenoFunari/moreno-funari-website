@@ -35,15 +35,15 @@ export default function AdsConfrontoPage() {
           <div className={styles.introduction}>
             <h1 id="confronto-title">La giornata finisce, ma i pensieri restano lì?</h1>
             <p className={styles.subtitle}>
-              Una decisione che rimandi. La pressione al lavoro. Il pensiero di
-              non essere all’altezza.
+              Magari c&apos;è una decisione che continui a rimandare. Oppure al lavoro
+              senti che tutto dipende da te. O ti ritrovi a dubitare delle tue capacità.
             </p>
             <p className={styles.approach}>
-              Sono Moreno. Ti ascolto e ti aiuto a mettere ordine, partendo da
-              una situazione che stai vivendo.
+              Non serve affrontare tutto insieme.
             </p>
             <p className={styles.contactHint}>
-              Se ha senso approfondire: 30 minuti online, gratuiti e senza impegno.
+              Possiamo partire da quello che stai vivendo, parlarne e provare a fare
+              un po&apos; di chiarezza.
             </p>
             <div className={styles.action}>
               <TrackedWhatsAppButton
