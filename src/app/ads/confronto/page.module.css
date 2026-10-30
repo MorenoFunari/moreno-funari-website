@@ -40,10 +40,15 @@
 }
 
 .identity {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.45;
 }
+
+.brandMark { flex: 0 0 44px; object-fit: contain; }
 
 .identity span {
   display: block;
@@ -61,14 +66,11 @@
   text-wrap: balance;
 }
 
-.subtitle,
-.approach {
+.subtitle {
   margin-top: 1rem;
   font-size: 1rem;
   line-height: 1.5;
 }
-
-.approach { color: var(--color-text); }
 
 .contactHint {
   margin-top: 1.25rem;
@@ -87,12 +89,33 @@
   line-height: 1.35;
 }
 
+.messageHint {
+  margin-top: .5rem;
+  max-width: 38rem;
+  color: var(--color-text-muted);
+  font-size: .8125rem;
+  line-height: 1.4;
+}
+
 .reassurance {
   margin-top: .75rem;
   color: var(--color-text-muted);
   font-size: .875rem;
   line-height: 1.5;
 }
+
+.trust {
+  margin-top: 2rem;
+  max-width: 48rem;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1rem;
+}
+
+.trust h2, .closing h2 { font-size: 1.4rem; line-height: 1.25; }
+.trust p, .closing > p { margin-top: .75rem; line-height: 1.5; color: var(--color-text); }
+.trust > a { display: inline-block; margin-top: .5rem; font-size: .9375rem; }
+
+.closing { margin-top: 2rem; max-width: 48rem; }
 
 .process {
   margin-top: 2rem;
@@ -116,11 +139,13 @@
   .landing { padding: 3rem 2rem; }
   .hero { grid-template-columns: minmax(0, 1fr) 360px; column-gap: 3.5rem; row-gap: 1rem; align-items: start; }
   .identity { grid-column: 1; grid-row: 1; border-left: 3px solid var(--color-accent); padding-left: .75rem; }
-  .identity span { display: inline; }
+  .brandMark { flex: 0 0 44px; object-fit: contain; }
+
+.identity span { display: inline; }
   .introduction { grid-column: 1; grid-row: 2; }
   .portrait { grid-column: 2; grid-row: 1 / 3; width: 360px; height: 450px; }
   .landing h1 { font-size: 2.9rem; }
-  .subtitle, .approach { font-size: 1.0625rem; }
+  .subtitle { font-size: 1.0625rem; }
   .action a { width: auto; min-width: 21rem; }
   .process { max-width: 48rem; margin-top: 2.25rem; }
 }
@@ -135,7 +160,7 @@
   .landing { padding-top: 1rem; }
   .hero { row-gap: 1rem; }
   .portrait { height: 88px; }
-  .subtitle, .approach { margin-top: .75rem; }
+  .subtitle { margin-top: .75rem; }
   .contactHint { margin-top: 1rem; }
 }
 
@@ -144,7 +169,7 @@
   .portrait { width: 72px; height: 80px; }
   .identity { font-size: .9375rem; }
   .landing h1 { font-size: 1.6rem; line-height: 1.1; }
-  .subtitle, .approach { font-size: .9375rem; line-height: 1.4; }
+  .subtitle { font-size: .9375rem; line-height: 1.4; }
   .contactHint { font-size: .875rem; line-height: 1.4; }
   .action a { font-size: .9375rem; }
 }
