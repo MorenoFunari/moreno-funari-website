@@ -16,6 +16,10 @@ export const metadata: Metadata = createPageMetadata({
   absoluteTitle: true,
 });
 
+const whatsappHref = `https://wa.me/393793408630?text=${encodeURIComponent(
+  "Ciao Moreno, vorrei un CONFRONTO su una situazione che sto vivendo.",
+)}`;
+
 export default function AdsConfrontoPage() {
   return (
     <main className={styles.landing} id="main-content">
@@ -31,47 +35,84 @@ export default function AdsConfrontoPage() {
               sizes="(min-width: 800px) 360px, 88px"
             />
           </div>
-          <p className={styles.identity}>Moreno Funari <span>| Mental Coach</span></p>
+          <div className={styles.identity}>
+            <Image
+              src="/images/brand/logo-mf-icon.png"
+              alt=""
+              width={44}
+              height={44}
+              className={styles.brandMark}
+            />
+            <p>Moreno Funari <span>| Mental Coach</span></p>
+          </div>
           <div className={styles.introduction}>
-            <h1 id="confronto-title">La giornata finisce, ma i pensieri restano lì?</h1>
+            <h1 id="confronto-title">Una scelta da fare, troppi pensieri per decidere?</h1>
             <p className={styles.subtitle}>
-              Magari c&apos;è una decisione che continui a rimandare. Oppure al lavoro
-              senti che tutto dipende da te. O ti ritrovi a dubitare delle tue capacità.
-            </p>
-            <p className={styles.approach}>
-              Non serve affrontare tutto insieme.
+              Al lavoro senti che tutto dipende da te. Rimandi una decisione,
+              poi ti chiedi se sei all’altezza.
             </p>
             <p className={styles.contactHint}>
-              Possiamo partire da quello che stai vivendo, parlarne e provare a fare
-              un po&apos; di chiarezza.
+              <strong>CONFRONTO inizia con un messaggio.</strong> Mi racconti
+              una situazione concreta e capiamo se ha senso approfondirla insieme.
             </p>
             <div className={styles.action}>
               <TrackedWhatsAppButton
-                href="https://wa.me/393793408630?text=CONFRONTO"
+                href={whatsappHref}
                 location="ads_confronto"
                 page="/ads/confronto"
                 size="large"
               >
-                Scrivi CONFRONTO su WhatsApp
+                Scrivi a Moreno su WhatsApp
               </TrackedWhatsAppButton>
             </div>
+            <p className={styles.messageHint}>
+              Si apre WhatsApp con un messaggio già pronto. Puoi modificarlo prima di inviarlo.
+            </p>
             <p className={styles.reassurance}>
               Scrivere non comporta iscrizioni automatiche, obblighi o acquisti.
             </p>
           </div>
         </section>
 
+        <section className={styles.trust} aria-labelledby="confronto-person">
+          <h2 id="confronto-person">Chi legge il tuo messaggio</h2>
+          <p>
+            Sono Moreno, Mental Coach e sviluppatore senior. Anche nel mio lavoro
+            mi confronto con responsabilità, pressione e scelte difficili.
+            Leggo personalmente il tuo messaggio e valuto se il coaching è il contesto adatto.
+          </p>
+          <a href="/chi-sono">Conosci Moreno e il suo approccio</a>
+        </section>
+
         <section className={styles.process} aria-labelledby="confronto-process">
           <h2 id="confronto-process">Cosa succede se mi scrivi</h2>
           <ol>
-            <li>Mi scrivi su WhatsApp e mi racconti brevemente cosa stai vivendo.</li>
+            <li><strong>Inizia anche solo con un saluto.</strong> Il messaggio è già pronto. Se vuoi, aggiungi poche righe su quello che stai vivendo.</li>
             <li>Leggo personalmente il tuo messaggio.</li>
             <li>Se ha senso approfondire, valutiamo un primo confronto conoscitivo online di 30 minuti, senza impegno.</li>
             <li>Solo successivamente, se lo riteniamo utile entrambi, possiamo parlare di un eventuale percorso.</li>
           </ol>
         </section>
+        <section className={styles.closing} aria-labelledby="confronto-closing">
+          <h2 id="confronto-closing">Non devi avere già tutto chiaro per scrivere.</h2>
+          <p>Puoi partire da una sola situazione, senza raccontare tutto.</p>
+          <div className={styles.action}>
+            <TrackedWhatsAppButton
+              href={whatsappHref}
+              location="ads_confronto"
+              page="/ads/confronto"
+              size="large"
+            >
+              Scrivi a Moreno su WhatsApp
+            </TrackedWhatsAppButton>
+          </div>
+          <p className={styles.reassurance}>
+            Sei tu a decidere se e come proseguire. Il coaching non è terapia.
+          </p>
+        </section>
         <p className={styles.note}>
-          I tuoi dati vengono usati per gestire la richiesta, nel rispetto della privacy.
+          I tuoi dati vengono usati per gestire la richiesta, nel rispetto della{" "}
+          <a href="/privacy-policy">Privacy Policy</a>. Evita dati sanitari o informazioni sensibili.
         </p>
       </div>
     </main>
