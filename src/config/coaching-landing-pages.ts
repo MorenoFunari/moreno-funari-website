@@ -834,8 +834,8 @@ export const coachingLandingPages = {
       eyebrow: "Online o in presenza",
       title: "Il percorso può svolgersi online.",
       paragraphs: [
-        "Gli incontri online permettono di lavorare dalla propria città senza aggiungere spostamenti e possono offrire maggiore continuità tra lavoro, famiglia, sport e altri impegni.",
-        "Per eventuali incontri in presenza nella zona di Frascati e Castelli Romani, ci si può accordare caso per caso, in base alla situazione e alla disponibilità. Non viene indicata una sede fissa perché non c’è uno studio aperto al pubblico da presentare come tale.",
+        "Gli incontri online sono disponibili in tutta Italia e permettono di lavorare dalla propria città senza aggiungere spostamenti. Possono offrire maggiore continuità tra lavoro, famiglia, sport e altri impegni.",
+        "Gli incontri in presenza nella zona di Frascati e dei Castelli Romani possono svolgersi presso il cliente o in spazi all’aperto, secondo modalità concordate caso per caso e in base alla disponibilità. Non c’è uno studio fisso aperto al pubblico.",
         "Online e presenza non cambiano i confini del percorso: si parte dalla situazione concreta, si chiarisce il tema e si scelgono domande, esercizi e piccoli passi da verificare nel tempo.",
       ],
       points: [
@@ -895,7 +895,7 @@ export const coachingLandingPages = {
     faqs: [
       { question: "Lavori solo con persone di Frascati?", answer: "No. Il riferimento a Frascati e ai Castelli Romani indica una prossimità territoriale reale, ma il percorso online è disponibile anche per chi vive a Roma Sud, in altre zone o fuori regione." },
       { question: "Il percorso si può fare online?", answer: "Sì. Il percorso può svolgersi online, mantenendo ascolto, domande, esercizi e verifica dei passi concordati senza richiedere spostamenti." },
-      { question: "È possibile incontrarsi in presenza?", answer: "Eventuali incontri in presenza nella zona di Frascati e Castelli Romani possono essere valutati caso per caso, in base alla situazione e alla disponibilità. Non c’è una sede fissa aperta al pubblico indicata sul sito." },
+      { question: "È possibile incontrarsi in presenza?", answer: "Sì, presso il cliente o in spazi all’aperto nella zona di Frascati e dei Castelli Romani, secondo modalità concordate caso per caso e in base alla disponibilità. Non c’è uno studio fisso aperto al pubblico." },
       { question: "Su quali temi si può lavorare?", answer: "Blocco, fiducia, autocritica, pressione lavorativa o sportiva, responsabilità, controllo, presenza, priorità e primi passi concreti, sempre entro i confini del mental coaching." },
       { question: "Il mental coaching sostituisce uno psicologo?", answer: "No. Il mental coaching non è terapia, non fa diagnosi e non tratta disturbi. Quando il disagio è intenso o persistente, coinvolge sintomi o sofferenza significativa, è più appropriato rivolgersi a uno psicologo o a un professionista sanitario." },
       { question: "Come faccio a capire se è il percorso giusto per me?", answer: "Puoi partire descrivendo la situazione e ciò che vorresti affrontare. Un primo confronto serve anche a chiarire aspettative e confini, senza obbligarti a iniziare un percorso." },
