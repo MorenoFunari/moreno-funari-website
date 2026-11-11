@@ -26,6 +26,14 @@ export function ApproachSection() {
             </Link>.
           </p>
 
+          <p>
+            Se cerchi un riferimento nella zona, puoi approfondire come si svolge
+            il{" "}
+            <Link href="/coaching/mental-coach-frascati">
+              mental coaching a Frascati e nei Castelli Romani
+            </Link>, anche online.
+          </p>
+
           <ButtonLink href="/coaching" variant="secondary">
             Scopri come lavoro
           </ButtonLink>

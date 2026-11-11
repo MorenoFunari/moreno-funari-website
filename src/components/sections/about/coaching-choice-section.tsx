@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 
@@ -26,6 +28,12 @@ export function CoachingChoiceSection() {
           Il coaching mi ha dato un modo per unire ascolto, domande,
           responsabilità e azione. È qui che la mia esperienza nel lavoro, nello
           sport e nella vita quotidiana incontra la formazione da Mental Coach.
+        </p>
+        <p>
+          Se vuoi capire anche dove possiamo incontrarci, trovi le modalità del{" "}
+          <Link href="/coaching/mental-coach-frascati">
+            mental coaching a Frascati e online
+          </Link>, con incontri in presenza da concordare caso per caso.
         </p>
       </div>
     </Container>
