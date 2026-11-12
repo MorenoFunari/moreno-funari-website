@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useId, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
+import { analyticsConfig } from "@/config/analytics";
 import { TrackedWhatsAppButton } from "@/components/analytics/tracked-whatsapp-button";
 import { pilotWhatsAppUrl } from "@/config/pilot";
 import { readAnalyticsConsent } from "@/lib/analytics/consent";
@@ -58,12 +59,17 @@ function trackGaEvent(
 ) {
   if (
     typeof window === "undefined" ||
+    !analyticsConfig.isConfigured ||
     readAnalyticsConsent()?.status !== "granted"
   ) {
     return;
   }
 
-  window.gtag?.("event", eventName, eventParameters);
+  try {
+    window.gtag?.("event", eventName, eventParameters);
+  } catch {
+    // Measurement failures must not change a successfully captured request.
+  }
 }
 
 function trackGaEventBeforeRedirect(
@@ -72,6 +78,7 @@ function trackGaEventBeforeRedirect(
 ) {
   if (
     typeof window === "undefined" ||
+    !analyticsConfig.isConfigured ||
     readAnalyticsConsent()?.status !== "granted" ||
     typeof window.gtag !== "function"
   ) {
@@ -88,11 +95,15 @@ function trackGaEventBeforeRedirect(
     };
     const timeoutId = window.setTimeout(finish, analyticsRedirectTimeoutMs);
 
-    window.gtag?.("event", eventName, {
-      ...eventParameters,
-      event_callback: finish,
-      event_timeout: analyticsRedirectTimeoutMs,
-    });
+    try {
+      window.gtag?.("event", eventName, {
+        ...eventParameters,
+        event_callback: finish,
+        event_timeout: analyticsRedirectTimeoutMs,
+      });
+    } catch {
+      finish();
+    }
   });
 }
 
@@ -111,6 +122,9 @@ export function ConfrontoLeadForm({
   const formId = useId().replace(/:/g, "");
   const router = useRouter();
   const startedAtRef = useRef(0);
+  const submittingRef = useRef(false);
+  const interactionTrackedRef = useRef(false);
+  const requestRef = useRef<{ body: string; id: string } | null>(null);
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [errors, setErrors] = useState<FieldErrors>({});
 
@@ -120,6 +134,8 @@ export function ConfrontoLeadForm({
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (submittingRef.current) return;
 
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -155,37 +171,40 @@ export function ConfrontoLeadForm({
       return;
     }
 
+    submittingRef.current = true;
     setSubmitState("submitting");
 
     try {
+      const body = JSON.stringify({
+        email, name, note, phone, privacyConsent, source,
+        startedAt: startedAtRef.current, website,
+      });
+      if (requestRef.current?.body !== body) {
+        requestRef.current = { body, id: window.crypto.randomUUID() };
+      }
       const response = await fetch("/api/confronto-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          name,
-          note,
-          phone,
-          privacyConsent,
-          source,
-          startedAt: startedAtRef.current,
-          website,
-        }),
+        body: JSON.stringify({ ...JSON.parse(body), requestId: requestRef.current.id }),
       });
 
       const result = (await response
         .json()
         .catch(() => null)) as ConfrontoLeadResponse | null;
 
-      if (!response.ok || !result?.leadCreated) {
+      if (!response.ok || result?.ok !== true || result.leadCreated !== true) {
         throw new Error("Lead submission failed");
       }
 
-      trackLeadConfrontoSubmitted(eventParameters);
+      try {
+        trackLeadConfrontoSubmitted(eventParameters);
+      } catch {
+        // A third-party tracker cannot turn a confirmed lead into a form error.
+      }
 
       trackGaEvent("confronto_lead_created", eventParameters);
       trackGaEvent(
-        result.notificationSent
+        result.notificationSent === true
           ? "confronto_notification_sent"
           : "confronto_notification_failed",
         eventParameters,
@@ -199,6 +218,7 @@ export function ConfrontoLeadForm({
       form.reset();
       router.push("/grazie-confronto");
     } catch {
+      submittingRef.current = false;
       setSubmitState("error");
     }
   }
@@ -246,7 +266,23 @@ export function ConfrontoLeadForm({
         ) : null}
       </div>
 
-      <form className={styles.form} noValidate onSubmit={handleSubmit}>
+      <form
+        className={styles.form}
+        noValidate
+        onChangeCapture={(event) => {
+          const fieldName = event.target.getAttribute("name");
+          if (
+            !interactionTrackedRef.current &&
+            ["name", "email", "phone", "note", "privacyConsent"].includes(fieldName ?? "") &&
+            analyticsConfig.isConfigured &&
+            readAnalyticsConsent()?.status === "granted"
+          ) {
+            interactionTrackedRef.current = true;
+            trackGaEvent("confronto_form_start", { funnel: "pilot", page, source });
+          }
+        }}
+        onSubmit={handleSubmit}
+      >
         <div aria-hidden="true" className={styles.honeypot}>
           <label htmlFor={`${formId}-website`}>Sito web</label>
           <input

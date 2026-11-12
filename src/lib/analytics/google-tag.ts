@@ -32,11 +32,15 @@ export function googleTagBootstrap() {
   `;
 }
 
-// Fallback for client-side navigation; shares the document-level guard.
-export function trackAdsConfrontoOpen() {
+// One event per route entry. Hydration/Strict Mode share the bootstrap guard;
+// leaving the route re-arms it for a later client-side visit.
+export function trackAdsConfrontoOpen(pathname = window.location.pathname) {
+  if (pathname.replace(/\/$/, "") !== "/ads/confronto") {
+    window.mfAdsConfrontoOpenSent = false;
+    return;
+  }
   if (
     !analyticsConfig.isConfigured ||
-    window.location.pathname.replace(/\/$/, "") !== "/ads/confronto" ||
     window.mfAdsConfrontoOpenSent ||
     !window.gtag
   ) {

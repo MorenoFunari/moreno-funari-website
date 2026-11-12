@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
-import { AdsConfrontoOpenAnalytics } from "@/components/analytics/ads-confronto-open-analytics";
 import { TrackedWhatsAppButton } from "@/components/analytics/tracked-whatsapp-button";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
@@ -23,7 +22,6 @@ const whatsappHref = `https://wa.me/393793408630?text=${encodeURIComponent(
 export default function AdsConfrontoPage() {
   return (
     <main className={styles.landing} id="main-content">
-      <AdsConfrontoOpenAnalytics />
       <div className={styles.content}>
         <section className={styles.hero} aria-labelledby="confronto-title">
           <div className={styles.portrait}>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 
+import { AdsConfrontoOpenAnalytics } from "@/components/analytics/ads-confronto-open-analytics";
 import { AnalyticsConsentManager } from "@/components/analytics/analytics-consent-manager";
 import { SiteShell } from "@/components/layout/site-shell";
 import { GoogleAnalyticsLoader } from "@/components/analytics/google-analytics-loader";
@@ -65,6 +66,7 @@ export default function RootLayout({
       </head>
       <body className={rubik.className}>
         <SiteShell>{children}</SiteShell>
+        <AdsConfrontoOpenAnalytics />
         <AnalyticsConsentManager />
       </body>
     </html>

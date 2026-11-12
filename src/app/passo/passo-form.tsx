@@ -1,8 +1,11 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+
+import { analyticsConfig } from "@/config/analytics";
+import { readAnalyticsConsent } from "@/lib/analytics/consent";
 
 import styles from "./page.module.css";
 
@@ -10,15 +13,19 @@ type SubmitState = "idle" | "submitting" | "error";
 
 type PassoLeadResponse = {
   success?: boolean;
+  guideEmailSent?: boolean;
 };
 
 export function PassoForm() {
   const router = useRouter();
+  const submittingRef = useRef(false);
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
+    if (submittingRef.current) return;
+    submittingRef.current = true;
     const form = event.currentTarget;
     const formData = new FormData(form);
     setSubmitState("submitting");
@@ -32,13 +39,23 @@ export function PassoForm() {
         .json()
         .catch(() => null)) as PassoLeadResponse | null;
 
-      if (!response.ok || result?.success !== true) {
+      if (!response.ok || result?.success !== true || result.guideEmailSent !== true) {
         throw new Error("PASSO submission failed");
       }
 
+      if (analyticsConfig.isConfigured && readAnalyticsConsent()?.status === "granted") {
+        try {
+          window.gtag?.("event", "passo_lead_created", {
+            funnel: "passo", lead_source: "brevo_passo_form", page: "/passo",
+          });
+        } catch {
+          // Delivery success does not depend on Analytics availability.
+        }
+      }
       form.reset();
       router.push("/grazie-passo");
     } catch {
+      submittingRef.current = false;
       setSubmitState("error");
     }
   }

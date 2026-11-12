@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { NextResponse } from "next/server";
 
 const brevoContactsEndpoint = "https://api.brevo.com/v3/contacts";
@@ -20,6 +21,7 @@ type ConfrontoLeadPayload = {
   source?: unknown;
   startedAt?: unknown;
   website?: unknown;
+  requestId?: unknown;
 };
 
 const minimumCompletionTimeMs = 1_200;
@@ -61,6 +63,7 @@ async function createBrevoContact({
       "Content-Type": "application/json",
     },
     body: JSON.stringify(body),
+    signal: AbortSignal.timeout(10_000),
   });
 }
 
@@ -102,6 +105,7 @@ async function sendLeadNotification({
 
   const response = await fetch(brevoTransactionalEmailEndpoint, {
     method: "POST",
+    signal: AbortSignal.timeout(10_000),
     headers: {
       "api-key": apiKey,
       "Content-Type": "application/json",
@@ -155,7 +159,11 @@ export async function POST(request: Request) {
   let payload: ConfrontoLeadPayload;
 
   try {
-    payload = (await request.json()) as ConfrontoLeadPayload;
+    const value: unknown = await request.json();
+    if (!value || typeof value !== "object" || Array.isArray(value)) {
+      return jsonError("Invalid JSON payload.", 400);
+    }
+    payload = value as ConfrontoLeadPayload;
   } catch {
     return jsonError("Invalid JSON payload.", 400);
   }
@@ -223,6 +231,69 @@ export async function POST(request: Request) {
     return jsonError("Lead capture is not configured.", 503);
   }
 
+  const requestId = normalizeString(payload.requestId);
+  if (payload.requestId !== undefined &&
+      !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(requestId)) {
+    return jsonError("Invalid request id.", 400);
+  }
+  const input = { apiKey, listId, email, name, note, phone, leadSource };
+  const perform = () => captureLead(input).catch(() =>
+    jsonError("Lead capture provider unavailable.", 502),
+  );
+  // Older cached clients remain supported; new clients supply a stable retry id.
+  if (!requestId) return perform();
+  return captureOnce(requestId, input, perform);
+}
+
+type AcceptedLead = {
+  apiKey: string;
+  listId: number;
+  email: string;
+  name: string;
+  note: string;
+  phone: string;
+  leadSource: string;
+};
+
+type PendingCapture = {
+  fingerprint: string;
+  expiresAt: number;
+  settled: boolean;
+  response: Promise<NextResponse>;
+};
+
+// Best effort per process only. No raw fields or identifiers are stored in the
+// replay ledger; this is not durable cross-instance exactly-once delivery.
+const captures = new Map<string, PendingCapture>();
+const replayWindowMs = 10 * 60 * 1_000;
+
+async function captureOnce(id: string, input: AcceptedLead, perform: () => Promise<NextResponse>) {
+  const now = Date.now();
+  for (const [key, entry] of captures) {
+    if (entry.settled && entry.expiresAt <= now) captures.delete(key);
+  }
+  const key = createHash("sha256").update(id).digest("hex");
+  const { email, name, note, phone, leadSource } = input;
+  const fingerprint = createHash("sha256")
+    .update(JSON.stringify({ email, name, note, phone, leadSource })).digest("hex");
+  const existing = captures.get(key);
+  if (existing) {
+    if (existing.fingerprint !== fingerprint) return jsonError("Request id already used.", 409);
+    return (await existing.response).clone();
+  }
+  if (captures.size >= 512) return jsonError("Please retry later.", 503);
+  const entry: PendingCapture = {
+    fingerprint, expiresAt: now + replayWindowMs, settled: false, response: perform(),
+  };
+  captures.set(key, entry);
+  const response = await entry.response;
+  entry.settled = true;
+  entry.expiresAt = Date.now() + replayWindowMs;
+  if (!response.ok) captures.delete(key);
+  return response.clone();
+}
+
+async function captureLead({ apiKey, listId, email, name, note, phone, leadSource }: AcceptedLead) {
   const baseContact = {
     email,
     listIds: [listId],
