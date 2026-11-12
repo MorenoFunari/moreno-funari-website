@@ -28,8 +28,6 @@ export function PassoThankYouAnalytics() {
       };
 
       window.gtag("event", "passo_thank_you_view", eventParameters);
-      window.gtag("event", "passo_lead_created", eventParameters);
-      window.gtag("event", "generate_lead", eventParameters);
     }
 
     trackLead();
