@@ -5,6 +5,7 @@ const brevoContactsEndpoint = "https://api.brevo.com/v3/contacts";
 const brevoTransactionalEmailEndpoint = "https://api.brevo.com/v3/smtp/email";
 const defaultLeadSource = "confronto_landing";
 const allowedLeadSources = new Set([
+  "ads_confronto_form",
   "confronto_landing",
   "home_pilot_form",
   "contatti_form",
@@ -180,7 +181,8 @@ export async function POST(request: Request) {
   const leadSource = allowedLeadSources.has(requestedSource)
     ? requestedSource
     : defaultLeadSource;
-  const isConfrontoLanding = leadSource === "confronto_landing";
+  const isConfrontoLanding =
+    leadSource === "confronto_landing" || leadSource === "ads_confronto_form";
 
   if (website) {
     console.warn("Confronto lead rejected by honeypot.", {

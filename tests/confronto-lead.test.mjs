@@ -42,3 +42,8 @@ test('null/array/malformed payloads fail validation without provider calls', asy
   const s = setup(); for (const body of ['null','[]','{']) { const r = await s.post(new Request('https://morenofunari.it/api/confronto-lead', { method: 'POST', body })); assert.equal(r.status, 400); } assert.equal(s.calls.length, 0);
 });
 test('cached older clients without requestId still work', async () => { const s = setup(); const p = data(); delete p.requestId; assert.equal((await s.post(request(p))).status, 200); });
+for (const change of [{}, {note:''}, {privacyConsent:false}]) test('Ads source preserves optional phone, required note and privacy: '+JSON.stringify(change), async () => {
+  const s=setup(); const r=await s.post(request({...data(),source:'ads_confronto_form',...change}));
+  const valid=Object.keys(change).length===0; assert.equal(r.status,valid?200:400);
+  if(valid){assert.equal(s.calls[0].body.attributes.PILOT_SOURCE,'ads_confronto_form');assert.deepEqual(s.calls[0].body.listIds,[99]);assert.equal(s.calls.length,2)} else assert.equal(s.calls.length,0);
+});

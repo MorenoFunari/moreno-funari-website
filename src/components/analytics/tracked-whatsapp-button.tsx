@@ -16,6 +16,7 @@ type TrackedWhatsAppButtonProps = {
   location: string;
   page?: string;
   size?: "medium" | "large";
+  variant?: "primary" | "secondary";
 };
 
 export function TrackedWhatsAppButton({
@@ -24,6 +25,7 @@ export function TrackedWhatsAppButton({
   location,
   page,
   size = "medium",
+  variant = "primary",
 }: TrackedWhatsAppButtonProps) {
   return (
     <ButtonLink
@@ -55,6 +57,7 @@ export function TrackedWhatsAppButton({
         }
       }}
       size={size}
+      variant={variant}
       target="_blank"
     >
       {children}
