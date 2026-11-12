@@ -18,6 +18,7 @@ type FieldErrors = Partial<
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
 export type ConfrontoLeadSource =
+  | "ads_confronto_form"
   | "confronto_landing"
   | "home_pilot_form"
   | "contatti_form"
@@ -32,6 +33,7 @@ type ConfrontoLeadFormProps = {
   noteRequired?: boolean;
   page: string;
   phoneRequired?: boolean;
+  reassuranceText?: string;
   source: ConfrontoLeadSource;
   title?: string;
   variant?: "full" | "compact" | "embedded";
@@ -115,6 +117,7 @@ export function ConfrontoLeadForm({
   noteRequired = false,
   page,
   phoneRequired = true,
+  reassuranceText = "Inviare la richiesta non significa entrare automaticamente nel percorso. La candidatura viene letta e valutata manualmente.",
   source,
   title = "Lascia i tuoi dati",
   variant = "full",
@@ -417,7 +420,7 @@ export function ConfrontoLeadForm({
         >
           {submitState === "submitting" ? "Invio in corso..." : ctaLabel}
         </button>
-        <p className={styles.privacyHelp}>Inviare la richiesta non significa entrare automaticamente nel percorso. La candidatura viene letta e valutata manualmente.</p>
+        <p className={styles.privacyHelp}>{reassuranceText}</p>
 
         {submitState === "error" ? (
           <div className={styles.formError} role="alert">

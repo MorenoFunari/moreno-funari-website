@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { loadSource, hooks, find, TestFormData, event, deferred, assertNoPersonalData } from './helpers/tracking-harness.mjs';
 const config = { isConfigured: true, measurementId: 'G-TEST' };
-function formSetup({ status = 'granted', provider, brokenTracker = false, callback = true } = {}) {
+function formSetup({ status = 'granted', provider, brokenTracker = false, callback = true, page = '/confronto', source: formSource = 'confronto_landing' } = {}) {
   const h = hooks(), events = [], requests = [], navigation = [], meta = [];
   const window = { crypto: webcrypto, setTimeout, clearTimeout, gtag: (...x) => { if (brokenTracker) throw Error('tracker'); events.push(x); if (callback) x[2]?.event_callback?.(); } };
   const state = { status };
@@ -18,7 +18,7 @@ function formSetup({ status = 'granted', provider, brokenTracker = false, callba
     '@/lib/analytics/meta-pixel': { trackLeadConfrontoSubmitted: x => { if (brokenTracker) throw Error('pixel'); meta.push(x); } },
     './confronto-lead-form.module.css': {},
   }, { window, FormData: TestFormData, fetch: async (url, options) => { requests.push({ url, ...options, payload: JSON.parse(options.body) }); return provider ? provider() : Response.json({ ok: true, leadCreated: true, notificationSent: true }); } });
-  const render = () => find(h.render(source.ConfrontoLeadForm, { page: '/confronto', source: 'confronto_landing', noteRequired: true, phoneRequired: false }), x => x.type === 'form');
+  const render = () => find(h.render(source.ConfrontoLeadForm, { page, source: formSource, noteRequired: true, phoneRequired: false }), x => x.type === 'form');
   let tree = render();
   return { events, requests, navigation, meta, form, state, window, render, h,
     submit: () => tree.props.onSubmit(event(form)),
@@ -97,7 +97,25 @@ for (const status of ['denied','granted']) test('PASSO success is isolated from 
   const tree = h.render(source.PassoForm); const form = { values: {}, reset() {} }; const first = tree.props.onSubmit(event(form)); await tree.props.onSubmit(event(form)); assert.equal(requests, 1); gate.resolve(Response.json({ success: true, guideEmailSent: true })); await first;
   assert.deepEqual(events.map(x => x[1]), status === 'granted' ? ['passo_lead_created'] : []); assert.deepEqual(nav, ['/grazie-passo']);
 });
-test('CONFRONTO thank-you has no success tracker or form, and Ads landing still has no form', () => {
+test('CONFRONTO thank-you has no success tracker or form, and Ads reuses the verified form', () => {
   const thanks = readFileSync(new URL('../src/app/grazie-confronto/page.tsx', import.meta.url), 'utf8'); assert(!/gtag|Analytics|generate_lead|confronto_lead_created/.test(thanks));
-  const ads = readFileSync(new URL('../src/app/ads/confronto/page.tsx', import.meta.url), 'utf8'); assert(!/<form|LeadForm/.test(ads));
+  const ads = readFileSync(new URL('../src/app/ads/confronto/page.tsx', import.meta.url), 'utf8'); assert(ads.includes('<ConfrontoLeadForm')); assert(ads.includes('source="ads_confronto_form"')); assert(ads.includes('href="#richiesta-confronto"'));
+});
+
+for (const status of ['denied','granted']) test('Ads embedded form: interaction, failure, retry, double click, confirmed success ('+status+')', async () => {
+  let fail = true; const gate = deferred();
+  const s = formSetup({ status, page:'/ads/confronto', source:'ads_confronto_form', provider: () => fail ? Response.json({ok:false},{status:502}) : gate.promise });
+  s.change('note'); s.change('email');
+  s.form.values.name = ''; await s.submit(); assert.equal(s.requests.length,0);
+  s.form.values.name = 'Private name'; await s.submit(); assert.equal(s.navigation.length,0);
+  assert(!s.events.some(x=>x[1]==='confronto_lead_created')); fail = false;
+  const pending = s.submit(); await s.submit(); assert.equal(s.requests.length,2);
+  assert.equal(s.requests[0].payload.requestId,s.requests[1].payload.requestId);
+  gate.resolve(Response.json({ok:true,leadCreated:true,notificationSent:true})); await pending; await s.submit();
+  assert.equal(s.requests.length,2); assert.equal(s.requests[1].payload.source,'ads_confronto_form');
+  assert.deepEqual(s.navigation,['/grazie-confronto']);
+  assert.equal(s.events.filter(x=>x[1]==='confronto_form_start').length,status==='granted'?1:0);
+  assert.equal(s.events.filter(x=>x[1]==='confronto_lead_created').length,status==='granted'?1:0);
+  for(const e of s.events) { assert.equal(e[2].page,'/ads/confronto'); assert.equal(e[2].source,'ads_confronto_form'); }
+  assertNoPersonalData(s.events);
 });
