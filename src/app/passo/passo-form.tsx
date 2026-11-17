@@ -14,6 +14,8 @@ type SubmitState = "idle" | "submitting" | "error";
 type PassoLeadResponse = {
   success?: boolean;
   guideEmailSent?: boolean;
+  error?: "contact" | "email" | "configuration";
+  code?: string;
 };
 
 export function PassoForm() {
@@ -21,6 +23,7 @@ export function PassoForm() {
   const submittingRef = useRef(false);
   const requestRef = useRef<{ id: string; at: number; payload: string } | null>(null);
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
+  const [errorReference, setErrorReference] = useState("");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -30,6 +33,7 @@ export function PassoForm() {
     const form = event.currentTarget;
     const formData = new FormData(form);
     setSubmitState("submitting");
+    setErrorReference("");
 
     try {
       const payload = JSON.stringify([formData.get("EMAIL"), formData.get("NOME"), formData.get("CONSENSO")]);
@@ -47,6 +51,10 @@ export function PassoForm() {
         .catch(() => null)) as PassoLeadResponse | null;
 
       if (!response.ok || result?.success !== true || result.guideEmailSent !== true) {
+        if (result?.error && ["contact", "email", "configuration"].includes(result.error)
+          && result.code && /^[a-z_]{1,40}$/.test(result.code)) {
+          setErrorReference(`${result.error}/${result.code}`);
+        }
         throw new Error("PASSO submission failed");
       }
 
@@ -136,6 +144,7 @@ export function PassoForm() {
         <p className={styles.formError} role="alert">
           Qualcosa non è andato. Riprova tra poco o scrivimi a{" "}
           <a href="mailto:info@morenofunari.it">info@morenofunari.it</a>.
+          {errorReference ? <> Riferimento: {errorReference}.</> : null}
         </p>
       ) : null}
       <p className={styles.formFallback}>

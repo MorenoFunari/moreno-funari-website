@@ -23,12 +23,20 @@ function getPositiveInteger(value: string | undefined, fallback: number) {
     : fallback;
 }
 
-function jsonError(status = 502) {
-  return NextResponse.json({ success: false }, { status });
+type FailureStage = "contact" | "email" | "configuration";
+const publicProviderCodes = new Set([
+  "invalid_parameter", "missing_parameter", "unauthorized", "permission_denied",
+  "document_not_found", "duplicate_parameter", "method_not_allowed",
+  "not_enough_credits", "account_under_validation", "too_many_requests",
+]);
+function jsonError(status = 502, stage?: FailureStage, providerCode?: unknown) {
+  const code = typeof providerCode === "string" && publicProviderCodes.has(providerCode)
+    ? providerCode : "provider_error";
+  return NextResponse.json({ success: false, ...(stage ? { error: stage, code } : {}) }, { status });
 }
 
 async function providerError(response: Response, stage: string) {
-  const error = await response.json().catch(() => null);
+  const error = await response.clone().json().catch(() => null);
   // Never log provider messages: they can contain contact information.
   console.error("Brevo PASSO operation rejected.", {
     stage, status: response.status,
@@ -156,7 +164,7 @@ async function deliver(email: string, name: string, requestId: string) {
 
   if (!apiKey) {
     console.error("PASSO lead capture is missing BREVO_API_KEY.");
-    return jsonError(503);
+    return jsonError(503, "configuration");
   }
 
   const listId = getPositiveInteger(
@@ -190,15 +198,15 @@ async function deliver(email: string, name: string, requestId: string) {
     deliveryName = contact.name;
   } catch {
     console.error("Brevo PASSO contact request failed.");
-    return jsonError();
+    return jsonError(502, "contact");
   }
 
   if (!contactResponse.ok) {
     console.error("Brevo rejected PASSO contact creation.", {
       status: contactResponse.status,
     });
-    await providerError(contactResponse, "contact");
-    return jsonError();
+    const error = await providerError(contactResponse, "contact");
+    return jsonError(502, "contact", error?.code);
   }
 
   let emailResponse: Response;
@@ -213,7 +221,7 @@ async function deliver(email: string, name: string, requestId: string) {
     });
   } catch {
     console.error("Brevo PASSO guide email request failed.");
-    return jsonError();
+    return jsonError(502, "email");
   }
 
   if (!emailResponse.ok) {
@@ -222,7 +230,7 @@ async function deliver(email: string, name: string, requestId: string) {
     // explicit idempotency rejection confirms a previously accepted send.
     if (!(emailResponse.status === 400 && error?.code === "duplicate_parameter"
       && typeof error?.message === "string" && /idempotenc/i.test(error.message))) {
-      return jsonError();
+      return jsonError(502, "email", error?.code);
     }
   }
 
