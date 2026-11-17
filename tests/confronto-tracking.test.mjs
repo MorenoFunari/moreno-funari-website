@@ -93,7 +93,7 @@ test('PASSO thank-you direct visits, remounts and grants never create commercial
 });
 for (const status of ['denied','granted']) test('PASSO success is isolated from CONFRONTO ('+status+')', async () => {
   const h = hooks(), events = [], nav = []; const gate = deferred(); let requests = 0;
-  const source = loadSource('src/app/passo/passo-form.tsx', { react: h.react, 'react/jsx-runtime': h.jsx, 'next/link': { default() {} }, 'next/navigation': { useRouter: () => ({ push: x => nav.push(x) }) }, '@/config/analytics': { analyticsConfig: config }, '@/lib/analytics/consent': { readAnalyticsConsent: () => ({ status }) }, './page.module.css': {} }, { window: { gtag: (...x) => events.push(x) }, FormData: TestFormData, fetch: () => { requests++; return gate.promise; } });
+  const source = loadSource('src/app/passo/passo-form.tsx', { react: h.react, 'react/jsx-runtime': h.jsx, 'next/link': { default() {} }, 'next/navigation': { useRouter: () => ({ push: x => nav.push(x) }) }, '@/config/analytics': { analyticsConfig: config }, '@/lib/analytics/consent': { readAnalyticsConsent: () => ({ status }) }, './page.module.css': {} }, { window: { crypto: webcrypto, gtag: (...x) => events.push(x) }, FormData: TestFormData, fetch: () => { requests++; return gate.promise; } });
   const tree = h.render(source.PassoForm); const form = { values: {}, reset() {} }; const first = tree.props.onSubmit(event(form)); await tree.props.onSubmit(event(form)); assert.equal(requests, 1); gate.resolve(Response.json({ success: true, guideEmailSent: true })); await first;
   assert.deepEqual(events.map(x => x[1]), status === 'granted' ? ['passo_lead_created'] : []); assert.deepEqual(nav, ['/grazie-passo']);
 });
