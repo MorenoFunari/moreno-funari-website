@@ -45,7 +45,7 @@ export default function CoachingPage() {
         noteLabel="Situazione concreta"
         page="/coaching"
         source="coaching_form"
-        text="CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso di coaching personalizzato."
+        text="CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso di coaching personalizzato a pagamento."
         points={[]}
         title="Vuoi capire se il coaching può fare per te?"
       />
