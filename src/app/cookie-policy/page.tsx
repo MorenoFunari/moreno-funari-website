@@ -103,10 +103,8 @@ export default function CookiePolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>4. Google Analytics 4</h2>
-            <p>Il tag di produzione utilizza lo stream G-Z7E9BSCE4N. Il cookie
-              di sessione appartiene alla famiglia _ga_*: il suffisso dipende
-              dalla configurazione del tag. La tabella descrive i cookie che
-              possono essere impostati dopo consenso.</p>
+            <p>Il tag di produzione utilizza lo stream G-Z7E9BSCE4N. I cookie riportati nella tabella sono stati verificati sul sito
+              dopo il consenso analytics; vengono rimossi alla revoca.</p>
             <p className={styles.tableHint} id="analytics-table-hint">
               La tabella può essere fatta scorrere orizzontalmente su schermi
               stretti.
@@ -139,7 +137,7 @@ export default function CookiePolicyPage() {
                     <td>Soltanto dopo consenso</td>
                   </tr>
                   <tr>
-                    <td>_ga_* (cookie di sessione GA4)</td>
+                    <td>_ga_Z7E9BSCE4N</td>
                     <td>Google Analytics</td>
                     <td>Conservare lo stato della sessione</td>
                     <td>Durata predefinita: 2 anni</td>
