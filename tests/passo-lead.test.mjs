@@ -65,3 +65,16 @@ for(const change of [{CONSENSO:'0'},{EMAIL:'invalid'},{email_address_check:'bot'
 test('request id cannot be reused with different data in the same instance',async()=>{const s=setup();const p=data();await s.post(p);assert.equal((await s.post({...p,NOME:'Another'})).status,409);});
 
 test('network failure never returns success',async()=>{const s=setup(()=>{throw Error('offline');});assert.equal((await s.post(data())).status,502);});
+
+test('contact error exposes only stage and allowlisted code, never provider message',async()=>{
+  const s=setup(()=>Response.json({code:'unauthorized',message:'Sensitive contact test@example.com'},{status:401}));
+  assert.deepEqual(await (await s.post(data())).json(),{success:false,error:'contact',code:'unauthorized'});
+});
+test('rejected attribute code survives the create failure without exposing its message',async()=>{
+  const s=setup(c=>c.method==='GET'?new Response(null,{status:404}):Response.json({code:'invalid_parameter',message:'Sensitive attribute value'},{status:400}));
+  assert.deepEqual(await (await s.post(data())).json(),{success:false,error:'contact',code:'invalid_parameter'});
+});
+test('email error is distinct from contact failure and arbitrary provider codes are hidden',async()=>{
+  const s=setup(c=>c.method==='GET'?Response.json({attributes:{}}):c.url.endsWith('/smtp/email')?Response.json({code:'sensitive_unknown_value',message:'test@example.com'},{status:400}):accepted());
+  assert.deepEqual(await (await s.post(data())).json(),{success:false,error:'email',code:'provider_error'});
+});
