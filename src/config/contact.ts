@@ -80,7 +80,7 @@ export const contactFaqs = [
   {
     question: "Quando ricevo informazioni su durata, modalità e costi?",
     answer:
-      "Queste informazioni vengono chiarite prima di fissare un eventuale incontro, così puoi decidere con trasparenza e senza impegno.",
+      "CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire. Per un eventuale percorso personalizzato, durata, modalità e costi vengono concordati prima di iniziare.",
   },
   {
     question: "È meglio scrivere via email o su Instagram?",

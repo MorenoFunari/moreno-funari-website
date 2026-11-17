@@ -23,16 +23,15 @@ type PilotConversionSectionProps = {
 };
 
 const defaultPoints = [
-  "6 incontri online",
-  "massimo 3 partecipanti",
-  "gratuito in fase pilota",
-  "si parte da una situazione concreta",
-  "nessuna promessa miracolosa",
+  "Primo incontro conoscitivo gratuito",
+  "30 minuti",
+  "Online oppure in presenza, da concordare",
+  "Senza obbligo di proseguire",
 ] as const;
 
 export function PilotConversionSection({
   className,
-  eyebrow = "Percorso pilota gratuito",
+  eyebrow = "CONFRONTO",
   formIntro,
   formTitle,
   noteLabel = "Situazione concreta / messaggio",
@@ -80,6 +79,7 @@ export function PilotConversionSection({
           <ConfrontoLeadForm
             ctaLabel="Invia richiesta"
             introText={formIntro}
+            reassuranceText="Inviare la richiesta non ti impegna a proseguire. Leggo personalmente ogni richiesta e concordiamo insieme l’eventuale incontro."
             noteLabel={noteLabel}
             page={page}
             source={source}

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ...createPageMetadata({
     title: "Moreno Funari | Mental Coach",
     description:
-      "Moreno Funari, mental coach: percorsi e risorse per affrontare blocco e pressione nel lavoro, nello sport e nella vita personale, con passi concreti.",
+      "Coaching per affrontare blocco e pressione nel lavoro, nello sport e nella vita. Primo incontro CONFRONTO gratuito di 30 minuti, online o in presenza da concordare.",
     path: "/",
     absoluteTitle: true,
   }),

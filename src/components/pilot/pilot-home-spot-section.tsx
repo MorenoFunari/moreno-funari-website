@@ -14,14 +14,12 @@ export function PilotHomeSpotSection() {
     >
       <div className={styles.callout}>
         <div className={styles.copy}>
-          <p className={styles.eyebrow}>PERCORSO PILOTA GRATUITO</p>
+          <p className={styles.eyebrow}>CONFRONTO</p>
           <h2 id="home-pilot-spot-title">
             Hai una situazione concreta che senti bloccata?
           </h2>
           <p>
-            Sto aprendo massimo 3 posti per un percorso pilota gratuito. Si
-            parte da una situazione reale: una scelta rimandata, una pressione
-            che torna, un blocco che fai fatica a sciogliere.
+            CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso di coaching personalizzato.
           </p>
         </div>
 
@@ -31,7 +29,7 @@ export function PilotHomeSpotSection() {
             page="/"
             size="medium"
           >
-            Scopri il percorso
+            Scopri CONFRONTO
           </TrackedConfrontoLink>
           <TrackedWhatsAppButton
             href={pilotWhatsAppUrl}

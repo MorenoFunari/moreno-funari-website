@@ -6,10 +6,10 @@ import { pilotWhatsAppUrl } from "@/config/pilot";
 import styles from "./pilot-home-form-section.module.css";
 
 const points = [
-  "6 incontri online",
-  "massimo 3 partecipanti",
-  "gratuito in fase pilota",
-  "nessuna promessa miracolosa",
+  "Primo incontro conoscitivo gratuito",
+  "30 minuti",
+  "Online oppure in presenza, da concordare",
+  "Senza obbligo di proseguire",
 ] as const;
 
 export function PilotHomeFormSection() {
@@ -20,7 +20,7 @@ export function PilotHomeFormSection() {
       className={styles.section}
     >
       <div className={styles.header}>
-        <p className={styles.eyebrow}>PERCORSO PILOTA GRATUITO</p>
+        <p className={styles.eyebrow}>CONFRONTO</p>
         <h2 id="home-pilot-form-title">Vuoi capire se può fare per te?</h2>
         <p>
           Lascia i tuoi dati e raccontami in poche parole da quale situazione

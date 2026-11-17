@@ -1,6 +1,3 @@
-import { createElement } from "react";
-import Link from "next/link";
-
 export const coachingSituations = [
   "Ti senti bloccato e continui a rimandare una scelta o un’azione.",
   "Vivi pressione nel lavoro, nello sport o nella vita personale.",
@@ -115,17 +112,12 @@ export const coachingFaqs = [
   {
     question: "Quante sessioni servono?",
     answer:
-      createElement(
-        "span", null,
-        "Il percorso individuale ",
-        createElement(Link, { href: "/percorsi" }, "Un Passo Possibile"),
-        " prevede 6 incontri online di circa 60 minuti, uno a settimana. Prima di iniziare verifichiamo insieme se è adatto alla situazione che vuoi affrontare.",
-      ),
+      "Il percorso è personalizzato. Durata, numero degli incontri, modalità e costi si concordano prima di iniziare, dopo il primo incontro conoscitivo.",
   },
   {
     question: "Posso iniziare con un solo confronto?",
     answer:
-      "Sì. Un primo confronto può servire a fare chiarezza e a capire se desideri proseguire. Non comporta l’obbligo di iniziare un percorso.",
+      "CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso personalizzato.",
   },
   {
     question: "Qual è la differenza rispetto alla psicoterapia?",
@@ -135,11 +127,6 @@ export const coachingFaqs = [
   {
     question: "Dove trovo durata, modalità e costi?",
     answer:
-      createElement(
-        "span", null,
-        "Durata, modalità e prezzi del percorso individuale sono indicati nella pagina ",
-        createElement(Link, { href: "/percorsi" }, "Un Passo Possibile"),
-        ". Il percorso pilota gratuito ha condizioni e accesso separati.",
-      ),
+      "CONFRONTO è gratuito e dura 30 minuti, online oppure in presenza da concordare. Durata, modalità e costi di un eventuale percorso personalizzato vengono chiariti prima di iniziare.",
   },
 ] as const;

@@ -31,10 +31,10 @@ export function PilotCtaBox({
       ? "Lascia una richiesta"
       : formSource === "coaching_form"
         ? "Vuoi partire da una situazione concreta?"
-      : "Vuoi capire se il percorso pilota può fare per te?";
+      : "Vuoi capire se il coaching può fare per te?";
   const formIntro =
     formSource === "contatti_form"
-      ? "Puoi scrivermi per il percorso pilota, per una domanda sul coaching o per capire se posso aiutarti rispetto a una situazione concreta."
+      ? "Puoi scrivermi per CONFRONTO, per una domanda sul coaching o per raccontarmi una situazione concreta."
       : formSource === "coaching_form"
         ? "Lascia i tuoi dati oppure scrivimi CONFRONTO su WhatsApp. Ti ricontatto io per capire se può avere senso partire da ciò che stai vivendo."
       : "Lascia i tuoi dati: ti ricontatto io per capire se il percorso può essere adatto alla situazione che stai vivendo.";
@@ -58,17 +58,16 @@ export function PilotCtaBox({
         .join(" ")}
     >
       <div className={styles.copy}>
-        <p className={styles.eyebrow}>Percorso pilota gratuito</p>
+        <p className={styles.eyebrow}>CONFRONTO</p>
         <h2 id="pilot-cta-title">
-          Un Passo Possibile — Percorso Pilota gratuito
+          Un primo incontro per conoscerci
         </h2>
         <p>
           Per chi si sente bloccato, sotto pressione o confuso rispetto a una
           situazione concreta.
         </p>
         <p>
-          Non serve avere già tutto chiaro. Partiamo da ciò che stai vivendo
-          davvero e lavoriamo su un prossimo passo possibile.
+          CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire.
         </p>
         {showContactDetails ? (
           <ul className={styles.contactList}>

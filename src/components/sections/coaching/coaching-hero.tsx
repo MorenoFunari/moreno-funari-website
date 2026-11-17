@@ -32,7 +32,7 @@ export function CoachingHero() {
             Raccontami la situazione concreta
           </ButtonLink>
           <ButtonLink href="/confronto#cosa-succede-dopo" size="large" variant="secondary">
-            Leggi cosa succede nel Pilot
+            Leggi cosa succede dopo
           </ButtonLink>
         </div>
       </div>

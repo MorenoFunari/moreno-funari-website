@@ -13,11 +13,10 @@ type PilotCtaBannerProps = {
 };
 
 const pilotPoints = [
-  "6 incontri online",
-  "massimo 3 partecipanti",
-  "gratuito in fase pilota",
-  "nessuna promessa miracolosa",
-  "si parte da una situazione concreta",
+  "Primo incontro conoscitivo gratuito",
+  "30 minuti",
+  "Online oppure in presenza, da concordare",
+  "Senza obbligo di proseguire",
 ] as const;
 
 export function PilotCtaBanner({
@@ -45,17 +44,16 @@ export function PilotCtaBanner({
       >
         <div className={styles.copy}>
           <p className={styles.eyebrow}>
-            {isCompact ? "Percorso pilota" : "Percorso pilota gratuito"}
+            CONFRONTO
           </p>
           <h2 id={titleId}>
             {isCompact
               ? "Hai una situazione concreta che continui a rimandare?"
-              : "Un Passo Possibile — Percorso Pilota gratuito"}
+              : "Partiamo dalla situazione che stai vivendo"}
           </h2>
           {isCompact ? (
             <p>
-              Sto aprendo un percorso pilota gratuito per lavorare su blocco,
-              pressione e prossimo passo possibile.
+              CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire.
             </p>
           ) : (
             <>
@@ -64,8 +62,7 @@ export function PilotCtaBanner({
                 una situazione concreta.
               </p>
               <p>
-                Non serve avere già tutto chiaro. Partiamo da ciò che stai
-                vivendo davvero e lavoriamo su un prossimo passo possibile.
+                Comprendiamo la situazione e valutiamo insieme un eventuale percorso di coaching personalizzato.
               </p>
               <ul className={styles.points}>
                 {pilotPoints.map((point) => (
@@ -81,7 +78,7 @@ export function PilotCtaBanner({
             page={page}
             size={isCompact ? "medium" : "large"}
           >
-            {isCompact ? "Scopri il percorso pilota" : "Lascia i tuoi dati"}
+            Scopri CONFRONTO
           </TrackedConfrontoLink>
           <TrackedWhatsAppButton
             href={pilotWhatsAppUrl}

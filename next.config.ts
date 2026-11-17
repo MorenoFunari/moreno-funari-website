@@ -57,7 +57,7 @@ const nextConfig: NextConfig = {
       {
         source: "/wa",
         destination:
-          "https://wa.me/393793408630?text=Ciao%20Moreno%2C%20vorrei%20info%20sul%20percorso%20pilota",
+          "https://wa.me/393793408630?text=Ciao%20Moreno%2C%20vorrei%20un%20CONFRONTO",
         permanent: false,
       },
     ];

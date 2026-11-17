@@ -20,7 +20,7 @@ import { createPageMetadata } from "@/lib/seo/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "Mental coaching online",
   description:
-    "Un percorso di mental coaching online, umano e concreto, per fare chiarezza su blocco, pressione, fiducia e individuare un primo passo possibile.",
+    "Coaching personalizzato per affrontare blocco e pressione. CONFRONTO gratuito di 30 minuti, online oppure in presenza da concordare, senza obbligo di proseguire.",
   path: "/coaching",
 });
 
@@ -39,14 +39,15 @@ export default function CoachingPage() {
       <BoundariesSection />
       <CoachingFaqSection />
       <PilotConversionSection
-        eyebrow="Percorso pilota"
-        formIntro="Se senti che una scelta, una pressione o un blocco sta diventando difficile da gestire da solo, puoi lasciarmi una richiesta. Ti ricontatto io per capire se il percorso pilota può essere adatto."
+        eyebrow="CONFRONTO"
+        formIntro="Se senti che una scelta, una pressione o un blocco sta diventando difficile da gestire da solo, puoi lasciarmi una richiesta. Leggo personalmente la tua richiesta e ti rispondo per valutare insieme il prossimo passo."
         formTitle="Vuoi partire da una situazione concreta?"
         noteLabel="Situazione concreta"
         page="/coaching"
         source="coaching_form"
-        text="Dopo aver visto cos’è il coaching e quali sono i suoi confini, puoi lasciare una richiesta se senti che c’è una situazione concreta da cui partire."
-        title="Vuoi capire se il percorso pilota può aiutarti?"
+        text="CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso di coaching personalizzato."
+        points={[]}
+        title="Vuoi capire se il coaching può fare per te?"
       />
       <CoachingClosingCta />
     </main>

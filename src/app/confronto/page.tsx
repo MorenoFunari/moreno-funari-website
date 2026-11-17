@@ -15,33 +15,33 @@ const situations = [
 ] as const;
 
 const nextSteps = [
-  ["Scrivi cosa stai vivendo", "Scrivi CONFRONTO o compila il form: bastano poche righe su una situazione concreta."],
-  ["Leggo personalmente", "Valuto con calma se questo può essere il contesto giusto."],
-  ["Ricevi il link Calendly", "Se ha senso proseguire, ti mando il link per fissare il confronto conoscitivo."],
-  ["Ci conosciamo", "Facciamo una call conoscitiva gratuita di 30 minuti, senza impegno a iniziare."],
-  ["Decidiamo entrambi", "Solo se entrambi confermiamo, ti invio l’Accordo Pilot e il Privacy Pack."],
-  ["Parte il Pilot", "Il percorso inizia dopo la firma e il completamento dei documenti."],
+  ["Mi racconti la situazione", "Compila il modulo o scrivi CONFRONTO: bastano poche righe su ciò che stai vivendo."],
+  ["Leggo personalmente", "Leggo la richiesta e ti rispondo per capire se il coaching può essere il contesto adatto."],
+  ["Concordiamo l’incontro", "Se ha senso, concordiamo un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza."],
+  ["Valutiamo il prossimo passo", "Comprendiamo meglio la situazione e valutiamo insieme un eventuale percorso di coaching personalizzato. Puoi scegliere di fermarti qui."],
 ] as const;
 
 const boundaries = [
   "Non è terapia.",
   "Non c’è promessa di risultato.",
   "Inviare la richiesta non richiede alcun pagamento.",
-  "Non entri automaticamente nel percorso Pilot.",
+  "Non hai alcun obbligo di proseguire.",
   "Puoi condividere solo ciò che ti senti.",
   "Evita dati sanitari o informazioni troppo sensibili.",
 ] as const;
 
 const formatItems = [
-  "6 incontri individuali online da circa 60 minuti",
-  "percorso gratuito in fase Pilot",
-  "massimo 3 partecipanti",
-  "si parte da una situazione concreta",
-  "lavoro orientato alla chiarezza e a un passo possibile",
-  "call conoscitiva gratuita prima dei documenti; Pilot dopo la firma",
+  "Primo incontro conoscitivo gratuito",
+  "30 minuti",
+  "Online oppure in presenza, da concordare",
+  "Senza obbligo di proseguire",
+  "Comprendere la situazione e valutare un eventuale percorso personalizzato",
 ] as const;
 
 const faqs = [
+  ["CONFRONTO è gratuito?", "Sì. Il primo incontro conoscitivo è gratuito e dura 30 minuti."],
+  ["Si svolge online o in presenza?", "Possiamo incontrarci online oppure in presenza. La modalità si concorda insieme."],
+  ["Devo avere già tutto chiaro?", "No. Puoi partire da una situazione che stai vivendo, anche se fai fatica a definirla."],
   [
     "È terapia?",
     "No. È un percorso di coaching e non sostituisce un supporto psicologico, medico o clinico.",
@@ -56,7 +56,7 @@ const faqs = [
   ],
   [
     "Quanto dura il percorso se decidiamo di partire?",
-    "Il Pilot prevede 6 incontri individuali online da circa 60 minuti, indicativamente distribuiti su 6 settimane.",
+    "Durata, modalità, numero degli incontri e costi di un eventuale percorso personalizzato si concordano prima di iniziare.",
   ],
   [
     "Cosa succede se non è il percorso adatto?",
@@ -65,9 +65,9 @@ const faqs = [
 ] as const;
 
 export const metadata: Metadata = createPageMetadata({
-  title: "CONFRONTO: mental coaching online",
+  title: "CONFRONTO gratuito di 30 minuti",
   description:
-    "Racconta una situazione concreta di blocco o pressione e valuta con Moreno un percorso pilota gratuito di mental coaching online, senza automatismi.",
+    "Un primo incontro conoscitivo gratuito di 30 minuti con Moreno Funari, online oppure in presenza da concordare, senza obbligo di proseguire.",
   path: "/confronto",
 });
 
@@ -76,15 +76,13 @@ export default function ConfrontoPage() {
     <main className={styles.page} id="main-content">
       <section className={styles.hero} aria-labelledby="confronto-title">
         <Container className={styles.heroInner}>
-          <p className={styles.eyebrow}>Percorso pilota — Un passo possibile</p>
+          <p className={styles.eyebrow}>CONFRONTO — Primo incontro conoscitivo gratuito</p>
           <h1 id="confronto-title">
             C’è una situazione concreta in cui ti senti bloccato o sotto
             pressione?
           </h1>
           <p className={styles.lead}>
-            Puoi raccontarmela con poche righe. Partiamo da ciò che sta
-            succedendo davvero, senza formule pronte e senza forzare una
-            decisione.
+            CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso di coaching personalizzato.
           </p>
           <div className={styles.actions}>
             <a className={styles.primaryAnchor} href="#lascia-dati">
@@ -130,8 +128,7 @@ export default function ConfrontoPage() {
         <Container className={styles.copyBlock}>
           <h2 id="next-steps-title">Cosa succede dopo</h2>
           <p className={styles.sectionIntro}>
-            Nessun calendario immediato e nessun ingresso automatico nel
-            Pilot.
+            Prima leggo personalmente la tua richiesta. Poi concordiamo insieme l’eventuale incontro.
           </p>
           <ol className={styles.stepList}>
             {nextSteps.map(([title, text]) => (
@@ -182,9 +179,9 @@ export default function ConfrontoPage() {
       <section className={styles.bandSoft} aria-labelledby="format-title">
         <Container className={styles.twoColumns}>
           <div>
-            <h2 id="format-title">Come lavoreremo, se ha senso partire</h2>
+            <h2 id="format-title">Come si svolge CONFRONTO</h2>
             <p className={styles.sectionIntro}>
-              Il Pilot mantiene un perimetro semplice e trasparente.
+              Un primo incontro per conoscerci e capire se il coaching può essere adatto alla tua situazione.
             </p>
           </div>
           <ul className={styles.cardList}>
