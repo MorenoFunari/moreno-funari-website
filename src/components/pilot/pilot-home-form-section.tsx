@@ -8,7 +8,7 @@ import styles from "./pilot-home-form-section.module.css";
 const points = [
   "Primo incontro conoscitivo gratuito",
   "30 minuti",
-  "Online oppure in presenza, da concordare",
+  "Online",
   "Senza obbligo di proseguire",
 ] as const;
 

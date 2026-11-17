@@ -17,7 +17,7 @@ export default async function PercorsiSocialImage() {
           <div style={{ display: "flex", flexDirection: "column", fontSize: 58, fontWeight: 700, lineHeight: 1.06, letterSpacing: -2 }}>
             <span>COACHING</span><span style={{ color: "#b7d52a" }}>PERSONALIZZATO</span>
           </div>
-          <p style={{ fontSize: 32, lineHeight: 1.35, marginTop: 32, marginBottom: 0, maxWidth: 580 }}>CONFRONTO gratuito di 30 minuti. Online oppure in presenza, da concordare.</p>
+          <p style={{ fontSize: 32, lineHeight: 1.35, marginTop: 32, marginBottom: 0, maxWidth: 580 }}>CONFRONTO gratuito di 30 minuti. Online.</p>
         </div>
         <div style={{ display: "flex", fontSize: 25, borderTop: "1px solid #49606d", paddingTop: 24 }}>Moreno Funari | Mental Coach</div>
       </div>

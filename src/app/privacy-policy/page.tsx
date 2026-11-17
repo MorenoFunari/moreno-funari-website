@@ -8,8 +8,8 @@ import { createPageMetadata } from "@/lib/seo/metadata";
 import styles from "../legal-page.module.css";
 
 const privacyContactEmail = "info@morenofunari.it";
-const privacyLastUpdatedIso = "2026-10-17";
-const privacyLastUpdatedLabel = "17 ottobre 2026";
+const privacyLastUpdatedIso = "2026-11-17";
+const privacyLastUpdatedLabel = "17 novembre 2026";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Privacy Policy",
@@ -179,220 +179,80 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>
-              5. Candidatura e partecipazione al percorso pilota di mental
-              coaching
-            </h2>
-            <p>
-              Quando l’utente compila il modulo di candidatura possono essere
-              trattati:
-            </p>
-            <ul className={styles.list}>
-              <li>nome e cognome;</li>
-              <li>indirizzo email;</li>
-              <li>numero di telefono, se fornito;</li>
-              <li>conferma della maggiore età;</li>
-              <li>
-                informazioni relative alla situazione sulla quale desidera
-                lavorare;
-              </li>
-              <li>aspettative rispetto al percorso;</li>
-              <li>disponibilità per gli incontri;</li>
-              <li>provenienza della candidatura;</li>
-              <li>risposte e comunicazioni inviate volontariamente.</li>
-            </ul>
-            <p className={styles.notice}>
-              Il modulo invita a non inserire diagnosi, informazioni sanitarie
-              o altri dati particolarmente sensibili non necessari. Le
-              informazioni eventualmente comunicate spontaneamente saranno
-              gestite esclusivamente nella misura indispensabile per valutare
-              l’adeguatezza della richiesta e tutelare l’interessato.
-            </p>
-
-            <h3 className={styles.subTitle}>Finalità e base giuridica</h3>
-            <p>I dati vengono utilizzati per:</p>
-            <ul className={styles.list}>
-              <li>ricevere e valutare la candidatura;</li>
-              <li>
-                verificare che la richiesta sia compatibile con il perimetro
-                del mental coaching;
-              </li>
-              <li>ricontattare il candidato;</li>
-              <li>selezionare i partecipanti;</li>
-              <li>organizzare gli incontri;</li>
-              <li>svolgere il percorso pilota;</li>
-              <li>
-                gestire comunicazioni, appuntamenti e osservazioni tra le
-                sessioni;
-              </li>
-              <li>raccogliere un feedback interno e facoltativo;</li>
-              <li>
-                adempiere a obblighi di legge e tutelare eventuali diritti.
-              </li>
-            </ul>
-            <p>Le basi giuridiche del trattamento sono:</p>
-            <ul className={styles.list}>
-              <li>
-                l’esecuzione di misure richieste dall’interessato prima
-                dell’avvio del percorso;
-              </li>
-              <li>
-                l’esecuzione dell’accordo di partecipazione per i candidati
-                selezionati;
-              </li>
-              <li>
-                l’adempimento di obblighi di legge, quando applicabile;
-              </li>
-              <li>
-                il legittimo interesse alla tutela di un diritto, quando
-                applicabile.
-              </li>
-            </ul>
-            <p>
-              I dati raccolti per il percorso pilota non vengono utilizzati
-              automaticamente per newsletter o comunicazioni promozionali.
-              L’iscrizione a tali comunicazioni richiede una scelta separata e
-              facoltativa.
-            </p>
-
-            <h3 className={styles.subTitle}>Modalità e strumenti</h3>
-            <ul className={styles.list}>
-              <li>il modulo è gestito tramite Google Moduli;</li>
-              <li>
-                risposte, comunicazioni ed eventuali materiali di lavoro
-                possono essere conservati tramite Google Drive e Gmail;
-              </li>
-              <li>
-                gli incontri online possono essere svolti tramite Google Meet;
-              </li>
-              <li>
-                Google Calendar o Calendly possono essere utilizzati per
-                organizzare gli appuntamenti, quando il relativo link viene
-                messo a disposizione;
-              </li>
-              <li>
-                le comunicazioni organizzative possono avvenire tramite email
-                o, se scelto dall’interessato, WhatsApp;
-              </li>
-              <li>
-                Brevo può essere utilizzato per la gestione di comunicazioni
-                organizzative o di liste separate;
-              </li>
-              <li>
-                la candidatura non comporta l’iscrizione automatica a
-                newsletter;
-              </li>
-              <li>
-                gli incontri non vengono registrati in audio o video senza un
-                consenso specifico e separato.
-              </li>
-            </ul>
-
-            <h3 className={styles.subTitle}>Conservazione</h3>
-            <ul className={styles.list}>
-              <li>
-                le candidature non selezionate vengono conservate per un
-                massimo di 6 mesi dalla comunicazione dell’esito;
-              </li>
-              <li>
-                i dati dei partecipanti, le comunicazioni organizzative e gli
-                eventuali appunti vengono conservati per un massimo di 12 mesi
-                dalla conclusione del percorso;
-              </li>
-              <li>
-                una conservazione ulteriore avviene solo quando necessaria per
-                obblighi di legge o tutela di un diritto;
-              </li>
-              <li>
-                è possibile richiedere la cancellazione anticipata quando non
-                esistono obblighi o motivi legittimi per conservare i dati.
-              </li>
-            </ul>
-
-            <h3 className={styles.subTitle}>
-              Natura del conferimento e selezione
-            </h3>
-            <ul className={styles.list}>
-              <li>
-                i dati contrassegnati come obbligatori sono necessari per
-                valutare la candidatura;
-              </li>
-              <li>i dati facoltativi possono non essere forniti;</li>
-              <li>la compilazione non garantisce l’accesso al percorso;</li>
-              <li>
-                la valutazione viene effettuata personalmente da Moreno Funari;
-              </li>
-              <li>non vengono utilizzati processi decisionali automatizzati.</li>
-            </ul>
-
-            <h3 className={styles.subTitle}>Riservatezza e testimonianze</h3>
-            <ul className={styles.list}>
-              <li>
-                le informazioni del percorso non vengono pubblicate o
-                condivise per finalità promozionali;
-              </li>
-              <li>
-                il feedback interno è distinto da una testimonianza pubblica;
-              </li>
-              <li>
-                testimonianze, citazioni o contenuti riferibili al partecipante
-                richiedono una richiesta separata e un consenso specifico,
-                libero e revocabile.
-              </li>
-            </ul>
+            <h2 className={styles.sectionTitle}>5. CONFRONTO: richiesta e prenotazione</h2>
+            <p>CONFRONTO è un incontro conoscitivo gratuito, esclusivamente online, di 30 minuti.
+              Non è una sessione di coaching e non obbliga a proseguire. Un eventuale percorso
+              successivo è personalizzato e a pagamento.</p>
+            <p>Il modulo sul sito raccoglie nome, email, telefono se fornito, situazione descritta,
+              presa visione della privacy e fonte della richiesta. Sulle pagine CONFRONTO e Ads
+              il telefono è facoltativo e la descrizione è richiesta. Evita dati sanitari,
+              diagnosi e altre informazioni sensibili non necessarie.</p>
+            <p>I dati sono inviati dal backend del sito a Brevo nella lista CONFRONTO (#5),
+              per gestire la richiesta e inviare un’email automatica con il collegamento a Calendly.
+              Una notifica operativa con i recapiti e il messaggio viene inviata a Moreno via email.
+              La risposta automatica riguarda esclusivamente la richiesta: non comporta iscrizione
+              alla newsletter né consenso a comunicazioni promozionali.</p>
+            <p>Aprendo il link Calendly puoi scegliere giorno e orario e fornire i dati necessari
+              alla prenotazione. Calendly e i servizi Google Calendar e Meet gestiscono
+              appuntamento, conferma e collegamento all’incontro online, secondo le rispettive informative.</p>
+            <p>La base giuridica è l’esecuzione delle misure precontrattuali richieste
+              dall’interessato (art. 6, par. 1, lett. b GDPR); per richieste generali,
+              il legittimo interesse a rispondere (lett. f). La casella privacy documenta
+              la richiesta e la presa visione, non un consenso marketing.</p>
+            <p>I dati vengono conservati per il tempo necessario a gestire la richiesta,
+              la prenotazione e l’eventuale rapporto conseguente; successivamente solo
+              per obblighi di legge o tutela dei diritti. Puoi chiedere la cancellazione
+              quando non sussistono motivi per proseguire la conservazione.</p>
+            <p>Gli incontri non vengono registrati in audio o video senza un consenso specifico e separato.</p>
+            <h3 className={styles.subTitle}>Richieste tramite Instagram e ManyChat</h3>
+            <p>Per le interazioni CONFRONTO su Instagram viene utilizzato ManyChat:
+              tratta identificativo del profilo, messaggi e risposte alle domande,
+              memorizza i campi personalizzati confronto_area e confronto_situazione
+              e applica il tag LEAD_CONFRONTO per organizzare la richiesta.
+              Finalità e basi giuridiche sono quelle di gestione della richiesta sopra descritte;
+              le risposte non costituiscono un’iscrizione alla newsletter né una decisione automatizzata
+              sull’accesso al coaching. Puoi richiedere accesso e cancellazione scrivendo al titolare.</p>
+            <h3 className={styles.subTitle}>Dati del precedente Percorso Pilota, concluso</h3>
+            <p>Il precedente Percorso Pilota è terminato e non raccoglie nuove candidature.
+              Questa indicazione riguarda esclusivamente la conservazione dei dati storici,
+              senza riattivare il percorso o cancellare documentazione.</p>
+            <p>Restano i termini già comunicati: candidature non selezionate fino a 6 mesi
+              dalla comunicazione dell’esito; dati dei partecipanti, comunicazioni e appunti
+              fino a 12 mesi dalla conclusione del percorso, salvo obblighi di legge o tutela
+              dei diritti. I dati già raccolti possono rimanere negli archivi Google Drive e Gmail
+              per queste sole finalità. Nessun uso promozionale automatico; testimonianze pubbliche
+              richiedono un consenso specifico e separato.</p>
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>
-              6. Guida gratuita e comunicazioni via email
-            </h2>
-            <p>
-              Il sito può offrire la possibilità di richiedere risorse
-              gratuite, come guide pratiche o approfondimenti, tramite moduli di
-              iscrizione gestiti da Brevo.
-            </p>
-            <p>Quando utilizzi questi moduli, possono essere raccolti:</p>
-            <ul className={styles.list}>
-              <li>indirizzo email;</li>
-              <li>nome, se fornito;</li>
-              <li>consenso prestato;</li>
-              <li>data e ora dell’iscrizione;</li>
-              <li>
-                informazioni tecniche e origine del modulo, secondo quanto
-                gestito dal servizio utilizzato.
-              </li>
-            </ul>
-            <p>I dati sono utilizzati per:</p>
-            <ul className={styles.list}>
-              <li>inviarti la risorsa richiesta;</li>
-              <li>
-                inviarti eventuali comunicazioni collegate al progetto Moreno
-                Funari | Mental Coach, se hai prestato il relativo consenso;
-              </li>
-              <li>
-                gestire iscrizione, conferma, disiscrizione e preferenze.
-              </li>
-            </ul>
-            <p>
-              Il servizio utilizzato per la gestione dei moduli, della lista
-              contatti e dell’invio email è Brevo. La base giuridica è il
-              consenso dell’interessato.
-            </p>
-            <p>
-              L’iscrizione può richiedere una conferma tramite email. Puoi
-              revocare il consenso o disiscriverti in qualsiasi momento tramite
-              il link presente nelle email ricevute o contattando il titolare.
-              I dati vengono conservati per il tempo necessario a gestire
-              l’iscrizione e le comunicazioni richieste, fino alla
-              disiscrizione o alla revoca del consenso, fatti salvi eventuali
-              obblighi di legge.
-            </p>
-            <p>
-              Le comunicazioni email possono includere informazioni tecniche
-              necessarie alla gestione dell’invio, della consegna, dell’apertura
-              o dell’interazione con i link, secondo le impostazioni del
-              servizio utilizzato.
-            </p>
+            <h2 className={styles.sectionTitle}>6. PASSO: guida gratuita ed email facoltative</h2>
+            <p>Il modulo PASSO è un modulo del sito: email obbligatoria e nome facoltativo
+              vengono inviati a /api/passo-lead, che comunica dal backend con Brevo.
+              La guida viene inviata con un’email transazionale personalizzata con il nome,
+              se disponibile. Il flusso non richiede una doppia conferma via email.</p>
+            <p>La prima casella documenta la presa visione dell’informativa e la richiesta
+              della guida. La consegna della risorsa richiesta si fonda sull’esecuzione
+              del servizio richiesto (art. 6, par. 1, lett. b GDPR), non sul consenso marketing.</p>
+            <p>La seconda casella è facoltativa, non preselezionata e indipendente:
+              soltanto selezionandola chiedi anche email occasionali con riflessioni,
+              contenuti pratici e aggiornamenti sul coaching, sulla base del consenso
+              (art. 6, par. 1, lett. a GDPR). La guida arriva anche senza questa scelta.</p>
+            <p>Brevo conserva separatamente la richiesta della guida e la scelta relativa
+              alle email occasionali, con data, origine, versione del modulo e testo mostrato.
+              I richiedenti entrano nella lista PASSO — Guida Dire sempre sì (#4);
+              l’adesione facoltativa può aggiungerli alla Community (#3).
+              La sola presenza nella lista guida non autorizza invii promozionali.</p>
+            <p>Per un contatto già presente, una casella facoltativa lasciata vuota non
+              revoca né rinnova un consenso precedente. Non vengono rimosse le disiscrizioni
+              o le esclusioni dagli invii registrate in Brevo. Puoi revocare il consenso
+              in qualsiasi momento dal link di disiscrizione delle email oppure scrivendo
+              a info@morenofunari.it, senza pregiudicare la consegna della guida richiesta.</p>
+            <p>I dati per la guida sono conservati per il tempo necessario alla consegna
+              e alla gestione di eventuali problemi. Per le comunicazioni facoltative,
+              fino alla revoca o disiscrizione; successivamente solo le informazioni
+              necessarie a rispettare l’opposizione, documentare le scelte o adempiere
+              a obblighi di legge. Le informazioni tecniche su consegna e interazioni
+              dipendono dalle impostazioni del servizio email.</p>
           </section>
 
           <section className={styles.section}>
@@ -496,7 +356,7 @@ export default function PrivacyPolicyPage() {
               <li className={styles.card}>
                 <h3 className={styles.subTitle}>Google Ireland Limited</h3>
                 <p>
-                  Fornitore di Google Moduli, Drive, Gmail, Calendar e Meet,
+                  Fornitore di Google Drive, Gmail, Calendar e Meet,
                   ciascuno secondo la propria finalità, e di Google Analytics
                   4 con Consent Mode v2, come descritto nella sezione dedicata.
                 </p>
@@ -511,7 +371,7 @@ export default function PrivacyPolicyPage() {
               <li className={styles.card}>
                 <h3 className={styles.subTitle}>Brevo</h3>
                 <p>
-                  Fornitore per la gestione di moduli, liste e comunicazioni
+                  Fornitore per la gestione di contatti, liste e comunicazioni
                   email. I dati del percorso pilota non vengono utilizzati
                   automaticamente per newsletter. Per i moduli /percorsi e
                   Giovani atleti, Brevo inoltra a Moreno la notifica della richiesta tramite
@@ -528,6 +388,15 @@ export default function PrivacyPolicyPage() {
                   per comunicazioni facoltative, e del Meta Pixel, caricato sul
                   sito soltanto dopo consenso.
                 </p>
+              </li>
+              <li className={styles.card}>
+                <h3 className={styles.subTitle}>ManyChat, Inc.</h3>
+                <p>Fornitore della gestione automatizzata delle conversazioni CONFRONTO
+                  su Instagram, dei campi personalizzati e del tag organizzativo.
+                  Per il trattamento per conto dei clienti e le garanzie sui trasferimenti
+                  internazionali si rinvia al <a href="https://manychat.com/legal/dpa">Data Processing Addendum</a>
+                  {" "}e alla <a href="https://manychat.com/legal/privacy">Privacy Policy ManyChat</a>.
+                  Non è incorporato un widget ManyChat nel sito.</p>
               </li>
               <li className={styles.card}>
                 <h3 className={styles.subTitle}>MongoDB e OpenAI</h3>
@@ -623,9 +492,9 @@ export default function PrivacyPolicyPage() {
             </h2>
             <p>
               I dati tecnici sono necessari per rendere disponibile il sito.
-              Scrivere via email e iscriversi per ricevere una guida sono
-              facoltativi. Senza i dati richiesti e la conferma
-              dell’iscrizione non è possibile inviare la risorsa. Il consenso
+              Scrivere via email e richiedere una guida sono facoltativi.
+              Senza l’indirizzo email non è possibile consegnare la guida.
+              La scelta delle email occasionali è separata e non condiziona la consegna. Il consenso
               Analytics è facoltativo: il rifiuto non limita navigazione,
               contenuti o contatto.
             </p>

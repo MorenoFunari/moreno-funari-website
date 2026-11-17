@@ -9,7 +9,7 @@ export function createPercorsiJsonLd(): JsonLdObject {
     "@id": `${url}#servizio`,
     name: "Coaching personalizzato",
     serviceType: "Mental coaching",
-    description: "Coaching personalizzato. Primo incontro CONFRONTO gratuito di 30 minuti, online oppure in presenza da concordare, senza obbligo di proseguire.",
+    description: "Coaching personalizzato. Primo incontro CONFRONTO gratuito di 30 minuti, online, senza obbligo di proseguire.",
     url,
     provider: { "@type": "Person", name: "Moreno Funari", jobTitle: "Mental Coach", url: toAbsoluteUrl("/chi-sono") },
     availableChannel: { "@type": "ServiceChannel", serviceUrl: `${url}#richiesta` },

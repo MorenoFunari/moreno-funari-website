@@ -14,7 +14,7 @@ const situations = [
 
 const nextSteps = [
   "Compili il modulo qui sotto, oppure scrivi CONFRONTO su Instagram.",
-  "Leggo personalmente la tua richiesta e ti rispondo per fissare l'incontro.",
+  "Dopo il modulo ricevi un’email automatica con il link Calendly: scegli tu giorno e orario.",
   "Ci vediamo per 30 minuti: ti farò qualche domanda sulla tua situazione.",
   "Se ci sono le condizioni per lavorare insieme, ti propongo un percorso di coaching personalizzato. Se non ci sono, te lo dico.",
 ] as const;
@@ -23,7 +23,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "CONFRONTO, primo incontro conoscitivo gratuito | Moreno Funari Mental Coach",
   absoluteTitle: true,
   description:
-    "30 minuti, online o in presenza, per capire meglio la situazione che stai vivendo. Gratuito e senza obbligo di proseguire.",
+    "30 minuti, online, per capire meglio la situazione che stai vivendo. Gratuito e senza obbligo di proseguire.",
   path: "/confronto",
 });
 
@@ -34,8 +34,8 @@ export default function ConfrontoPage() {
         <Container className={styles.heroInner}>
           <p className={styles.eyebrow}>CONFRONTO</p>
           <h1 id="confronto-title">CONFRONTO: un primo incontro per capire da dove partire</h1>
-          <p className={styles.lead}>30 minuti, gratuito, online o in presenza. Senza obbligo di proseguire.</p>
-          <p className={styles.ctaCopy}>La modalità si concorda insieme.</p>
+          <p className={styles.lead}>30 minuti, gratuito, online. Senza obbligo di proseguire.</p>
+          <p className={styles.ctaCopy}>Dal modulo ricevi un’email automatica con il link per scegliere giorno e orario.</p>
           <div className={styles.actions}>
             <a className={styles.primaryAnchor} href="#lascia-dati">Richiedi il primo incontro</a>
             <a className={styles.secondaryAnchor} href="#cosa-succede-dopo">Come funziona</a>

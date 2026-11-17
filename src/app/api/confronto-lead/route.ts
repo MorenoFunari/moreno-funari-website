@@ -129,7 +129,7 @@ async function sendLeadNotification({
         <p><strong>Telefono:</strong><br>${safePhone}</p>
         <p><strong>Situazione indicata:</strong><br>${safeNote}</p>
         <p><strong>Fonte:</strong><br>${escapeHtml(source)}</p>
-        <p><strong>Azione consigliata:</strong><br>Rispondere entro 24 ore.</p>
+        <p><strong>Azione consigliata:</strong><br>Verificare la richiesta. L’email automatica contiene il link Calendly per prenotare online.</p>
       `,
       textContent: [
         "È arrivata una nuova richiesta dal sito.",
@@ -139,7 +139,7 @@ async function sendLeadNotification({
         `Telefono: ${phone}`,
         `Situazione indicata: ${note || "Non indicata"}`,
         `Fonte: ${source}`,
-        "Azione consigliata: Rispondere entro 24 ore.",
+        "Azione consigliata: Verificare la richiesta. L’email automatica contiene il link Calendly per prenotare online.",
       ].join("\n"),
     }),
   });

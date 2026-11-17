@@ -12,11 +12,11 @@ import faq from "@/components/sections/coaching/coaching-faq-section.module.css"
 import styles from "./page.module.css";
 
 const socialTitle = "Coaching personalizzato | Moreno Funari";
-const socialDescription = "Coaching personalizzato a partire da una situazione concreta. Primo incontro CONFRONTO gratuito di 30 minuti, online oppure in presenza da concordare.";
+const socialDescription = "Coaching personalizzato a partire da una situazione concreta. Primo incontro CONFRONTO gratuito di 30 minuti, online.";
 const baseMetadata = createPageMetadata({
   title: "Percorso di mental coaching individuale | Moreno Funari",
   absoluteTitle: true,
-  description: "Coaching personalizzato: si parte da CONFRONTO, incontro gratuito di 30 minuti, online oppure in presenza da concordare, senza obbligo di proseguire.",
+  description: "Coaching personalizzato: si parte da CONFRONTO, incontro gratuito di 30 minuti, online, senza obbligo di proseguire.",
   path: "/percorsi",
   noIndex: process.env.VERCEL_ENV === "preview" || process.env.NODE_ENV === "development",
 });
@@ -95,7 +95,7 @@ export default function PercorsiPage() {
       <Container as="section" className={styles.section} aria-labelledby="prezzo">
         <SectionHeading id="prezzo" title="Durata, modalità e costi" />
         <div className={styles.copy}>
-          <p>CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire.</p>
+          <p>CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online, senza obbligo di proseguire.</p>
           <p>Se decidiamo di proseguire, definiamo insieme durata, numero degli incontri, modalità e costi del percorso personalizzato prima di iniziare.</p>
         </div>
         <ButtonLink href="#richiesta">Richiedi un CONFRONTO</ButtonLink>

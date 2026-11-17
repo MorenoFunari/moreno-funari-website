@@ -11,7 +11,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = createPageMetadata({
   title: "CONFRONTO gratuito di 30 minuti | Moreno Funari",
   description:
-    "Un primo incontro conoscitivo gratuito di 30 minuti con Moreno Funari, online oppure in presenza da concordare, senza obbligo di proseguire.",
+    "Un primo incontro conoscitivo gratuito di 30 minuti con Moreno Funari, online, senza obbligo di proseguire.",
   path: "/ads/confronto",
   noIndex: true,
   absoluteTitle: true,
@@ -52,7 +52,7 @@ export default function AdsConfrontoPage() {
               poi ti chiedi se sei all’altezza.
             </p>
             <p className={styles.contactHint}>
-              CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso di coaching personalizzato a pagamento.
+              CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso di coaching personalizzato a pagamento.
             </p>
             <div className={styles.action}>
               <ButtonLink href="#richiesta-confronto" external size="large">
@@ -90,8 +90,8 @@ export default function AdsConfrontoPage() {
           <h2 id="confronto-process">Cosa succede dopo la richiesta</h2>
           <ol>
             <li><strong>Mi racconti una situazione concreta.</strong> Compili il modulo qui sotto oppure, se preferisci, mi scrivi su WhatsApp.</li>
-            <li>Leggo personalmente la tua richiesta e ti ricontatto.</li>
-            <li>Se ha senso approfondire, concordiamo un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, senza obbligo di proseguire.</li>
+            <li>Dopo il modulo ricevi un’email automatica con il link Calendly per scegliere giorno e orario. Per WhatsApp ti rispondo personalmente.</li>
+            <li>Ci incontriamo online per un primo incontro conoscitivo gratuito di 30 minuti, online, senza obbligo di proseguire.</li>
             <li>Solo successivamente, se lo riteniamo utile entrambi, possiamo parlare di un eventuale percorso.</li>
           </ol>
         </section>
@@ -106,7 +106,7 @@ export default function AdsConfrontoPage() {
             page="/ads/confronto"
             variant="embedded"
             title="Raccontami cosa stai vivendo"
-            introText="Lascia un recapito e poche righe sulla situazione. Leggo personalmente ogni richiesta e ti ricontatto per capire se ha senso approfondire."
+            introText="Lascia un recapito e poche righe sulla situazione. Ricevi un’email automatica con il link Calendly per prenotare. Leggo personalmente ogni richiesta."
             ctaLabel="Invia la richiesta CONFRONTO"
             noteLabel="Quale situazione concreta vuoi guardare meglio?"
             noteRequired

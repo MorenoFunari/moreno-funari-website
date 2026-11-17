@@ -36,7 +36,7 @@ export function PassoForm() {
     setErrorReference("");
 
     try {
-      const payload = JSON.stringify([formData.get("EMAIL"), formData.get("NOME"), formData.get("CONSENSO")]);
+      const payload = JSON.stringify([formData.get("EMAIL"), formData.get("NOME"), formData.get("CONSENSO"), formData.get("MARKETING_CONSENT")]);
       if (!requestRef.current || requestRef.current.payload !== payload) {
         requestRef.current = { id: window.crypto.randomUUID(), at: Date.now(), payload };
       }
@@ -116,10 +116,16 @@ export function PassoForm() {
           value="1"
         />
         <label htmlFor="passo-consent">
-          Ho letto la <Link href="/privacy-policy">Privacy Policy</Link> e
-          acconsento al trattamento dei miei dati per ricevere la guida gratuita
-          richiesta e contenuti pratici collegati a consapevolezza, confini e
-          primi passi possibili. Potrò cancellarmi in qualsiasi momento.
+          Ho letto l’<Link href="/privacy-policy">Informativa Privacy</Link> e
+          chiedo di ricevere via email la guida gratuita PASSO.
+        </label>
+      </div>
+      <div className={styles.consentField}>
+        <input disabled={submitState === "submitting"} id="passo-marketing"
+          name="MARKETING_CONSENT" type="checkbox" value="1" />
+        <label htmlFor="passo-marketing">
+          Desidero ricevere anche email occasionali da Moreno Funari con riflessioni,
+          contenuti pratici e aggiornamenti sul coaching. Posso disiscrivermi in qualsiasi momento.
         </label>
       </div>
       <div aria-hidden="true" className={styles.honeypot}>
@@ -148,9 +154,10 @@ export function PassoForm() {
         </p>
       ) : null}
       <p className={styles.formFallback}>
-        Userò i dati inseriti per inviarti la guida e, ogni tanto, contenuti
-        utili collegati al lavoro di Moreno Funari | Mental Coach. Nessuno spam,
-        nessuna pressione.
+        La guida arriva anche senza scegliere le email occasionali. La seconda
+        casella è facoltativa e non è preselezionata. Se sei già iscritto, lasciarla
+        vuota non modifica la tua preferenza: puoi revocarla dal link nelle email
+        o scrivendo a info@morenofunari.it.
       </p>
     </form>
   );

@@ -9,7 +9,7 @@ function setup(provider, env = {}) {
   const calls=[];
   const route=loadSource('src/app/api/passo-lead/route.ts', { 'next/server': { NextResponse: Response } }, {
     Response, Request, FormData,
-    process: { env: { BREVO_API_KEY:'test', BREVO_LIST_ID_PASSO:'77', BREVO_TEMPLATE_ID_PASSO:'88', ...env } },
+    process: { env: { BREVO_API_KEY:'test', BREVO_LIST_ID_PASSO_GUIDE:'77', BREVO_TEMPLATE_ID_PASSO:'88', ...env } },
     fetch: async (url, opts) => {
       const call={url,method:opts.method ?? 'GET',body:opts.body ? JSON.parse(opts.body) : null}; calls.push(call);
       return provider ? provider(call) : call.method === 'GET' ? new Response(null,{status:404}) : call.url.endsWith('/smtp/email') ? Response.json({messageId:'accepted'},{status:201}) : new Response(null,{status:201});
@@ -20,7 +20,7 @@ function setup(provider, env = {}) {
 const accepted = () => new Response(null,{status:204});
 test('new contact saves all consent evidence, configured list and template, name', async () => {
   const s=setup(); const r=await s.post(data()); assert.equal(r.status,200); assert.equal((await r.json()).guideEmailSent,true);
-  assert.equal(s.calls[1].method,'POST'); assert.deepEqual(s.calls[1].body.listIds,[77]); assert.equal(s.calls[1].body.attributes.CONSENSO,true); assert(s.calls[1].body.attributes.PASSO_CONSENT_TEXT); assert.equal(s.calls[2].body.templateId,88); assert.equal(s.calls[2].body.params.NOME,'Test');
+  assert.equal(s.calls[1].method,'POST'); assert.deepEqual(s.calls[1].body.listIds,[77]); assert(!('CONSENSO' in s.calls[1].body.attributes)); assert.equal(s.calls[1].body.attributes.MARKETING_CONSENT,false); assert.equal(JSON.parse(s.calls[1].body.attributes.PASSO_REQUEST).marketingSelected,false); assert.equal(s.calls[2].body.templateId,88); assert.equal(s.calls[2].body.params.NOME,'Test');
 });
 for (const listIds of [[77],[9]]) test('existing contact in lists '+JSON.stringify(listIds)+' is updated, consent preserved',async()=>{
   const s=setup(c=>c.method==='GET'?Response.json({attributes:{NOME:'Previous',CONSENSO:true,PASSO_REQUESTED_AT:'2020-01-01',PASSO_CONSENT_TEXT:'original',OTHER:'keep'},listIds}):accepted());
@@ -77,4 +77,35 @@ test('rejected attribute code survives the create failure without exposing its m
 test('email error is distinct from contact failure and arbitrary provider codes are hidden',async()=>{
   const s=setup(c=>c.method==='GET'?Response.json({attributes:{}}):c.url.endsWith('/smtp/email')?Response.json({code:'sensitive_unknown_value',message:'test@example.com'},{status:400}):accepted());
   assert.deepEqual(await (await s.post(data())).json(),{success:false,error:'email',code:'provider_error'});
+});
+
+for (const marketing of [false,true]) test('new contact guide delivery independent of optional marketing '+marketing,async()=>{
+ const s=setup();assert.equal((await s.post({...data(),...(marketing?{MARKETING_CONSENT:'1'}:{})})).status,200);
+ const contact=s.calls[1].body;assert.deepEqual(contact.listIds,marketing?[77,3]:[77]);
+ assert.equal(contact.attributes.MARKETING_CONSENT,marketing);
+ assert.equal(JSON.parse(contact.attributes.PASSO_REQUEST).marketingSelected,marketing);
+ assert.equal('MARKETING_EVIDENCE' in contact.attributes,marketing);
+ assert.equal(s.calls.filter(c=>c.url.endsWith('/smtp/email')).length,1);
+});
+for(const previous of [true,false]) test('unchecked preserves established marketing preference '+previous,async()=>{
+ const s=setup(c=>c.method==='GET'?Response.json({attributes:{MARKETING_CONSENT:previous,MARKETING_EVIDENCE:'original',CONSENSO:true}}):accepted());
+ await s.post(data());const a=s.calls[1].body.attributes;
+ assert(!('MARKETING_CONSENT' in a));assert(!('MARKETING_EVIDENCE' in a));assert(!('CONSENSO' in a));
+ assert.deepEqual(s.calls[1].body.listIds,[77]);
+});
+test('explicit new opt-in records evidence separately and adds marketing list',async()=>{
+ const s=setup(c=>c.method==='GET'?Response.json({attributes:{MARKETING_CONSENT:false}}):accepted());
+ await s.post({...data(),MARKETING_CONSENT:'1'});const a=s.calls[1].body.attributes;
+ assert.equal(a.MARKETING_CONSENT,true);assert.match(JSON.parse(a.MARKETING_EVIDENCE).text,/Desidero ricevere/);
+ assert.deepEqual(s.calls[1].body.listIds,[77,3]);
+});
+test('explicit opt-in never unblocks a previously unsubscribed contact',async()=>{
+ const s=setup(c=>c.method==='GET'?Response.json({attributes:{MARKETING_CONSENT:false},emailBlacklisted:true}):accepted());
+ await s.post({...data(),MARKETING_CONSENT:'1'});assert.deepEqual(s.calls[1].body.listIds,[77]);assert(!('emailBlacklisted' in s.calls[1].body));
+});
+test('same id with altered marketing is rejected',async()=>{
+ const s=setup();const p=data();await s.post(p);assert.equal((await s.post({...p,MARKETING_CONSENT:'1'})).status,409);
+});
+test('guide and marketing cannot use same list',async()=>{
+ const s=setup(null,{BREVO_LIST_ID_MARKETING:'77'});assert.equal((await s.post(data())).status,503);assert.equal(s.calls.length,0);
 });
