@@ -118,8 +118,8 @@ export default function PassoPage() {
               pressione.
             </p>
             <p className={styles.privacyCopy}>
-              Puoi cancellarti quando vuoi. I tuoi dati vengono usati per
-              inviarti la guida e le comunicazioni collegate, come indicato
+              Le email occasionali sono facoltative e puoi disiscriverti quando vuoi. I dati servono a
+              inviarti la guida e, solo se lo scegli, le email occasionali, come indicato
               nella <Link href="/privacy-policy">Privacy Policy</Link>.
             </p>
           </div>

@@ -14,7 +14,7 @@ import { createPageMetadata } from "@/lib/seo/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "Contatti",
   description:
-    "Scrivi a Moreno Funari. CONFRONTO è un incontro conoscitivo gratuito di 30 minuti, online oppure in presenza da concordare, senza obbligo di proseguire.",
+    "Scrivi a Moreno Funari. CONFRONTO è un incontro conoscitivo gratuito di 30 minuti, online, senza obbligo di proseguire.",
   path: "/contatti",
 });
 
@@ -31,7 +31,7 @@ export default function ContattiPage() {
         page="/contatti"
         points={[]}
         source="contatti_form"
-        text="Non serve avere già tutto chiaro. CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire."
+        text="Non serve avere già tutto chiaro. CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online, senza obbligo di proseguire."
         title="Puoi scrivermi anche da qui."
       />
       <MessageStartersSection />

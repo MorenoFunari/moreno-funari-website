@@ -112,14 +112,14 @@ function trackGaEventBeforeRedirect(
 
 export function ConfrontoLeadForm({
   ctaLabel = "Invia i dati",
-  introText = "Leggerò personalmente la tua richiesta e ti ricontatterò per valutare insieme il prossimo passo. CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire.",
+  introText = "Riceverai un’email automatica con il link Calendly per scegliere giorno e orario. Leggo personalmente ogni richiesta. CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online, senza obbligo di proseguire.",
   noteLabel = "In una frase, su cosa vorresti fare chiarezza?",
   noteHelpText,
   notePlaceholder = "Es. Mi sento bloccato davanti a una scelta lavorativa / continuo a rimandare / sento molta pressione dopo un errore / faccio fatica a mettere un confine.",
   noteRequired = false,
   page,
   phoneRequired = true,
-  reassuranceText = "Inviare la richiesta non ti impegna a proseguire. Leggo personalmente ogni richiesta e concordiamo insieme l’eventuale incontro.",
+  reassuranceText = "Inviare la richiesta non ti impegna a proseguire. Ricevi il link Calendly via email per prenotare online; leggo personalmente ogni richiesta.",
   source,
   title = "Lascia i tuoi dati",
   variant = "full",

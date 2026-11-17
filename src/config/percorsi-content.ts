@@ -7,7 +7,7 @@ export const percorsiContent = {
       "Non sempre manca la volontà di agire. A volte è difficile capire da quale parte iniziare.",
       "Il coaching personalizzato è un percorso individuale di Mental Coaching per lavorare su una situazione concreta, fare chiarezza e individuare passi che puoi iniziare ad affrontare nella vita di tutti i giorni.",
     ],
-    format: "CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire.",
+    format: "CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online, senza obbligo di proseguire.",
   },
   situations: {
     title: "Forse ti riconosci in una di queste situazioni",
@@ -82,7 +82,7 @@ export const percorsiContent = {
     steps: [
       "Mi racconti brevemente la situazione che vorresti affrontare, compilando il modulo qui sotto.",
       "Leggo la tua richiesta e ti rispondo personalmente.",
-      "CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso di coaching personalizzato.",
+      "CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso di coaching personalizzato.",
       "Se entrambi lo riteniamo utile, definiamo modalità, condizioni e avvio del percorso.",
     ],
     note: "Se dalla tua richiesta emerge che serve un’altra figura professionale, te lo dico con chiarezza.",
@@ -104,6 +104,6 @@ export const percorsiFaqs = [
   { question: "Cosa succede se un passo non va come speravo?", answer: "Lo osserviamo insieme. Un risultato diverso da quello sperato non è un fallimento: è un’informazione che serve a decidere se continuare, modificare, ridimensionare o cambiare direzione." },
   { question: "Il percorso garantisce che risolverò il problema?", answer: "No, e non sarebbe corretto prometterlo. Lavoriamo per aumentare la chiarezza sulla situazione, sperimentare passi possibili e imparare dall’esperienza." },
   { question: "È una terapia?", answer: "No. Il Mental Coaching non è psicoterapia, non formula diagnosi e non sostituisce interventi sanitari quando sono necessari." },
-  { question: "Quanto costa CONFRONTO?", answer: "Il primo incontro conoscitivo è gratuito e dura 30 minuti. Può svolgersi online oppure in presenza, da concordare, senza obbligo di proseguire." },
+  { question: "Quanto costa CONFRONTO?", answer: "Il primo incontro conoscitivo è gratuito e dura 30 minuti. Può svolgersi online, senza obbligo di proseguire." },
   { question: "Il colloquio conoscitivo mi impegna a iniziare?", answer: "No. Serve a capire se il percorso è adatto alla tua situazione. Decidiamo insieme se ha senso proseguire." },
 ] as const;

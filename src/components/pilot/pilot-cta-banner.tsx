@@ -15,7 +15,7 @@ type PilotCtaBannerProps = {
 const pilotPoints = [
   "Primo incontro conoscitivo gratuito",
   "30 minuti",
-  "Online oppure in presenza, da concordare",
+  "Online",
   "Senza obbligo di proseguire",
 ] as const;
 
@@ -53,7 +53,7 @@ export function PilotCtaBanner({
           </h2>
           {isCompact ? (
             <p>
-              CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire.
+              CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online, senza obbligo di proseguire.
             </p>
           ) : (
             <>

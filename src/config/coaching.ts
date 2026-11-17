@@ -117,7 +117,7 @@ export const coachingFaqs = [
   {
     question: "Posso iniziare con un solo confronto?",
     answer:
-      "CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso personalizzato.",
+      "CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso personalizzato.",
   },
   {
     question: "Qual è la differenza rispetto alla psicoterapia?",
@@ -127,6 +127,6 @@ export const coachingFaqs = [
   {
     question: "Dove trovo durata, modalità e costi?",
     answer:
-      "CONFRONTO è gratuito e dura 30 minuti, online oppure in presenza da concordare. Durata, modalità e costi di un eventuale percorso personalizzato vengono chiariti prima di iniziare.",
+      "CONFRONTO è gratuito e dura 30 minuti, online. Durata, modalità e costi di un eventuale percorso personalizzato vengono chiariti prima di iniziare.",
   },
 ] as const;

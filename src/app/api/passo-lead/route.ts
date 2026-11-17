@@ -3,10 +3,11 @@ import { NextResponse } from "next/server";
 
 const brevoContactsEndpoint = "https://api.brevo.com/v3/contacts";
 const brevoTransactionalEmailEndpoint = "https://api.brevo.com/v3/smtp/email";
-const defaultPassoListId = 3;
+const defaultPassoListId = 4;
+const defaultMarketingListId = 3;
 const defaultPassoTemplateId = 2;
-const passoConsentText =
-  "Ho letto la Privacy Policy e acconsento al trattamento dei miei dati per ricevere la guida gratuita richiesta e contenuti pratici collegati a consapevolezza, confini e primi passi possibili. Potrò cancellarmi in qualsiasi momento.";
+const passoRequestText = "Ho letto l’Informativa Privacy e chiedo di ricevere via email la guida gratuita PASSO.";
+const marketingConsentText = "Desidero ricevere anche email occasionali da Moreno Funari con riflessioni, contenuti pratici e aggiornamenti sul coaching. Posso disiscrivermi in qualsiasi momento.";
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 type ContactAttributes = Record<string, boolean | string>;
@@ -45,8 +46,8 @@ async function providerError(response: Response, stage: string) {
   return error;
 }
 
-async function createOrUpdateContact({ apiKey, attributes, email, listId }: {
-  apiKey: string; attributes: ContactAttributes; email: string; listId: number;
+async function createOrUpdateContact({ apiKey, attributes, email, listId, marketing, marketingListId }: {
+  apiKey: string; attributes: ContactAttributes; email: string; listId: number; marketing: boolean; marketingListId: number;
 }) {
   const headers = { "api-key": apiKey, "Content-Type": "application/json" };
   const contactUrl = `${brevoContactsEndpoint}/${encodeURIComponent(email)}`;
@@ -55,7 +56,7 @@ async function createOrUpdateContact({ apiKey, attributes, email, listId }: {
   if (existing.status === 404) {
     const created = await fetch(brevoContactsEndpoint, {
       method: "POST", headers, cache: "no-store",
-      body: JSON.stringify({ email, attributes, listIds: [listId], updateEnabled: false }),
+      body: JSON.stringify({ email, attributes, listIds: marketing ? [listId, marketingListId] : [listId], updateEnabled: false }),
     });
     if (created.ok) return { response: created, name: String(attributes.NOME ?? "") };
     const error = await providerError(created, "create");
@@ -66,16 +67,22 @@ async function createOrUpdateContact({ apiKey, attributes, email, listId }: {
   if (!existing.ok) return { response: existing, name: "" };
   const contact = await existing.json();
   const previous = contact.attributes ?? {};
-  const update: ContactAttributes = {};
-  for (const [key, value] of Object.entries(attributes)) {
-    // Preserve the original consent evidence and unrelated contact attributes.
-    if (key === "NOME" || previous[key] === undefined || previous[key] === null) {
-      update[key] = value;
-    }
+  // An unchecked optional field is not a withdrawal. Do not reinterpret legacy CONSENSO.
+  const update: ContactAttributes = {
+    PASSO_REQUEST: attributes.PASSO_REQUEST,
+    ...(attributes.NOME ? { NOME: attributes.NOME } : {}),
+  };
+  if (marketing) {
+    update.MARKETING_CONSENT = true;
+    update.MARKETING_EVIDENCE = attributes.MARKETING_EVIDENCE;
+  } else if (previous.MARKETING_CONSENT === undefined || previous.MARKETING_CONSENT === null) {
+    update.MARKETING_CONSENT = false;
   }
+  // Brevo unsubscribe/blocklist remains authoritative: never unblock through this form.
+  const listIds = marketing && !contact.emailBlacklisted ? [listId, marketingListId] : [listId];
   const response = await fetch(contactUrl, {
     method: "PUT", headers, cache: "no-store",
-    body: JSON.stringify({ attributes: update, listIds: [listId] }),
+    body: JSON.stringify({ attributes: update, listIds }),
   });
   return { response, name: String(attributes.NOME || previous.NOME || "") };
 }
@@ -133,9 +140,11 @@ export async function POST(request: Request) {
   const email = getString(formData, "EMAIL").toLowerCase();
   const name = getString(formData, "NOME");
   const consent = getString(formData, "CONSENSO");
+  const marketingValue = getString(formData, "MARKETING_CONSENT");
+  const marketing = marketingValue === "1";
   const honeypot = getString(formData, "email_address_check");
 
-  if (honeypot || !emailPattern.test(email) || consent !== "1") {
+  if (honeypot || !emailPattern.test(email) || email.length > 320 || name.length > 200 || consent !== "1" || !["", "1"].includes(marketingValue)) {
     return jsonError(400);
   }
 
@@ -146,20 +155,20 @@ export async function POST(request: Request) {
     return jsonError(400);
   }
   const requestId = suppliedId || randomUUID(); // Compatibility with already-open forms.
-  const fingerprint = createHash("sha256").update(JSON.stringify([email, name, consent])).digest("hex");
+  const fingerprint = createHash("sha256").update(JSON.stringify([email, name, consent, marketing])).digest("hex");
   for (const [key, entry] of submissions) if (entry.expiresAt < Date.now()) submissions.delete(key);
   const previous = submissions.get(requestId);
   if (previous) return previous.fingerprint === fingerprint
     ? (await previous.pending).clone() : jsonError(409);
   if (submissions.size >= 1000) return jsonError(503);
-  const pending = deliver(email, name, requestId);
+  const pending = deliver(email, name, requestId, marketing);
   submissions.set(requestId, { fingerprint, expiresAt: Date.now() + requestWindowMs, pending });
   const response = await pending;
   if (!response.ok) submissions.delete(requestId);
   return response.clone();
 }
 
-async function deliver(email: string, name: string, requestId: string) {
+async function deliver(email: string, name: string, requestId: string, marketing: boolean) {
   const apiKey = process.env.BREVO_API_KEY;
 
   if (!apiKey) {
@@ -168,7 +177,7 @@ async function deliver(email: string, name: string, requestId: string) {
   }
 
   const listId = getPositiveInteger(
-    process.env.BREVO_LIST_ID_PASSO,
+    process.env.BREVO_LIST_ID_PASSO_GUIDE,
     defaultPassoListId,
   );
   const templateId = getPositiveInteger(
@@ -176,24 +185,24 @@ async function deliver(email: string, name: string, requestId: string) {
     defaultPassoTemplateId,
   );
   const requestedAt = new Date().toISOString();
-  const baseAttributes: ContactAttributes = {
-    CONSENSO: true,
-    ...(name ? { NOME: name } : {}),
-  };
+  const marketingListId = getPositiveInteger(process.env.BREVO_LIST_ID_MARKETING, defaultMarketingListId);
+  if (listId === marketingListId) return jsonError(503, "configuration");
   const passoAttributes: ContactAttributes = {
-    ...baseAttributes,
-    PASSO_REQUESTED: true,
-    PASSO_SOURCE: "/passo",
-    PASSO_REQUESTED_AT: requestedAt,
-    PASSO_PRIVACY_ACCEPTED: true,
-    PASSO_CONSENT_TEXT: passoConsentText,
-    PASSO_FORM_VERSION: "v1",
+    ...(name ? { NOME: name } : {}),
+    PASSO_REQUEST: JSON.stringify({
+      version: "v2", source: "/passo", at: requestedAt, requestId,
+      guideRequested: true, requestText: passoRequestText, marketingSelected: marketing,
+    }),
+    MARKETING_CONSENT: marketing,
+    ...(marketing ? { MARKETING_EVIDENCE: JSON.stringify({
+      version: "v2", source: "/passo", at: requestedAt, requestId, text: marketingConsentText,
+    }) } : {}),
   };
 
   let contactResponse: Response;
   let deliveryName = name;
   try {
-    const contact = await createOrUpdateContact({ apiKey, attributes: passoAttributes, email, listId });
+    const contact = await createOrUpdateContact({ apiKey, attributes: passoAttributes, email, listId, marketing, marketingListId });
     contactResponse = contact.response;
     deliveryName = contact.name;
   } catch {

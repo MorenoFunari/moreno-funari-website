@@ -14,7 +14,7 @@ export function PilotHomeSpotSection() {
         <div className={styles.copy}>
           <p className={styles.eyebrow}>CONFRONTO</p>
           <h2 id="home-pilot-spot-title">
-            Un primo incontro conoscitivo gratuito di 30 minuti, online o in presenza.
+            Un primo incontro conoscitivo gratuito di 30 minuti, online.
           </h2>
           <p>
             Per capire meglio la situazione che stai vivendo e se ha senso lavorare insieme.

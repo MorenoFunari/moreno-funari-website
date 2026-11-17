@@ -31,7 +31,7 @@ test('every primary CONFRONTO entry presents the complete offer before form subm
     const main = readFileSync(join(root, page + '.html'), 'utf8').match(/<main\b[\s\S]*?<\/main>/)?.[0];
     assert.ok(main, page);
     const text = visible(main);
-    for (const term of ['gratuito', '30 minuti', 'online', 'in presenza', 'senza obbligo di proseguire']) {
+    for (const term of ['gratuito', '30 minuti', 'online', 'senza obbligo di proseguire']) {
       assert.ok(text.toLowerCase().includes(term), `${page}: ${term}`);
     }
   }
@@ -51,7 +51,7 @@ test('approved CONFRONTO copy and Home CTA destinations are rendered exactly', (
   const text = visible(html).replace(/&#x27;/g, "'");
   for (const expected of [
     'CONFRONTO: un primo incontro per capire da dove partire',
-    '30 minuti, gratuito, online o in presenza. Senza obbligo di proseguire.',
+    '30 minuti, gratuito, online. Senza obbligo di proseguire.',
     'Sei sotto pressione da settimane e non riesci a staccare.',
     "Rimandi una decisione e ogni giorno pesa un po' di più.",
     'Sai cosa dovresti fare, ma non riesci a partire.',
@@ -61,7 +61,7 @@ test('approved CONFRONTO copy and Home CTA destinations are rendered exactly', (
     'Richiedi il primo incontro',
   ]) assert.ok(text.includes(expected), expected);
   assert.ok(html.includes('<title>CONFRONTO, primo incontro conoscitivo gratuito | Moreno Funari Mental Coach</title>'));
-  assert.ok(html.includes('name="description" content="30 minuti, online o in presenza, per capire meglio la situazione che stai vivendo. Gratuito e senza obbligo di proseguire."'));
+  assert.ok(html.includes('name="description" content="30 minuti, online, per capire meglio la situazione che stai vivendo. Gratuito e senza obbligo di proseguire."'));
   const phone = html.match(/<input[^>]*name="phone"[^>]*>/)[0];
   assert.ok(!phone.includes('required'));
   const home = readFileSync(join(root, 'index.html'), 'utf8');

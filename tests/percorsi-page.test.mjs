@@ -24,7 +24,7 @@ test('updated copy is rendered and original method remains intact', () => {
   }
   for (const text of strings(copy.method)) assert.ok(approved.includes(text), `Original method changed: ${text}`);
   assert.ok(plain.includes('gratuito di 30 minuti'));
-  assert.ok(plain.includes('online oppure in presenza, da concordare, senza obbligo di proseguire'));
+  assert.ok(plain.includes('online, senza obbligo di proseguire'));
   assert.doesNotMatch(plain, /Pilot|pilota|6 incontri|sei incontri|6 settimane|700|1[.,]100|cinque partecipanti|Prezzo di lancio/);
 });
 test('one H1, exactly ten H2s in approved order; method H3s, semantic inclusions and FAQs', () => {
@@ -38,9 +38,9 @@ test('one H1, exactly ten H2s in approved order; method H3s, semantic inclusions
 });
 test('approved absolute SEO title, canonical, descriptions, robots and social metadata', () => {
   assert.ok(html.includes('<title>Percorso di mental coaching individuale | Moreno Funari</title>'));
-  const description = 'Coaching personalizzato: si parte da CONFRONTO, incontro gratuito di 30 minuti, online oppure in presenza da concordare, senza obbligo di proseguire.';
+  const description = 'Coaching personalizzato: si parte da CONFRONTO, incontro gratuito di 30 minuti, online, senza obbligo di proseguire.';
   assert.ok(html.includes(`name="description" content="${description}"`));
-  const socialDescription = 'Coaching personalizzato a partire da una situazione concreta. Primo incontro CONFRONTO gratuito di 30 minuti, online oppure in presenza da concordare.';
+  const socialDescription = 'Coaching personalizzato a partire da una situazione concreta. Primo incontro CONFRONTO gratuito di 30 minuti, online.';
   for (const attribute of ['property="og:description"', 'name="twitter:description"']) assert.ok(html.includes(`${attribute} content="${socialDescription}"`));
   assert.ok(html.includes('rel="canonical" href="https://morenofunari.it/percorsi"'));
   assert.ok(html.includes('name="robots" content="index, follow"'));
@@ -89,7 +89,7 @@ test('coaching and contact present the current offer without retired commercial 
   for (const route of ['coaching', 'contatti', 'grazie-confronto']) {
     const page = decode(readFileSync(new URL(`../.next/server/app/${route}.html`, import.meta.url), 'utf8').split('</main>')[0].replace(/<[^>]+>/g, ''));
     assert.ok(page.includes('gratuito di 30 minuti'), route);
-    assert.ok(page.includes('online oppure in presenza'), route);
+    assert.ok(page.includes('online'), route);
     assert.ok(page.includes('senza obbligo di proseguire'), route);
     assert.doesNotMatch(page, /percorso pilota|nel Pilot|6 incontri|tre partecipanti/i, route);
   }

@@ -67,7 +67,7 @@ export function PilotCtaBox({
           situazione concreta.
         </p>
         <p>
-          CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire.
+          CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online, senza obbligo di proseguire.
         </p>
         {showContactDetails ? (
           <ul className={styles.contactList}>
