@@ -52,7 +52,7 @@ export default function AdsConfrontoPage() {
               poi ti chiedi se sei all’altezza.
             </p>
             <p className={styles.contactHint}>
-              CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso di coaching personalizzato.
+              CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso di coaching personalizzato a pagamento.
             </p>
             <div className={styles.action}>
               <ButtonLink href="#richiesta-confronto" external size="large">

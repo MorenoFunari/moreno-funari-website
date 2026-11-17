@@ -1,7 +1,5 @@
 import { TrackedConfrontoLink } from "@/components/analytics/tracked-confronto-link";
-import { TrackedWhatsAppButton } from "@/components/analytics/tracked-whatsapp-button";
 import { Container } from "@/components/ui/container";
-import { pilotWhatsAppUrl } from "@/config/pilot";
 
 import styles from "./pilot-home-spot-section.module.css";
 
@@ -16,10 +14,10 @@ export function PilotHomeSpotSection() {
         <div className={styles.copy}>
           <p className={styles.eyebrow}>CONFRONTO</p>
           <h2 id="home-pilot-spot-title">
-            Hai una situazione concreta che senti bloccata?
+            Un primo incontro conoscitivo gratuito di 30 minuti, online o in presenza.
           </h2>
           <p>
-            CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso di coaching personalizzato.
+            Per capire meglio la situazione che stai vivendo e se ha senso lavorare insieme.
           </p>
         </div>
 
@@ -29,16 +27,15 @@ export function PilotHomeSpotSection() {
             page="/"
             size="medium"
           >
-            Scopri CONFRONTO
+            Richiedi il primo incontro
           </TrackedConfrontoLink>
-          <TrackedWhatsAppButton
-            href={pilotWhatsAppUrl}
+          <TrackedConfrontoLink
             location="home_pilot_spot_whatsapp"
             page="/"
             size="medium"
           >
             Scrivimi CONFRONTO
-          </TrackedWhatsAppButton>
+          </TrackedConfrontoLink>
         </div>
       </div>
     </Container>
