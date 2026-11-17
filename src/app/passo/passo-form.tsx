@@ -19,6 +19,7 @@ type PassoLeadResponse = {
 export function PassoForm() {
   const router = useRouter();
   const submittingRef = useRef(false);
+  const requestRef = useRef<{ id: string; at: number; payload: string } | null>(null);
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -31,6 +32,12 @@ export function PassoForm() {
     setSubmitState("submitting");
 
     try {
+      const payload = JSON.stringify([formData.get("EMAIL"), formData.get("NOME"), formData.get("CONSENSO")]);
+      if (!requestRef.current || requestRef.current.payload !== payload) {
+        requestRef.current = { id: window.crypto.randomUUID(), at: Date.now(), payload };
+      }
+      formData.set("requestId", requestRef.current.id);
+      formData.set("requestedAt", String(requestRef.current.at));
       const response = await fetch("/api/passo-lead", {
         method: "POST",
         body: formData,

@@ -41,6 +41,7 @@ export function find(tree, predicate) {
 export class TestFormData {
   constructor(form) { this.values = form.values; }
   get(name) { return this.values[name] ?? null; }
+  set(name, value) { this.values[name] = value; }
 }
 export function event(form) { return { preventDefault() {}, currentTarget: form }; }
 export function deferred() { let resolve; const promise = new Promise(r => { resolve = r; }); return { promise, resolve }; }
