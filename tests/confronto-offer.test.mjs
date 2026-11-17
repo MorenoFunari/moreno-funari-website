@@ -72,3 +72,13 @@ test('approved CONFRONTO copy and Home CTA destinations are rendered exactly', (
   assert.ok(visible(block).includes('Richiedi il primo incontro'));
   assert.ok(visible(block).includes('Scrivimi CONFRONTO'));
 });
+
+test('CONFRONTO privacy states the adopted maximum retention and avoids list-routing promises',()=>{
+ const html=readFileSync(join(root,'privacy-policy.html'),'utf8');
+ const text=visible(html).replace(/&#x27;/g,"'");
+ const section=text.split('5. CONFRONTO: richiesta e prenotazione')[1].split('Richieste tramite Instagram')[0];
+ assert.match(section,/massimo di 12 mesi dall’ultima interazione/);
+ assert.match(section,/non danno seguito a un rapporto professionale/);
+ assert.match(section,/nuova richiesta intenzionale può comportare un nuovo invio/);
+ assert.doesNotMatch(section,/Archivio richieste|lista di ingresso|#8|senza riattivare/);
+});

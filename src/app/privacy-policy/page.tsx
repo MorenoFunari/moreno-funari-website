@@ -187,13 +187,9 @@ export default function PrivacyPolicyPage() {
               presa visione della privacy e fonte della richiesta. Sulle pagine CONFRONTO e Ads
               il telefono è facoltativo e la descrizione è richiesta. Evita dati sanitari,
               diagnosi e altre informazioni sensibili non necessarie.</p>
-            <p>I dati sono inviati dal backend del sito a Brevo nella lista CONFRONTO (#5),
-              per gestire la richiesta. L’automazione invia l’email con il collegamento a Calendly,
-              aggiunge il contatto alla lista Archivio richieste (#8) e lo rimuove dalla
-              lista di ingresso (#5). Una nuova richiesta intenzionale, dopo il completamento
-              del flusso, può quindi inviare nuovamente il link. Se una richiesta è ancora
-              in gestione, il contatto già presente viene aggiornato senza creare una nuova
-              iscrizione. Il link di prenotazione è disponibile anche nella pagina di conferma.
+            <p>I dati sono inviati dal backend del sito a Brevo per gestire il contatto e la richiesta. Un’email automatica contiene il collegamento a Calendly
+              per prenotare l’incontro online. Una nuova richiesta intenzionale può comportare
+              un nuovo invio del link. Il collegamento è disponibile anche nella pagina di conferma.
               Una notifica operativa con i recapiti e il messaggio viene inviata a Moreno via email.
               La risposta automatica riguarda esclusivamente la richiesta: non comporta iscrizione
               alla newsletter né consenso a comunicazioni promozionali.</p>
@@ -204,15 +200,11 @@ export default function PrivacyPolicyPage() {
               dall’interessato (art. 6, par. 1, lett. b GDPR); per richieste generali,
               il legittimo interesse a rispondere (lett. f). La casella privacy documenta
               la richiesta e la presa visione, non un consenso marketing.</p>
-            <p>I dati vengono conservati per il tempo necessario a gestire la richiesta,
-              la prenotazione e l’eventuale rapporto conseguente; successivamente solo
-              per obblighi di legge o tutela dei diritti. Le richieste conoscitive che non
-              proseguono vengono riesaminate separatamente dai successivi rapporti
-              professionali: i dati non più necessari vengono cancellati o anonimizzati,
-              senza eliminare quelli ancora richiesti per altre finalità legittime.
-              L’archiviazione nella lista Brevo non costituisce di per sé un motivo per
-              conservarli indefinitamente. Puoi chiedere la cancellazione quando non
-              sussistono motivi per proseguire la conservazione.</p>
+            <p>Le richieste CONFRONTO che non danno seguito a un rapporto professionale vengono conservate per un massimo di 12 mesi dall’ultima interazione, salvo eventuali obblighi di legge o necessità di tutela dei diritti.</p>
+            <p>I dati relativi a successivi rapporti professionali sono gestiti separatamente,
+              secondo le finalità e gli obblighi applicabili. I dati non più necessari vengono
+              cancellati o anonimizzati, preservando soltanto quelli ancora necessari per
+              altre finalità legittime. Puoi chiedere la cancellazione scrivendo al titolare.</p>
             <p>Gli incontri non vengono registrati in audio o video senza un consenso specifico e separato.</p>
             <h3 className={styles.subTitle}>Richieste tramite Instagram e ManyChat</h3>
             <p>Per le interazioni CONFRONTO su Instagram viene utilizzato ManyChat:
@@ -249,9 +241,10 @@ export default function PrivacyPolicyPage() {
               (art. 6, par. 1, lett. a GDPR). La guida arriva anche senza questa scelta.</p>
             <p>Brevo conserva separatamente la richiesta della guida e la scelta relativa
               alle email occasionali, con data, origine, versione del modulo e testo mostrato.
-              I richiedenti entrano nella lista PASSO — Guida Dire sempre sì (#4);
-              l’adesione facoltativa può aggiungerli alla Community (#3).
-              La sola presenza nella lista guida non autorizza invii promozionali.</p>
+              Tutti i richiedenti entrano nella lista PASSO — Guida Dire sempre sì (#4) e nella
+              Community (#3), usata come contenitore generale dei contatti. La presenza in
+              queste liste non autorizza invii promozionali: le comunicazioni successive
+              richiedono un consenso marketing valido e verificabile, nel rispetto delle preferenze registrate.</p>
             <p>Per un contatto già presente, una casella facoltativa lasciata vuota non
               revoca né rinnova un consenso precedente. Non vengono rimosse le disiscrizioni
               o le esclusioni dagli invii registrate in Brevo. Puoi revocare il consenso

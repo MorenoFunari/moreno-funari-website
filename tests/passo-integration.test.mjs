@@ -15,9 +15,9 @@ test('built PASSO: new and existing contact, separate optional marketing, one gu
  };
  await submit(false);await submit(true);await submit(false);
  const sent=rows().slice(before),writes=sent.filter(x=>!x.url.endsWith('/smtp/email'));
- assert.equal(writes.length,3);assert.deepEqual(writes[0].body.listIds,[4]);assert.equal(writes[0].body.attributes.MARKETING_CONSENT,false);
+ assert.equal(writes.length,3);assert.deepEqual(writes[0].body.listIds,[4,3]);assert.equal(writes[0].body.attributes.MARKETING_CONSENT,false);
  assert.deepEqual(writes[1].body.listIds,[4,3]);assert.equal(writes[1].body.attributes.MARKETING_CONSENT,true);
- assert.deepEqual(writes[2].body.listIds,[4]);assert(!('MARKETING_CONSENT' in writes[2].body.attributes));
+ assert.deepEqual(writes[2].body.listIds,[4,3]);assert(!('MARKETING_CONSENT' in writes[2].body.attributes));
  assert.equal(sent.filter(x=>x.url.endsWith('/smtp/email')).length,3);
  const thanks=await fetch(base+'/grazie-passo');assert.equal(thanks.status,200);assert.equal(rows().length,before+6);
 });

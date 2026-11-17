@@ -2,11 +2,11 @@
 
 Responsabile operativo: Moreno Funari. Procedura manuale, senza cancellazioni automatiche.
 
-## Valutazione del termine
+## Termine operativo adottato
 
-Dodici mesi dall’ultima interazione sostanziale sono un obiettivo di riesame proporzionato per richieste conoscitive concluse senza coaching: coprono un eventuale ritorno della persona senza mantenere indefinitamente il racconto iniziale. Non sono un obbligo di legge né un’autorizzazione a mantenere dati ormai inutili per dodici mesi. Aperture di newsletter, campagne e aggiornamenti tecnici Brevo non rinnovano il periodo CONFRONTO.
+Le richieste CONFRONTO che non danno seguito a un rapporto professionale vengono conservate per un massimo di 12 mesi dall’ultima interazione, salvo eventuali obblighi di legge o necessità di tutela dei diritti.
 
-Non pubblicare ancora un termine tassativo di dodici mesi: manca un registro completo dell’ultima interazione tra Brevo, email, Calendly/Calendar e messaggi social e non è attivo un processo di scadenza. La policy mantiene il criterio di necessità e distingue richieste e rapporti successivi. Il termine fisso potrà essere adottato dopo il censimento e l’avvio del riesame periodico documentato.
+Il termine è un massimo, non un periodo minimo. Si applica al contenuto della richiesta e alle copie nei sistemi, non indistintamente all’intero contatto che può avere altri rapporti o preferenze. Aperture di newsletter, campagne e aggiornamenti tecnici Brevo non spostano la scadenza CONFRONTO. L’ultima interazione è la richiesta o una successiva comunicazione sostanziale/incontro relativo a essa, verificata nella cronologia, nelle email e negli appuntamenti.
 
 Fonti consultate il 17/11/2026:
 - Garante, principio di limitazione della conservazione: https://www.garanteprivacy.it/web/guest/home/principi-fondamentali-del-trattamento
@@ -14,13 +14,13 @@ Fonti consultate il 17/11/2026:
 
 La conservazione decennale dei documenti contabili applicabili non si estende automaticamente a tutte le richieste conoscitive. Per rapporti di coaching, fatture, contratti, controversie o obblighi specifici verificare separatamente finalità e termini con il consulente competente; nessun termine unico per tutto il contatto.
 
-## Esecuzione mensile proposta
+## Esecuzione mensile
 
-Prima verifica: entro il 17/12/2026; successivamente una volta al mese. Questa è una procedura consegnata al titolare, non un’automazione o un promemoria già attivato.
+Responsabile: Moreno Funari. Controllo il 17 di ogni mese; prossimo controllo 17/12/2026. Revisione anticipata a 11 mesi dall’ultima interazione, con cancellazione/anonimizzazione entro la scadenza dei 12 mesi, salvo eccezione documentata. Nessuna cancellazione automatica indiscriminata; questo documento definisce l’attività manuale del titolare, senza attivare promemoria o nuove automazioni.
 
 1. Esaminare lista ingresso #5 e Archivio richieste #8 e richieste CONFRONTO negli altri canali. Non usare appartenenza alla lista o ultima modifica globale Brevo come prova dell’ultima interazione.
-2. Per ogni richiesta registrare in un registro privato: identificativo interno, ultima interazione effettiva e sua fonte, richiesta conclusa sì/no, coaching avviato sì/no, altre finalità, eventuale motivo di conservazione, data di riesame e operazione prevista. Nessun recapito o testo della richiesta nel repository.
-3. Portare a verifica individuale le richieste concluse senza seguito da almeno dodici mesi, e quelle già non necessarie anche prima. Per quelle senza data affidabile ricostruire l’interazione: non presumere che siano recenti e non cancellare alla cieca.
+2. Per ogni richiesta registrare in un registro privato: identificativo interno, ultima interazione effettiva e sua fonte, richiesta conclusa sì/no, coaching avviato sì/no, altre finalità, eventuale motivo di conservazione, data di riesame, scadenza massima e operazione prevista. Le eccezioni devono indicare dati strettamente necessari, motivo concreto, termine applicabile e prossima verifica; non basta scrivere genericamente “tutela diritti”. Nessun recapito o testo della richiesta nel repository.
+3. Calcolare scadenza = ultima interazione + 12 mesi di calendario (il 29 febbraio scade il 28 febbraio nell’anno non bisestile). Selezionare per riesame quelle concluse senza seguito da almeno 11 mesi; dare priorità immediata a quelle già scadute o non più necessarie. Pianificare la cancellazione entro la data massima, non al controllo mensile successivo alla scadenza. Per quelle senza data affidabile ricostruire l’interazione: non presumere che siano recenti e non cancellare alla cieca.
 4. Verificare email, appuntamenti, eventuali accordi e note prima di decidere. Se esistono altre finalità, conservare solo i relativi dati. Marketing esplicito, prova del consenso e opposizioni devono rimanere separati; cancellare il racconto CONFRONTO non significa riscrivere le preferenze.
 5. Se nulla giustifica la conservazione: cancellare i campi e le note CONFRONTO, rimuovere dalle liste pertinenti, eliminare le copie della richiesta in email, allegati ed esportazioni, e verificare le copie in Calendly/Calendar e nei canali social. Eliminare l’intero contatto solo se non serve per nessun’altra finalità; altrimenti mantenere il minimo necessario. La sola rimozione da una lista non cancella i dati.
 6. L’anonimizzazione è alternativa solo se irreversibile: togliere email e nome lasciando un racconto riconoscibile non basta. Se non verificabile, preferire cancellazione selettiva. Verificare termini di recupero/cestino e conservazione del provider senza promettere la cancellazione immediata dei backup.
