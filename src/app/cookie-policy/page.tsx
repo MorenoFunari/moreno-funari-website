@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { AnalyticsPreferencesButton } from "@/components/analytics/analytics-preferences-button";
 import { Container } from "@/components/ui/container";
-import { legalConfig } from "@/config/legal";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
 import styles from "../legal-page.module.css";
@@ -28,8 +27,8 @@ export default function CookiePolicyPage() {
           </p>
           <p className={styles.updated}>
             Ultimo aggiornamento:{" "}
-            <time dateTime={legalConfig.lastUpdatedIso}>
-              {legalConfig.lastUpdatedLabel}
+            <time dateTime="2026-11-17">
+              17 novembre 2026
             </time>
           </p>
         </header>
@@ -104,6 +103,10 @@ export default function CookiePolicyPage() {
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>4. Google Analytics 4</h2>
+            <p>Il tag di produzione utilizza lo stream G-Z7E9BSCE4N. Il cookie
+              di sessione appartiene alla famiglia _ga_*: il suffisso dipende
+              dalla configurazione del tag. La tabella descrive i cookie che
+              possono essere impostati dopo consenso.</p>
             <p className={styles.tableHint} id="analytics-table-hint">
               La tabella può essere fatta scorrere orizzontalmente su schermi
               stretti.
@@ -136,7 +139,7 @@ export default function CookiePolicyPage() {
                     <td>Soltanto dopo consenso</td>
                   </tr>
                   <tr>
-                    <td>_ga_11RJTDXWBS</td>
+                    <td>_ga_* (cookie di sessione GA4)</td>
                     <td>Google Analytics</td>
                     <td>Conservare lo stato della sessione</td>
                     <td>Durata predefinita: 2 anni</td>
@@ -151,15 +154,14 @@ export default function CookiePolicyPage() {
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>5. Meta Pixel</h2>
             <p>
-              Se configurato, il Meta Pixel viene caricato soltanto dopo il tuo
-              consenso. Può misurare visite e interazioni con le pagine del sito
-              e può utilizzare identificatori come il cookie `_fbp`. Il sito
-              non lo carica se rifiuti gli analytics.
+              Il Meta Pixel è attualmente disattivato: il sito non carica il tag
+              Meta e non attiva cookie del Pixel, come _fbp. La scelta
+              “Accetta analytics” riguarda Analytics e non abilita il Pixel.
             </p>
             <p>
-              Il Pixel è fornito da Meta Platforms Ireland Limited. La durata e
-              le modalità degli eventuali cookie dipendono dalle impostazioni e
-              dalle regole del servizio Meta.
+              Un’eventuale attivazione futura richiederà una scelta marketing
+              separata e l’aggiornamento di questa informativa. Il fornitore
+              del servizio è Meta Platforms Ireland Limited.
             </p>
             <ul className={styles.list}>
               <li>

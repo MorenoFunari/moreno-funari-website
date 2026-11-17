@@ -188,7 +188,10 @@ export default function PrivacyPolicyPage() {
               il telefono è facoltativo e la descrizione è richiesta. Evita dati sanitari,
               diagnosi e altre informazioni sensibili non necessarie.</p>
             <p>I dati sono inviati dal backend del sito a Brevo nella lista CONFRONTO (#5),
-              per gestire la richiesta e inviare un’email automatica con il collegamento a Calendly.
+              per gestire la richiesta. Al primo ingresso nella lista, un’automazione invia
+              l’email con il collegamento a Calendly. Se il contatto è già nella lista,
+              il reinvio del modulo aggiorna la richiesta senza riattivare quell’automazione;
+              il link di prenotazione è disponibile anche nella pagina di conferma.
               Una notifica operativa con i recapiti e il messaggio viene inviata a Moreno via email.
               La risposta automatica riguarda esclusivamente la richiesta: non comporta iscrizione
               alla newsletter né consenso a comunicazioni promozionali.</p>
@@ -385,8 +388,8 @@ export default function PrivacyPolicyPage() {
                 </h3>
                 <p>
                   Fornitore di WhatsApp e dei servizi social Meta, utilizzati
-                  per comunicazioni facoltative, e del Meta Pixel, caricato sul
-                  sito soltanto dopo consenso.
+                  per comunicazioni facoltative, e del Meta Pixel, attualmente disattivato sul sito.
+                  La scelta analytics non abilita il Pixel.
                 </p>
               </li>
               <li className={styles.card}>

@@ -119,7 +119,7 @@ export function ConfrontoLeadForm({
   noteRequired = false,
   page,
   phoneRequired = true,
-  reassuranceText = "Inviare la richiesta non ti impegna a proseguire. Leggo personalmente ogni richiesta e concordiamo insieme l’eventuale incontro.",
+  reassuranceText = "Inviare la richiesta non ti impegna a proseguire. Ricevi il link Calendly via email per prenotare online; leggo personalmente ogni richiesta.",
   source,
   title = "Lascia i tuoi dati",
   variant = "full",

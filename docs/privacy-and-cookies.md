@@ -5,7 +5,7 @@
 - Sito principale `https://morenofunari.it`.
 - Contatti volontari via email.
 - Hosting e log tecnici.
-- Google Analytics 4, soltanto dopo consenso.
+- Google Analytics 4: Consent Mode v2 denied prima della scelta; cookie solo dopo consenso. Stream di produzione G-Z7E9BSCE4N, verificato il 17/11/2026.
 - localStorage per ricordare la scelta analytics.
 
 ## Inventario strumenti
@@ -14,7 +14,7 @@
 | --- | --- | --- | --- |
 | `mf_analytics_consent` | localStorage di prima parte | Ricordare accettazione o rifiuto di Analytics | Necessario |
 | `_ga` | Cookie Google Analytics | Distinguere i visitatori | Dopo consenso |
-| `_ga_11RJTDXWBS` | Cookie Google Analytics | Conservare lo stato della sessione | Dopo consenso |
+| `_ga_*` | Cookie Google Analytics | Conservare lo stato della sessione | Dopo consenso |
 
 ## Fornitori
 
@@ -34,7 +34,7 @@
 - [ ] Cookie Policy aggiornata
 - [ ] Pagine legali ancora noindex
 - [ ] Pagine legali escluse dalla sitemap
-- [ ] Nessun tag Google prima del consenso
+- [x] Tag Google con i quattro segnali denied prima della scelta; nessun cookie analytics senza consenso
 - [ ] Nessun cookie GA prima del consenso
 - [ ] Rifiuto funzionante
 - [ ] Accettazione funzionante
@@ -55,3 +55,9 @@
 Le informative devono essere riesaminate se cambiano hosting, email provider, analytics, form, newsletter, pagamenti, campagne pubblicitarie, strumenti di prenotazione, area riservata, AI app, forma fiscale o dati del titolare.
 
 Questa documentazione non dichiara conformità legale garantita.
+
+## Allineamento 17 novembre 2026
+
+Il vecchio ID G-11RJTDXWBS è presente nella proprietà storica 543556019, distinta dalla proprietà di produzione 556079158 / stream 15851473810, che usa G-Z7E9BSCE4N. Nessun ID modificato. La Cookie Policy descrive la famiglia _ga_* senza dedurre il suffisso dal Measurement ID. Meta Pixel è disattivato dal codice (marketingConsentGranted=false); analytics non lo abilita.
+
+PASSO v2 usa lista guida #4 e aggiunge la Community #3 solo per una scelta marketing esplicita. Campi Brevo creati e verificati: PASSO_REQUEST (testo JSON), MARKETING_CONSENT (booleano), MARKETING_EVIDENCE (testo JSON). Segmento #1 “Email occasionali — consenso esplicito”: MARKETING_CONSENT=true. Usare esclusivamente questo segmento per future campagne PASSO, rispettando inoltre le blocklist Brevo. CONSENSO storico non viene interpretato o sovrascritto; casella vuota non revoca una preferenza preesistente. Nessuna sequenza promozionale attiva.
