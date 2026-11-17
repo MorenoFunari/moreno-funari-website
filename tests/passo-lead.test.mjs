@@ -20,12 +20,12 @@ function setup(provider, env = {}) {
 const accepted = () => new Response(null,{status:204});
 test('new contact saves all consent evidence, configured list and template, name', async () => {
   const s=setup(); const r=await s.post(data()); assert.equal(r.status,200); assert.equal((await r.json()).guideEmailSent,true);
-  assert.equal(s.calls[1].method,'POST'); assert.deepEqual(s.calls[1].body.listIds,[77]); assert(!('CONSENSO' in s.calls[1].body.attributes)); assert.equal(s.calls[1].body.attributes.MARKETING_CONSENT,false); assert.equal(JSON.parse(s.calls[1].body.attributes.PASSO_REQUEST).marketingSelected,false); assert.equal(s.calls[2].body.templateId,88); assert.equal(s.calls[2].body.params.NOME,'Test');
+  assert.equal(s.calls[1].method,'POST'); assert.deepEqual(s.calls[1].body.listIds,[77,3]); assert(!('CONSENSO' in s.calls[1].body.attributes)); assert.equal(s.calls[1].body.attributes.MARKETING_CONSENT,false); assert.equal(JSON.parse(s.calls[1].body.attributes.PASSO_REQUEST).marketingSelected,false); assert.equal(s.calls[2].body.templateId,88); assert.equal(s.calls[2].body.params.NOME,'Test');
 });
 for (const listIds of [[77],[9]]) test('existing contact in lists '+JSON.stringify(listIds)+' is updated, consent preserved',async()=>{
   const s=setup(c=>c.method==='GET'?Response.json({attributes:{NOME:'Previous',CONSENSO:true,PASSO_REQUESTED_AT:'2020-01-01',PASSO_CONSENT_TEXT:'original',OTHER:'keep'},listIds}):accepted());
   const p=data();p.NOME=''; assert.equal((await s.post(p)).status,200);
-  assert.equal(s.calls[1].method,'PUT'); assert.deepEqual(s.calls[1].body.listIds,[77]);
+  assert.equal(s.calls[1].method,'PUT'); assert.deepEqual(s.calls[1].body.listIds,[77,3]);
   for(const key of ['NOME','CONSENSO','PASSO_REQUESTED_AT','PASSO_CONSENT_TEXT','OTHER']) assert(!(key in s.calls[1].body.attributes));
   assert.equal(s.calls[2].body.params.NOME,'Previous'); assert(!('unlinkListIds' in s.calls[1].body));
 });
@@ -81,7 +81,7 @@ test('email error is distinct from contact failure and arbitrary provider codes 
 
 for (const marketing of [false,true]) test('new contact guide delivery independent of optional marketing '+marketing,async()=>{
  const s=setup();assert.equal((await s.post({...data(),...(marketing?{MARKETING_CONSENT:'1'}:{})})).status,200);
- const contact=s.calls[1].body;assert.deepEqual(contact.listIds,marketing?[77,3]:[77]);
+ const contact=s.calls[1].body;assert.deepEqual(contact.listIds,[77,3]);
  assert.equal(contact.attributes.MARKETING_CONSENT,marketing);
  assert.equal(JSON.parse(contact.attributes.PASSO_REQUEST).marketingSelected,marketing);
  assert.equal('MARKETING_EVIDENCE' in contact.attributes,marketing);
@@ -91,7 +91,7 @@ for(const previous of [true,false]) test('unchecked preserves established market
  const s=setup(c=>c.method==='GET'?Response.json({attributes:{MARKETING_CONSENT:previous,MARKETING_EVIDENCE:'original',CONSENSO:true}}):accepted());
  await s.post(data());const a=s.calls[1].body.attributes;
  assert(!('MARKETING_CONSENT' in a));assert(!('MARKETING_EVIDENCE' in a));assert(!('CONSENSO' in a));
- assert.deepEqual(s.calls[1].body.listIds,[77]);
+ assert.deepEqual(s.calls[1].body.listIds,[77,3]);
 });
 test('explicit new opt-in records evidence separately and adds marketing list',async()=>{
  const s=setup(c=>c.method==='GET'?Response.json({attributes:{MARKETING_CONSENT:false}}):accepted());
@@ -101,11 +101,19 @@ test('explicit new opt-in records evidence separately and adds marketing list',a
 });
 test('explicit opt-in never unblocks a previously unsubscribed contact',async()=>{
  const s=setup(c=>c.method==='GET'?Response.json({attributes:{MARKETING_CONSENT:false},emailBlacklisted:true}):accepted());
- await s.post({...data(),MARKETING_CONSENT:'1'});assert.deepEqual(s.calls[1].body.listIds,[77]);assert(!('emailBlacklisted' in s.calls[1].body));
+ await s.post({...data(),MARKETING_CONSENT:'1'});assert.deepEqual(s.calls[1].body.listIds,[77,3]);assert(!('emailBlacklisted' in s.calls[1].body));assert(!('MARKETING_CONSENT' in s.calls[1].body.attributes));assert(!('MARKETING_EVIDENCE' in s.calls[1].body.attributes));
 });
 test('same id with altered marketing is rejected',async()=>{
  const s=setup();const p=data();await s.post(p);assert.equal((await s.post({...p,MARKETING_CONSENT:'1'})).status,409);
 });
-test('guide and marketing cannot use same list',async()=>{
+test('guide and Community cannot use same list',async()=>{
  const s=setup(null,{BREVO_LIST_ID_MARKETING:'77'});assert.equal((await s.post(data())).status,503);assert.equal(s.calls.length,0);
+});
+
+test('Community override is independent of marketing; evidence includes source, timestamp and version',async()=>{
+ const s=setup(null,{BREVO_LIST_ID_COMMUNITY:'42',BREVO_LIST_ID_MARKETING:'9'});
+ await s.post({...data(),MARKETING_CONSENT:'1'});
+ assert.deepEqual(s.calls[1].body.listIds,[77,42]);
+ const evidence=JSON.parse(s.calls[1].body.attributes.MARKETING_EVIDENCE);
+ assert.equal(evidence.source,'/passo');assert.equal(evidence.version,'v2');assert(Number.isFinite(Date.parse(evidence.at)));
 });

@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 const brevoContactsEndpoint = "https://api.brevo.com/v3/contacts";
 const brevoTransactionalEmailEndpoint = "https://api.brevo.com/v3/smtp/email";
 const defaultPassoListId = 4;
-const defaultMarketingListId = 3;
+const defaultCommunityListId = 3;
 const defaultPassoTemplateId = 2;
 const passoRequestText = "Ho letto l’Informativa Privacy e chiedo di ricevere via email la guida gratuita PASSO.";
 const marketingConsentText = "Desidero ricevere anche email occasionali da Moreno Funari con riflessioni, contenuti pratici e aggiornamenti sul coaching. Posso disiscrivermi in qualsiasi momento.";
@@ -46,8 +46,8 @@ async function providerError(response: Response, stage: string) {
   return error;
 }
 
-async function createOrUpdateContact({ apiKey, attributes, email, listId, marketing, marketingListId }: {
-  apiKey: string; attributes: ContactAttributes; email: string; listId: number; marketing: boolean; marketingListId: number;
+async function createOrUpdateContact({ apiKey, attributes, email, listId, marketing, communityListId }: {
+  apiKey: string; attributes: ContactAttributes; email: string; listId: number; marketing: boolean; communityListId: number;
 }) {
   const headers = { "api-key": apiKey, "Content-Type": "application/json" };
   const contactUrl = `${brevoContactsEndpoint}/${encodeURIComponent(email)}`;
@@ -56,7 +56,7 @@ async function createOrUpdateContact({ apiKey, attributes, email, listId, market
   if (existing.status === 404) {
     const created = await fetch(brevoContactsEndpoint, {
       method: "POST", headers, cache: "no-store",
-      body: JSON.stringify({ email, attributes, listIds: marketing ? [listId, marketingListId] : [listId], updateEnabled: false }),
+      body: JSON.stringify({ email, attributes, listIds: [listId, communityListId], updateEnabled: false }),
     });
     if (created.ok) return { response: created, name: String(attributes.NOME ?? "") };
     const error = await providerError(created, "create");
@@ -72,14 +72,14 @@ async function createOrUpdateContact({ apiKey, attributes, email, listId, market
     PASSO_REQUEST: attributes.PASSO_REQUEST,
     ...(attributes.NOME ? { NOME: attributes.NOME } : {}),
   };
-  if (marketing) {
+  if (marketing && !contact.emailBlacklisted) {
     update.MARKETING_CONSENT = true;
     update.MARKETING_EVIDENCE = attributes.MARKETING_EVIDENCE;
   } else if (previous.MARKETING_CONSENT === undefined || previous.MARKETING_CONSENT === null) {
     update.MARKETING_CONSENT = false;
   }
   // Brevo unsubscribe/blocklist remains authoritative: never unblock through this form.
-  const listIds = marketing && !contact.emailBlacklisted ? [listId, marketingListId] : [listId];
+  const listIds = [listId, communityListId];
   const response = await fetch(contactUrl, {
     method: "PUT", headers, cache: "no-store",
     body: JSON.stringify({ attributes: update, listIds }),
@@ -185,8 +185,8 @@ async function deliver(email: string, name: string, requestId: string, marketing
     defaultPassoTemplateId,
   );
   const requestedAt = new Date().toISOString();
-  const marketingListId = getPositiveInteger(process.env.BREVO_LIST_ID_MARKETING, defaultMarketingListId);
-  if (listId === marketingListId) return jsonError(503, "configuration");
+  const communityListId = getPositiveInteger(process.env.BREVO_LIST_ID_COMMUNITY ?? process.env.BREVO_LIST_ID_MARKETING, defaultCommunityListId);
+  if (listId === communityListId) return jsonError(503, "configuration");
   const passoAttributes: ContactAttributes = {
     ...(name ? { NOME: name } : {}),
     PASSO_REQUEST: JSON.stringify({
@@ -202,7 +202,7 @@ async function deliver(email: string, name: string, requestId: string, marketing
   let contactResponse: Response;
   let deliveryName = name;
   try {
-    const contact = await createOrUpdateContact({ apiKey, attributes: passoAttributes, email, listId, marketing, marketingListId });
+    const contact = await createOrUpdateContact({ apiKey, attributes: passoAttributes, email, listId, marketing, communityListId });
     contactResponse = contact.response;
     deliveryName = contact.name;
   } catch {
