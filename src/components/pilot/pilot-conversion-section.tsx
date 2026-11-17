@@ -80,6 +80,7 @@ export function PilotConversionSection({
           <ConfrontoLeadForm
             ctaLabel="Invia richiesta"
             introText={formIntro}
+            reassuranceText="Inviare la richiesta non ti impegna a proseguire. Leggo personalmente ogni richiesta e concordiamo insieme l’eventuale incontro."
             noteLabel={noteLabel}
             page={page}
             source={source}

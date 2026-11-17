@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { PercorsiLeadForm } from "@/components/forms/percorsi-lead-form";
-import { PercorsiPricingSection } from "@/components/sections/percorsi/percorsi-pricing-section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -12,12 +11,12 @@ import hero from "@/components/sections/coaching/coaching-hero.module.css";
 import faq from "@/components/sections/coaching/coaching-faq-section.module.css";
 import styles from "./page.module.css";
 
-const socialTitle = "Un Passo Possibile | Percorso individuale di Mental Coaching";
-const socialDescription = "6 incontri online per fare chiarezza su una situazione concreta e individuare il prossimo passo possibile. Scopri come funziona il percorso.";
+const socialTitle = "Coaching personalizzato | Moreno Funari";
+const socialDescription = "Coaching personalizzato a partire da una situazione concreta. Primo incontro CONFRONTO gratuito di 30 minuti, online oppure in presenza da concordare.";
 const baseMetadata = createPageMetadata({
   title: "Percorso di mental coaching individuale | Moreno Funari",
   absoluteTitle: true,
-  description: "Un Passo Possibile: 6 incontri individuali online di Mental Coaching per fare chiarezza su una situazione concreta. Cosa comprende, prezzi e come iniziare.",
+  description: "Coaching personalizzato: si parte da CONFRONTO, incontro gratuito di 30 minuti, online oppure in presenza da concordare, senza obbligo di proseguire.",
   path: "/percorsi",
   noIndex: process.env.VERCEL_ENV === "preview" || process.env.NODE_ENV === "development",
 });
@@ -27,7 +26,7 @@ export const metadata: Metadata = {
     ...baseMetadata.openGraph,
     title: socialTitle,
     description: socialDescription,
-    images: [{ url: toAbsoluteUrl("/percorsi/opengraph-image"), width: 1200, height: 630, alt: "Un Passo Possibile | Moreno Funari — Mental Coach" }],
+    images: [{ url: toAbsoluteUrl("/percorsi/opengraph-image"), width: 1200, height: 630, alt: "Coaching personalizzato | Moreno Funari — Mental Coach" }],
   },
   twitter: {
     ...baseMetadata.twitter,
@@ -51,7 +50,7 @@ export default function PercorsiPage() {
           <h1 id="percorsi-title" className={hero.title}>{copy.hero.title}</h1>
           <div className={hero.copy}><Paragraphs items={copy.hero.paragraphs} /><p>{copy.hero.format}</p></div>
           <div className={hero.actions}>
-            <ButtonLink href="#richiesta" size="large">Richiedi un colloquio conoscitivo</ButtonLink>
+            <ButtonLink href="#richiesta" size="large">Richiedi un CONFRONTO</ButtonLink>
             <ButtonLink href="#come-lavoriamo" size="large" variant="secondary">Scopri come funziona il percorso</ButtonLink>
           </div>
         </div>
@@ -93,7 +92,14 @@ export default function PercorsiPage() {
         <ul className={`${styles.copy} ${styles.list}`}>{copy.boundaries.items.map((text) => <li key={text}>{text}</li>)}</ul>
       </Container>
 
-      <PercorsiPricingSection />
+      <Container as="section" className={styles.section} aria-labelledby="prezzo">
+        <SectionHeading id="prezzo" title="Durata, modalità e costi" />
+        <div className={styles.copy}>
+          <p>CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire.</p>
+          <p>Se decidiamo di proseguire, definiamo insieme durata, numero degli incontri, modalità e costi del percorso personalizzato prima di iniziare.</p>
+        </div>
+        <ButtonLink href="#richiesta">Richiedi un CONFRONTO</ButtonLink>
+      </Container>
 
       <Container as="section" className={styles.section} aria-labelledby="moreno-title">
         <SectionHeading id="moreno-title" title={copy.author.title} />
@@ -118,7 +124,7 @@ export default function PercorsiPage() {
       <Container as="section" className={styles.section} aria-labelledby="chiusura-title">
         <SectionHeading id="chiusura-title" title={copy.closing.title} />
         <div className={styles.copy}><p>{copy.closing.text}</p></div>
-        <div><ButtonLink href="#richiesta" size="large">Richiedi un colloquio conoscitivo</ButtonLink></div>
+        <div><ButtonLink href="#richiesta" size="large">Richiedi un CONFRONTO</ButtonLink></div>
         <p>{copy.closing.signature}</p>
       </Container>
     </main>

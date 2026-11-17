@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
-export const alt = "Un Passo Possibile — 6 incontri individuali. Una situazione concreta da affrontare. Moreno Funari | Mental Coach";
+export const alt = "Coaching personalizzato — CONFRONTO gratuito di 30 minuti. Moreno Funari | Mental Coach";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -14,10 +14,10 @@ export default async function PercorsiSocialImage() {
       <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", width: 720, padding: "60px 54px" }}>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", width: 84, height: 8, background: "#b7d52a", marginBottom: 34 }} />
-          <div style={{ display: "flex", flexDirection: "column", fontSize: 76, fontWeight: 700, lineHeight: 1.06, letterSpacing: -2 }}>
-            <span>UN PASSO</span><span style={{ color: "#b7d52a" }}>POSSIBILE</span>
+          <div style={{ display: "flex", flexDirection: "column", fontSize: 58, fontWeight: 700, lineHeight: 1.06, letterSpacing: -2 }}>
+            <span>COACHING</span><span style={{ color: "#b7d52a" }}>PERSONALIZZATO</span>
           </div>
-          <p style={{ fontSize: 32, lineHeight: 1.35, marginTop: 32, marginBottom: 0, maxWidth: 580 }}>6 incontri individuali. Una situazione concreta da affrontare.</p>
+          <p style={{ fontSize: 32, lineHeight: 1.35, marginTop: 32, marginBottom: 0, maxWidth: 580 }}>CONFRONTO gratuito di 30 minuti. Online oppure in presenza, da concordare.</p>
         </div>
         <div style={{ display: "flex", fontSize: 25, borderTop: "1px solid #49606d", paddingTop: 24 }}>Moreno Funari | Mental Coach</div>
       </div>

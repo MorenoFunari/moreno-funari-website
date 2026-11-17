@@ -1,13 +1,13 @@
-// Approved Marketing Engine copy supplied on 17 October 2026. Do not paraphrase.
+// Updated offer approved by Moreno on 16 November 2026; narrative and method retained.
 export const percorsiContent = {
   hero: {
     title: "Quando hai troppe cose in testa, da dove cominci?",
     paragraphs: [
       "Magari c’è una decisione che rimandi da settimane. Una situazione lavorativa che continua a pesarti. Oppure qualcosa che vorresti cambiare, ma ogni volta che ci pensi ti sembra troppo complicato.",
       "Non sempre manca la volontà di agire. A volte è difficile capire da quale parte iniziare.",
-      "Un Passo Possibile è un percorso individuale di Mental Coaching per lavorare su una situazione concreta, fare chiarezza e individuare passi che puoi iniziare ad affrontare nella vita di tutti i giorni.",
+      "Il coaching personalizzato è un percorso individuale di Mental Coaching per lavorare su una situazione concreta, fare chiarezza e individuare passi che puoi iniziare ad affrontare nella vita di tutti i giorni.",
     ],
-    format: "6 incontri individuali online · circa 6 settimane",
+    format: "CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire.",
   },
   situations: {
     title: "Forse ti riconosci in una di queste situazioni",
@@ -39,12 +39,12 @@ export const percorsiContent = {
   includes: {
     title: "Cosa comprende il percorso",
     items: [
-      { title: "Incontri individuali", text: "6 incontri online di circa 60 minuti." },
-      { title: "Durata", text: "Circa 6 settimane, un incontro a settimana." },
+      { title: "Incontri individuali", text: "Numero, durata e modalità degli incontri vengono concordati in base alla situazione." },
+      { title: "Durata", text: "La durata del percorso si definisce insieme, prima di iniziare." },
       { title: "Lavoro tra gli incontri", text: "Osservazioni, esercizi e piccoli esperimenti nella vita di tutti i giorni." },
-      { title: "Documento condiviso", text: "Uno spazio personale per raccogliere quello che emerge nel percorso." },
-      { title: "Supporto WhatsApp", text: "Per aggiornamenti brevi e dubbi sugli esercizi, entro confini concordati." },
-      { title: "Follow-up", text: "Un incontro di circa 30 minuti, indicativamente un mese dopo l’ultimo incontro." },
+      { title: "Documento condiviso", text: "Strumenti di lavoro scelti in base a ciò che emerge nel percorso." },
+      { title: "Supporto WhatsApp", text: "Eventuale supporto tra gli incontri, con modalità e confini concordati." },
+      { title: "Follow-up", text: "Eventuali momenti successivi si concordano in base al percorso." },
     ],
   },
   method: {
@@ -61,7 +61,7 @@ export const percorsiContent = {
     conclusion: "Questa sequenza non è rigida. Quando serve, si torna su una fase precedente.",
   },
   boundaries: {
-    title: "Cosa Un Passo Possibile non è",
+    title: "I confini del coaching",
     items: [
       "Non è un elenco di soluzioni pronte.",
       "Non decido io al posto tuo.",
@@ -82,7 +82,7 @@ export const percorsiContent = {
     steps: [
       "Mi racconti brevemente la situazione che vorresti affrontare, compilando il modulo qui sotto.",
       "Leggo la tua richiesta e ti rispondo personalmente.",
-      "Se ha senso, fissiamo un colloquio conoscitivo per capire se il Mental Coaching è il contesto giusto e se Un Passo Possibile può rispondere alla tua esigenza.",
+      "CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso di coaching personalizzato.",
       "Se entrambi lo riteniamo utile, definiamo modalità, condizioni e avvio del percorso.",
     ],
     note: "Se dalla tua richiesta emerge che serve un’altra figura professionale, te lo dico con chiarezza.",
@@ -97,13 +97,13 @@ export const percorsiContent = {
 
 export const percorsiFaqs = [
   { question: "Devo avere già un obiettivo preciso?", answer: "No. Puoi partire anche da una situazione che non riesci ancora a definire. Una parte del lavoro serve proprio a renderla più chiara." },
-  { question: "Gli incontri sono individuali?", answer: "Sì. Il percorso prevede sei incontri individuali online di circa 60 minuti, uno a settimana." },
+  { question: "Gli incontri sono individuali?", answer: "Sì. Numero degli incontri, durata e modalità del percorso personalizzato si concordano prima di iniziare." },
   { question: "Tra un incontro e l’altro devo fare degli esercizi?", answer: "Possiamo concordare osservazioni, esercizi o piccoli esperimenti legati alla tua situazione. Non sono compiti standard uguali per tutti e non devono diventare un impegno scolastico." },
   { question: "Posso scriverti tra un incontro e l’altro?", answer: "Sì, su WhatsApp, per aggiornamenti brevi e dubbi sugli esercizi. Quello che richiede più spazio lo riprendiamo durante gli incontri. Non è un servizio di emergenza." },
   { question: "Chi sceglie i passi da fare?", answer: "Tu. Ti accompagno a individuarli, ma il passo è sempre una tua scelta." },
   { question: "Cosa succede se un passo non va come speravo?", answer: "Lo osserviamo insieme. Un risultato diverso da quello sperato non è un fallimento: è un’informazione che serve a decidere se continuare, modificare, ridimensionare o cambiare direzione." },
   { question: "Il percorso garantisce che risolverò il problema?", answer: "No, e non sarebbe corretto prometterlo. Lavoriamo per aumentare la chiarezza sulla situazione, sperimentare passi possibili e imparare dall’esperienza." },
   { question: "È una terapia?", answer: "No. Il Mental Coaching non è psicoterapia, non formula diagnosi e non sostituisce interventi sanitari quando sono necessari." },
-  { question: "Che differenza c’è con il Pilot gratuito?", answer: "Il Pilot è una fase di validazione del metodo, gratuita e limitata a un massimo di tre partecipanti, con un proprio percorso di accesso. Un Passo Possibile, su questa pagina, è il percorso individuale a pagamento: la struttura di riferimento è la stessa, condizioni e modalità di accesso sono diverse." },
+  { question: "Quanto costa CONFRONTO?", answer: "Il primo incontro conoscitivo è gratuito e dura 30 minuti. Può svolgersi online oppure in presenza, da concordare, senza obbligo di proseguire." },
   { question: "Il colloquio conoscitivo mi impegna a iniziare?", answer: "No. Serve a capire se il percorso è adatto alla tua situazione. Decidiamo insieme se ha senso proseguire." },
 ] as const;

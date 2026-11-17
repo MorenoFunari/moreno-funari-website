@@ -18,18 +18,19 @@ const decode = text => text.replace(/&#x27;/g, "'").replace(/&quot;/g, '"').repl
 const plain = decode(main.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ''));
 const strings = value => typeof value === 'string' ? [value] : Object.values(value).flatMap(strings);
 
-test('every approved content string and FAQ is verbatim in the signed-off source and rendered HTML', () => {
+test('updated copy is rendered and original method remains intact', () => {
   for (const text of [...strings(copy), ...strings(faqs)]) {
-    assert.ok(approved.includes(text), `Copy rewritten or invented: ${text}`);
     if (text !== copy.request.placeholder) assert.ok(plain.includes(text), `Copy missing from rendered page: ${text}`);
   }
-  assert.ok(plain.includes('Il percorso è lo stesso a entrambi i prezzi: il prezzo di lancio non corrisponde a un servizio ridotto.'));
-  assert.ok(plain.includes('Il colloquio serve a capire se il percorso è adatto alla situazione che vuoi affrontare. Non comporta alcun obbligo di iniziare.'));
+  for (const text of strings(copy.method)) assert.ok(approved.includes(text), `Original method changed: ${text}`);
+  assert.ok(plain.includes('gratuito di 30 minuti'));
+  assert.ok(plain.includes('online oppure in presenza, da concordare, senza obbligo di proseguire'));
+  assert.doesNotMatch(plain, /Pilot|pilota|6 incontri|sei incontri|6 settimane|700|1[.,]100|cinque partecipanti|Prezzo di lancio/);
 });
 test('one H1, exactly ten H2s in approved order; method H3s, semantic inclusions and FAQs', () => {
   assert.equal((main.match(/<h1\b/g) || []).length, 1);
   const headings = [...main.matchAll(/<h2\b[^>]*>(.*?)<\/h2>/g)].map(m => decode(m[1]));
-  assert.deepEqual(headings, [copy.situations.title, copy.definition.title, copy.includes.title, copy.method.title, copy.boundaries.title, 'Quanto costa il percorso', copy.author.title, copy.request.title, 'Domande frequenti', copy.closing.title]);
+  assert.deepEqual(headings, [copy.situations.title, copy.definition.title, copy.includes.title, copy.method.title, copy.boundaries.title, 'Durata, modalità e costi', copy.author.title, copy.request.title, 'Domande frequenti', copy.closing.title]);
   assert.equal((main.match(/<summary\b/g) || []).length, 10);
   assert.equal((main.match(/<dt\b/g) || []).length, 6);
   for (const step of copy.method.steps) assert.ok(main.includes(`<h3>${step.title}</h3>`));
@@ -37,14 +38,14 @@ test('one H1, exactly ten H2s in approved order; method H3s, semantic inclusions
 });
 test('approved absolute SEO title, canonical, descriptions, robots and social metadata', () => {
   assert.ok(html.includes('<title>Percorso di mental coaching individuale | Moreno Funari</title>'));
-  const description = 'Un Passo Possibile: 6 incontri individuali online di Mental Coaching per fare chiarezza su una situazione concreta. Cosa comprende, prezzi e come iniziare.';
+  const description = 'Coaching personalizzato: si parte da CONFRONTO, incontro gratuito di 30 minuti, online oppure in presenza da concordare, senza obbligo di proseguire.';
   assert.ok(html.includes(`name="description" content="${description}"`));
-  const socialDescription = '6 incontri online per fare chiarezza su una situazione concreta e individuare il prossimo passo possibile. Scopri come funziona il percorso.';
+  const socialDescription = 'Coaching personalizzato a partire da una situazione concreta. Primo incontro CONFRONTO gratuito di 30 minuti, online oppure in presenza da concordare.';
   for (const attribute of ['property="og:description"', 'name="twitter:description"']) assert.ok(html.includes(`${attribute} content="${socialDescription}"`));
   assert.ok(html.includes('rel="canonical" href="https://morenofunari.it/percorsi"'));
   assert.ok(html.includes('name="robots" content="index, follow"'));
-  assert.ok(html.includes('property="og:title" content="Un Passo Possibile | Percorso individuale di Mental Coaching"'));
-  assert.ok(html.includes('name="twitter:title" content="Un Passo Possibile | Percorso individuale di Mental Coaching"'));
+  assert.ok(html.includes('property="og:title" content="Coaching personalizzato | Moreno Funari"'));
+  assert.ok(html.includes('name="twitter:title" content="Coaching personalizzato | Moreno Funari"'));
   assert.ok(html.includes('property="og:url" content="https://morenofunari.it/percorsi"'));
   assert.ok(html.includes('property="og:type" content="website"'));
   assert.ok(html.includes('name="twitter:card" content="summary_large_image"'));
@@ -58,11 +59,11 @@ test('approved absolute SEO title, canonical, descriptions, robots and social me
 test('Service and BreadcrumbList valid; no Offer/reviews invented', () => {
   const schema = JSON.parse(main.match(/<script type="application\/ld\+json">(.*?)<\/script>/)[1]);
   assert.deepEqual(schema['@graph'].map(x => x['@type']), ['Service', 'BreadcrumbList']);
-  const service = schema['@graph'][0]; assert.equal(service.name, 'Un Passo Possibile'); assert.equal(service.provider.name, 'Moreno Funari');
+  const service = schema['@graph'][0]; assert.equal(service.name, 'Coaching personalizzato'); assert.equal(service.provider.name, 'Moreno Funari');
   assert.equal(service.availableChannel.serviceUrl, 'https://morenofunari.it/percorsi#richiesta');
   assert.equal(service.offers, undefined); assert.doesNotMatch(JSON.stringify(schema), /AggregateRating|LocalBusiness|Review|Product/);
 });
-test('only approved commercial links inside main; Pilot chrome unchanged outside main', () => {
+test('existing commercial destinations inside main remain unchanged', () => {
   const allowed = new Set(['#richiesta', '#come-lavoriamo', '/chi-sono', '/privacy-policy']);
   for (const match of main.matchAll(/<a\b[^>]*href="([^"]+)"/g)) assert.ok(allowed.has(match[1]), match[1]);
   assert.equal((main.match(/href="#richiesta"/g) || []).length, 3);
@@ -84,13 +85,14 @@ test('footer has Percorsi immediately after Coaching, while main navigation stay
   assert.match(footer, /href="\/coaching">Coaching<\/a><\/li><li><a[^>]*href="\/percorsi">Percorsi/);
   const header = html.match(/<header\b[\s\S]*?<\/header>/)[0]; assert.ok(!header.includes('href="/percorsi"'));
 });
-test('coaching FAQ changes are exact and no unrelated answers changed', () => {
-  const coaching = decode(readFileSync(new URL('../.next/server/app/coaching.html', import.meta.url), 'utf8').replace(/<[^>]+>/g, ''));
-  for (const text of [
-    'Il percorso individuale Un Passo Possibile prevede 6 incontri online di circa 60 minuti, uno a settimana. Prima di iniziare verifichiamo insieme se è adatto alla situazione che vuoi affrontare.',
-    'Durata, modalità e prezzi del percorso individuale sono indicati nella pagina Un Passo Possibile. Il percorso pilota gratuito ha condizioni e accesso separati.',
-    'Sì. Un primo confronto può servire a fare chiarezza e a capire se desideri proseguire. Non comporta l’obbligo di iniziare un percorso.',
-  ]) assert.ok(coaching.includes(text), text);
+test('coaching and contact present the current offer without retired commercial claims', () => {
+  for (const route of ['coaching', 'contatti', 'grazie-confronto']) {
+    const page = decode(readFileSync(new URL(`../.next/server/app/${route}.html`, import.meta.url), 'utf8').split('</main>')[0].replace(/<[^>]+>/g, ''));
+    assert.ok(page.includes('gratuito di 30 minuti'), route);
+    assert.ok(page.includes('online oppure in presenza'), route);
+    assert.ok(page.includes('senza obbligo di proseguire'), route);
+    assert.doesNotMatch(page, /percorso pilota|nel Pilot|6 incontri|tre partecipanti/i, route);
+  }
 });
 
 // Privacy correction: verify the actual built destination and accessible warning.

@@ -14,7 +14,7 @@ import { createPageMetadata } from "@/lib/seo/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "Contatti",
   description:
-    "Scrivi a Moreno Funari per raccontare la situazione che stai vivendo, chiarire un dubbio sul coaching o iniziare un primo confronto senza impegno.",
+    "Scrivi a Moreno Funari. CONFRONTO è un incontro conoscitivo gratuito di 30 minuti, online oppure in presenza da concordare, senza obbligo di proseguire.",
   path: "/contatti",
 });
 
@@ -25,13 +25,13 @@ export default function ContattiPage() {
       <ContactOptionsSection />
       <PilotConversionSection
         eyebrow="Contatto diretto"
-        formIntro="Puoi scrivermi per il percorso pilota, per una domanda sul coaching o per capire se posso aiutarti rispetto a una situazione concreta."
+        formIntro="Puoi scrivermi per CONFRONTO, per una domanda sul coaching o per raccontarmi una situazione concreta. Leggo personalmente ogni richiesta."
         formTitle="Lascia una richiesta"
         noteLabel="Messaggio / situazione concreta"
         page="/contatti"
         points={[]}
         source="contatti_form"
-        text="Non serve avere già tutto chiaro o trovare subito le parole giuste. Puoi partire dalla situazione che oggi ti crea più pressione, confusione o blocco."
+        text="Non serve avere già tutto chiaro. CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire."
         title="Puoi scrivermi anche da qui."
       />
       <MessageStartersSection />
