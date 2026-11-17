@@ -47,3 +47,20 @@ for (const change of [{}, {note:''}, {privacyConsent:false}]) test('Ads source p
   const valid=Object.keys(change).length===0; assert.equal(r.status,valid?200:400);
   if(valid){assert.equal(s.calls[0].body.attributes.PILOT_SOURCE,'ads_confronto_form');assert.deepEqual(s.calls[0].body.listIds,[99]);assert.equal(s.calls.length,2)} else assert.equal(s.calls.length,0);
 });
+
+test('two intentional requests for same existing email are accepted; retries do not repeat capture or notification', async () => {
+  const s = setup(); const first = data();
+  const second = { ...first, requestId: randomUUID(), note: 'Second intentional request' };
+  for (const p of [first, first, second, second]) assert.equal((await s.post(request(p))).status, 200);
+  const contacts = s.calls.filter(c => c.url.endsWith('/contacts'));
+  const emails = s.calls.filter(c => c.url.endsWith('/smtp/email'));
+  assert.equal(contacts.length, 2); assert.equal(emails.length, 2);
+  for (const c of contacts) {
+    assert.equal(c.body.updateEnabled, true);
+    assert.deepEqual(c.body.listIds, [99]);
+    assert.equal(c.body.email, first.email);
+    assert(!('emailBlacklisted' in c.body));
+    assert(!('MARKETING_CONSENT' in c.body.attributes));
+    assert(!('CONSENSO' in c.body.attributes));
+  }
+});

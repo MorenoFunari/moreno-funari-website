@@ -188,10 +188,12 @@ export default function PrivacyPolicyPage() {
               il telefono è facoltativo e la descrizione è richiesta. Evita dati sanitari,
               diagnosi e altre informazioni sensibili non necessarie.</p>
             <p>I dati sono inviati dal backend del sito a Brevo nella lista CONFRONTO (#5),
-              per gestire la richiesta. Al primo ingresso nella lista, un’automazione invia
-              l’email con il collegamento a Calendly. Se il contatto è già nella lista,
-              il reinvio del modulo aggiorna la richiesta senza riattivare quell’automazione;
-              il link di prenotazione è disponibile anche nella pagina di conferma.
+              per gestire la richiesta. L’automazione invia l’email con il collegamento a Calendly,
+              aggiunge il contatto alla lista Archivio richieste (#8) e lo rimuove dalla
+              lista di ingresso (#5). Una nuova richiesta intenzionale, dopo il completamento
+              del flusso, può quindi inviare nuovamente il link. Se una richiesta è ancora
+              in gestione, il contatto già presente viene aggiornato senza creare una nuova
+              iscrizione. Il link di prenotazione è disponibile anche nella pagina di conferma.
               Una notifica operativa con i recapiti e il messaggio viene inviata a Moreno via email.
               La risposta automatica riguarda esclusivamente la richiesta: non comporta iscrizione
               alla newsletter né consenso a comunicazioni promozionali.</p>
@@ -204,8 +206,13 @@ export default function PrivacyPolicyPage() {
               la richiesta e la presa visione, non un consenso marketing.</p>
             <p>I dati vengono conservati per il tempo necessario a gestire la richiesta,
               la prenotazione e l’eventuale rapporto conseguente; successivamente solo
-              per obblighi di legge o tutela dei diritti. Puoi chiedere la cancellazione
-              quando non sussistono motivi per proseguire la conservazione.</p>
+              per obblighi di legge o tutela dei diritti. Le richieste conoscitive che non
+              proseguono vengono riesaminate separatamente dai successivi rapporti
+              professionali: i dati non più necessari vengono cancellati o anonimizzati,
+              senza eliminare quelli ancora richiesti per altre finalità legittime.
+              L’archiviazione nella lista Brevo non costituisce di per sé un motivo per
+              conservarli indefinitamente. Puoi chiedere la cancellazione quando non
+              sussistono motivi per proseguire la conservazione.</p>
             <p>Gli incontri non vengono registrati in audio o video senza un consenso specifico e separato.</p>
             <h3 className={styles.subTitle}>Richieste tramite Instagram e ManyChat</h3>
             <p>Per le interazioni CONFRONTO su Instagram viene utilizzato ManyChat:
