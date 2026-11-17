@@ -9,9 +9,9 @@ import { createPageMetadata } from "@/lib/seo/metadata";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "CONFRONTO | Moreno Funari Mental Coach",
+  title: "CONFRONTO gratuito di 30 minuti | Moreno Funari",
   description:
-    "Racconta una situazione concreta e capisci se ha senso fare un primo confronto con Moreno Funari.",
+    "Un primo incontro conoscitivo gratuito di 30 minuti con Moreno Funari, online oppure in presenza da concordare, senza obbligo di proseguire.",
   path: "/ads/confronto",
   noIndex: true,
   absoluteTitle: true,
@@ -52,8 +52,7 @@ export default function AdsConfrontoPage() {
               poi ti chiedi se sei all’altezza.
             </p>
             <p className={styles.contactHint}>
-              <strong>Possiamo partire da una situazione concreta.</strong> Me la
-              racconti in poche righe e capiamo se ha senso approfondirla insieme.
+              CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire. Serve a comprendere la situazione e valutare un eventuale percorso di coaching personalizzato.
             </p>
             <div className={styles.action}>
               <ButtonLink href="#richiesta-confronto" external size="large">
@@ -92,7 +91,7 @@ export default function AdsConfrontoPage() {
           <ol>
             <li><strong>Mi racconti una situazione concreta.</strong> Compili il modulo qui sotto oppure, se preferisci, mi scrivi su WhatsApp.</li>
             <li>Leggo personalmente la tua richiesta e ti ricontatto.</li>
-            <li>Se ha senso approfondire, valutiamo un primo confronto conoscitivo online di 30 minuti, senza impegno.</li>
+            <li>Se ha senso approfondire, concordiamo un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, senza obbligo di proseguire.</li>
             <li>Solo successivamente, se lo riteniamo utile entrambi, possiamo parlare di un eventuale percorso.</li>
           </ol>
         </section>

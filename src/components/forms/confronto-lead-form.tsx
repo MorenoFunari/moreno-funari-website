@@ -111,13 +111,13 @@ function trackGaEventBeforeRedirect(
 
 export function ConfrontoLeadForm({
   ctaLabel = "Invia i dati",
-  introText = "Ti ricontatterò solo per capire se il percorso pilota può essere adatto alla situazione che stai vivendo.",
+  introText = "Leggerò personalmente la tua richiesta e ti ricontatterò per valutare insieme il prossimo passo. CONFRONTO è un primo incontro conoscitivo gratuito di 30 minuti, online oppure in presenza, da concordare, senza obbligo di proseguire.",
   noteLabel = "In una frase, su cosa vorresti fare chiarezza?",
   notePlaceholder = "Es. Mi sento bloccato davanti a una scelta lavorativa / continuo a rimandare / sento molta pressione dopo un errore / faccio fatica a mettere un confine.",
   noteRequired = false,
   page,
   phoneRequired = true,
-  reassuranceText = "Inviare la richiesta non significa entrare automaticamente nel percorso. La candidatura viene letta e valutata manualmente.",
+  reassuranceText = "Inviare la richiesta non ti impegna a proseguire. Leggo personalmente ogni richiesta e concordiamo insieme l’eventuale incontro.",
   source,
   title = "Lascia i tuoi dati",
   variant = "full",
