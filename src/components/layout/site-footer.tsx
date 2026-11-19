@@ -16,7 +16,7 @@ export function SiteFooter() {
           <div className={styles.identity}>
             <p className={styles.signature}>Moreno Funari | Mental Coach</p>
             <p className={styles.tagline}>
-              Piccoli passi concreti per fare chiarezza.
+              Chiarezza, non motivazione. Un passo possibile alla volta.
             </p>
           </div>
 
@@ -41,6 +41,11 @@ export function SiteFooter() {
                 Risorse
               </h2>
               <ul className={styles.list}>
+                <li>
+                  <Link className={styles.link} href="/passo">
+                    Guida gratuita (PASSO)
+                  </Link>
+                </li>
                 <li>
                   <a className={styles.link} href={siteConfig.appUrl}>
                     Un Passo Possibile AI
