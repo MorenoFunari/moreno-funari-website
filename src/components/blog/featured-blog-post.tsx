@@ -16,11 +16,17 @@ type FeaturedBlogPostProps = {
 export function FeaturedBlogPost({ label, post, titleId }: FeaturedBlogPostProps) {
   const categoryLabel = getBlogCategoryLabel(post.category);
   const tags = post.tags.slice(0, 3);
-  const hasCover = Boolean(post.coverImage && post.coverAlt);
+  const articleCover = post.coverImage && post.coverAlt
+    ? { src: post.coverImage, alt: post.coverAlt }
+    : null;
+  const cover = articleCover ?? {
+    src: "/images/moreno/moreno-about-outdoor.webp",
+    alt: "Moreno Funari all’aperto",
+  };
   const excerpt = post.excerpt ?? post.description;
 
   return (
-    <article className={hasCover ? styles.withCover : styles.article}>
+    <article className={styles.article}>
       <div className={styles.content}>
         <p className={styles.label}>{label}</p>
         <div className={styles.meta}>
@@ -50,19 +56,16 @@ export function FeaturedBlogPost({ label, post, titleId }: FeaturedBlogPostProps
         </ButtonLink>
       </div>
 
-      {post.coverImage && post.coverAlt ? (
-        <div className={styles.cover}>
-          <Image
-            alt={post.coverAlt}
-            className={styles.coverImage}
-            height={720}
-            priority
-            sizes="(min-width: 1024px) 42vw, 100vw"
-            src={post.coverImage}
-            width={1280}
-          />
-        </div>
-      ) : null}
+      <div className={styles.cover}>
+        <Image
+          alt={cover.alt}
+          className={articleCover ? styles.coverImage : styles.portraitImage}
+          fill
+          priority
+          sizes="(min-width: 960px) 42vw, 100vw"
+          src={cover.src}
+        />
+      </div>
     </article>
   );
 }

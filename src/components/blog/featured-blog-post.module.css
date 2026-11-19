@@ -1,16 +1,12 @@
-.article,
-.withCover {
+.article {
   display: grid;
+  align-items: center;
   gap: var(--space-2xl);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-surface);
   box-shadow: var(--shadow-card);
   padding: clamp(var(--space-xl), 5vw, var(--space-3xl));
-}
-
-.withCover {
-  align-items: center;
 }
 
 .content {
@@ -76,20 +72,26 @@
 }
 
 .cover {
+  position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: var(--radius-md);
   background: var(--color-surface-muted);
 }
 
-.coverImage {
+.coverImage,
+.portraitImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+.portraitImage {
+  object-position: center 15%;
+}
+
 @media (min-width: 960px) {
-  .withCover {
+  .article {
     grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.78fr);
   }
 }

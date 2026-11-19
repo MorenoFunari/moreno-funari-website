@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 
 import { Container } from "@/components/ui/container";
@@ -34,7 +35,16 @@ export default function ConfrontoPage() {
         <Container className={styles.heroInner}>
           <p className={styles.eyebrow}>CONFRONTO</p>
           <h1 id="confronto-title">CONFRONTO: un primo incontro per capire da dove partire</h1>
-          <p className={styles.lead}>30 minuti, gratuito, online. Senza obbligo di proseguire.</p>
+          <div className={styles.introduction}>
+            <Image
+              alt="Moreno Funari"
+              height={96}
+              src="/images/moreno/moreno-about-outdoor.webp"
+              width={96}
+            />
+            <p>Ci vediamo io e te: 30 minuti, online o di persona a Frascati e dintorni. Ti faccio qualche domanda e poi ti rispondo personalmente.</p>
+          </div>
+          <p className={styles.lead}>Gratuito. Senza obbligo di proseguire.</p>
           <p className={styles.ctaCopy}>Dal modulo ricevi un’email automatica con il link per scegliere giorno e orario.</p>
           <div className={styles.actions}>
             <a className={styles.primaryAnchor} href="#lascia-dati">Richiedi il primo incontro</a>

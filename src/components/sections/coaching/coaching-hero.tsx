@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
@@ -36,7 +38,16 @@ export function CoachingHero() {
           </ButtonLink>
         </div>
       </div>
-      <div className={styles.signal} aria-hidden="true" />
+      <div className={styles.portrait}>
+        <Image
+          alt="Moreno Funari all’aperto"
+          className={styles.portraitImage}
+          fill
+          priority
+          sizes="(min-width: 960px) 34vw, (min-width: 560px) 30rem, 100vw"
+          src="/images/moreno/moreno-about-outdoor.webp"
+        />
+      </div>
     </Container>
   );
 }
