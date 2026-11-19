@@ -37,6 +37,27 @@
   line-height: var(--line-height-tight);
 }
 
+.introduction {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.introduction img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.introduction p {
+  margin: 0;
+  line-height: var(--line-height-intro);
+}
+
 .lead {
   max-width: 43rem;
   margin: var(--space-lg) 0 0;

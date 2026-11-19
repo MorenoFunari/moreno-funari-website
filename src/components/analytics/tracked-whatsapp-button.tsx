@@ -16,7 +16,7 @@ type TrackedWhatsAppButtonProps = {
   location: string;
   page?: string;
   size?: "medium" | "large";
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "text";
 };
 
 export function TrackedWhatsAppButton({

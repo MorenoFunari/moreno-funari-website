@@ -8,11 +8,14 @@ import { createCoachingLandingPageJsonLd } from "@/lib/seo/structured-data";
 
 const page = coachingLandingPages.mentalCoachFrascati;
 
-export const metadata: Metadata = createPageMetadata({
-  title: page.metaTitle,
-  description: page.description,
-  path: page.path,
-});
+export const metadata: Metadata = {
+  ...createPageMetadata({
+    title: page.metaTitle,
+    description: page.description,
+    path: page.path,
+  }),
+  title: { absolute: "Mental coach a Frascati e nei Castelli Romani" },
+};
 
 export default function MentalCoachFrascatiPage() {
   return (

@@ -51,7 +51,8 @@ test('approved CONFRONTO copy and Home CTA destinations are rendered exactly', (
   const text = visible(html).replace(/&#x27;/g, "'");
   for (const expected of [
     'CONFRONTO: un primo incontro per capire da dove partire',
-    '30 minuti, gratuito, online. Senza obbligo di proseguire.',
+    'Ci vediamo io e te: 30 minuti, online o di persona a Frascati e dintorni. Ti faccio qualche domanda e poi ti rispondo personalmente.',
+    'Gratuito. Senza obbligo di proseguire.',
     'Sei sotto pressione da settimane e non riesci a staccare.',
     "Rimandi una decisione e ogni giorno pesa un po' di più.",
     'Sai cosa dovresti fare, ma non riesci a partire.',
@@ -68,9 +69,9 @@ test('approved CONFRONTO copy and Home CTA destinations are rendered exactly', (
   const block = home.match(/<section[^>]*aria-labelledby="home-pilot-spot-title"[\s\S]*?<\/section>/)[0];
   const links = [...block.matchAll(/<a[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)];
   assert.equal(links.length, 2);
-  for (const link of links) assert.equal(link[1], '/confronto');
+  assert.deepEqual(links.map(link => link[1]), ['/confronto', 'https://wa.me/393793408630?text=CONFRONTO']);
   assert.ok(visible(block).includes('Richiedi il primo incontro'));
-  assert.ok(visible(block).includes('Scrivimi CONFRONTO'));
+  assert.ok(visible(block).includes('Preferisci un messaggio? Scrivimi CONFRONTO'));
 });
 
 test('CONFRONTO privacy states the adopted maximum retention and avoids list-routing promises',()=>{

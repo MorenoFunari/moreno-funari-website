@@ -13,18 +13,14 @@ export function ClosingCtaSection() {
       <div className={styles.panel}>
         <span className={styles.detail} aria-hidden="true" />
         <h2 className={styles.title} id="closing-cta-title">
-          Da quale piccolo passo vuoi iniziare?
+          Ne parliamo in 30 minuti?
         </h2>
         <p className={styles.text}>
-          Puoi leggere, riflettere o scegliere di parlarne. Non devi fare tutto
-          insieme.
+          Un primo incontro gratuito, online o di persona ai Castelli Romani. Ti faccio qualche domanda e poi ti rispondo personalmente.
         </p>
         <div className={styles.actions}>
-          <ButtonLink href="/inizia-da-qui" variant="ghost">
-            Inizia da qui
-          </ButtonLink>
-          <ButtonLink href="/confronto" variant="text">
-            Scopri CONFRONTO
+          <ButtonLink href="/confronto" variant="ghost">
+            Richiedi il primo incontro
           </ButtonLink>
         </div>
       </div>

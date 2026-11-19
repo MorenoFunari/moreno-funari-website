@@ -36,6 +36,25 @@ const leadMagnetPlacements = {
     "blog-self-talk",
 } as const;
 
+const articleTitles: Partial<Record<string, string>> = {
+  "quando-hai-troppe-cose-in-testa-5-azioni-per-ritrovare-lucidita":
+    "Troppe cose in testa? 5 azioni per ritrovare lucidità",
+  "quando-ti-senti-bloccato-non-devi-cambiare-tutto":
+    "Ti senti bloccato? Non devi cambiare tutto",
+  "come-staccare-dal-lavoro-a-fine-giornata":
+    "Come staccare dal lavoro a fine giornata",
+  "mental-coach-e-psicologo-qual-e-la-differenza":
+    "Mental coach e psicologo: qual è la differenza?",
+  "perche-rimandi-anche-quando-sai-cosa-dovresti-fare":
+    "Perché rimandi anche quando sai cosa fare",
+  "responsabilita-non-significa-controllo-cosa-succede-quando-provi-a-gestire-tutto":
+    "Responsabilità non significa controllare tutto",
+  "la-fiducia-arriva-dopo-il-primo-passo":
+    "Fiducia: a volte arriva dopo il primo passo",
+  "ti-parleresti-cosi-se-fossi-una-persona-a-cui-vuoi-bene":
+    "Autocritica: ti parleresti così?",
+};
+
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
@@ -79,8 +98,10 @@ export async function generateMetadata({
         },
       ];
 
+  const articleTitle = articleTitles[slug];
+
   return {
-    title: post.title,
+    title: articleTitle ? { absolute: articleTitle } : post.title,
     description: post.description,
     alternates: {
       canonical: url,

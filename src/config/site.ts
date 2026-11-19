@@ -26,6 +26,7 @@ export const siteConfig = {
   mainNavigation: [
     { label: "Inizia da qui", href: "/inizia-da-qui" },
     { label: "Chi sono", href: "/chi-sono" },
+    { label: "Guida gratuita", href: "/passo" },
     { label: "Blog", href: "/blog" },
     { label: "eBook", href: "/ebook" },
     { label: "Coaching", href: "/coaching" },

@@ -51,11 +51,6 @@ export function BlogHero({ hasPosts }: BlogHeroProps) {
             )}
           </div>
         </div>
-        <div className={styles.marker} aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </div>
       </Container>
     </section>
   );
