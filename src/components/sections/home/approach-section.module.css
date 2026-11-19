@@ -15,6 +15,10 @@
   justify-items: start;
 }
 
+.heading {
+  --color-accent-strong: var(--color-primary-strong);
+}
+
 .steps {
   display: grid;
   gap: var(--space-md);
