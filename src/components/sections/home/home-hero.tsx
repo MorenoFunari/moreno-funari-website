@@ -15,7 +15,7 @@ export function HomeHero() {
     >
       <div className={styles.content}>
         <Eyebrow className={styles.eyebrow}>
-          Moreno Funari | Mental Coach
+          Mental coach a Frascati e online
         </Eyebrow>
         <h1 className={styles.title} id="hero-title">
           Non devi risolvere tutto oggi.
