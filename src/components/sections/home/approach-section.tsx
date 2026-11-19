@@ -13,6 +13,7 @@ export function ApproachSection() {
       <Container className={styles.inner}>
         <div className={styles.intro}>
           <SectionHeading
+            className={styles.heading}
             eyebrow="Il mio approccio"
             id="approach-title"
             title="Non si tratta di dirti cosa fare."

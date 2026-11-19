@@ -37,8 +37,9 @@ export function HomeHero() {
           alt="Moreno Funari all'aperto in un momento informale."
           className={styles.image}
           fill
-          priority
-          sizes="(max-width: 767px) 100vw, (max-width: 1199px) 42vw, 34rem"
+          fetchPriority="high"
+          loading="eager"
+          sizes="(min-width: 1120px) 26rem, (min-width: 1024px) 38vw, (min-width: 576px) 34rem, calc(100vw - 2rem)"
           src="/images/moreno/moreno-hero-outdoor.webp"
         />
       </div>
