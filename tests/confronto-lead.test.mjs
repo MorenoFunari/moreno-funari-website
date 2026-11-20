@@ -28,7 +28,7 @@ test('same id with a different valid payload is refused without another provider
 });
 test('failed provider operations allow retry, never return a commercial success', async () => {
   let fail = true; const s = setup(() => fail ? new Response('', { status: 503 }) : Response.json({}, { status: 201 })); const p = data(); const bad = await s.post(request(p)); assert.equal(bad.status, 502); assert.equal((await bad.json()).leadCreated, undefined);
-  fail = false; assert.equal((await s.post(request(p))).status, 200); assert.equal(s.calls.length, 5);
+  fail = false; assert.equal((await s.post(request(p))).status, 200); assert.equal(s.calls.length, 3);
 });
 test('network failure is a handled 502 and can be retried', async () => { const s = setup(() => { throw Error('offline'); }); assert.equal((await s.post(request(data()))).status, 502); });
 test('notification rejection does not pretend delivery and replay does not resend', async () => {
@@ -36,6 +36,15 @@ test('notification rejection does not pretend delivery and replay does not resen
 });
 test('existing contact fallbacks are preserved; only one notification after acceptance', async () => {
   let contacts = 0; const s = setup(url => new Response('', { status: url.endsWith('/contacts') && ++contacts < 3 ? 400 : 201 })); const r = await s.post(request(data())); assert.equal(r.status, 200); assert.equal(s.calls.length, 4); assert.equal(contacts, 3);
+  const writes = s.calls.slice(0, 3);
+  const timestamp = writes[0].body.attributes.CONFRONTO_REQUESTED_AT;
+  assert.equal(new Date(timestamp).toISOString(), timestamp);
+  for (const write of writes) {
+    assert.equal(write.body.attributes.PILOT_TAG, 'CONFRONTO');
+    assert.equal(write.body.attributes.CONFRONTO_REQUESTED_AT, timestamp);
+    assert.deepEqual(write.body.listIds, [99]);
+  }
+  assert.deepEqual(writes[2].body.attributes, { PILOT_TAG: 'CONFRONTO', CONFRONTO_REQUESTED_AT: timestamp });
 });
 for (const [label, change] of [ ['privacy', { privacyConsent: false }], ['note', { note: '' }], ['email', { email: 'bad' }], ['honeypot', { website: 'bot' }], ['clock', { startedAt: Date.now() + 5000 }], ['id', { requestId: 'not-a-uuid' }] ]) test('invalid '+label+' cannot call Brevo', async () => { const s = setup(); assert.equal((await s.post(request({ ...data(), ...change }))).status, 400); assert.equal(s.calls.length, 0); });
 test('null/array/malformed payloads fail validation without provider calls', async () => {
