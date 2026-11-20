@@ -302,86 +302,34 @@ async function captureLead({ apiKey, listId, email, name, note, phone, leadSourc
     updateEnabled: true,
   };
 
-  const response = await createBrevoContact({
-    apiKey,
-    body: {
-      ...baseContact,
-      attributes: {
-        CONFRONTO_NOTE: note,
-        NOME: name,
-        PILOT_SOURCE: leadSource,
-        PILOT_TAG: "CONFRONTO",
-        ...(phone ? { WHATSAPP: phone } : {}),
-      },
-    },
-  });
+  const requiredAttributes = {
+    PILOT_TAG: "CONFRONTO",
+    CONFRONTO_REQUESTED_AT: new Date().toISOString(),
+  };
+  const fullAttributes = {
+    CONFRONTO_NOTE: note,
+    NOME: name,
+    PILOT_SOURCE: leadSource,
+    ...(phone ? { WHATSAPP: phone } : {}),
+    ...requiredAttributes,
+  };
 
-  if (!response.ok) {
-    console.error("Brevo rejected confronto lead capture request.", {
-      status: response.status,
-    });
-
-    const fallbackResponse = await createBrevoContact({
-      apiKey,
-      body: {
-        ...baseContact,
-        attributes: {
-          NOME: name,
-          ...(phone ? { WHATSAPP: phone } : {}),
-        },
-      },
-    });
-
-    if (!fallbackResponse.ok) {
-      console.error("Brevo rejected confronto fallback lead capture request.", {
-        status: fallbackResponse.status,
-      });
-
-      const minimalFallbackResponse = await createBrevoContact({
-        apiKey,
-        body: baseContact,
-      });
-
-      if (!minimalFallbackResponse.ok) {
-        console.error(
-          "Brevo rejected confronto minimal fallback lead capture request.",
-          {
-            status: minimalFallbackResponse.status,
-          },
-        );
-
-        return jsonError("Brevo rejected the lead capture request.", 502);
-      }
-
-      console.warn(
-        "Brevo accepted confronto lead with minimal fallback. Contact attributes may be missing.",
-      );
-
-      const notificationSent = await sendLeadNotification({
-        apiKey,
-        email,
-        name,
-        note,
-        phone,
-        source: leadSource,
-      }).catch(() => {
-        console.error("Brevo lead notification failed.", {
-          source: leadSource,
-        });
-        return false;
-      });
-
-      return NextResponse.json({
-        leadCreated: true,
-        notificationSent,
-        ok: true,
-      });
+  let accepted = false;
+  for (const attributes of [
+    fullAttributes,
+    { NOME: name, ...(phone ? { WHATSAPP: phone } : {}), ...requiredAttributes },
+    requiredAttributes,
+  ]) {
+    const response = await createBrevoContact({ apiKey, body: { ...baseContact, attributes } });
+    if (response.ok) {
+      accepted = true;
+      break;
     }
-
-    console.warn(
-      "Brevo accepted confronto lead with fallback attributes. Custom Pilot attributes may be missing.",
-    );
+    console.error("Brevo rejected confronto lead capture request.", { status: response.status });
+    // Only a definite validation rejection warrants retrying with fewer optional attributes.
+    if (response.status !== 400) return jsonError("Brevo rejected the lead capture request.", 502);
   }
+  if (!accepted) return jsonError("Brevo rejected the lead capture request.", 502);
 
   const notificationSent = await sendLeadNotification({
     apiKey,
